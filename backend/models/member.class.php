@@ -35,7 +35,7 @@ class Member extends Model {
 		$this->table													= "members";
 		
 		# Initialize UID from Parameter
-		$this->id														= $uid;
+		$this->uid														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class Member extends Model {
 		$form															= new Form($action, "POST", "member_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->id);
+		$form->add(""							, "hidden"			, "uid"					, $this->uid);
 		$form->add_select("Select a Title"      , "title_id"       	,$this->title_id        , title_select());
 		$form->add("Name"						, "text"			, "name"				, $this->name);
 		$form->add("Surname"					, "text"			, "surname"				, $this->surname);
@@ -87,7 +87,7 @@ class Member extends Model {
 																				`cell` as 'Cell',
 																				`email` as 'Email',
 																				`provinces`.`province` as 'Province',
-																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
+																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">Edit<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 																			FROM
 																				`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
 																			WHERE

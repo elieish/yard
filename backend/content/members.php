@@ -59,17 +59,18 @@ class Page extends AbstractPage {
 		$member_id														= Form::get_int('id');
 		
 		#Get Data
-		$listing														= CostCenter::listing_by_member($member_id);
+		//$listing														= CostCenter::listing_by_member($member_id);
 		
 		#Create New Object
 		$obj															= new Member($member_id);
 		
 		# Generate HTML
-		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/cost_center/list.html";
+		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/profile.html";
 		$vars															= array(
 																					"name"			=> $obj->name,
-																					"listing"		=> $listing,
-																					"add_link"		=> "?p=costcenter&action=add&id={$member_id}"
+																					"form"          => $obj->item_form($this->cur_page),
+            																		"js"            => $js,
+																					"add_link"		=> "?p=members&action=add&id={$member_id}"
 																				);
 		$template														= new Template($file,$vars);
 		$html															= $template->tostring();

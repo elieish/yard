@@ -35,7 +35,7 @@ class Enterprise extends Model {
 		$this->table													= "enterprises";
 		
 		# Initialize UID from Parameter
-		$this->id														= $uid;
+		$this->uid														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class Enterprise extends Model {
 		$form															= new Form($action, "POST", "enterprise_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->id);
+		$form->add(""							, "hidden"			, "uid"					, $this->uid);
 		$form->add("Name"						, "text"			, "name"				, $this->name);
 		$form->add_select("Select a Group"      , "group_id"       	,$this->group_id         , group_select());
 		$form->add_select("Select a Member"      , "member_id"       ,$this->member_id        , member_select());
@@ -70,7 +70,7 @@ class Enterprise extends Model {
 																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `enterprises`.`uid`, '\">', `enterprises`.`name`, '</a>') as 'Name',
 																				`enterprise_groups`.`group`,
 																				CONCAT(`members`.`name`,' ',`members`.`surname`) AS 'Owner',
-																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `enterprises`.`uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `enterprises`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
+																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `enterprises`.`uid`, '\">Edit<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `enterprises`.`uid`, '\">Delete<i class=\"icon-trash\"></i></a>') as 'Actions'
 																			FROM
 																				`enterprises` 
 																			JOIN 
