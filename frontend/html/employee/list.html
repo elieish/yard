@@ -1,0 +1,35 @@
+
+	        	<div class='row-fluid'>
+	        		
+	        		<div class="btn-position">
+	        		
+	        			<a class='btn btn-success pull-right' href='{{add_link}}'><i class='icon-plus icon-white'></i> Add Employee</a>
+	        		
+	        		</div>
+	        		
+	        		<h1>{{company_name}}</h1>
+	
+					<!-- Breadcrumbs -->	
+               		<ul class='breadcrumb'>
+               			<li>
+               				<a href='?p=companies'>Companies</a>
+               				<span class='divider'> > </span>
+               			</li>
+               			<li>
+               				<a href='?p=companies'>{{company_name}}</a>
+               				<span class='divider'> > </span>
+               			</li>
+               			<li>
+               				<a href='{{costcenter_link}}'>{{costcenter_name}}</a>
+               				<span class='divider'> > </span>
+               			</li>
+               			<li class='active'>
+               			{{department_name}}
+               			</li>
+               		</ul>
+
+					{{message}}
+			    
+		    		{{listing}}
+	
+				</div>

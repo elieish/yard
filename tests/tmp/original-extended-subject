@@ -1,0 +1,39 @@
+MAIL FROM:<244373553@incoming.vax.co.za>
+RCPT TO:<faxmaster@amefax.co.za>
+DATA
+Received: from isfax-mail4-rba.isfax.co.za ([196.34.20.6]:14792)
+        by fax-01.amefax.co.za with esmtps (TLSv1:DHE-RSA-AES256-SHA:256)
+        (Exim 4.80.1)
+        (envelope-from <244373553@incoming.vax.co.za>)
+        id 1VtFrs-0004Zi-Es
+        for faxmaster@amefax.co.za; Wed, 18 Dec 2013 14:04:48 +0200
+Received: from pagan by isfax-mail4-rba.isfax.co.za with local (Exim 4.80.1 #2)
+        (envelope-from <244373553@incoming.vax.co.za>)
+        id 1VtFv1-000Jc8-Tj
+        for <faxmaster@amefax.co.za>; Wed, 18 Dec 2013 14:08:03 +0200
+From: 244373553@incoming.vax.co.za
+To: faxmaster@amefax.co.za
+Auto-Submitted: auto-generated
+Precedence: bulk
+Message-Id: <fsn.244373553.250976605.75332@isfax-mail4-rba.isfax.co.za>
+Subject: Fax Status Notification (SUCCESS)
+Date: Wed, 18 Dec 2013 14:08:03 +0200
+X-Trace: isfax-mail4-rba.isfax.co.za 1VtFv1-000Jc8-Tj 2453cdc7d5718408dcbe3cd227990ade
+
+Your message [Fax reference: 244373553]
+  Dated: Wed, 18 Dec 2013 12:06:45 +0000
+  Message-Id: <2484C0AB9A057340B23B930326E8BAB58B081ABB@DC.uo.implyit.co.za>
+  Subject: [FAX 1VtFql-0004Z7-GA sent by Anthon Walters <anthon@ws.co.za>](was:
+ This is a test fax five)
+
+Was successful to the following recipient(s):
+  "'27867437949@amefax.co.za'" <27867437949@vax.co.za>
+            Status: 2.1.5 Delivered
+           Recipient: 27867437949
+               Pages: 1
+Transmit Time (secs): 59
+      Processed Time: Wed Dec 18 14:08:03 2013
+           Transport: hairpin
+             Retries: 0
+
+.

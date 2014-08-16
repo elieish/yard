@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>AME Africa Fax Service</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="img/implyit.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    body {
+      padding-top: 90px;
+      padding-bottom: 40px;
+  }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" href="css/cus-icons.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="vendor/jquery-ui/css/redmond/jquery-ui-1.10.3.custom.min.css">
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+            <![endif]-->
+
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                       <a class="brand" href="./"><img src="img/amefax-log-sml.jpg" alt="AME Africa Logo" width="200px" /></a>
+                       <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li><a href="?p=companies">Companies</a></li>
+                            <li><a href="?p=report_faxes">Fax Report</a></li>
+                            <li><a href="?p=exim_log">Exim Statistics</a></li>
+                        </ul>
+                        <ul class='nav pull-right'>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class='icon icon-user'></i> {{USERNAME}} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu navbar-right">
+                                  <li><a href="?p=users">Profile</a></li>
+                                  <li><a href="?p=logout">Logout</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </div><!--/.nav-collapse -->
+              </div>
+          </div>
+      </div>
+      <div class="container-fluid">
+        <div class='row-fluid'>
+            <div class='span6 pull-right search'>
+             <form method="GET" action="?p=search" class='pull-right'>
+                <input type="hidden" name="p" value="search">
+
+                <input type="text" name="search_string" value="{{SEARCH}}" placeholder="Search">
+                <button class="btn btn-primary" type="submit"><i class='icon-search icon-white'></i> Search</button>
+            </form>
+        </div>
+    </div>
+
+    {{CONTENT}}
+
+    <hr>
+
+    <footer>
+        <p>Copyright &copy; <a href="http://www.implyit.co.za">Imply Development</a> 2013</p>
+    </footer>
+
+</div> <!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="vendor/jquery-ui/js/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="vendor/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/pwstrength.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/general.js"></script>
+</body>
+</html>

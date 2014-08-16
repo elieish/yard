@@ -1,0 +1,5 @@
+<div class="search_item">
+	<div class="search_item_title">{{title}}</div>
+	<div class="search_item_type">type: <strong>{{type}}</strong></div>
+	<div class="search_item_link">Link: <a href="{{link}}">{{link}}</a></div>
+</div>

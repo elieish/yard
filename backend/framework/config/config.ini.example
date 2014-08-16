@@ -1,0 +1,6 @@
+[DB]
+mysql_host = localhost
+mysql_user = amefax
+mysql_pass = amefax
+mysql_db = amefax
+mysql_debug= false

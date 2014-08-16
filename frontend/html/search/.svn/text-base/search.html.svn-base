@@ -1,0 +1,21 @@
+<ul class="breadcrumb">
+	<li class="home-icon"><a href="./"></a>
+	<span class="divider">></span></li>
+	<li>Search</li>
+</ul>
+
+<div class="container-fluid">
+	
+	<div class="row-fluid">
+	
+		<h1>Search Results: {{search_string}}</h1>							
+
+	</div><!-- /.row-fluid -->
+
+	<div class="row-fluid">
+	
+		{{results}}
+	
+	</div>
+	
+</div>

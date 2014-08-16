@@ -1,0 +1,2 @@
+ALTER TABLE `exim_logs`
+    ADD COLUMN `cost` DECIMAL(10,2) NOT NULL DEFAULT '0.00' AFTER `retries`;
