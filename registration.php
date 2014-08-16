@@ -3,7 +3,7 @@
 session_start();
 
 # Include Required Scripts
-include_once(dirname(dirname(__FILE__)) . "/yard/backend/framework/include.php");
+include_once(dirname(__FILE__). "/backend/framework/include.php");
 Application::include_models();
 Application::include_helpers();
 Application::db_connect();
