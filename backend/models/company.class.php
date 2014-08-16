@@ -64,9 +64,9 @@ class Company extends Model {
 		
 		# Get Data
 		$query															= "	SELECT
-																				`id` as '#',
-																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `id`, '\">', `name`, '</a>') as 'Company name',
-																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `id`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `id`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
+																				`uid` as '#',
+																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `name`, '</a>') as 'Company name',
+																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 																			FROM
 																				`companies`
 																			WHERE
@@ -93,7 +93,7 @@ class Company extends Model {
 		global $_db;
 		
 		$query	= "SELECT 
-						`id` as '#',
+						`uid` as '#',
 						`datetime` as 'Date Created',
 						`name` as 'Companies'
 					FROM
