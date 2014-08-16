@@ -136,3 +136,39 @@ INSERT INTO `titles` (`id`, `title`) VALUES
 /*!40000 ALTER TABLE `titles` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+CREATE TABLE `users` (
+  `id`       int(11)     auto_increment,
+  `datetime`      datetime    NOT NULL default '0000-00-00 00:00:00',
+  `user`        int(11)     NOT NULL default 0,
+  `username`      varchar(50)   NOT NULL default '',
+  `password`      varchar(50)   NOT NULL default '',
+  `first_name`    varchar(50)   NOT NULL default '',
+  `last_name`     varchar(50)   NOT NULL default '',
+  `email`       varchar(255)  NOT NULL default '',
+  `tel`       varchar(30)   NOT NULL default '',
+  `mobile`      varchar(30)   NOT NULL default '',
+  `fax`       varchar(30)   NOT NULL default '',
+  `notes`       varchar(255)  NOT NULL default '',
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`)
+);
+
+CREATE TABLE `groups` (
+  `id`       int(11)     auto_increment,
+  `datetime`      datetime    NOT NULL default '0000-00-00 00:00:00',
+  `user`        int(11)     NOT NULL default 0,
+  `name`        varchar(100)  NOT NULL default '',
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`)
+);
+
+CREATE TABLE `user_groups` (
+  `id`       int(11)     auto_increment,
+  `datetime`      datetime    NOT NULL default '0000-00-00 00:00:00',
+  `user`        int(11)     NOT NULL default 0,
+  `user_id`     int(11)     NOT NULL default 0,
+  `group_id`      int(11)     NOT NULL default 0,
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`)
+);
