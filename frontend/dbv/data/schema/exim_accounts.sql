@@ -1,5 +1,5 @@
 CREATE TABLE `exim_accounts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
   `email_address` varchar(255) NOT NULL DEFAULT '',
   `user` varchar(255) NOT NULL DEFAULT '',
   `password` varchar(255) NOT NULL DEFAULT '',
@@ -12,7 +12,7 @@ CREATE TABLE `exim_accounts` (
   `home` varchar(255) NOT NULL DEFAULT '',
   `active` tinyint(1) NOT NULL DEFAULT '0',
   `deliver_first` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`uid`),
   KEY `user` (`user`),
   KEY `password` (`password`),
   KEY `domain` (`domain`),

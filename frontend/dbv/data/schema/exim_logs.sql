@@ -1,5 +1,5 @@
 CREATE TABLE `exim_logs` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `uid` bigint(20) NOT NULL AUTO_INCREMENT,
   `date` datetime DEFAULT '0000-00-00 00:00:00',
   `company` int(10) unsigned NOT NULL DEFAULT '0',
   `cost_center` int(10) unsigned NOT NULL DEFAULT '0',
@@ -16,5 +16,5 @@ CREATE TABLE `exim_logs` (
   `date_processed` datetime DEFAULT '0000-00-00 00:00:00',
   `retries` tinyint(4) DEFAULT '0',
   `cost` decimal(10,2) NOT NULL DEFAULT '0.00',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8

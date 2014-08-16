@@ -62,9 +62,9 @@ class department extends Model {
 		
 		// Get Data
 		$query = "	SELECT
-																				`id` as '#',
-																				CONCAT('<a href=\"?p=department&action=profile&id=', `id`, '\">', `name`, '</a>') as 'Department name',
-																				CONCAT('<a href=\"?p=department&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`id`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"?p=department&action=delete&id=', `id`, '\"><i class=\"icon-trash\"</a>') as 'Actions'
+																				`uid` as '#',
+																				CONCAT('<a href=\"?p=department&action=profile&id=', `uid`, '\">', `name`, '</a>') as 'Department name',
+																				CONCAT('<a href=\"?p=department&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"?p=department&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"</a>') as 'Actions'
 																			FROM
 																				`departments`
 																			WHERE
@@ -83,9 +83,9 @@ class department extends Model {
 			
 		# Get Data
 		$query															= "	SELECT
-																				`id` as '#',
-																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `id`, '\">', `name`, '</a>') as 'Company name',
-																				CONCAT('<a href=\"{$this->cur_page}&action=delete&id=', `id`, '\">delete</a>') as 'Delete'
+																				`uid` as '#',
+																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `name`, '</a>') as 'Company name',
+																				CONCAT('<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\">delete</a>') as 'Delete'
 																			FROM
 																				`cost_centers`
 																			WHERE
@@ -114,10 +114,10 @@ class department extends Model {
 		global $_db;
 		
 		$query	= "SELECT 
-						`id` as '#',
+						`uid` as '#',
 						`datetime` as 'Date Created',
-						(SELECT `name` FROM `companies` WHERE `active` = 1 AND `id` = `departments`.`company_id`) as 'Companies',
-						(SELECT `name` FROM `cost_centers` WHERE `active` = 1 AND `id` = `departments`.`cost_center_id`) as 'Cost Centers',
+						(SELECT `name` FROM `companies` WHERE `active` = 1 AND `uid` = `departments`.`company_id`) as 'Companies',
+						(SELECT `name` FROM `cost_centers` WHERE `active` = 1 AND `uid` = `departments`.`cost_center_id`) as 'Cost Centers',
 						`name` as 'Departments'
 					FROM
 						`departments`

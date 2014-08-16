@@ -1,5 +1,5 @@
 CREATE TABLE `files` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
   `file` varchar(255) NOT NULL DEFAULT '',
   `item` varchar(255) NOT NULL DEFAULT '',
   `datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
@@ -9,5 +9,5 @@ CREATE TABLE `files` (
   `folder` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) NOT NULL DEFAULT '',
   `active` int(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8

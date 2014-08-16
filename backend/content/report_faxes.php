@@ -26,11 +26,11 @@ class Page extends AbstractPage {
         $start_date     = (Form::get_str("start_date"))?        Form::get_str("start_date")         : date("Y-m-d", mktime(0, 0, 0, date("m"), date("d") - 7, date("Y")));
         $end_date       = (Form::get_str("end_date"))?          Form::get_str("end_date")           : date("Y-m-d");
         $company_id     = Form::get_int("company_id");
-        $company        = ($company_id)?                        " AND c.`id` = {$company_id}"      : "";
+        $company        = ($company_id)?                        " AND c.`uid` = {$company_id}"      : "";
         $cost_center_id = Form::get_int("cost_center_id");
-        $cost_center    = ($cost_center_id)?                    " AND cc.`id` = {$cost_center_id}" : "";
+        $cost_center    = ($cost_center_id)?                    " AND cc.`uid` = {$cost_center_id}" : "";
         $department_id  = Form::get_int("department_id");
-        $department     = ($department_id)?                     " AND d.`id` = {$department_id}"   : "";
+        $department     = ($department_id)?                     " AND d.`uid` = {$department_id}"   : "";
 
         # Generate Listing
         $query = "SELECT
@@ -54,15 +54,15 @@ class Page extends AbstractPage {
                         `employees`     e
                     WHERE
                         e.`email`       = l.`sender` AND
-                        d.`id`         = l.`department` AND
-                        cc.`id`        = l.`cost_center` AND
-                        c.`id`         = l.`company` AND
+                        d.`uid`         = l.`department` AND
+                        cc.`uid`        = l.`cost_center` AND
+                        c.`uid`         = l.`company` AND
                         l.`date` BETWEEN '{$start_date} 00:00:00' AND '{$end_date} 23:59:59' AND
                         e.`active` = 1
                         {$company}
                         {$cost_center}
                         {$department}
-                        GROUP BY l.`id`
+                        GROUP BY l.`uid`
                     ORDER BY
                         l.`date` DESC
         ";
@@ -102,11 +102,11 @@ class Page extends AbstractPage {
 
         $end_date       = (Form::get_str("end_date")) ? Form::get_str("end_date") : date("Y-m-d");
         $company_id     = Form::get_int("company_id");
-        $company        = ($company_id) ? " AND c.`id` = {$company_id}" : "";
+        $company        = ($company_id) ? " AND c.`uid` = {$company_id}" : "";
         $cost_center_id = Form::get_int("cost_center_id");
-        $cost_center    = ($cost_center_id) ? " AND cc.`id` = {$cost_center_id}" : "";
+        $cost_center    = ($cost_center_id) ? " AND cc.`uid` = {$cost_center_id}" : "";
         $department_id  = Form::get_int("department_id");
-        $department     = ($department_id) ? " AND d.`id` = {$department_id}" : "";
+        $department     = ($department_id) ? " AND d.`uid` = {$department_id}" : "";
 
         // Generate Listing
         $query = "SELECT
@@ -129,15 +129,15 @@ class Page extends AbstractPage {
                         `employees`     e
                     WHERE
                         e.`email`       = l.`sender` AND
-                        d.`id`         = l.`department` AND
-                        cc.`id`        = l.`cost_center` AND
-                        c.`id`         = l.`company` AND
+                        d.`uid`         = l.`department` AND
+                        cc.`uid`        = l.`cost_center` AND
+                        c.`uid`         = l.`company` AND
                         `date` BETWEEN '{$start_date} 00:00:00' AND '{$end_date} 23:59:59' AND
                         e.`active` = 1
                         {$company}
                         {$cost_center}
                         {$department}
-                    GROUP BY l.`id`
+                    GROUP BY l.`uid`
         ";
 
         $data = $_db->fetch($query);
