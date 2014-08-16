@@ -40,6 +40,8 @@ if(isset($_POST['submit'])){
 	$membershipno	= $name_abr.$surname_abr.$datetime.$province_abr;
 	$registration	= $_POST['registrationnumber'];
 
+	print($registration);
+
 
 	# Create new Object
 	$obj				= new Member();
@@ -54,7 +56,7 @@ if(isset($_POST['submit'])){
 	$obj->province		= $prov;
 	$obj->title_id		= $title_id;
 	$obj->created_at 	= now();
-	$obj->membershipno	= $membershipno;
+	$obj->membership_no	= $membershipno;
 	$obj->active		= 1;
 	
 	# Save Member
