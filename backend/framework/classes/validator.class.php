@@ -2,7 +2,7 @@
 /**
  * Validator Class
  * 
- * @author Ralfe Poisson <ralfepoisson@gmail.com>
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
  * @package Project
  */

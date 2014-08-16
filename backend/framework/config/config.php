@@ -2,7 +2,7 @@
 /**
  * Project
  * 
- * @author Ralfe Poisson <ralfepoisson@gmail.com>
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
  * @package Project
  */
@@ -21,10 +21,10 @@ $_GLOBALS['base_dir']													= dirname(dirname(dirname(dirname(__FILE__))))
 $_GLOBALS['base_url']													= $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . "/../../";
 $_GLOBALS['upload_dir']													= $_GLOBALS['base_dir'] . "files/";
 $_GLOBALS['upload_url']													= "files/";
-$_GLOBALS['admin_email']												= "development@implyit.co.za";
-$_GLOBALS['security_email']												= "development@implyit.co.za";
+$_GLOBALS['admin_email']												= "development@Yard.co.za";
+$_GLOBALS['security_email']												= "development@Yard.co.za";
 $_GLOBALS['security_subject']											= "SECURITY ALERT FOR " . $_GLOBALS['title'];
-$_GLOBALS['from_email']													= "no-reply@implyit.co.za";
+$_GLOBALS['from_email']													= "no-reply@Yard.co.za";
 $_GLOBALS['config_file']												= dirname(__FILE__) . "/config.ini";
 $_GLOBALS['requires_login']												= true;
 

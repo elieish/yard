@@ -8,8 +8,8 @@
 * @category   AMEFax
 * @package    Email
 * @subpackage Process_Single_Fax
-* @author     Bruce Pieterse <brucep@implyit.co.za>
-* @copyright  2013 Copyright (c) Imply IT CC (http://www.implyit.co.za)
+* @author     Bruce Pieterse <brucep@Yard.co.za>
+* @copyright  2013 Copyright (c) Imply IT CC (http://www.Yard.co.za)
 * @since      0.1
 */
 
@@ -310,7 +310,7 @@ if (moveFile($src,$dst)) {
                     }
 
                     mail(
-                        "brucep@implyit.co.za", 
+                        "brucep@Yard.co.za", 
                         "AME Fax: Process Script Error", 
                         "Unable to find fax with message ID {$messageID}\r\n\r\n{$message}"
                     );
@@ -334,7 +334,7 @@ if (moveFile($src,$dst)) {
 
                 logg("Fax Rewrite: Unable to find a record with a Message ID of {$messageID}.");
 
-                mail("brucep@implyit.co.za", "AME Fax: Process Script Error", $message);
+                mail("brucep@Yard.co.za", "AME Fax: Process Script Error", $message);
             }
             
             logg("Fax Rewrite: Writing updated message to mbox file");
@@ -449,7 +449,7 @@ function moveFile($src, $dst) {
 }
 
 function mailErrors($errors) {
-    $to      = 'brucep@implyit.co.za';
+    $to      = 'brucep@Yard.co.za';
     $subject = 'Fax Rewrite Errors';
     $message = "The following errors occurred while processing certain files:\r\n\r\n";
     

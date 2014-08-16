@@ -4,7 +4,7 @@
  *
  * This script makes use of PHP-Unit to test ta module
  * 
- * @author Ralfe Poisson <ralfepoisson@gmail.com>
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @copyright Copyright (C) Ralfe Poisson 2012
  */

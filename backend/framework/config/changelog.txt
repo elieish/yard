@@ -1,6 +1,6 @@
 5 August 2012 [Ralfe Poisson]
 
-* Version 2.0 of the ImplyIT WebApplication Template
+* Version 2.0 of the Yard WebApplication Template
 * Initial Structure
 * MVC design pattern has been utilized
 * PHPUnit testing framework has been integrated

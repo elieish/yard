@@ -6,7 +6,7 @@
  *
  * This class creates a dabase engine object to interface
  * with a MySQL Database
- * @author Ralfe Poisson <ralfepoisson@gmail.com>
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @package Intranet
  */
