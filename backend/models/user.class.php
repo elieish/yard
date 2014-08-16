@@ -27,10 +27,10 @@ class User extends Model {
 		$this->table													= "users";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
-		if ($this->uid) {
+		$this->id														= $uid;
+		if ($this->id) {
 			$this->load();
-			$this->membership											= new UserGroup($this->uid);
+			$this->membership											= new UserGroup($this->id);
 			$this->membership->get_groups();
 		}
 	}
@@ -45,7 +45,7 @@ class User extends Model {
 		# Generate Form
 		$form														= new Form("{$cur_page}&action=save");
 		//			Label				Type			Name				Value
-		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add(""					, "hidden"		, "uid"				, $this->id);
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
@@ -87,17 +87,17 @@ class User extends Model {
 		# Handle Comparison Result
 		if ($auth){
 			# Get User Details
-			$query														= "	SELECT
-																				* 
-																			FROM
-																				`users` 
-																			WHERE
-																				`username` = \"$username\" 
-																				AND `password` = \"$password\"";
-			$user														= $_db->fetch_one($query);
+			$query					= "	SELECT
+											* 
+										FROM
+											`users` 
+										WHERE
+											`username` = \"$username\" 
+												AND `password` = \"$password\"";
+			$user						= $_db->fetch_one($query);
 
 			# Set SESSION Details
-			$_SESSION['user_uid']										= $user->uid;
+			$_SESSION['user_uid']										= $user->id;
 			$_SESSION['user_username']									= $user->username;
 			unset($_SESSION['login_error']);
 			
@@ -137,11 +137,11 @@ class User extends Model {
 
 		#Query
 		$query = " SELECT
-						`uid` as '#',
-						 CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `username`, '</a>') as 'Username',
+						`id` as '#',
+						 CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `id`, '\">', `username`, '</a>') as 'Username',
 						`first_name` as 'First Name',
 						`last_name` as 'Last Name',
-						CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
+						CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `id`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `id`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 					FROM
 						`users`
 					WHERE

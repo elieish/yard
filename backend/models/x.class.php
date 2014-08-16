@@ -35,7 +35,7 @@ class X extends Model {
 		$this->table													= "x";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
+		$this->id														= $uid;
 		if ($uid) {
 			$this->load();
 		}

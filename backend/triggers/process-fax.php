@@ -298,9 +298,9 @@ if (moveFile($src,$dst)) {
             if (count($entries)) {
                 $entry = $entries[0];
 
-                logg("Fax Rewrite: Found Fax Record with UID: {$entry->uid}");
+                logg("Fax Rewrite: Found Fax Record with UID: {$entry->id}");
 
-                if ($entry->uid == 0) {
+                if ($entry->id == 0) {
                     logg("Fax Rewrite: Warning, no record found. Possible error during initial forwarding of e-mail.");
                     
                     $message = implode($data, "\n");

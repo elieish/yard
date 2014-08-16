@@ -30,14 +30,14 @@ class Page extends AbstractPage {
 		
 		# Search Companies
 		$factory														= new Company();
-		$companies														= $factory->from_sql("SELECT `uid` FROM `companies` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
+		$companies														= $factory->from_sql("SELECT `id` FROM `companies` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
 		
 		# Generate Results
 		$results = "";
 		foreach ($companies as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=companies&action=profile&id=" . $item->uid;
+			$link														= "?p=companies&action=profile&id=" . $item->id;
 			$type														= "Company";
 			
 			# Generate HTML from Template
@@ -47,13 +47,13 @@ class Page extends AbstractPage {
 
 		# Search Cost Centers
 		$cost_factory													= new CostCenter();
-		$costcnts														= $cost_factory->from_sql("SELECT `uid` FROM `cost_centers` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
+		$costcnts														= $cost_factory->from_sql("SELECT `id` FROM `cost_centers` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
 		
 		# Generate Results
 		foreach ($costcnts as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=costcenter&action=profile&id=" . $item->uid;
+			$link														= "?p=costcenter&action=profile&id=" . $item->id;
 			$type														= "Cost Center";
 			
 			# Generate HTML from Template
@@ -62,13 +62,13 @@ class Page extends AbstractPage {
 		
 		# Search Departments
 		$dep_factory													= new department();
-		$departments													= $dep_factory->from_sql("SELECT `uid` FROM `departments` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
+		$departments													= $dep_factory->from_sql("SELECT `id` FROM `departments` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
 		
 		# Generate Results
 		foreach ($departments as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=department&action=profile&id=" . $item->uid;
+			$link														= "?p=department&action=profile&id=" . $item->id;
 			$type														= "Department";
 			
 			# Generate HTML from Template
@@ -77,13 +77,13 @@ class Page extends AbstractPage {
 		
 		# Search Employees
 		$emp_factory													= new employee();
-		$employees														= $emp_factory->from_sql("SELECT `uid` FROM `employees` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
+		$employees														= $emp_factory->from_sql("SELECT `id` FROM `employees` WHERE `active` = 1 AND `name` LIKE \"%{$search_string}%\"");
 		
 		# Generate Results
 		foreach ($employees as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=employee&action=add&id=" . $item->company_id."&co=".$item->cost_center_id."&dep=".$item->department_id."&em=".$item->uid;
+			$link														= "?p=employee&action=add&id=" . $item->company_id."&co=".$item->cost_center_id."&dep=".$item->department_id."&em=".$item->id;
 			$type														= "Employee";
 			
 			# Generate HTML from Template

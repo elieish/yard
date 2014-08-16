@@ -40,7 +40,7 @@ function user_get_name($user_id) {
 																			FROM
 																				`users`
 																			WHERE
-																				`uid` = '$user_id'";
+																				`id` = '$user_id'";
 	$data																= $_db->fetch_single($query);
 	
 	# Return Data
@@ -117,7 +117,7 @@ function user_auths($uid) {
 				<div class='checkbox_wrapper'>
 					<!-- Check Box -->
 					<div class='checkbox_input'>
-						<input type='checkbox' name=' f_{$item->uid}' {$checked} />
+						<input type='checkbox' name=' f_{$item->id}' {$checked} />
 					</div><!-- END: Checkbox Input -->
 					
 					<!-- Label -->

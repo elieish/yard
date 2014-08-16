@@ -26,7 +26,7 @@ class Page extends AbstractPage {
 	
 		# Get Data
 		$query															= "	SELECT
-																				CONCAT(\"<a href='$this->cur_page&action=profile&id=\", `uid`, \"'>\", `username`, \"</a>\")as 'Username',
+																				CONCAT(\"<a href='$this->cur_page&action=profile&id=\", `id`, \"'>\", `username`, \"</a>\")as 'Username',
 																				`last_name`				as 'Last Name',
 																				`first_name`			as 'First Name',
 																				`email`					as 'Email Address',

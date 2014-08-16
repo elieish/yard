@@ -35,8 +35,8 @@ class EximLog extends Model {
 		$this->table = "exim_logs";
 		
 		// Initialize UID from Parameter
-		$this->uid       = $uid;
-		$this->uid_field = $uid_field;
+		$this->id       = $uid;
+		$this->id_field = $uid_field;
 
 		if ($uid) {
 			$this->load();

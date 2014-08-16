@@ -35,7 +35,7 @@ class employee extends Model {
 		$this->table													= "employees";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
+		$this->id														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class employee extends Model {
 		$form															= new Form($action, "POST", "employee_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->uid);
+		$form->add(""							, "hidden"			, "uid"					, $this->id);
 		$form->add("Name"						, "text"			, "employee_name"		, $this->name);
 		$form->add("Email"						, "text"			, "employee_email"		, $this->email);
 		$form->add(""							, "submit"			, ""					, "Save");
@@ -65,10 +65,10 @@ class employee extends Model {
 		
 		# Get Data
 		$query															= "	SELECT
-																				`uid` as '#',
-																				CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`uid`,'\">', `name`, '</a>') as 'Employee name',
+																				`id` as '#',
+																				CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`id`,'\">', `name`, '</a>') as 'Employee name',
 																				`email` as 'Employee Email',
-																				CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`uid`,'\"><i class=\"icon-edit\"></i></a>\t<a href=\"?p=employee&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
+																				CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`id`,'\"><i class=\"icon-edit\"></i></a>\t<a href=\"?p=employee&action=delete&id=', `id`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 																			FROM
 																				`employees`
 																			WHERE
@@ -90,15 +90,15 @@ class employee extends Model {
 		
 		# Get Data
 		$query															= "	SELECT
-																				`uid` as '#',
+																				`id` as '#',
 																				`email` as 'Employee Email',
-																				CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`uid`,'\"><i class=\"icon-edit\"></i></a><a href=\"?p=employee&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"></i></a>'') as 'Actions'
+																				CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`id`,'\"><i class=\"icon-edit\"></i></a><a href=\"?p=employee&action=delete&id=', `id`, '\"><i class=\"icon-trash\"></i></a>'') as 'Actions'
 																			FROM
 																				`employees`
 																			WHERE
 																				`active` = 1
 																				AND `department_id`={$department_id}
-																				AND `uid`={$employee_id}
+																				AND `id`={$employee_id}
 																			ORDER BY
 																				`name`																			
 																			";
@@ -113,9 +113,9 @@ class employee extends Model {
 			
 		# Get Data
 		$query															= "	SELECT
-																				`uid` as '#',
-																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `name`, '</a>') as 'Company name',
-																				CONCAT('<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\">delete</a>') as 'Delete'
+																				`id` as '#',
+																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `id`, '\">', `name`, '</a>') as 'Company name',
+																				CONCAT('<a href=\"{$this->cur_page}&action=delete&id=', `id`, '\">delete</a>') as 'Delete'
 																			FROM
 																				`employees`
 																			WHERE
@@ -144,7 +144,7 @@ class employee extends Model {
 		$query  = "SELECT * FROM `employees` WHERE `email` = '{$email}' AND `active` = 1";
 		$result = $_db->fetch_one($query);
 
-		if(isset($result->uid) && $result->uid > 0) {
+		if(isset($result->id) && $result->id > 0) {
 			return $result;
 		} else {
 			return false;
@@ -155,11 +155,11 @@ class employee extends Model {
 		global $_db;
 		
 		$query	= "SELECT 
-						`uid` as '#',
+						`id` as '#',
 						`datetime` as 'Date Created',
-						(SELECT `name` FROM `companies` WHERE `active` = 1 AND `uid` = `employees`.`company_id`) as 'Companies',
-						(SELECT `name` FROM `cost_centers` WHERE `active` = 1 AND `uid` = `employees`.`cost_center_id`) as 'Cost Centers',
-						(SELECT `name` FROM `departments` WHERE `active` = 1 AND `uid` = `employees`.`department_id`) as 'Departments',
+						(SELECT `name` FROM `companies` WHERE `active` = 1 AND `id` = `employees`.`company_id`) as 'Companies',
+						(SELECT `name` FROM `cost_centers` WHERE `active` = 1 AND `id` = `employees`.`cost_center_id`) as 'Cost Centers',
+						(SELECT `name` FROM `departments` WHERE `active` = 1 AND `id` = `employees`.`department_id`) as 'Departments',
 						`name` as 'Employees',
 						`email` as 'Email Addresses'
 					FROM

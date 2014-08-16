@@ -50,8 +50,8 @@ class Page extends AbstractPage {
 																					"costcenter_name"	=> $objcost->name,
 																					"department_name"	=> $objdep->name,
 																					"listing"			=> $listing,
-																					"costcenter_link"	=> "?p=costcenter&action=profile&id={$objcost->uid}",	
-																					"add_link"			=> "?p=employee&action=add&id={$objcom->uid}&co={$objcost->uid}&dep={$objdep->uid}",
+																					"costcenter_link"	=> "?p=costcenter&action=profile&id={$objcost->id}",	
+																					"add_link"			=> "?p=employee&action=add&id={$objcom->id}&co={$objcost->id}&dep={$objdep->id}",
 																					"message"           => getMessage()
 																				);
 		$template														= new Template($file,$vars);

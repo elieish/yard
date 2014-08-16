@@ -78,7 +78,7 @@ class ProjectTest extends PHPUnit_Framework_TestCase{
 		$this->testUser->save();
 		
 		# Test Insert into the database
-		$test_user														= new User($this->testUser->uid);
+		$test_user														= new User($this->testUser->id);
 		$this->assertTrue($test_user->first_name == $this->testUser->first_name && $test_user->password == $this->testUser->password);
 	}
 	

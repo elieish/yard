@@ -35,7 +35,7 @@ class CostCenter extends Model {
 		$this->table													= "cost_centers";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
+		$this->id														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class CostCenter extends Model {
 		$form															= new Form($action, "POST", "costcenter_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->uid);
+		$form->add(""							, "hidden"			, "uid"					, $this->id);
 		$form->add("Name"						, "text"			, "costcenter_name"		, $this->name);
 		$form->add(""							, "submit"			, ""					, "Save");
 		
@@ -64,9 +64,9 @@ class CostCenter extends Model {
 		
 		# Get Data
 		$query															= "	SELECT
-																				`uid` as '#',
-																				CONCAT('<a href=\"?p=costcenter&action=profile&id=', `uid`, '\">', `name`, '</a>') as 'Cost Center name',
-																				CONCAT('<a href=\"?p=costcenter&action=add&id=', `company_id`,'&co=',`uid`,'\"><i class=\"icon-edit\"></i></a>\t<a href=\"?p=costcenter&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"</a>') as 'Actions'
+																				`id` as '#',
+																				CONCAT('<a href=\"?p=costcenter&action=profile&id=', `id`, '\">', `name`, '</a>') as 'Cost Center name',
+																				CONCAT('<a href=\"?p=costcenter&action=add&id=', `company_id`,'&co=',`id`,'\"><i class=\"icon-edit\"></i></a>\t<a href=\"?p=costcenter&action=delete&id=', `id`, '\"><i class=\"icon-trash\"</a>') as 'Actions'
 																			FROM
 																				`cost_centers`
 																			WHERE
@@ -85,9 +85,9 @@ class CostCenter extends Model {
 			
 		# Get Data
 		$query															= "	SELECT
-																				`uid` as '#',
-																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `name`, '</a>') as 'Company name',
-																				CONCAT('<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\">delete</a>') as 'Delete'
+																				`id` as '#',
+																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `id`, '\">', `name`, '</a>') as 'Company name',
+																				CONCAT('<a href=\"{$this->cur_page}&action=delete&id=', `id`, '\">delete</a>') as 'Delete'
 																			FROM
 																				`cost_centers`
 																			WHERE
@@ -114,9 +114,9 @@ class CostCenter extends Model {
 		global $_db;
 		
 		$query	= "SELECT 
-						`uid` as '#',
+						`id` as '#',
 						`datetime` as 'Date Created',
-						(SELECT `name` FROM `companies` WHERE `active` = 1 AND `uid` = `cost_centers`.`company_id`) as 'Companies',
+						(SELECT `name` FROM `companies` WHERE `active` = 1 AND `id` = `cost_centers`.`company_id`) as 'Companies',
 						`name` as 'Cost Centers'
 					FROM
 						`cost_centers`
