@@ -15,13 +15,16 @@ function display()
 
 }
 
+$title			= titles_select();
+$province		= provinces_select();
+
 
 if(isset($_POST['submit'])){
 	
 
 	$name 			= $_POST['name'];
 	$surname		= $_POST['surname'];
-	$title			= titles_select();
+	
 	$gender			= $_POST['gender'];
 	$dob			= $_POST['dob'];
 	$cellphone		= $_POST['cellphone'];
@@ -29,7 +32,7 @@ if(isset($_POST['submit'])){
 	$email			= $_POST['email'];
 	$prov 			= $_POST['province'];
 	$title_id 		= $_POST['title'];
-	$province		= provinces_select();
+	
 	$name_abr		= strtoupper(substr($name, 0,1));
 	$surname_abr	= strtoupper(substr($surname, 0,1));
 	$datetime		= date('dmy');
@@ -39,7 +42,7 @@ if(isset($_POST['submit'])){
 
 
 	# Create new Object
-/*	$obj				= new Member();
+	$obj				= new Member();
 	$obj->datetime		= now();
 	$obj->name			= $name;
 	$obj->surname		= $surname;
@@ -52,10 +55,10 @@ if(isset($_POST['submit'])){
 	$obj->title_id		= $title_id;
 	$obj->created_at 	= now();
 	$obj->membershipno	= $membershipno;
-	$obj->active		= 1;*/
+	$obj->active		= 1;
 	
 	# Save Member
-	/*$obj->save();*/
+	 $obj->save();
 	
 }
 # ===================================================
