@@ -37,7 +37,7 @@ class Page extends AbstractPage {
 		foreach ($companies as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=companies&action=profile&id=" . $item->id;
+			$link														= "?p=companies&action=profile&id=" . $item->uid;
 			$type														= "Company";
 			
 			# Generate HTML from Template
@@ -53,7 +53,7 @@ class Page extends AbstractPage {
 		foreach ($costcnts as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=costcenter&action=profile&id=" . $item->id;
+			$link														= "?p=costcenter&action=profile&id=" . $item->uid;
 			$type														= "Cost Center";
 			
 			# Generate HTML from Template
@@ -68,7 +68,7 @@ class Page extends AbstractPage {
 		foreach ($departments as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=department&action=profile&id=" . $item->id;
+			$link														= "?p=department&action=profile&id=" . $item->uid;
 			$type														= "Department";
 			
 			# Generate HTML from Template
@@ -83,7 +83,7 @@ class Page extends AbstractPage {
 		foreach ($employees as $item) {
 			# Prepare Result Variables
 			$title														= $item->name;
-			$link														= "?p=employee&action=add&id=" . $item->company_id."&co=".$item->cost_center_id."&dep=".$item->department_id."&em=".$item->id;
+			$link														= "?p=employee&action=add&id=" . $item->company_id."&co=".$item->cost_center_id."&dep=".$item->department_id."&em=".$item->uid;
 			$type														= "Employee";
 			
 			# Generate HTML from Template

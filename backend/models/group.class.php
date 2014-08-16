@@ -35,7 +35,7 @@ class Group extends Model {
 		$this->table													= "groups";
 		
 		# Initialize UID from Parameter
-		$this->id														= $uid;
+		$this->uid														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -51,7 +51,7 @@ class Group extends Model {
 																			FROM
 																				`group_functions`
 																			WHERE
-																				`group` = '{$this->id}'";
+																				`group` = '{$this->uid}'";
 		$result															= $_db->fetch_single($query);
 		
 		# Return Result
@@ -66,7 +66,7 @@ class Group extends Model {
 		global $_db;
 		
 		# Clear out Allowed Functions
-		$_db->delete("group_functions", "group", $this->id);
+		$_db->delete("group_functions", "group", $this->uid);
 	}
 	
 	function get_auths() {
@@ -79,7 +79,7 @@ class Group extends Model {
 																			FROM
 																				`group_functions`
 																			WHERE
-																				`group` = '{$this->id}'";
+																				`group` = '{$this->uid}'";
 		$auths															= $_db->fetch($query);
 		
 		# Generate Response
@@ -104,7 +104,7 @@ class Group extends Model {
 		$_db->insert(
 			"group_functions",
 			array(
-				"user"												=> $this->id,
+				"user"												=> $this->uid,
 				"function"											=> $function
 			)
 		);

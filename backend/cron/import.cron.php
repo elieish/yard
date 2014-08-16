@@ -211,7 +211,7 @@ if (count($files) > 0) {
                                         'subject'       => $_db->link->real_escape_string($subject)
                                     ),
                                     array(
-                                        'uid' => $record->id
+                                        'uid' => $record->uid
                                     )
                                 );
 

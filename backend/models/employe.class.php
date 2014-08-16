@@ -35,7 +35,7 @@ class employee extends Model {
 		$this->table													= "employees";
 		
 		# Initialize UID from Parameter
-		$this->id														= $uid;
+		$this->uid														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class employee extends Model {
 		$form															= new Form($action, "POST", "employee_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->id);
+		$form->add(""							, "hidden"			, "uid"					, $this->uid);
 		$form->add("Name"						, "text"			, "employee_name"		, $this->name);
 		$form->add("Email"						, "text"			, "employee_email"		, $this->email);
 		$form->add(""							, "submit"			, ""					, "Save");
@@ -144,7 +144,7 @@ class employee extends Model {
 		$query  = "SELECT * FROM `employees` WHERE `email` = '{$email}' AND `active` = 1";
 		$result = $_db->fetch_one($query);
 
-		if(isset($result->id) && $result->id > 0) {
+		if(isset($result->uid) && $result->uid > 0) {
 			return $result;
 		} else {
 			return false;

@@ -185,7 +185,7 @@ class Application {
 	}
 	
 	public function authenticate() {
-		if (!$this->user->id) {
+		if (!$this->user->uid) {
 			redirect("login.php");
 			die();
 		}

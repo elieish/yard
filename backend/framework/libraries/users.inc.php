@@ -117,7 +117,7 @@ function user_auths($uid) {
 				<div class='checkbox_wrapper'>
 					<!-- Check Box -->
 					<div class='checkbox_input'>
-						<input type='checkbox' name=' f_{$item->id}' {$checked} />
+						<input type='checkbox' name=' f_{$item->uid}' {$checked} />
 					</div><!-- END: Checkbox Input -->
 					
 					<!-- Label -->

@@ -35,7 +35,7 @@ class Form {
 	 */
 	function __construct($action, $method="POST", $id="item_form") {
 		# Initialise Variables
-		$this->id														= $id;
+		$this->uid														= $id;
 		$this->action													= $action;
 		$this->fields													= array();
 		$this->method													= $method;
@@ -119,7 +119,7 @@ class Form {
 		
 		# Generate HTML
 		$html															= "
-		<form id=\"{$this->id}\" method=\"{$this->method}\" action=\"{$this->action}\">
+		<form id=\"{$this->uid}\" method=\"{$this->method}\" action=\"{$this->action}\">
 			{$fields}
 		</form>
 		";

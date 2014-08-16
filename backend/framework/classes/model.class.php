@@ -35,8 +35,8 @@ class Model {
 		# Initialise Variables
 		$this->table													= "";
 		$this->fields													= array();
-		$this->id														= 0;
-		$this->id_field												= "uid";
+		$this->uid														= 0;
+		$this->uid_field												= "uid";
 	}
 	
 	/**
@@ -49,16 +49,16 @@ class Model {
 		global $_db;
 		
 		# Confirm UID Field
-		$this->id_field												= ($this->id_field)? $this->id_field : "uid";
+		$this->uid_field												= ($this->uid_field)? $this->uid_field : "uid";
 		
 		# Check if Object exists in Database
-		if ($this->id && $this->table) {
+		if ($this->uid && $this->table) {
 			$query														= "	SELECT
 																				COUNT(*)
 																			FROM
 																				`{$this->table}`
 																			WHERE
-																				`{$this->id_field}` = '{$this->id}'
+																				`{$this->uid_field}` = '{$this->uid}'
 																			";
 			$exists														= $_db->fetch_single($query);
 			
@@ -92,7 +92,7 @@ class Model {
 																			FROM
 																				`{$this->table}`
 																			WHERE
-																				`{$this->id_field}` = '{$this->id}'
+																				`{$this->uid_field}` = '{$this->uid}'
 																			";
 			$data														= $_db->fetch_one($query);
 			
@@ -150,14 +150,14 @@ class Model {
 				$this->table,
 				$data,
 				array(
-					"{$this->id_field}" => $this->id
+					"{$this->uid_field}" => $this->uid
 				)
 			);
 		}
 		
 		# If the object does not exist, and the table is set, insert it
 		else if ($this->table) {
-			$this->id													= $_db->insert(
+			$this->uid													= $_db->insert(
 				$this->table,
 				$data
 			);
@@ -172,7 +172,7 @@ class Model {
 		global $_db;
 		
 		# Disable
-		$_db->disable($this->table, $this->id);
+		$_db->disable($this->table, $this->uid);
 	}
 	
 	public function get($filters="") {
@@ -184,7 +184,7 @@ class Model {
 		
 		# Get Data
 		$query															= "	SELECT
-																				`{$this->id_field}`
+																				`{$this->uid_field}`
 																			FROM
 																				`{$this->table}`
 																			WHERE
@@ -198,7 +198,7 @@ class Model {
 		$class 															= get_class($this);
 		foreach ($data as $item) {
 			$obj_class													= new ReflectionClass($class);
-			$obj														= $obj_class->newInstanceArgs(array($item->id));
+			$obj														= $obj_class->newInstanceArgs(array($item->uid));
 			$objects[]													= $obj;
 		}
 		
@@ -239,7 +239,7 @@ class Model {
 		$class 															= get_class($this);
 		foreach ($data as $item) {
 			$obj_class													= new ReflectionClass($class);
-			$obj														= $obj_class->newInstanceArgs(array($item->id));
+			$obj														= $obj_class->newInstanceArgs(array($item->uid));
 			$results[]													= $obj;
 		}
 		

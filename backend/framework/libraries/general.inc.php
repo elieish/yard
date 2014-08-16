@@ -333,7 +333,7 @@ function generate_select_values($table, $id_field, $name_field, $where="", $orde
 	# Generate Values
 	$values																= array();
 	foreach ($data as $item) {
-		$values[$item->id]												= $item->name;
+		$values[$item->uid]												= $item->name;
 	}
 	
 	# Return Values

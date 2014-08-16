@@ -35,7 +35,7 @@ class department extends Model {
 		$this->table													= "departments";
 		
 		# Initialize UID from Parameter
-		$this->id														= $uid;
+		$this->uid														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class department extends Model {
 		$form															= new Form($action, "POST", "department_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->id);
+		$form->add(""							, "hidden"			, "uid"					, $this->uid);
 		$form->add("Name"						, "text"			, "department_name"		, $this->name);
 		$form->add(""							, "submit"			, ""					, "Save");
 		

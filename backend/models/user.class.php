@@ -27,10 +27,10 @@ class User extends Model {
 		$this->table													= "users";
 		
 		# Initialize UID from Parameter
-		$this->id														= $uid;
-		if ($this->id) {
+		$this->uid														= $uid;
+		if ($this->uid) {
 			$this->load();
-			$this->membership											= new UserGroup($this->id);
+			$this->membership											= new UserGroup($this->uid);
 			$this->membership->get_groups();
 		}
 	}
@@ -45,7 +45,7 @@ class User extends Model {
 		# Generate Form
 		$form														= new Form("{$cur_page}&action=save");
 		//			Label				Type			Name				Value
-		$form->add(""					, "hidden"		, "uid"				, $this->id);
+		$form->add(""					, "hidden"		, "uid"				, $this->uid);
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
