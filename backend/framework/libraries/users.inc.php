@@ -40,7 +40,7 @@ function user_get_name($user_id) {
 																			FROM
 																				`users`
 																			WHERE
-																				`uid` = '$user_id'";
+																				`id` = '$user_id'";
 	$data																= $_db->fetch_single($query);
 	
 	# Return Data
