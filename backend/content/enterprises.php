@@ -25,10 +25,10 @@ class Page extends AbstractPage {
 		global $_db;
 	
 		# Get Data
-		$listing														= Company::listing();
+		$listing														= Enterprise::listing();
 		
 		# Generate HTML
-		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/companies/list.html";
+		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/enterprises/list.html";
 		$vars															= array(
 																					"listing"	=> $listing,
 																					"add_link"	=> $this->cur_page."&action=add",
@@ -48,21 +48,21 @@ class Page extends AbstractPage {
 		# Global Variables
 		global $_db;
 		
-		# Get Company ID
-		$company_id														= Form::get_int('id');
+		# Get Enterprise ID
+		$enterprise_id														= Form::get_int('id');
 		
 		#Get Data
-		$listing														= CostCenter::listing_by_company($company_id);
+		$listing														= CostCenter::listing_by_member($enterprise_id);
 		
 		#Create New Object
-		$obj															= new Company($company_id);
+		$obj															= new Enterprise($enterprise_id);
 		
 		# Generate HTML
 		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/cost_center/list.html";
 		$vars															= array(
-																					"company_name"	=> $obj->name,
+																					"name"			=> $obj->name,
 																					"listing"		=> $listing,
-																					"add_link"		=> "?p=costcenter&action=add&id={$company_id}"
+																					"add_link"		=> "?p=costcenter&action=add&id={$enterprise_id}"
 																				);
 		$template														= new Template($file,$vars);
 		$html															= $template->tostring();
@@ -80,15 +80,15 @@ class Page extends AbstractPage {
 		#Get GET Data
 		$uid															= Form::get_int('id');
 	
-		# Create new Company Object
-		$obj															= new Company($uid);
+		# Create new Enterprise Object
+		$obj															= new Enterprise($uid);
 	
 		# Generate HTML
 		$vars															= array(
 																					"form"	=> $obj->item_form($this->cur_page."&action=save")
 																				);
 		
-		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/companies/add.html";
+		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/enterprises/add.html";
 		
 		$template														= new template($file,$vars);
 		
@@ -108,18 +108,20 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 	
 		# Get POST Data
-		$company_id														= Form::get_int("uid");
-		$company_name													= Form::get_str("company_name");
+		$enterprise_id														= Form::get_int("uid");
+		$name															= Form::get_str("name");
 		
 		
 		# Create new Object
-		$obj															= new Company($company_id);
+		$obj															= new Enterprise($enterprise_id);
 		$obj->user														= get_user_uid();
 		$obj->datetime													= now();
-		$obj->name														= $company_name;
+		$obj->name														= $name;
+		$obj->group_id													= Form::get_str("group_id");
+		$obj->member_id													= Form::get_str("member_id");
 		$obj->active													= 1;
 		
-		# Save Company
+		# Save Enterprise
 		$obj->save();
 	
 		# Redirect
@@ -133,11 +135,11 @@ class Page extends AbstractPage {
 		# Get GET Data
 		$uid															= Form::get_int("id");
 	
-		# Create Company Object
-		$company														= new Company($uid);
+		# Create Enterprise Object
+		$enterprise														= new Enterprise($uid);
 	
 		# Delete From Database
-		$company->delete();
+		$enterprise->delete();
 	
 		# Redirect
 		redirect($this->cur_page);

@@ -75,7 +75,7 @@ class Form {
 	 */
 	function generate_input($type, $name, $value="", $options="") {
 		if ($type == "text") {
-			return "<input class='textfield' type='text' name='{$name}' value=\"{$value}\">";
+			return "<input class='textfield form-control' type='text' name='{$name}' value=\"{$value}\">";
 		} else if ($type == "textarea") {
 			return "<textarea name='{$name}' rows='5' cols='60'>{$value}</textarea>";
 		} else if ($type == "hidden") {
@@ -87,7 +87,7 @@ class Form {
 		} else if ($type == "checkbox") {
 			return "<input type='checkbox' name='{$name}' " . is_checked($value) . ">";
 		} else if ($type == "date") {
-			return "<input type='text' class='date' name='{$name}' id='{$name}' value=\"{$value}\">";
+			return "<input type='text' class='date form-control' name='{$name}' id='{$name}' value=\"{$value}\">";
 		} else if ($type == "select") {
 			return generate_select($name, $options, $value);
 		} else if ($type == "other") {
@@ -110,16 +110,19 @@ class Form {
 				";
 			}
 			else {
-				$fields .= "
+				$fields .= "<div class='form-group'>
 					<label>{$field['label']}</label>
+					<div class='form-group'>
 					" . $this->generate_input($field['type'], $field['name'], $field['value'], $field['options']) . "
+					</div>
+				  </div>
 				";
 			}
 		}
 		
 		# Generate HTML
 		$html															= "
-		<form id=\"{$this->uid}\" method=\"{$this->method}\" action=\"{$this->action}\">
+		<form id=\"{$this->uid}\"  role='form' method=\"{$this->method}\" action=\"{$this->action}\">
 			{$fields}
 		</form>
 		";

@@ -344,11 +344,14 @@ function paginated_listing($query, $this_page="", $prefix="") {
 	# Generate HTML
 	$html																= "
 	{$page_select}
-	
+	<div class='panel panel-default'>
+  	<div class='panel-body'>
 	<table class='table'>
 		{$headings}
 		{$rows}
 	</table>
+	</div>
+	</div>
 	
 	{$buttons}
 	";
@@ -720,7 +723,7 @@ function bullet_points($text, $ol=0) {
 
 function generate_select($name, $values, $active="", $use_key=1, $custom_tags="") {
 	# Construct HTML
-	$html  																= "<select name=\"{$name}\" id=\"{$name}\" {$custom_tags}>\n";
+	$html  																= "<select class='form-control' name=\"{$name}\" id=\"{$name}\" {$custom_tags}>\n";
 	$html																.= "	<option value='0'>Select One</option>\n";
 	foreach ($values as $key => $value) {
 		$key															= ($use_key)? $key : $value;
