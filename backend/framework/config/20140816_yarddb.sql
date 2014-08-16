@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS `enterprises` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `group_id` int(11) NOT NULL DEFAULT '0',
+  `active`      int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -33,16 +34,17 @@ CREATE TABLE IF NOT EXISTS `enterprises` (
 CREATE TABLE IF NOT EXISTS `enterprise_groups` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `group` varchar(50) NOT NULL,
+  `active`      int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table yarddb.enterprise_groups: ~0 rows (approximately)
 /*!40000 ALTER TABLE `enterprise_groups` DISABLE KEYS */;
-INSERT INTO `enterprise_groups` (`uid`, `group`) VALUES
-	(1, 'SMME'),
-	(2, 'Co-op'),
-	(3, 'Individual');
+INSERT INTO `enterprise_groups` (`uid`, `group`,`active`) VALUES
+	(1, 'SMME',1),
+	(2, 'Co-op',1),
+	(3, 'Individual',1);
 /*!40000 ALTER TABLE `enterprise_groups` ENABLE KEYS */;
 
 
@@ -66,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `members` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `deleted_at` timestamp NULL DEFAULT NULL,
+  `active`      int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -76,25 +79,26 @@ CREATE TABLE IF NOT EXISTS `members` (
 
 
 -- Dumping structure for table yarddb.provincies
-CREATE TABLE IF NOT EXISTS `provincies` (
+CREATE TABLE IF NOT EXISTS `provinces` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `province` varchar(50) NOT NULL,
+  `active`      int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table yarddb.provincies: ~0 rows (approximately)
 /*!40000 ALTER TABLE `provincies` DISABLE KEYS */;
-INSERT INTO `provincies` (`uid`, `province`) VALUES
-	(1, 'Limpopo'),
-	(2, 'Gauteng'),
-	(3, 'North West'),
-	(4, 'Mpumalanga'),
-	(5, 'Northern Cape'),
-	(6, 'Free State'),
-	(7, 'KwaZulu-Natal'),
-	(8, 'Western Cape'),
-	(9, 'Eastern Cape');
+INSERT INTO `provinces` (`uid`, `province`,`active`) VALUES
+	(1, 'Limpopo',1),
+	(2, 'Gauteng',1),
+	(3, 'North West',1),
+	(4, 'Mpumalanga',1),
+	(5, 'Northern Cape',1),
+	(6, 'Free State',1),
+	(7, 'KwaZulu-Natal',1),
+	(8, 'Western Cape',1),
+	(9, 'Eastern Cape',1);
 /*!40000 ALTER TABLE `provincies` ENABLE KEYS */;
 
 
@@ -102,17 +106,18 @@ INSERT INTO `provincies` (`uid`, `province`) VALUES
 CREATE TABLE IF NOT EXISTS `sectors` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `sector` varchar(50) NOT NULL,
+  `active`      int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table yarddb.sectors: ~0 rows (approximately)
 /*!40000 ALTER TABLE `sectors` DISABLE KEYS */;
-INSERT INTO `sectors` (`uid`, `sector`) VALUES
-	(1, 'National'),
-	(2, 'Provincial'),
-	(3, 'District'),
-	(4, 'Local');
+INSERT INTO `sectors` (`uid`, `sector`,`active`) VALUES
+	(1, 'National',1),
+	(2, 'Provincial',1),
+	(3, 'District',1),
+	(4, 'Local',1);
 /*!40000 ALTER TABLE `sectors` ENABLE KEYS */;
 
 
@@ -120,25 +125,26 @@ INSERT INTO `sectors` (`uid`, `sector`) VALUES
 CREATE TABLE IF NOT EXISTS `titles` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
+  `active`  int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table yarddb.titles: ~0 rows (approximately)
 /*!40000 ALTER TABLE `titles` DISABLE KEYS */;
-INSERT INTO `titles` (`uid`, `title`) VALUES
-	(1, 'National Chair'),
-	(2, 'National Treasurer'),
-	(3, 'National Secretary'),
-	(4, 'Provincial Chair'),
-	(5, 'Provincial Treasurer'),
-	(6, 'Provincial Secretary'),
-	(7, 'District Chair'),
-	(8, 'District Treasurer'),
-	(9, 'District Secretary'),
-	(10, 'Mr'),
-	(11, 'Mrs'),
-	(12, 'Ms');
+INSERT INTO `titles` (`uid`, `title`,`active`) VALUES
+	(1, 'National Chair',1),
+	(2, 'National Treasurer',1),
+	(3, 'National Secretary',1),
+	(4, 'Provincial Chair',1),
+	(5, 'Provincial Treasurer',1),
+	(6, 'Provincial Secretary',1),
+	(7, 'District Chair',1),
+	(8, 'District Treasurer',1),
+	(9, 'District Secretary',1),
+	(10, 'Mr',1),
+	(11, 'Mrs',1),
+	(12, 'Ms',1);
 /*!40000 ALTER TABLE `titles` ENABLE KEYS */;
 /*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
@@ -185,3 +191,19 @@ CREATE TABLE `user_groups` (
 INSERT INTO `users` (`datetime`, `username`, `password`, `first_name`, `last_name`, `active`) VALUES(NOW(), 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', 'User', 1);
 INSERT INTO `groups` (`datetime`, `user`, `name`) VALUES(NOW(), 1, 'Admin');
 INSERT INTO `user_groups` (`datetime`, `user`, `user_id`, `group_id`, `active`) VALUES(NOW(), 1, 1, 1, 1);
+
+
+ALTER TABLE `provinces` ADD `abreviation` varchar(3) AFTER `province`;
+
+UPDATE `provinces` SET `abreviation` = 'EC' WHERE `uid`= 9;
+UPDATE `provinces` SET `abreviation` = 'FS' WHERE `uid`= 6;
+UPDATE `provinces` SET `abreviation` = 'GP' WHERE `uid`= 2;
+UPDATE `provinces` SET `abreviation` = 'KZN' WHERE `uid`= 7;
+UPDATE `provinces` SET `abreviation` = 'LP' WHERE `uid`= 1;
+UPDATE `provinces` SET `abreviation` = 'NC' WHERE `uid`= 5;
+UPDATE `provinces` SET `abreviation` = 'NW' WHERE `uid`= 3;
+UPDATE `provinces` SET `abreviation` = 'NC' WHERE `uid`= 5;
+UPDATE `provinces` SET `abreviation` = 'WC' WHERE `uid`= 8;
+UPDATE `provinces` SET `abreviation` = 'MP' WHERE `uid`= 4;
+
+

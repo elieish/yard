@@ -123,6 +123,7 @@ function department_select($cost_center=0, $company=0) {
 
 	return generate_select_values("departments", "uid", "name", $where, "name");
 }
+
 function group_select() {
     # Global Variables
     global $_db;
@@ -181,3 +182,72 @@ function member_select() {
     # Return Values
     return $values;
 }
+
+function title_select($flag,$selected_value) {
+	# Global Variables
+	global $_db;
+	
+	# Get Data
+	$query			= "	SELECT
+							`uid`,
+							`title`
+						FROM
+							`titles`
+							";
+	$data			= $_db->fetch($query);
+
+
+		foreach ($data as $item) {
+
+			if($selected_value == $item->uid)
+			{
+				
+				$array			.= "<option selected value={$item->uid}>{$item->title}</option>";
+			}
+			else
+			{
+				$array 			.= "<option  value={$item->uid}>{$item->title}</option>";
+			}
+
+			
+		}
+
+		return "<select class='form-control' name='title' id='title'><option value=0>Select One</option>{$array}</select>";
+	
+}
+
+function province_select($flag,$selected_value) {
+	# Global Variables
+	global $_db;
+	
+	# Get Data
+	$query			= "	SELECT
+							`uid`,
+							`province`
+						FROM
+							`provinces`
+							";
+	$data			= $_db->fetch($query);
+
+
+		foreach ($data as $item) {
+
+			if($selected_value == $item->id)
+			{
+				
+				$array			.= "<option selected value={$item->uid}>{$item->province}</option>";
+			}
+			else
+			{
+				$array 			.= "<option  value={$item->uid}>{$item->province}</option>";
+			}
+
+			
+		}
+
+		return "<select class='form-control' name='province' id='province'><option value=0>Select One</option>{$array}</select>";
+	
+}
+
+
+
