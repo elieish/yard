@@ -282,7 +282,7 @@ jQuery(function(){
     });
     //events
     //event
-    $(document).scroll(function(){
+ /*   $(document).scroll(function(){
         document_top = $(document).scrollTop();
         event_wapper_top = $("#templatemo_events").position().top - $('#templatemo_banner_menu').outerHeight();
         if(document_top<event_wapper_top){
@@ -294,10 +294,10 @@ jQuery(function(){
             $("#templatemo_events .event_animate_left").css({'left': 0,'opacity':1});
             $("#templatemo_events .event_animate_right").css({'left':0,'opacity':1});
         }
-    }); 
+    }); */
 });
 //google map
-function initialize(){
+/*function initialize(){
     //define map
     var map;
     //lat lng
@@ -342,4 +342,4 @@ function initialize(){
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, 'resize', initialize);
-
+*/
