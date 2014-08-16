@@ -75,13 +75,13 @@ class User extends Model {
 
 		
 		# Compare to database
-		$query															= "	SELECT
-																			COUNT(*)
-																		FROM
-																			`users`
-																		WHERE
-																			`username` = \"$username\"
-																			AND `password` = \"$password\"";
+		$query									= "	SELECT
+													COUNT(*)
+													FROM
+														`users`
+													WHERE
+														`username` = \"$username\"
+														AND `password` = \"$password\"";
 		$auth															= $_db->fetch_single($query);
 
 		# Handle Comparison Result
@@ -97,8 +97,8 @@ class User extends Model {
 			$user						= $_db->fetch_one($query);
 
 			# Set SESSION Details
-			$_SESSION['user_uid']										= $user->id;
-			$_SESSION['user_username']									= $user->username;
+			$_SESSION['user_uid']				= $user->uid;
+			$_SESSION['user_username']			= $user->username;
 			unset($_SESSION['login_error']);
 			
 			# Log Activity
