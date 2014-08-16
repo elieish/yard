@@ -24,7 +24,6 @@ if(isset($_POST['submit'])){
 
 	$name 			= $_POST['name'];
 	$surname		= $_POST['surname'];
-	
 	$gender			= $_POST['gender'];
 	$dob			= $_POST['dob'];
 	$cellphone		= $_POST['cellphone'];
@@ -32,16 +31,11 @@ if(isset($_POST['submit'])){
 	$email			= $_POST['email'];
 	$prov 			= $_POST['province'];
 	$title_id 		= $_POST['title'];
-	
 	$name_abr		= strtoupper(substr($name, 0,1));
 	$surname_abr	= strtoupper(substr($surname, 0,1));
 	$datetime		= date('dmy');
 	$province_abr	= $_POST['province'];
 	$membershipno	= $name_abr.$surname_abr.$datetime.$province_abr;
-	$registration	= $_POST['registrationnumber'];
-
-	print($registration);
-
 
 	# Create new Object
 	$obj				= new Member();
@@ -115,7 +109,19 @@ else {
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
        <!-- Custom Theme JavaScript -->
-   
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/sb-admin-2.js"></script>
+    <script src="js/main.js"></script>
 
 </head>
 
@@ -135,14 +141,15 @@ else {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading hidden" id='showmessage'>
-                            Thank your for registration.Please take not of your membership number:
+                        <div class="panel-heading" id='showmessage'>
+                            Thank you for your registration.Please take note of your membership number:
                         </div>
                      
                         <div class="panel-body"> 
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form" action='registration.php' method='POST' id='registration' >
+                                  
                                      	<div class="form-group">
                                             <label>Title</label>
                             
@@ -168,7 +175,7 @@ else {
                                     
                                        <div class="form-group">
                                             <label>Date of Birth:</label>
-                                            <input class="form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob">
+                                            <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob">
                                         </div>
                                         <div class="form-group">
                                             <label>Telephone:</label>
@@ -187,9 +194,11 @@ else {
                                             <label>Province:</label>
                                            <?php print $province;?>
                                          </div>
-                                      <input type ='hidden' id='registrationnumber' name='registrationnumber' value="<?php print $membershipno ?>"/>
-                                  	 <div class="form-group">
-                                   
+                                        <input type='hidden' id='registrationnumber' value="<?php echo $membershipno ?>"/>
+
+                                        <input type='text' class='hidden' id='registrationnumbers' value="<?php echo $membershipno ?>"/>
+                                     
+                                  	 <div class="form-group">     
                                      <button type="submit" name='submit' class="btn btn-primary">Submit</button>
                                      </div>
                      
@@ -220,19 +229,8 @@ else {
     <!-- /#wrapper -->
 
     <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
-
+  
      <!-- Custom Theme JavaScript -->
-    <script src="js/main.js"></script>
-
+    
 </body>
 </html>

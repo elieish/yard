@@ -1,9 +1,18 @@
 $(document).ready(function(){
 
-	$( "#registration" ).submit(function(event) {
-	
+	$( "#registration" ).on('submit',function(){
 		var membership = $("#registrationnumber").val();
-		alert(membership);
-	
+		//$("#registrationnumbers").removeClass('hidden');
+		alert("Thank you for your registration,your membership number is " + membership);
 	});
+
+	  // Datepicker for single fields
+    $('.date').datepicker({
+        dateFormat: 'yy-mm-dd'
+    });
+		
 });
+
+/* $(".date").datepicker({
+        dateFormat: 'yy-mm-dd'
+ });*/

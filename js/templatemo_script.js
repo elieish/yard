@@ -7,9 +7,7 @@ http://www.templatemo.com/preview/templatemo_411_dragonfruit
 
 jQuery(function(){
     $ = jQuery;
-    $(window).load( function() {
-        $('.external-link').unbind('click');    
-    });
+  
     //main menu
     $("#templatemo_banner_menu ul").singlePageNav({offset: $('#templatemo_banner_menu').outerHeight()});
     //banner slide
