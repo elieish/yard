@@ -34,14 +34,14 @@ if(isset($_POST['submit'])){
 	print $province_abr;
 
 	# Create new Object
-	/*$obj			= new Member();
+	$obj			= new Member();
 	$obj->datetime	= now();
 	$obj->name		= $name;
 	$obj->surname	= $surname;
-	$obj->active	= 1;*/
+	$obj->active	= 1;
 	
 	# Save Member
-/*	$obj->save();*/
+	$obj->save();
 	
 }
 # ===================================================
@@ -119,7 +119,7 @@ else {
                         <div class="panel-heading hidden" id='showmessage'>
                             Thank your for registration.Please take not of your membership number:
                         </div>
-                        <input type ='hidden' id='registrationnumber' value="<?php $membershipno ?>"/>
+                        <input type ='hidden' id='registrationnumber' value="<?php print $membershipno ?>"/>
                         <div class="panel-body"> 
                             <div class="row">
                                 <div class="col-lg-6">
