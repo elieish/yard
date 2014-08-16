@@ -183,7 +183,7 @@ function member_select() {
     return $values;
 }
 
-function title_select($flag,$selected_value) {
+function titles_select($flag,$selected_value) {
 	# Global Variables
 	global $_db;
 	
@@ -216,7 +216,7 @@ function title_select($flag,$selected_value) {
 	
 }
 
-function province_select($flag,$selected_value) {
+function provinces_select($flag,$selected_value) {
 	# Global Variables
 	global $_db;
 	
