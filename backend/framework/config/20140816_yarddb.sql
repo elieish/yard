@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `members` (
 
 
 -- Dumping structure for table yarddb.provincies
-CREATE TABLE IF NOT EXISTS `provincies` (
+CREATE TABLE IF NOT EXISTS `provinces` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `province` varchar(50) NOT NULL,
   `active`      int(1)      NOT NULL default 1,
@@ -191,3 +191,19 @@ CREATE TABLE `user_groups` (
 INSERT INTO `users` (`datetime`, `username`, `password`, `first_name`, `last_name`, `active`) VALUES(NOW(), 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin', 'User', 1);
 INSERT INTO `groups` (`datetime`, `user`, `name`) VALUES(NOW(), 1, 'Admin');
 INSERT INTO `user_groups` (`datetime`, `user`, `user_id`, `group_id`, `active`) VALUES(NOW(), 1, 1, 1, 1);
+
+
+ALTER TABLE `provinces` ADD `abreviation` varchar(3) AFTER `province`;
+
+UPDATE `provinces` SET `abreviation` = 'EC' WHERE `uid`= 9;
+UPDATE `provinces` SET `abreviation` = 'FS' WHERE `uid`= 6;
+UPDATE `provinces` SET `abreviation` = 'GP' WHERE `uid`= 2;
+UPDATE `provinces` SET `abreviation` = 'KZN' WHERE `uid`= 7;
+UPDATE `provinces` SET `abreviation` = 'LP' WHERE `uid`= 1;
+UPDATE `provinces` SET `abreviation` = 'NC' WHERE `uid`= 5;
+UPDATE `provinces` SET `abreviation` = 'NW' WHERE `uid`= 3;
+UPDATE `provinces` SET `abreviation` = 'NC' WHERE `uid`= 5;
+UPDATE `provinces` SET `abreviation` = 'WC' WHERE `uid`= 8;
+UPDATE `provinces` SET `abreviation` = 'MP' WHERE `uid`= 4;
+
+

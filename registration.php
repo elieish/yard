@@ -23,16 +23,23 @@ if(isset($_POST['submit'])){
 	$surname		= $_POST['surname'];
 	$title			= title_select();
 	$province		= province_select();
+	$name_abr		= substr($name, 0,1);
+	$surname_abr	= substr($surname, 0,1);
+	$datetime		= date('dmy');
+
+	print $name_abr;
+	print $surname_abr;
+	print $datetime;
 
 	# Create new Object
-	$obj			= new Member($company_id);
+	/*$obj			= new Member();
 	$obj->datetime	= now();
 	$obj->name		= $name;
 	$obj->surname	= $surname;
-	$obj->active	= 1;
+	$obj->active	= 1;*/
 	
 	# Save Member
-	$obj->save();
+/*	$obj->save();*/
 	
 }
 # ===================================================
