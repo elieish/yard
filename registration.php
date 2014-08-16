@@ -21,8 +21,8 @@ if(isset($_POST['submit'])){
 
 	$name 			= $_POST['name'];
 	$surname		= $_POST['surname'];
-	$title			= title_select();
-	$province		= province_select();
+	$title			= titles_select();
+	$province		= provinces_select();
 	$name_abr		= strtoupper(substr($name, 0,1));
 	$surname_abr	= strtoupper(substr($surname, 0,1));
 	$datetime		= date('dmy');
