@@ -22,6 +22,96 @@ function company_select() {
 	return generate_select_values("companies", "uid", "name", "", "name");
 }
 
+function province_select() {
+	# Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+         					`uid`, `province`
+                    FROM
+
+         					`provinces`
+
+     				WHERE
+
+         					`active` = 1
+
+     				ORDER BY
+
+         					`province`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->province;
+    }
+
+    # Return Values
+    return $values;
+}
+
+function title_select() {
+	# Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+         					`uid`, `title`
+                    FROM
+
+         					`titles`
+
+     				WHERE
+
+         					`active` = 1
+
+     				ORDER BY
+
+         					`title`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->title;
+    }
+
+    # Return Values
+    return $values;
+}
+
+function sector_select() {
+	# Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+         					`uid`, `sector`
+                    FROM
+
+         					`sectors`
+
+     				WHERE
+
+         					`active` = 1
+
+     				ORDER BY
+
+         					`sector`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->sector;
+    }
+
+    # Return Values
+    return $values;
+}
+
 function cost_center_select($company=0) {
 	$where = ($company)? "company_id = {$company}" : "";
 
@@ -32,4 +122,62 @@ function department_select($cost_center=0, $company=0) {
 	$where = ($cost_center)? "cost_center_id = {$cost_center}" : $where;
 
 	return generate_select_values("departments", "uid", "name", $where, "name");
+}
+function group_select() {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+         					`uid`, `group`
+                    FROM
+
+         					`enterprise_groups`
+
+     				WHERE
+
+         					`active` = 1
+
+     				ORDER BY
+
+         					`group`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->group;
+    }
+
+    # Return Values
+    return $values;
+}
+function member_select() {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+         					`uid`, CONCAT(`name`,' ',`surname`) AS 'member'
+                    FROM
+
+         					`members`
+
+     				WHERE
+
+         					`active` = 1
+
+     				ORDER BY
+
+         					`name`, `surname`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->member;
+    }
+
+    # Return Values
+    return $values;
 }
