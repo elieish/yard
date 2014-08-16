@@ -73,7 +73,7 @@ function province_select($flag,$selected_value) {
 	
 	# Get Data
 	$query			= "	SELECT
-							`uid`,
+							`abreviation`,
 							`province`
 						FROM
 							`provinces`
@@ -86,7 +86,7 @@ function province_select($flag,$selected_value) {
 			if($selected_value == $item->id)
 			{
 				
-				$array			.= "<option selected value={$item->uid}>{$item->province}</option>";
+				$array			.= "<option selected value={$item->abreviation}>{$item->province}</option>";
 			}
 			else
 			{
