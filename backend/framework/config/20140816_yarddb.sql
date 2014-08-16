@@ -151,7 +151,7 @@ CREATE TABLE `users` (
   `fax`       varchar(30)   NOT NULL default '',
   `notes`       varchar(255)  NOT NULL default '',
   `active`      int(1)      NOT NULL default 1,
-  PRIMARY KEY (`uid`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `groups` (
@@ -160,7 +160,7 @@ CREATE TABLE `groups` (
   `user`        int(11)     NOT NULL default 0,
   `name`        varchar(100)  NOT NULL default '',
   `active`      int(1)      NOT NULL default 1,
-  PRIMARY KEY (`uid`)
+  PRIMARY KEY (`id`)
 );
 
 CREATE TABLE `user_groups` (
@@ -170,5 +170,5 @@ CREATE TABLE `user_groups` (
   `user_id`     int(11)     NOT NULL default 0,
   `group_id`      int(11)     NOT NULL default 0,
   `active`      int(1)      NOT NULL default 1,
-  PRIMARY KEY (`uid`)
+  PRIMARY KEY (`id`)
 );
