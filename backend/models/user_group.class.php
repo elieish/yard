@@ -36,7 +36,7 @@ class UserGroup extends Model {
 		$this->table													= "user_groups";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
+		$this->id														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -70,7 +70,7 @@ class UserGroup extends Model {
 		
 		# Check if Group Exists
 		foreach ($this->groups as $group) {
-			if ($group->uid == $group_id) {
+			if ($group->id == $group_id) {
 				return true;
 			}
 		}

@@ -83,8 +83,8 @@ class Page extends AbstractPage {
 																					"company"			=> $objCo->name,
 																					"costcenter"		=> $objCost->name,
 																					"department"		=> $objdep->name,
-																					"costcenter_link"	=> "?p=costcenter&action=profile&id={$objCost->uid}",
-																					"department_link"	=> "?p=department&action=profile&id={$objdep->uid}"
+																					"costcenter_link"	=> "?p=costcenter&action=profile&id={$objCost->id}",
+																					"department_link"	=> "?p=department&action=profile&id={$objdep->id}"
 																				);
 		
 		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/employee/add.html";

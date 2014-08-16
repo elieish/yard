@@ -27,10 +27,10 @@ class User extends Model {
 		$this->table													= "users";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
-		if ($this->uid) {
+		$this->id														= $uid;
+		if ($this->id) {
 			$this->load();
-			$this->membership											= new UserGroup($this->uid);
+			$this->membership											= new UserGroup($this->id);
 			$this->membership->get_groups();
 		}
 	}
@@ -45,7 +45,7 @@ class User extends Model {
 		# Generate Form
 		$form														= new Form("{$cur_page}&action=save");
 		//			Label				Type			Name				Value
-		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add(""					, "hidden"		, "uid"				, $this->id);
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
@@ -97,7 +97,7 @@ class User extends Model {
 			$user														= $_db->fetch_one($query);
 
 			# Set SESSION Details
-			$_SESSION['user_uid']										= $user->uid;
+			$_SESSION['user_uid']										= $user->id;
 			$_SESSION['user_username']									= $user->username;
 			unset($_SESSION['login_error']);
 			

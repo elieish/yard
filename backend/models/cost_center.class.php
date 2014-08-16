@@ -35,7 +35,7 @@ class CostCenter extends Model {
 		$this->table													= "cost_centers";
 		
 		# Initialize UID from Parameter
-		$this->uid														= $uid;
+		$this->id														= $uid;
 		if ($uid) {
 			$this->load();
 		}
@@ -46,7 +46,7 @@ class CostCenter extends Model {
 		$form															= new Form($action, "POST", "costcenter_form");
 		
 		# Generate Form - Lead
-		$form->add(""							, "hidden"			, "uid"					, $this->uid);
+		$form->add(""							, "hidden"			, "uid"					, $this->id);
 		$form->add("Name"						, "text"			, "costcenter_name"		, $this->name);
 		$form->add(""							, "submit"			, ""					, "Save");
 		

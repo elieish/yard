@@ -48,7 +48,7 @@ class Page extends AbstractPage {
 																					"company_name"		=> $obj->name,
 																					"costcenter_name"	=> $objco->name,
 																					"listing"			=> $listing,
-																					"add_link"			=> "?p=department&action=add&id={$objco->company_id}&co={$objco->uid}"
+																					"add_link"			=> "?p=department&action=add&id={$objco->company_id}&co={$objco->id}"
 																				);
 		$template														= new Template($file,$vars);
 		$html															= $template->tostring();

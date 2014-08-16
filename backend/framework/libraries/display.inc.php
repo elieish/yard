@@ -929,7 +929,7 @@ function view_files($item) {
 		$html 															.= "		<th>&nbsp;</th>\n";
 		$html 															.= "	</tr>\n";
 		foreach ($files as $file) {
-		        $delete_link 											= "<a href='{$_SERVER['REQUEST_URI']}&subaction=delete_file&file={$file->uid}&file_item={$item}' style='color:red;font-size:10px;'>x</a>";
+		        $delete_link 											= "<a href='{$_SERVER['REQUEST_URI']}&subaction=delete_file&file={$file->id}&file_item={$item}' style='color:red;font-size:10px;'>x</a>";
 				$file_name												= ($file->name)? $file->name : $file->file;
 				$html 													.= "	<tr><td><a href='{$_GLOBALS['upload_url']}{$file->file}' target='_blank'>{$file_name}</a></td><td>{$file->datetime}</td><td>" . user_get_name($file->user) . "</td><td>{$delete_link}</td></tr>\n";
 		}
