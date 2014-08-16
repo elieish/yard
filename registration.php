@@ -22,23 +22,37 @@ if(isset($_POST['submit'])){
 	$name 			= $_POST['name'];
 	$surname		= $_POST['surname'];
 	$title			= titles_select();
+	$gender			= $_POST['gender'];
+	$dob			= $_POST['dob'];
+	$cellphone		= $_POST['cellphone'];
+	$telephone		= $_POST['telephone'];
+	$email			= $_POST['email'];
+	$prov 			= $_POST['province'];
+	$title_id 		= $_POST['title'];
 	$province		= provinces_select();
 	$name_abr		= strtoupper(substr($name, 0,1));
 	$surname_abr	= strtoupper(substr($surname, 0,1));
 	$datetime		= date('dmy');
 	$province_abr	= $_POST['province'];
 	$membershipno	= $name_abr.$surname_abr.$datetime.$province_abr;
-	print $name_abr;
-	print $surname_abr;
-	print $datetime;
-	print $province_abr;
+	$registration	= $_POST['registrationnumber'];
+	print $registration;
 
 	# Create new Object
-	$obj			= new Member();
-	$obj->datetime	= now();
-	$obj->name		= $name;
-	$obj->surname	= $surname;
-	$obj->active	= 1;
+	$obj				= new Member();
+	$obj->datetime		= now();
+	$obj->name			= $name;
+	$obj->surname		= $surname;
+	$obj->gender		= $gender;
+	$obj->dob			= $dob;
+	$obj->email			= $email;
+	$obj->cell 			= $cellphone;
+	$obj->tel 			= $telephone;
+	$obj->province		= $prov;
+	$obj->title_id		= $title_id;
+	$obj->created_at 	= now();
+	$obj->membershipno	= $membershipno;
+	$obj->active		= 1;
 	
 	# Save Member
 	$obj->save();
@@ -119,7 +133,7 @@ else {
                         <div class="panel-heading hidden" id='showmessage'>
                             Thank your for registration.Please take not of your membership number:
                         </div>
-                        <input type ='hidden' id='registrationnumber' value="<?php print $membershipno ?>"/>
+                     
                         <div class="panel-body"> 
                             <div class="row">
                                 <div class="col-lg-6">
@@ -168,7 +182,7 @@ else {
                                             <label>Province:</label>
                                            <?php print $province;?>
                                          </div>
-                                
+                                      <input type ='hidden' id='registrationnumber' name='registrationnumber' value="<?php print $membershipno ?>"/>
                                   	 <div class="form-group">
                                    
                                      <button type="submit" name='submit' class="btn btn-primary">Submit</button>
