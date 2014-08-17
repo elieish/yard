@@ -1,3 +1,4 @@
+
 <?php
 /**
  * Project
@@ -25,24 +26,23 @@ class Page extends AbstractPage {
 		global $_db;
 	
 		# Get Data
-		$listing														= Member::listing();
-		
+		$listing = Member::listing();
 		# Generate HTML
-		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
-		$vars															= array(
-																					"listing"	=> $listing,
-																					"add_link"	=> $this->cur_page."&action=add",
-																					"title"		=> 'Members',
+		$file	= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
+		$vars	= array(
+							"listing"	=> $listing,
+							"add_link"	=> $this->cur_page."&action=add",
+							"title"		=> 'Members',
 																				
-																				);
+						);
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
-				$vars['title']												= 'Paid Members';
+				$vars['title']			= 'Paid Members';
 			else 
-				$vars['title']												= 'Unpaid Members' ;
+				$vars['title']			= 'Unpaid Members' ;
 		}
-		$template														= new Template($file,$vars);
-		$html															= $template->tostring();
+		$template						= new Template($file,$vars);
+		$html							= $template->tostring();
 		
 		# Display HTML
 		Print $html;

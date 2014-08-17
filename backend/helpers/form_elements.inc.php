@@ -249,5 +249,25 @@ function provinces_select($flag,$selected_value) {
 	
 }
 
+function province_id($abr) {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid` 
+                    FROM
+
+                            `provinces`
+
+                    WHERE
+
+                            `abreviation` = '{$abr}'";
+    $data  = $_db->fetch_single($query);
+
+    # Return Values
+    return $data;
+}
+
 
 

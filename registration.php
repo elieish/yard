@@ -35,6 +35,7 @@ if(isset($_POST['submit'])){
 	$surname_abr	= strtoupper(substr($surname, 0,1));
 	$datetime		= date('dmy');
 	$province_abr	= $_POST['province'];
+    $provid         = province_id($prov);
 	$membershipno	= $name_abr.$surname_abr.$datetime.$province_abr;
 
 	# Create new Object
@@ -47,7 +48,7 @@ if(isset($_POST['submit'])){
 	$obj->email			= $email;
 	$obj->cell 			= $cellphone;
 	$obj->tel 			= $telephone;
-	$obj->province		= $prov;
+	$obj->province_id	= $provid;
 	$obj->title_id		= $title_id;
 	$obj->created_at 	= now();
 	$obj->membership_no	= $membershipno;
@@ -55,6 +56,7 @@ if(isset($_POST['submit'])){
 	
 	# Save Member
 	 $obj->save();
+     $registrationnumber = $obj->membership_no;
 	
 }
 # ===================================================
@@ -185,9 +187,9 @@ else {
                                             <label>Province:</label>
                                            <?php print $province;?>
                                          </div>
-                                        <input type='hidden' id='registrationnumber'  value="<?php echo $membershipno ?>" name="registrationnumber"/>
+                                        <input type='hidden' id='registrationnumber'  value="<?php echo $registrationnumber ?>" name="registrationnumber"/>
 
-                                        <input type='text' class='hidden' id='registrationnumbers' value="<?php echo $membershipno ?>"/>
+                                      
                                      
                                   	 <div class="form-group">     
                                      <button type="submit" name='submit' class="btn btn-primary">Submit</button>

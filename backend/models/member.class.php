@@ -75,23 +75,23 @@ class Member extends Model {
 		global $_db;
 		
 		# Get Data
-		$query															= "	SELECT
-																				`members`.`uid` as '#',
-																				CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
-																				`name` as 'Name',
-																				`surname` as 'Surname',
-																				`gender` as 'Gender',
-																				`dob` as 'DOB',
-																				`age` as 'Age',
-																				`tel` as 'Tel',
-																				`cell` as 'Cell',
-																				`email` as 'Email',
-																				`provinces`.`province` as 'Province',
-																				CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">Edit<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
-																			FROM
-																				`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
-																			WHERE
-																				`members`.`active` = 1																			
+		$query		= "	SELECT
+							`members`.`uid` as '#',
+							CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
+							`name` as 'Name',
+							`surname` as 'Surname',
+							`gender` as 'Gender',
+							`dob` as 'DOB',
+							`age` as 'Age',
+							`tel` as 'Tel',
+							`cell` as 'Cell',
+							`email` as 'Email',
+							`provinces`.`province` as 'Province',
+							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">Edit<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
+						FROM
+								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
+						WHERE
+								`members`.`active` = 1																			
 																			";
 																			
 		if(isset($_GET['v'])){
