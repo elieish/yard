@@ -4,3 +4,10 @@ mysql_user = yardwgzemg_1
 mysql_pass = pVswyMT8
 mysql_db = yardwgzemg_db1
 mysql_debug= falses
+
+mysql_host = localhost
+mysql_user = root
+mysql_pass = elie
+mysql_db =  yarddb
+mysql_debug= falses
+
