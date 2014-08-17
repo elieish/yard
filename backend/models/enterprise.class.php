@@ -41,7 +41,7 @@ class Enterprise extends Model {
 		}
 	}
 	
-	function item_form($action) {
+/*	function item_form($action) {
 		# Create Form Object
 		$form															= new Form($action, "POST", "enterprise_form");
 		
@@ -112,7 +112,7 @@ class Enterprise extends Model {
 		
 		$listing													= ($mode=="list")?paginated_listing($query):$_db->fetch($query);
 		return $listing;
-	}	
+	}	*/
 	
 }
 
