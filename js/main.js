@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$( "#registration" ).submit( function() {	
+	$( "#registration" ).submit( function(event) {	
 		var name          = $("#name").val().toString().substr(0,1);
 		var surname       = $("#surname").val().toString().substr(0,1);
 		var fullDate      = new Date();console.log(fullDate);
@@ -9,8 +9,12 @@ $(document).ready(function(){
 		var currentDate   = twoDigitDate  + twoDigitMonth + fullDate.getFullYear().toString().substr(2,2);
 		var province	  = $("#province").val();
 		var membershipno = name + surname + currentDate + province;
+		var text = "Thank you for your registration,your membership number is "+ membershipno;
 		$("#registrationnumber").val(membershipno);
-		alert("Thank you for your registration,your membership number is " + membershipno);
+		alert(text);
+		//$("#confirmationmembership").innerHTML="text";
+		//$("#ishimwe").modal('show');
+		//event.preventDefault();
 	});
 
 
