@@ -31,12 +31,8 @@ if(isset($_POST['submit'])){
 	$email			= $_POST['email'];
 	$prov 			= $_POST['province'];
 	$title_id 		= $_POST['title'];
-	$name_abr		= strtoupper(substr($name, 0,1));
-	$surname_abr	= strtoupper(substr($surname, 0,1));
-	$datetime		= date('dmy');
-	$province_abr	= $_POST['province'];
-    $provid         = province_id($prov);
-	$membershipno	= $name_abr.$surname_abr.$datetime.$province_abr;
+	$provid         = province_id($prov);
+    $registrationno = $_POST['registrationnumber'];
 
 	# Create new Object
 	$obj				= new Member();
@@ -51,13 +47,12 @@ if(isset($_POST['submit'])){
 	$obj->province_id	= $provid;
 	$obj->title_id		= $title_id;
 	$obj->created_at 	= now();
-	$obj->membership_no	= $membershipno;
+	$obj->membership_no	= $registrationno;
 	$obj->active		= 1;
 	
 	# Save Member
 	 $obj->save();
-     $registrationnumber = $obj->membership_no;
-	
+ 
 }
 # ===================================================
 # ACTION HANDLER
@@ -134,9 +129,9 @@ else {
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading" id='showmessage'>
-                            Thank you for your registration.Please take note of your membership number:
-                        </div>
+                      <!-- <div class="panel-heading" id='showmessage'>
+                          Thank you for your registration.Please take note of your membership number:
+                      </div> -->
                      
                         <div class="panel-body"> 
                             <div class="row">
@@ -155,7 +150,7 @@ else {
                                         </div>
                                         <div class="form-group">
                                             <label>Surname:</label>
-                                            <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname">
+                                            <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
                                         </div>
 										<div class="form-group">
                                             <label>Gender</label> 
@@ -168,31 +163,31 @@ else {
                                     
                                        <div class="form-group">
                                             <label>Date of Birth:</label>
-                                            <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob">
+                                            <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
                                         </div>
                                         <div class="form-group">
                                             <label>Telephone:</label>
-                                            <input class="form-control" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone">
+                                            <input class="form-control" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
                                         </div>
                                          <div class="form-group">
                                             <label>Cellphone:</label>
-                                            <input class="form-control" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone">
+                                            <input class="form-control" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
                                         </div>
                                         <div class="form-group">
                                             <label>Email:</label>
-                                            <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email">
+                                            <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
                                             <p class="help-block">email@example.com</p>
                                         </div>
 										<div class="form-group">
                                             <label>Province:</label>
                                            <?php print $province;?>
                                          </div>
-                                        <input type='hidden' id='registrationnumber'  value="<?php echo $registrationnumber ?>" name="registrationnumber"/>
+                                        <input type='hidden' id='registrationnumber' name="registrationnumber"/>
 
                                       
                                      
                                   	 <div class="form-group">     
-                                     <button type="submit" name='submit' class="btn btn-primary">Submit</button>
+                                     <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
                                      </div>
                      
                                     </form>
