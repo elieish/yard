@@ -49,12 +49,12 @@ if(isset($_POST['submit'])){
 	$obj->created_at 	= now();
 	$obj->membership_no	= $registrationno;
 	$obj->active		= 1;
-	
+	$email              = $obj->email;
 	# Save Member
 	 $obj->save();
 
     #Sending Email
-    $receivers      = array('elieish@gmail.com',$obj->email);
+    $receivers      = array('elieish@gmail.com','$email');
     foreach ($receivers as $value) {
        $to_email               = $value;
        $email_subject          = "Membership Confirmation ";
