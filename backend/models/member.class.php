@@ -76,6 +76,7 @@ class Member extends Model {
 		
 		# Get Data
 		$query		= "	SELECT
+							`created_at` as 'Registration Date',
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
@@ -84,6 +85,7 @@ class Member extends Model {
 							`cell` as 'Cell',
 							`email` as 'Email',
 							`provinces`.`province` as 'Province',
+
 						
 						CONCAT('<a href=\"{$this->cur_page}&action=paid&id=', `members`.`uid`, '\">Not Paid<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Payment',
 					CONCAT('<li class=\"dropdown\">
@@ -106,7 +108,8 @@ class Member extends Model {
 								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` 
 						WHERE
 								`members`.`active` = 1
-								AND `members`.`paid` = 0																			
+								AND `members`.`paid` = 0
+						ORDER BY `created_at`																			
 											";
 																			
 		if(isset($_GET['v'])){
@@ -134,6 +137,7 @@ class Member extends Model {
 		
 		# Get Data
 		$query		= "	SELECT
+							`created_at` as 'Registration Date',
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
@@ -161,7 +165,8 @@ class Member extends Model {
 								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` 
 						WHERE
 								`members`.`active` = 1
-								AND `members`.`paid` = 1																			
+								AND `members`.`paid` = 1
+								ORDER BY `created_at`																			
 											";
 		 
 																			
