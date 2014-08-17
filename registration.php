@@ -54,7 +54,7 @@ if(isset($_POST['submit'])){
 	 $obj->save();
 
     #Sending Email
-    $receivers      = array('elieish@gmail.com','$email');
+    $receivers      = array('mackdolvins@gmail.com',$obj->email);
     foreach ($receivers as $value) {
        $to_email               = $value;
        $email_subject          = "Membership Confirmation ";
