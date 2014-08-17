@@ -13,12 +13,3 @@ $(document).ready(function(){
     });
 	
 });
-
-
-
-
-//More Legal Fields
-var legal_fields = function(){
-  $('#legal_fields').modal('show');
-  
-}
