@@ -58,17 +58,17 @@ class Page extends AbstractPage {
 		global $_db;
 		
 		# Get Member ID
-		$member_id														= Form::get_int('id');
+		$member_id	= Form::get_int('id');
 		
 		#Get Data
 		//$listing														= CostCenter::listing_by_member($member_id);
 		
 		#Create New Object
-		$obj															= new Member($member_id);
+		$obj			= new Member($member_id);
 		
 		# Generate HTML
-		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/profile.html";
-		$vars															= array(
+		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/profile.html";
+		$vars			= array(
 																					"name"			=> $obj->name,
 																					"form"          => $obj->item_form($this->cur_page),
             																		"js"            => $js,
@@ -154,10 +154,10 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 	
 		# Get GET Data
-		$uid															= Form::get_int("id");
+		$uid				= Form::get_int("id");
 	
 		# Create Member Object
-		$member														= new Member($uid);
+		$member				= new Member($uid);
 	
 		# Delete From Database
 		$member->delete();

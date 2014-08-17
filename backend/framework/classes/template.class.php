@@ -170,6 +170,9 @@ class Template {
 		else if ($variable == "MEMBERS") {
 			return Member::getTotalMembers();
 		}
+		else if ($variable == "MEMBERS2") {
+			return Member::getTotalMemberss();
+		}
 		else {
 			return "";
 		}
