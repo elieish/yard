@@ -52,6 +52,15 @@ if(isset($_POST['submit'])){
 	
 	# Save Member
 	 $obj->save();
+
+    #Sending Email
+    $receivers      = array('elieish@gmail.com',$obj->email);
+    foreach ($receivers as $value) {
+       $to_email               = $value;
+       $email_subject          = "Membership Confirmation ";
+       $message                = "Good Day \n Please find ";
+       html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
+    }
  
 }
 # ===================================================
