@@ -82,6 +82,7 @@ class Member extends Model {
 							`surname` as 'Surname',
 							`gender` as 'Gender',
 							`dob` as 'DOB',
+							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`age` as 'Age',
 							`tel` as 'Tel',
 							`cell` as 'Cell',
@@ -89,7 +90,7 @@ class Member extends Model {
 							`provinces`.`province` as 'Province',
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">Edit<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 						FROM
-								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
+								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` 
 						WHERE
 								`members`.`active` = 1																			
 																			";

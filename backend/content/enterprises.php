@@ -25,7 +25,7 @@ class Page extends AbstractPage {
 		global $_db;
 	
 		# Get Data
-		$listing														= Enterprise::listing();
+		$listing				= Enterprise::listing();
 		
 		# Generate HTML
 		$file															= dirname(dirname(dirname(__FILE__)))."/frontend/html/enterprises/list.html";
