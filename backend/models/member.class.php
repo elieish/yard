@@ -76,7 +76,6 @@ class Member extends Model {
 		
 		# Get Data
 		$query		= "	SELECT
-							`members`.`uid` as '#',
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							`name` as 'Name',
 							`surname` as 'Surname',
