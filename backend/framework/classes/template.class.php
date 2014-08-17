@@ -167,6 +167,9 @@ class Template {
 		else if ($variable == "USERNAME") {
 			return user_get_name(get_user_uid());
 		}
+		else if ($variable == "MEMBERS") {
+			return Member::getTotalMembers();
+		}
 		else {
 			return "";
 		}
