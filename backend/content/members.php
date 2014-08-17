@@ -26,13 +26,15 @@ class Page extends AbstractPage {
 		global $_db;
 	
 		# Get Data
-		$listing = Member::listing();
+		$listing 		= Member::listing();
+		$listingpaid 	= Member::listingpaid();
 		# Generate HTML
-		$file	= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
+		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(
-							"listing"	=> $listing,
-							"add_link"	=> $this->cur_page."&action=add",
-							"title"		=> 'Members',
+							"listing"		=> $listing,
+							"listingpaid" 	=> $listingpaid,
+							"add_link"		=> $this->cur_page."&action=add",
+							"title"			=> 'Members',
 																				
 						);
 		if(isset($_GET['v'])){
@@ -89,10 +91,10 @@ class Page extends AbstractPage {
 		$uid															= Form::get_int('id');
 	
 		# Create new Member Object
-		$obj															= new Member($uid);
+		$obj							= new Member($uid);
 	
 		# Generate HTML
-		$vars															= array(
+		$vars							= array(
 																					"form"	=> $obj->item_form($this->cur_page."&action=save")
 																				);
 		
@@ -116,28 +118,29 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 	
 		# Get POST Data
-		$member_id														= Form::get_int("uid");
-		$name															= Form::get_str("name");
+		$member_id			= Form::get_int("uid");
+		$name				= Form::get_str("name");
 		
 		
 		# Create new Object
-		$obj															= new Member($member_id);
-		$obj->user														= get_user_uid();
-		$obj->created_at												= now();
-		$obj->title_id													= Form::get_str("title_id");
-		$obj->name														= $name;
-		$obj->surname													= Form::get_str("surname");
-		$obj->gender													= Form::get_str("gender");
-		$obj->dob														= Form::get_str("dob");
-		$obj->age														= Form::get_str("age");
-		$obj->tel														= Form::get_str("tel");
-		$obj->cell														= Form::get_str("cell");
-		$obj->email														= Form::get_str("email");
-		$obj->province_id												= Form::get_str("province_id");
-		$obj->district													= Form::get_str("district");
-		$obj->local_area												= Form::get_str("local)_area");
-		$obj->sector_id													= Form::get_str("sector_id");
-		$obj->active													= 1;
+		$obj				= new Member($member_id);
+		$obj->user			= get_user_uid();
+		$obj->created_at	= now();
+		$obj->title_id		= Form::get_str("title_id");
+		$obj->name			= $name;
+		$obj->surname		= Form::get_str("surname");
+		$obj->gender		= Form::get_str("gender");
+		$obj->dob			= Form::get_str("dob");
+		$obj->age			= Form::get_str("age");
+		$obj->tel			= Form::get_str("tel");
+		$obj->cell			= Form::get_str("cell");
+		$obj->email			= Form::get_str("email");
+		$obj->province_id	= Form::get_str("province_id");
+		$obj->district		= Form::get_str("district");
+		$obj->local_area	= Form::get_str("local)_area");
+		$obj->sector_id		= Form::get_str("sector_id");
+		$obj->paid			= 0;
+		$obj->active		= 1;
 		
 		# Save Member
 		$obj->save();
@@ -158,6 +161,46 @@ class Page extends AbstractPage {
 	
 		# Delete From Database
 		$member->delete();
+	
+		# Redirect
+		redirect($this->cur_page);
+	}
+
+	function paid() {
+		# Global Variables
+		global $_db, $validator;
+
+
+		# Get GET Data
+		$uid			= Form::get_int("id");
+	
+		# Create Member Object
+		$member		= new Member($uid);
+	
+		# Delete From Database
+		$member->paid = 1;
+
+		$member->save();
+	
+		# Redirect
+		redirect($this->cur_page);
+	}
+
+	function notpaid() {
+		# Global Variables
+		global $_db, $validator;
+
+
+		# Get GET Data
+		$uid			= Form::get_int("id");
+	
+		# Create Member Object
+		$member		= new Member($uid);
+	
+		# Delete From Database
+		$member->paid = 0;
+
+		$member->save();
 	
 		# Redirect
 		redirect($this->cur_page);
