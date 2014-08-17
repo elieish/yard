@@ -150,7 +150,7 @@ class Member extends Model {
                     <ul class=\"dropdown-menu dropdown-user\">
                         <li><a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\"><i class=\"fa fa-user fa-fw\"></i> Edit</a>
                         </li>
-                        <li><a href=\"#\"><i class=\"fa fa-print fa-fw\"></i> Print </a>
+                        <li><a href=\"#\"  onclick=\"printPDF()\"><i class=\"fa fa-print fa-fw\"></i> Print </a>
                         </li>
                         <li><a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"fa fa-trash-o fa-fw\"></i> Delete </a>
                         </li>      
