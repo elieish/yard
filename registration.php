@@ -102,26 +102,17 @@ else {
     <!-- Custom Fonts -->
     <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <!-- Custom CSS -->
+    <link href="css/jquery-ui.css" rel="stylesheet">
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-       <!-- Custom Theme JavaScript -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-     <!-- Bootstrap Core JavaScript -->
-    <script src="js/jquery-ui.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
-
     <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
-    <script src="js/main.js"></script>
+   
 
 </head>
 
@@ -194,7 +185,7 @@ else {
                                             <label>Province:</label>
                                            <?php print $province;?>
                                          </div>
-                                        <input type='hidden' id='registrationnumber' value="<?php echo $membershipno ?>"/>
+                                        <input type='hidden' id='registrationnumber'  value="<?php echo $membershipno ?>" name="registrationnumber"/>
 
                                         <input type='text' class='hidden' id='registrationnumbers' value="<?php echo $membershipno ?>"/>
                                      
@@ -233,4 +224,17 @@ else {
      <!-- Custom Theme JavaScript -->
     
 </body>
+ <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/sb-admin-2.js"></script>
+<script src="js/main.js"></script>
 </html>

@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$( "#registration" ).on('submit',function(){
+	$( "#registration" ).submit( function() {
 		var membership = $("#registrationnumber").val();
 		//$("#registrationnumbers").removeClass('hidden');
 		alert("Thank you for your registration,your membership number is " + membership);
@@ -10,9 +10,16 @@ $(document).ready(function(){
     $('.date').datepicker({
         dateFormat: 'yy-mm-dd'
     });
+
+    $('#legal_fields').modal('hide');
 		
 });
 
-/* $(".date").datepicker({
-        dateFormat: 'yy-mm-dd'
- });*/
+
+
+
+//More Legal Fields
+var legal_fields = function(){
+  $('#legal_fields').modal('show');
+  
+}

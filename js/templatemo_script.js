@@ -280,7 +280,7 @@ jQuery(function(){
     });
     //events
     //event
- /*   $(document).scroll(function(){
+    $(document).scroll(function(){
         document_top = $(document).scrollTop();
         event_wapper_top = $("#templatemo_events").position().top - $('#templatemo_banner_menu').outerHeight();
         if(document_top<event_wapper_top){
@@ -292,7 +292,9 @@ jQuery(function(){
             $("#templatemo_events .event_animate_left").css({'left': 0,'opacity':1});
             $("#templatemo_events .event_animate_right").css({'left':0,'opacity':1});
         }
-    }); */
+    }); 
+
+     $('#legal_fields').modal('hide');
 });
 //google map
 /*function initialize(){
@@ -341,3 +343,14 @@ jQuery(function(){
 google.maps.event.addDomListener(window, 'load', initialize);
 google.maps.event.addDomListener(window, 'resize', initialize);
 */
+//More Legal Fields
+var legal_fields = function(){
+  $('#legal_fields').modal('show');
+  
+}
+
+function close_modal(id){
+  $('#'+id).modal('hide');
+}
+
+
