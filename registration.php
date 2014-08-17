@@ -51,16 +51,17 @@ if(isset($_POST['submit'])){
 	$obj->active		= 1;
 	$email              = $obj->email;
 	# Save Member
-	 $obj->save();
+	$obj->save();
 
-    #Sending Email
-    $receivers      = array('mackdolvins@gmail.com',$obj->email);
-    foreach ($receivers as $value) {
+  #Sending Email
+  $receivers           = array('mackdolvins@gmail.com',$obj->email);
+  foreach ($receivers as $value) {
        $to_email               = $value;
        $email_subject          = "Membership Confirmation ";
        $message                = "Good Day ".$obj->name." \n Thank you for you registration. Please take note of your membership no is  ".$obj->membership_no;
        html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
     }
+    redirect('index.html');
  
 }
 # ===================================================
