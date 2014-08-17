@@ -1,466 +1,565 @@
 /*  Free Template by www.templatemo.com  */
 
 /* 
-Dragonfruit Template 
-http://www.templatemo.com/preview/templatemo_411_dragonfruit 
+Solidity Template 
+http://www.templatemo.com/preview/templatemo_407_solidity 
 */
 
-body {
-    font-family: 'Century Gothic', sans-serif;
-}
-.container-fluid {
-    max-width: 1600px;
-}
-.container_wapper {
-    width: 100%;
-    background: #c0c0c0;
-}
-.rcolor {
-    background: #f00;
-}
-.gcolor {
-    background: #0f0;
-}
-.bcolor {
-    background: #00f;
-}
-h1 {
-    margin-top: 60px;
-    margin-bottom: 60px;
-    text-align: center;
-    font: normal normal normal 34px/60px 'Century Gothic', sans-serif;
-    color: #3b3b3b;
+body {  font: 14px/1.85em 'Open Sans', Arial, Helvetice Neue, sans-serif; color: #888888; font-weight: 300; font-style: normal; -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */ -webkit-text-size-adjust: 100%; }
+
+a, a:hover, a:focus { 
+	text-decoration: none; 
+	-webkit-transition: all 150ms ease-in; 
+	-moz-transition: all 150ms ease-in; 
+	-o-transition: all 150ms ease-in; 
+	transition: all 150ms ease-in;
 }
 
-.templatemo_logo a:hover {
-	text-decoration: none;
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Open Sans', Arial, Helvetice Neue, sans-serif; 
 }
-/*menu*/
-#templatemo_mobile_menu {
-    top: 0;
-    width: 250px;
-    height: 100%;
-    background: #f9f9f9;
-    position: fixed;
-    z-index: 5500;
-    right: -1500px;
-    display: none;
-    overflow: auto;
+
+h1 { 
+	text-transform: uppercase; width: 100%; border-bottom: 1px solid #3cb04a; font-size: 24px; color: #333333; padding-bottom: 10px; font-weight: bold; 
 }
-#templatemo_mobile_menu ul li a {
-    text-align: left;
-    background: #f15556;
-    color: #000;
+
+.clear { 
+	clear: both;
 }
-#templatemo_mobile_menu ul li:hover a {
-    background: #c83233;
-	color: #fff;
+
+.content { 
+ 	display: none; 
+	height: auto;
 }
-#templatemo_banner_menu {
-    width: 100%;
-    background: #f9f9f9;
-    height: 94px;
-    border-bottom: 1px solid #f15556;
-    position: fixed;
-    top: 0;
-    z-index: 5000;
+
+.homepage { 
+ 	display: block;
 }
-#templatemo_banner_menu #logo_img {
-    max-height: 90px;
-    float: left; 
+
+.templatemo_title { 
+	float: left; 
+	width: 100%; 
+	font-size: 46px; 
+	color: #3cb04a;
+	font-weight: 400; 
+	margin-top: 60px;
 }
-#templatemo_banner_menu #logo_text {
-    font: normal normal normal 36px/1em 'Century Gothic', sans-serif;
-    margin-top: 30px;
-    padding-left: 60px;
-    text-align: left;
-    color: #e35354;
+
+.templatemo_title a { 
+	color: #3cb04a; 
 }
-#templatemo_banner_menu #logo_text span {
-    color: #9fb038;
+
+.templatemo_subtitle { 
+	float: left; 
+	margin-top: 5px; 
 }
-#templatemo_banner_menu ul li a ,
-#templatemo_banner_menu ul li a:focus {
-    padding-top: 35px;
-    padding-bottom: 35px;
-    font: normal normal normal 18px/23px 'Century Gothic', sans-serif;
-    color: #000;
-    background: repeat-x url("../images/banner_bg.jpg") 0 -94px ;
-    transition-duration: .5s;
+
+.templatemo_search { 
+ 	float: left; 
+	width: 100%;
 }
-#templatemo_banner_menu ul li a:hover ,
-#templatemo_banner_menu ul li a.current
-{
-    background-position: 0 0px ;
-    background-color: #f15556;
-    color: #ffffff;
+.templatemo_search input { 
+ 	border: 1px solid #cccccc; 
+	padding: 7px; 
+	width: 100%; 
+	font-style: italic; 
+	color: #999999;
 }
-#templatemo_banner_menu #mobile_menu {
-    padding-top: 25px;
-    font-size: 30px;
-    float: right;
-    color: #e35354;
+
+::-webkit-input-placeholder { 
+ /* WebKit browsers */
+    color: #999999;
 }
-/*banner slide*/
-.banner { 
-    width: 100%;
-    height: 500px;
-    margin-top: 94px;
-    position: relative; 
-    overflow: hidden;
+:-moz-placeholder { 
+ /* Mozilla Firefox 4 to 18 */
+    color: #999999;
 }
-.banner ul { 
-    list-style: none; 
-    padding: 0;
+::-moz-placeholder { 
+ /* Mozilla Firefox 19+ */
+    color: #999999;
 }
-.banner ul li { 
-    float: left; 
-    background-size:50px 50px;
-    height:500px;
-    width: 100%;
+:-ms-input-placeholder { 
+ /* Internet Explorer 10+ */
+    color: #999999;
 }
-.banner div.slide_caption {
-	background: rgba(0, 0, 0, 0.0);
-    max-width: 600px;
-    margin: 120px auto auto auto;
+
+.responsive-navigation { 
+ 	background: #3cb04a; 
+	float: left; 
+	padding: 10px 0px; 
+	margin-bottom: 30px;
 }
-.banner div.slide_caption h1 ,
-.banner div.slide_caption p {
-    background: none ;
-    text-align: center;
-    color: #fff;
-    line-height: 2em;
-    text-shadow: 1px 1px 5px rgba(150, 150, 150, 1);
+.menu-toggle-btn { 
+	 margin-left: 20px;
 }
-.banner div.slide_caption a {
-	color: #FF6;
+
+a.menu-toggle-btn { 
+	 color: #ffffff;
 }
-.banner div.slide_caption h1 {
-    font-size: 32px;
-    margin: 0;
+
+.templatemo_menu { 
+ 	text-align: center;
 }
-.banner div.slide_caption p {
-    font-size: 16px;
+
+.responsive_menu ul { 
+ 	padding: 0; 
+	margin: 0; 
+	list-style: none;
 }
-.templatemo_banner_slide_01 {
-    background: url('../images/templatemo_banner_slide_01.jpg');
-    background-size: cover;
+
+.main_menu { 
+ 	text-align: center; 
+	margin-top: 30px; 
+	margin-bottom: 30px;
 }
-.templatemo_banner_slide_02 {
-    background: url('../images/templatemo_banner_slide_02.jpg');
-    background-size: cover;
+.main_menu div.col-md-2 { 
+ 	margin-bottom: 1px; 
+	font-size: 16px;
 }
-.templatemo_banner_slide_03 {
-    background: url('../images/templatemo_banner_slide_03.jpg');
-    background-size: cover;
+.main_menu div.col-md-2 div.fa { 
+	font-size: 50px;
 }
-/*about our organization*/
-#templatemo_about {
-    background: #ffffff;
-    float: left;
+.main_menu div.col-md-2 a { 
+ 	color: white; 
+	text-transform: uppercase; 
+	display: block; 
+	background-color: #3cb04a; 
+	-webkit-transition: all 150ms ease-in; 
+	-moz-transition: all 150ms ease-in; 
+	-o-transition: all 150ms ease-in; 
+	transition: all 150ms ease-in; 
 }
-#templatemo_about .about_icon img {
-    width: 100%;
+
+.main_menu div.col-md-2 a:hover { 
+	background-color: #1c8b2a; 
 }
-#templatemo_about .about_icon h2 {
-    text-align: center;
-    font: normal normal normal 20px/25px 'Century Gothic', sans-serif;
+
+.main_menu div.col-md-2 a#prev { 
+	width: 70px; 
+	height: 70px; 
+	line-height: 70px; 
+	font-weight: 400; 
+	cursor: pointer; 
 }
-#templatemo_about .about_icon .imgwap {
-    text-align: center;
-    border-radius: 75px;
+.main_menu div.col-md-2 a#next { 
+ 	width: 70px;
+	height: 70px; 
+	line-height: 70px; 
+	float: right; 
+	font-weight: 400; 
+	cursor: pointer;
 }
-#templatemo_about .about_icon p {
-    text-align: center;
-    font: normal normal normal 14px/23px 'Century Gothic', sans-serif;
+
+a.menu_toggle-btn { 
+	width: 100%; 
+	height: 60px; 
+	background-color: #3cb04a; 
+	text-align: center; 
+	line-height: 60px; 
+	display: block; 
+	color: white; 
+	}
+a.menu_toggle-btn i { 
+	line-height: 60px; 
+	}
+
+.responsive-navigation { 
+	position: relative; 
+	width: 100%; 
+	display: block; 
+	z-index: 9999; 
 }
-#templatemo_about .mission {
-    background-color: #bd3e25;
-    color: #f5bd48;
+
+.responsive_menu { 
+	display: none; 
+	background-color: #38a345; 
 }
-#templatemo_about .product {
-    background-color: #334d5c;
-    color: #f5bd48;
+.responsive_menu ul li a { 
+	color: white; 
+	text-transform: uppercase; 
+	display: block; 
+	padding: 10px 20px; 
+	border-bottom: 1px solid #9bd3a2; 
 }
-#templatemo_about .testimonial {
-    background-color: #efc84a;
-    color: #ab4921;
+
+.main-slider { 
+	width: 100%; 
+	height: 570px;
+	margin-top: 30px;
 }
-#templatemo_about .statistic {
-    background-color: #334d5c;
-    color: #efc84a;
+
+.flexslider .slides { 
+	height: 570px;
 }
-#templatemo_about #testimonial_text_wap {
-    overflow: hidden;
+
+.slider-caption { 
+	position: absolute; 
+	vertical-align: middle; 
+	width: 100%; 
+	text-align: center; 
+	height: 100px; 
+	z-index: 8; 
+	color: white; 
+	top: 200px; 
 }
-#templatemo_about #testimonial_text_wap h2 {
-    font-size: 24px;
-    margin: 0;
-    padding: 12px 0;
+
+.slider-caption h2 { 
+	font-size: 48px; 
+	text-transform: uppercase; 
+	font-weight: 800; 
+	margin-bottom: 30px; 
 }
-#templatemo_about #testimonial_text_wap h3 {
-    font-size: 20px;
-    margin: 0;
-    padding: 12px 0;
+
+.slider-caption p { 
+	font-size: 16px; 
+	text-transform: uppercase; 
+	letter-spacing: 2px; 
+	width: 50%; 
+	margin: 0 auto 30px auto; 
+	line-height: 1.8em; 
 }
-#templatemo_about #testimonial_text_wap img {
-    margin-bottom: 20px ;
+
+.flexslider { 
+	background-color: black; 
+	height: 570px; 
+	overflow: hidden; 
+	margin: 0;
 }
-#templatemo_about #testimonial_text_wap p {
-    font-size: 14px;
-    line-height: 2em;
+
+.flexslider img { 
+	position: relative; 
+	opacity: 0.5; 
+	width: 100%; 
+	z-index: 7; 
 }
-#templatemo_about .testimonial_text {
-    width: 100%;
-    float: left;
+
+.flex-control-nav { 
+	bottom: 15px; 
+	z-index: 9;
 }
-#templatemo_about .pre_next {
-    font-size: 70px;
-    top: 50%;
-    margin-top: -35px;
-    position: absolute;
+
+.flex-control-paging li a { 
+	background-color: white; 
+	border: 2px solid black; 
+	opacity: 0.6;
 }
-#templatemo_about .pre_next a {
-    color: #6698b5;
-    float: left;
+
+.flex-control-paging li a:hover { 
+	opacity: 1; 
+	background: white; 
 }
-#templatemo_about .pre_next a:hover {
-    color: #334d5c;
+
+.flex-control-paging li a.flex-active { 
+	opacity: 1; 
+	background: white; 
 }
-#templatemo_about #testimonial_text_wap h1 {
-    font-size: 70px;
-    top: 50%;
-    margin-top: -35px;
+
+.templatemo_icon { 
+	float: left; 
+	font-size: 40px; 
+	color: #3cb04a; 
+	text-align: center; 
+	padding-bottom: 3px; 
+	border-bottom: 2px solid #cccccc;
 }
-#templatemo_about .testimonial_top_bottom_spacer {
-    padding-bottom: 80px;
+
+.templatemo_greentitle { 
+	float: left; 
+	font-size: 20px; 
+	color: #3cb04a; 
+	font-weight: bold; 
+	text-transform: uppercase; 
+	margin-left: 10px; 
+	margin-top: 5px;
 }
-/*events*/
-#templatemo_events {
-    background: #6698b5;
-    float: left;
-    overflow: hidden;
+.templatemo_servicegap { 
+	margin: 40px 0px 0px 0px;
 }
-#templatemo_events h1{
-    color: #fff;
+.templatemo_servicegap img { 
+	width: 100%;
 }
-#templatemo_events .event_box_wap {
+
+.templatemo_email { 
+	 width: 40px; 
+	 height: 40px; 
+	 border-radius: 20px; 
+	 background: #3cb04a; 
+	 text-align: center;  
+	 left:50%;  
+	 margin-left:-20px; 
+	 margin-top: -20px; 
+	 position: absolute;
+	-webkit-transition-duration: 1.5s;
+    -moz-transition-duration: 1.5s;
+    -o-transition-duration: 1.5s;
+    transition-duration: 1.5s;
+     
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
     overflow:hidden;
-    margin-bottom: 30px;
-    cursor: pointer;
-    position: relative;
 }
-#templatemo_events .event_box_wap .event_box_img {
-    position: relative;
-    top: 0;
+
+.templatemo_email div.fa { 
+	font-size: 16px; 
+	color: #ffffff; 
+	line-height: 40px;
 }
-#templatemo_events .event_box_wap .event_box_caption {
-    position: relative;
-    top: 0;
-    padding-bottom: 10px;
-    background: #fff;
+
+.templatemo_email:hover	{ 
+	-webkit-transform: rotate(360deg);    
+	-moz-transform: rotate(360deg);   
+	 -o-transform: rotate(360deg);
+}
+
+.templatemo_teamtext { 
+	 float: left;
+	 width: 100%;
+	 margin: 20px 0px;
+}
+.templatemo_teamname { 
+	float: left;
+	width: 50%;
+}
+.templatemo_teamtitle { 
+	float: left; 
+	font-size: 18px; 
+	color: #3cb04a; 
+	font-weight: bold; 
+	text-transform: uppercase;
+	width: 100%; 
+}
+
+.templatemo_teampost { 
+	float: left; 
+	text-transform: uppercase; 
+	font-style: italic;
+}
+
+.templatemo_teamsocial { 
+	float: right; 
+	width: 50%; 
+	text-align: right;
+}
+.templatemo_teamsocial .fa { 
+	margin-left: 5px;
+	color: #cccccc; 
+	font-size: 16px;
+}
+.templatemo_teamsocial .fa:hover{ color: #3cb04a; }
+
+.templatemo_portfolio img { 
+	width: 100%; 
+	margin-top: 30px;
+}
+
+.fadeInDown	{ 
+}
+
+/*------------------------------------------------------
+	Gallery Styles 
+--------------------------------------------------------*/
+.gallery-item { 
+	margin-bottom: 0px;
+ 	position: relative;
+	overflow: hidden;
+}
+.gallery-item .content-gallery { 
+	text-align: center;
+}
+.gallery-item .content-gallery h3 { 
+	  color: #b10021;
+	  font-size: 16px;
+	  font-weight: 300;
+	  margin-top: 5px;
+	  padding-bottom: 5px;
+	  display: inline-block;
+}
+.gallery-item img { 
+ width: 100%;
+}
+.gallery-item .overlay { 
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: block;
+  -webkit-transition: all 50ms ease-in-out;
+  -moz-transition: all 50ms ease-in-out;
+  -ms-transition: all 50ms ease-in-out;
+  -o-transition: all 50ms ease-in-out;
+  transition: all 50ms ease-in-out;
+}
+.gallery-item .overlay a { 
+  color: #ffffff;
+  text-align: center;
+  line-height: 32px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+  font-size: 24px;
+}
+
+#templatemo_map	{ 
     width: 100%;
-    border-top: 3px solid #3c6f8c;
+	height: 300px;
+	border: 1px solid #cccccc;
+	margin: 40px 0px;
 }
-#templatemo_events .event_box_wap h1,
-#templatemo_events .event_box_wap p {
-    margin: 0;
-    color: #000000;
-    text-align: left;
+.templatemo_textbox	{ 
+ 	width: 50%; 
+	float: left; 
+	margin-top: 0px;
 }
-#templatemo_events .event_box_wap p {
-    padding: 5px 20px 15px 20px;
+.templatemo_textbox	input { 
+	width: 95%; 
+	border-radius: 0px; 
+	padding: 7px;
 }
-#templatemo_events .event_box_wap h1 {
-    padding: 20px 20px 20px 20px;
-    font-size: 24px;
-    line-height: 24px;
+.templatemo_textareabox	{ 
+	width: 100%; 
+	float: left;
 }
-/*timeline*/
-#templatemo_timeline {
-    background: #fff;
-    float: left;
+.templatemo_textareabox	textarea { 
+	border-radius: 0px;
+	padding: 7px; 
+	height: 130px; 
+	width: 97.5%; 
+	margin-top: 20px;
 }
-#templatemo_timeline .container-fluid {
-    max-width: 1600px;
-    position: absolute;
-    margin: auto;
-    margin-bottom: 80px;
-    background: url("../images/time_line_bg.jpg") repeat-y center top;
+.templatemo_textareabox button { 
+	border-radius: 0px; 
+	background: #3cb04b; 
+	padding: 7px 15px; 
+	text-transform: uppercase; 
+	font-weight: 400; 
+	font-size: 16px;
+	margin-top: 20px;
 }
-#templatemo_timeline .time_line_wap {
-    position: absolute;
-    display: none;
+.templatemo_address ul { 
+	float: left; 
+	margin: 0px; 
+	padding: 0px; 
 }
-#templatemo_timeline .time_line_caption {
-    background: #f15556;
-    padding: 10px 20px 10px 20px ;
-    border-radius: 5px;
-    height: 40px;
-    clear: both;
-    color: #fff; 
+.templatemo_address	li { 
+	padding: 0px 0px 10px 0px; 
+	margin: 0px; 
+	list-style: none; 
+	float: left;
 }
-#templatemo_timeline .time_line_paragraph {
-    background: #e6e6e6;
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    margin-top: 50px;
-    font-family: 'Century Gothic', sans-serif;
+.templatemo_address	li.fa { 
+	width: 10%; 
+	color:#3cb04b; 
+	font-size: 20px;
 }
-#templatemo_timeline .time_line_paragraph a {
-    color: #000;
-    text-decoration: underline;
+.templatemo_address	li.text { 
+	width: 90%;
+	font-size: 16px;
 }
-#templatemo_timeline .left_timeline {
-    margin-left: 30px;
+
+.templatemo_footer { 
+	background: #3cb04b; 
+	margin-top: 50px; 
+	padding: 10px 0px; 
+	text-align: center; 
+	color:#ffffff;
 }
-#templatemo_timeline .left_timeline .time_line_caption {
-    float: right;
-    margin-right: 0px;
+
+.templatemo_footer a { 
+	color: #ffffff;
 }
-#templatemo_timeline .right_timeline .time_line_caption {
-    float: left;
-}
-#templatemo_timeline .time_line_paragraph h1 {
-    text-align: left;
-    margin: 0;
-    font-size: 24px;
-    line-height: 30px;
-    color: #000;
-    padding: 20px 20px 20px 20px;
-}
-#templatemo_timeline .time_line_paragraph p {
-    padding: 0px 20px 20px 20px;
-    text-align: left;
-    margin: 0;
-    font-size: 14px;
-    line-height: 2em;
-    color: #000;
-}
-#templatemo_timeline .left_timer {
-    float: right;
-    background: url("../images/arrow_left.png") 0 5px;
-}
-#templatemo_timeline .right_timer {
-    float: left;
-    background: url("../images/arrow_right.png") 0px 5px;
-}
-#templatemo_timeline .left_timer ,
-#templatemo_timeline .right_timer {
-    padding-left:30px;
-    width: 101px;
-    position: absolute;
-}
-#templatemo_timeline .left_timer span,
-#templatemo_timeline .right_timer span {
-    border-radius: 20px;
-    width: 30px;
-    height: 30px;
-    background: #e6e6e6;
-    text-align: center;
-    color: #fff;
-    font-size: 24px;
-    padding-top: 3px;
-    margin-top: 3px;
-}
-/*contact*/
-#templatemo_contact {
-    background: #6698b5;
-    float: left;
-}
-#templatemo_contact h1 {
-    color: #fff;
-}
-#templatemo_contact h2 {
-    font-size: 24px;
-    color: #fff;
-    padding-top: 0;
-    padding-bottom: 20px;
-}
-#templatemo_contact_map {
-    width: 100%;
-    height: 320px;
-    float: left;
-    margin-bottom: 40px;
-}
-#templatemo_contact ul li a {
-    background: none;
-}
-#templatemo_contact ul li a i {
-    width: 60px;
-    padding: 20px 0;
-    font-size: 32px;
-    color: #fff;
-    text-align: center;
-}
-#templatemo_contact p {
-    color: #fff;
-    line-height: 30px;
-	margin-top: 15px;
-}
-#templatemo_contact input {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    border: none;
-}
-#templatemo_contact textarea {
-    border: none;
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-}
-#templatemo_contact button {
-    width: 100%;
-    height: 50px;
-    float: left;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: none;
-    background: #eaeaea;
-}
-#templatemo_contact button:hover {
-    background: #f4f4f4;
-}
-/*templatemo_footer*/
-#templatemo_footer {
-    width: 100%;
-    border-top: 2px solid #507f9a;
-    height: 70px;
-    background: #447693;
-    float: left;
-}
-#templatemo_footer p {
-    padding-top: 20px;
-    color: #fff;
-    text-align: center;
-}
-#templatemo_footer a {
-    color: #fff;
-    text-decoration: underline;
-}
-/*  Small devices (tablets, 768px and up)  */
-@media (max-width: 768px ) { 
-    #templatemo_about .pre_next {
-        font-size: 15px;
-    }
-    #templatemo_timeline .right_timer {
-        background-position: center center;
-    }
-}
-/*  Medium devices (desktops, 992px and up)  */
-@media (max-width: 970px ) {
-    #templatemo_timeline .right_timer {
-        background-position: 100px 5px;
-    }
-    #templatemo_banner_menu #logo_text {
-        font: normal normal normal 30px/1em 'Century Gothic', sans-serif;
-    }
-    #templatemo_timeline .container-fluid {
-        background: url("../images/time_line_bg.jpg") repeat-y 28px 0;
-    }
-}
-/*  Large devices (large desktops, 1200px and up)  */
-@media (min-width: 1200px ) {
-}
+
+@media (max-width: 767px) { 
+	.slider-caption a, .slider-caption p { 
+	display: none; 
+	top: 50px !important; } 
+	.templatemo_servicegap {
+	float: left;
+	width: 100%;
+	}
+	}
+@media (max-width: 581px) { 
+ .slider-caption { 
+ display: none; } }
+@media (max-width: 991px) { 
+ .navigation	{ 
+ display: none;}
+	 #main-content { 
+ width: 100%; }
+ 	.first-footer { 
+ border-left: 0; }
+	.flexslider .slides, .flexslider, .main-slider { 
+ height: auto; }
+	.service-item { 
+ margin-bottom: 30px; }
+	.progess-bars { 
+ margin-top: 40px; }
+ }
+
+ @media (min-width: 332px)	{ 
+ .templatemo_address	{ 
+	margin-top: 30px; 
+	}
+	.templatemo_search	{ 
+	margin: 20px 0px;
+	}
+ }
+ @media (min-width: 768px) {
+ 	.templatemo_search	{ 
+	margin-top: 60px;}
+ }
+ @media (min-width: 768px) and (max-width: 991px) {
+ 	.main-navigation { margin-top: 20px;}
+ }
+ @media (min-width: 992px) { 
+	.main_menu div.col-md-2 div.fa	{ line-height: 128px;}
+	.main_menu div.col-md-2 a{ 
+ 	height: 128px; 
+	line-height: 128px;
+	}
+	.main_menu div.col-md-2 a#prev	{ 
+	margin-top: 22%;
+	}
+	.main_menu div.col-md-2 a#next	{ 
+	margin-top: 22%;
+	}
+	.templatemo_imagecontrol { 
+	height: 118px; 
+	overflow: hidden;
+	}
+	.templatemo_imagecontrol .gallery-item .overlay a{ 
+ top: 20%;}
+	.templatemo_address	{ 
+ margin-top: 0px;}
+
+ }
+ 
+@media (min-width: 1200px) { 
+	.main_menu div.col-md-2 div.fa	{ 
+	line-height: 160px;
+	}
+	.main_menu div.col-md-2 a{ 
+	 height: 160px; 
+	 line-height: 160px;
+	 }
+	.main_menu div.col-md-2 a#prev	{ 
+	margin-top: 27%;
+	}
+	.main_menu div.col-md-2 a#next	{ 
+ 	margin-top: 27%;
+	}
+	.templatemo_imagecontrol { 
+	height: 140px; 
+	overflow: hidden;
+	}
+	.templatemo_imagecontrol .gallery-item .overlay a { 
+	top: 22%;
+	}
+ }
