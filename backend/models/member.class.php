@@ -109,7 +109,7 @@ class Member extends Model {
 						WHERE
 								`members`.`active` = 1
 								AND `members`.`paid` = 0
-						ORDER BY `created_at`																			
+																									
 											";
 																			
 		if(isset($_GET['v'])){
@@ -166,7 +166,7 @@ class Member extends Model {
 						WHERE
 								`members`.`active` = 1
 								AND `members`.`paid` = 1
-								ORDER BY `created_at`																			
+																									
 											";
 		 
 																			
