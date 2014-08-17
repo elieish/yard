@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
     foreach ($receivers as $value) {
        $to_email               = $value;
        $email_subject          = "Membership Confirmation ";
-       $message                = "Good Day \n Please find ".$obj->membership_no.$email;
+       $message                = "Good Day \n Please your membership no is  ".$obj->membership_no;
        html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
     }
  
