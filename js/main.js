@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 	$( "#registration" ).submit( function(event) {	
-		var name          = $("#name").val().toString().substr(0,1);
-		var surname       = $("#surname").val().toString().substr(0,1);
+		var name          = $("#name").val().toString().substr(0,1).toUpperCase();
+		var surname       = $("#surname").val().toString().substr(0,1).toUpperCase();
 		var fullDate      = new Date();console.log(fullDate);
 		var twoDigitMonth = fullDate.getMonth()+"";if(twoDigitMonth.length==1)  twoDigitMonth="0" +twoDigitMonth;
 		var twoDigitDate  = fullDate.getDate()+"";if(twoDigitDate.length==1) twoDigitDate="0" +twoDigitDate;
