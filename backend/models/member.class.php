@@ -123,7 +123,7 @@ class Member extends Model {
 																				`name`';
 		}
 																			
-		$listing														= paginated_listing($query);
+		$listing							= paginated_listing($query);
 		
 		
 		return $listing;

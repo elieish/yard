@@ -288,7 +288,7 @@ function paginated_listing($query, $this_page="", $prefix="") {
 	
 	# Generate Headings
 	$headings															= "
-		<tr>
+		<thead><tr>
 	";
 	foreach ($head as $item) {
 		$headings														.= "
@@ -296,11 +296,11 @@ function paginated_listing($query, $this_page="", $prefix="") {
 			";
 	}
 	$headings															.= "
-		</tr>
+		</tr></thead>
 	";
 	
 	# Generate Rows
-	$rows																= "";
+	$rows																= "<tbody>";
 	foreach ($body as $row) {
 		$rows															.= "
 		<tr>
@@ -314,6 +314,7 @@ function paginated_listing($query, $this_page="", $prefix="") {
 		</tr>
 		";
 	}
+	$rows																.= "</tbody>";
 	
 	# Output Page selection
 	$page_select														= "";

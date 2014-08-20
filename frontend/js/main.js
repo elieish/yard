@@ -1,6 +1,6 @@
-$(document).ready(function(){
-    
-})
+ $(document).ready(function() {
+        $('.table').dataTable();
+ });
 
 function printPDF(){
 	var doc = new jsPDF();
