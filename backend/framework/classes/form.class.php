@@ -1,12 +1,11 @@
 <?php
 /**
  * Project : Form Class
- * 
- * @author Ralfe Poisson <ralfe@Yard.co.za>
+ *
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
- * @copyright Copyright (C) Imply Development CC 2012
  * @package Project
- * 
+ *
  */
 
 # ==========================================================================================
@@ -14,24 +13,24 @@
 # ==========================================================================================
 
 class Form {
-	
+
 	# --------------------------------------------------------------------------------------
 	# ATTRIBUTES
 	# --------------------------------------------------------------------------------------
-	
+
 	var $action;
 	var $fields;
 	var $method;
 	var $id;
-	
+
 	# --------------------------------------------------------------------------------------
 	# METHODS
 	# --------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Constructor
-	 * 
-	 * Initialise default values for Model attributes 
+	 *
+	 * Initialise default values for Model attributes
 	 */
 	function __construct($action, $method="POST", $id="item_form") {
 		# Initialise Variables
@@ -40,12 +39,12 @@ class Form {
 		$this->fields													= array();
 		$this->method													= $method;
 	}
-	
+
 	/**
 	 * Add Field
-	 * 
+	 *
 	 * Add a Field to the Form
-	 * 
+	 *
 	 * @param $label String
 	 * @param $type String
 	 * @param $name String
@@ -59,7 +58,7 @@ class Form {
 																					"options"	=> ""
 																				);
 	}
-	
+
 	function add_select($label, $name, $default, $values) {
 		$this->fields[]													= array(	"label"		=> $label,
 																					"type"		=> "select",
@@ -68,10 +67,10 @@ class Form {
 																					"options"	=> $values
 																				);
 	}
-	
+
 	/**
 	 * Generate Input
-	 * 
+	 *
 	 */
 	function generate_input($type, $name, $value="", $options="") {
 		if ($type == "text") {
@@ -94,10 +93,10 @@ class Form {
 			return $name;
 		}
 	}
-	
+
 	/**
 	 * Generate
-	 * 
+	 *
 	 * Generate HTML of the form.
 	 */
 	function generate() {
@@ -119,26 +118,26 @@ class Form {
 				";
 			}
 		}
-		
+
 		# Generate HTML
 		$html															= "
 		<form id=\"{$this->uid}\"  role='form' method=\"{$this->method}\" action=\"{$this->action}\">
 			{$fields}
 		</form>
 		";
-		
+
 		# Return HTML
 		return $html;
 	}
-	
+
 	public function get_str($name) {
 		return (isset($_REQUEST[$name]))? htmlentities($_REQUEST[$name]) : "";
 	}
-	
+
 	public function get_int($name) {
 		return (isset($_REQUEST[$name]))? intval($_REQUEST[$name]) : "";
 	}
-	
+
 }
 
 # ==========================================================================================
