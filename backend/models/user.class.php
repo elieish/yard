@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
  * @package Project
@@ -12,20 +12,20 @@
 # ==========================================================================================
 
 class User extends Model {
-	
+
 	public $membership;
-	
+
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * Set the Table and the UID of the object.
-	 * 
+	 *
 	 * @param $uid Integer: The Unique Identifier of the object.
 	 */
 	public function __construct($uid=0) {
 		# Set Table
 		$this->table													= "users";
-		
+
 		# Initialize UID from Parameter
 		$this->uid														= $uid;
 		if ($this->uid) {
@@ -34,14 +34,14 @@ class User extends Model {
 			$this->membership->get_groups();
 		}
 	}
-	
+
 	/**
 	 * Displays the user form
 	 */
 	public function form($cur_page) {
 		# Global Variables
 		global $_db;
-		
+
 		# Generate Form
 		$form														= new Form("{$cur_page}&action=save");
 		//			Label				Type			Name				Value
@@ -55,25 +55,25 @@ class User extends Model {
 		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
 		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
 		$form->add(""					, "submit"		, "submit"			, "Save");
-		
+
 		# Generate HTML
 		$html														= $form->generate();
-		
+
 		# Return HTML
 		return $html;
 	}
-	
+
 	public function login($username, $password) {
 		# Global Variables
 		global $_db;
-		
+
 		# Sanitize Parameters Parameters
 		$username														= preg_replace('@[^a-zA-Z0-9_]@', '', $username);
 		/*var_dump($password);die;*/
 		$password														= md5($password);
 
 
-		
+
 		# Compare to database
 		$query									= "	SELECT
 													COUNT(*)
@@ -88,11 +88,11 @@ class User extends Model {
 		if ($auth){
 			# Get User Details
 			$query					= "	SELECT
-											* 
+											*
 										FROM
-											`users` 
+											`users`
 										WHERE
-											`username` = \"$username\" 
+											`username` = \"$username\"
 												AND `password` = \"$password\"";
 			$user						= $_db->fetch_one($query);
 
@@ -100,10 +100,10 @@ class User extends Model {
 			$_SESSION['user_uid']				= $user->uid;
 			$_SESSION['user_username']			= $user->username;
 			unset($_SESSION['login_error']);
-			
+
 			# Log Activity
 			logg("Login : Login Successful. Username = `$username`.");
-			
+
 			# Return True
 			return true;
 		}
@@ -114,12 +114,12 @@ class User extends Model {
 			# Display Error Message
 			logg ("Login : Authentication FAILED! Username = `$username`.", "ALERT");
 			$_SESSION['login_error'] 									= "Login Failed. Please Try Aagain.";
-			
+
 			# Return False
 			return false;
 		}
 	}
-	
+
 	public function check_auth($function) {
 		# Check for auth in groups
 		foreach ($this->membership->groups as $group) {
@@ -148,11 +148,40 @@ class User extends Model {
 						`active` = 1
 					";
 		$listing = paginated_listing($query);
-		
+
 		return $listing;
-		
+
 		}
-	
+
+
+	 // Clear out Allowed Functions for this user
+
+	function clear_auths() {
+		# Global Variables
+		global $_db;
+
+		# Clear out Allowed Functions
+		$_db->delete("functions_users", "user", $this->uid);
+	}
+
+	/**
+	 * Add Allowed Function
+	 * @param String $function The function that this user is allowed to perform
+	 */
+	function add_allowed_function($function) {
+		# Global Variables
+		global $_db;
+
+		# Add Function
+		$_db->insert(
+			"functions_users",
+			array(
+				"user"												=> $this->uid,
+				"function"											=> $function
+			)
+		);
+	}
+
 }
 
 # ==========================================================================================

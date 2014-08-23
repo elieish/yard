@@ -68,17 +68,17 @@ function has_authority($function, $user_id=0) {
 	return $data;
 }
 
-function user_profile($uid=0) {
+function user_profile($uid=0,$cur_page) {
 	# Global Variables
-	global $_db, $cur_page, $_GLOBALS;
+	global $_db, $_GLOBALS;
 
 	# Create User
 	$user							= new User($uid);
 
 	# Generate Content For Tabs
-	$tab_data				= array(	"Details"			=> "<div class='col-lg-6'><h3>Details</h2>\n
-				                                              ". $user->form()."</div>",
-										"Authorizations"	=> user_auths($uid),
+	$tab_data				= array(	"Details"			=> "<h3>Details</h3>\n
+				                                              ". $user->form(),
+										"Authorizations"	=> user_auths($uid,$cur_page),
 										"Comments"			=> comments_page("u" . $uid),
 										"Attachments"		=> attachments_page("u" . $uid)
 																				);
@@ -89,16 +89,19 @@ function user_profile($uid=0) {
 	# Generate HTML
 	$html													= "
 	<!-- Tabs -->
+
 	{$tabs}
+
 	";
 
 	# Return HTML
 	return $html;
 }
 
-function user_auths($uid) {
+function user_auths($uid,$cur_page) {
 	# Global Variables
-	global $_db, $cur_page, $_GLOBALS;
+	global $_db, $_GLOBALS;
+
 
 	# Get List of Functions
 	$query																= "	SELECT
@@ -153,6 +156,33 @@ function user_auths($uid) {
 	return $html;
 }
 
+
+function save_auths() {
+		# Global Variables
+		global $_db, $validator;
+
+		# Get POST Data
+		$uid						= $validator->validate($_POST['uid'], "Integer");
+
+		# Create User
+		$user						= new User($uid);
+
+		# Save Auths
+		$user->clear_auths();
+		foreach ($_POST as $key => $value) {
+			if (substr($key, 0, 2) == "f_") {
+				# Get Function
+				$function_id			= substr($key, 2);
+				$function				= $_db->get_data("functions", "function", "uid", $function_id);
+
+				# Add function to user
+				$user->add_allowed_function($function);
+			}
+		}
+
+		# Redirect
+		redirect("{$this->cur_page}&action=profile&id={$uid}");
+	}
 # =========================================================================
 # THE END
 # =========================================================================

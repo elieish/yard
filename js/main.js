@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$( "#registration" ).submit( function(event) {	
+	$( "#registration" ).submit( function(event) {
 		var name          = $("#name").val().toString().substr(0,1).toUpperCase();
 		var surname       = $("#surname").val().toString().substr(0,1).toUpperCase();
 		var fullDate      = new Date();console.log(fullDate);
@@ -23,5 +23,6 @@ $(document).ready(function(){
     $('.date').datepicker({
         dateFormat: 'yy-mm-dd'
     });
-	
+
 });
+

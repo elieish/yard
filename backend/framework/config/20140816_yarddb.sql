@@ -253,4 +253,11 @@ CREATE TABLE IF NOT EXISTS `functions_users` (
   PRIMARY KEY (`uid`)
 );
 
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (2, 'District', 'District Administration', 'Admin');
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (3, 'Provincial', 'Provincial Administration', 'Admin');
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (4, 'National', 'National Administration', 'Admin');
+
 

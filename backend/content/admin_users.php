@@ -53,7 +53,7 @@ class Page extends AbstractPage {
 		<h2>User Administration</h2>
 
 		<!-- Form -->
-		" . user_profile($uid) . "
+		" . user_profile($uid,$this->cur_page) . "
 		";
 
 		# Display HTML
@@ -120,7 +120,7 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 
 		# Get GET Data
-		$uid															= $validator->validate($_GET['id'], "Integer");
+		$uid				= $validator->validate($_GET['id'], "Integer");
 
 		# Create User Object
 		$user															= new User($uid);
@@ -140,10 +140,10 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 
 		# Get POST Data
-		$uid						= $validator->validate($_POST['uid'], "Integer");
+		$uid		= $_POST['uid'];
 
 		# Create User
-		$user						= new User($uid);
+		$user		= new User($uid);
 
 		# Save Auths
 		$user->clear_auths();
@@ -161,6 +161,8 @@ class Page extends AbstractPage {
 		# Redirect
 		redirect("{$this->cur_page}&action=profile&id={$uid}");
 	}
+
+
 }
 
 # =========================================================================
