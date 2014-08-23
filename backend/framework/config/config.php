@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
  * @package Project
@@ -12,7 +12,7 @@
 # =========================================================================
 
 # System Settings
-$_GLOBALS['title']						= "Yard";
+$_GLOBALS['title']						= "Yards";
 $_GLOBALS['max_results']				= 20;
 $_GLOBALS['default_page']				= "home";
 $_GLOBALS['default_action']				= "display";
