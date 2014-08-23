@@ -207,3 +207,50 @@ UPDATE `provinces` SET `abreviation` = 'WC' WHERE `uid`= 8;
 UPDATE `provinces` SET `abreviation` = 'MP' WHERE `uid`= 4;
 
 
+CREATE TABLE IF NOT EXISTS `functions` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `function` varchar(50) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `category` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`)
+);
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `item` varchar(255) NOT NULL DEFAULT '',
+  `user` varchar(11) NOT NULL DEFAULT '0',
+  `comment` blob,
+  `company` int(11) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`uid`)
+);
+
+
+CREATE TABLE IF NOT EXISTS `files` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `branch` int(11) NOT NULL DEFAULT '0',
+  `file` varchar(255) NOT NULL DEFAULT '',
+  `item` varchar(255) NOT NULL DEFAULT '',
+  `datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user` int(11) NOT NULL DEFAULT '0',
+  `revision` int(5) NOT NULL DEFAULT '0',
+  `type` varchar(30) NOT NULL DEFAULT 'general',
+  `folder` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `active` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`uid`)
+);
+
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (1, 'admin_users', 'User Administration', 'Admin');
+
+
+CREATE TABLE IF NOT EXISTS `functions_users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `function` varchar(50) NOT NULL DEFAULT '',
+  `user` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`)
+);
+
+
