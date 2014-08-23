@@ -146,8 +146,7 @@ function user_auths($uid,$cur_page) {
 		{$functions_html}
 
 		<!-- Save Button -->
-		" . button("Save", "javascript:document.getElementById(\"auth_form\").submit();", "left") . "
-
+		" . button("Save", "javascript:document.getElementById(\"auth_form\").submit();", "left","href","a","btn btn-primary") . "
 	</form>
 
 	";
