@@ -221,7 +221,7 @@ hr {
 }
 
 .logo {
-    margin: 25px;
+    margin: 20px;
     overflow: hidden;
 }
 
@@ -233,8 +233,8 @@ hr {
 .main-menu ul li {
     display: inline-block;
     float: left;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 18px;
+    padding-right: 18px;
     border-left: 1px solid #eee;
 }
 
