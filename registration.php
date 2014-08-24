@@ -7,7 +7,7 @@ include_once(dirname(__FILE__). "/backend/framework/include.php");
 Application::include_models();
 Application::include_helpers();
 Application::db_connect();
- 
+
 function display()
 {
 	# Global Variables
@@ -20,7 +20,7 @@ $province		= provinces_select();
 
 
 if(isset($_POST['submit'])){
-	
+
 
 	$name 			= $_POST['name'];
 	$surname		= $_POST['surname'];
@@ -62,8 +62,9 @@ if(isset($_POST['submit'])){
        html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
     }
     redirect('index.html');
- 
+
 }
+
 # ===================================================
 # ACTION HANDLER
 # ===================================================
@@ -119,7 +120,7 @@ else {
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Custom Theme JavaScript -->
-   
+
 
 </head>
 
@@ -127,7 +128,7 @@ else {
 
     <div id="wrapper">
 
-      
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -142,35 +143,35 @@ else {
                       <!-- <div class="panel-heading" id='showmessage'>
                           Thank you for your registration.Please take note of your membership number:
                       </div> -->
-                     
-                        <div class="panel-body"> 
+
+                        <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
                                     <form role="form" action='registration.php' method='POST' id='registration' >
-                                  
+
                                      	<div class="form-group">
                                             <label>Title</label>
-                            
+
                                             <?php print $title;?>
                                         </div>
                                         <div class="form-group">
                                             <label>Name:</label>
                                             <input class="form-control" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
-          
+
                                         </div>
                                         <div class="form-group">
                                             <label>Surname:</label>
                                             <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
                                         </div>
 										<div class="form-group">
-                                            <label>Gender</label> 
+                                            <label>Gender</label>
                                            <select class="form-control" name="gender" id="gender">
                                            		<option value="0">Select One</option>
                                            		<option value="1">Male</option>
                                            		<option value="2">Female</option>
                                            	</select>
                                         </div>
-                                    
+
                                        <div class="form-group">
                                             <label>Date of Birth:</label>
                                             <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
@@ -188,26 +189,30 @@ else {
                                             <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
                                             <p class="help-block">email@example.com</p>
                                         </div>
-										<div class="form-group">
+										                    <div class="form-group">
                                             <label>Province:</label>
                                            <?php print $province;?>
-                                         </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>District:</label>
+                                            <div id='district'></div>
+                                        </div>
                                         <input type='hidden' id='registrationnumber' name="registrationnumber"/>
 
-                                      
-                                     
-                                  	 <div class="form-group">     
+
+
+                                  	 <div class="form-group">
                                      <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
                                      </div>
-                     
+
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 <div class="col-lg-6">
-                                   
-                                 
-                                      
-                                           
+
+
+
+
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                             </div>
@@ -244,9 +249,9 @@ else {
     <!-- /#wrapper -->
 
     <!-- jQuery Version 1.11.0 -->
-  
+
      <!-- Custom Theme JavaScript -->
-    
+
 </body>
  <script src="js/jquery-1.11.0.js"></script>
 
