@@ -38,6 +38,9 @@ include_once("template.class.php");
 # TestManager
 include_once("testManager.class.php");
 
+# PDF class
+include('class.ezpdf.php');
+
 # =========================================================================
 # CONSTRUCT SPECIAL OBJECTS
 # =========================================================================

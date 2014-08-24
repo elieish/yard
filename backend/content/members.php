@@ -27,7 +27,7 @@ class Page extends AbstractPage {
 	
 		# Get Data
 		$listing 		= Member::listing();
-		/*$listingpaid 	= Member::listingpaid();*/
+		$listingpaid 	= Member::listingpaid();
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(
@@ -165,7 +165,7 @@ class Page extends AbstractPage {
 		# Redirect
 		redirect($this->cur_page);
 	}
-
+	
 	function paid() {
 		# Global Variables
 		global $_db, $validator;

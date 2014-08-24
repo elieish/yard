@@ -80,10 +80,8 @@ class Member extends Model {
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
-							`surname` as 'Surname',				
-							`tel` as 'Tel',
+							`surname` as 'Surname',	
 							`cell` as 'Cell',
-							`email` as 'Email',
 							`provinces`.`province` as 'Province',
 
 						
@@ -141,10 +139,8 @@ class Member extends Model {
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
-							`surname` as 'Surname',					
-							`tel` as 'Tel',
-							`cell` as 'Cell',
-							`email` as 'Email',
+							`surname` as 'Surname',	
+							`cell` as 'Cell', 
 							`provinces`.`province` as 'Province',
 						CONCAT('<a href=\"{$this->cur_page}&action=notpaid&id=', `members`.`uid`, '\">Paid<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Payment',
 						CONCAT('<li class=\"dropdown\">
@@ -152,9 +148,9 @@ class Member extends Model {
                         <i class=\"fa fa-tasks fa-fw\"></i>  <i class=\"fa fa-caret-down\"></i>
                     </a>
                     <ul class=\"dropdown-menu dropdown-user\">
-                        <li><a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\"><i class=\"fa fa-user fa-fw\"></i> Edit</a>
+                        <li><a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\"><i class=\"fa fa-edit fa-fw\"></i> Edit</a>
                         </li>
-                        <li><a href=\"#\"  onclick=\"printPDF()\"><i class=\"fa fa-print fa-fw\"></i> Print </a>
+                        <li><a target=\"_blank\" href=\"../reports.php?member_id=',`members`.`uid`, '\"  onclick=\"printPDF()\"><i class=\"fa fa-print fa-fw\"></i> Print </a>
                         </li>
                         <li><a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"fa fa-trash-o fa-fw\"></i> Delete </a>
                         </li>      
@@ -173,14 +169,14 @@ class Member extends Model {
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
 				$query.= 'AND paid = "Y"';
-			else 
+			if($_GET['v'] == 'unpaid') 
 				$query.= 'AND paid = "N"';
 		}
 		else {
 				$query.= 'ORDER BY
 																				`name`';
 		}
-																			
+														
 		$listing= paginated_listing($query);
 		
 		
@@ -219,8 +215,30 @@ class Member extends Model {
 		$query = "SELECT COUNT(*) FROM `members` WHERE `active` = 1 AND `paid` = 1 ";
 		$total = $_db->fetch_single($query);
 		return ($total <> 0)?$total : '0';
-	}	
+	}
 	
+	public function report_query($value='')
+	{
+		global $_db;
+		
+		$query		= "	SELECT
+							`created_at` as 'Registration Date',
+							`membership_no` as 'Membership No.',
+							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
+							`name` as 'Name',
+							`surname` as 'Surname',	
+							`cell` as 'Cell', 
+							`provinces`.`province` as 'Province'
+						FROM
+								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` 
+						WHERE
+								`members`.`active` = 1
+								AND `members`.`paid` = 1
+																									
+											";
+											
+		return $_db->fetch($query);;
+	}
 }
 
 # ==========================================================================================
