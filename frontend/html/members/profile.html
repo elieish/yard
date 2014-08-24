@@ -1,0 +1,39 @@
+
+<ul class="breadcrumb">
+	<li><a href="?p=home">Home</a></li>
+	<li><span class="divider">></span></li>
+	<li><a href="?p=members">Members</a>
+		<span class="divider">></span></li>
+		<li>{{name}}</li>
+	</ul>
+
+	<div class="container-fluid">
+
+		<div class="row-fluid">
+
+			<h1>{{name}}</h1>							
+			<div class="tab_heading">
+				<ul id="myTab" class="nav nav-tabs">
+					<li class="tab_head active"><a href="#profile" data-toggle="tab">Edit</a></li>
+				</ul>
+			</div>
+			<div class="tab-content">
+
+				<div id="profile" class="tab-pane active">
+					<div class="span3">
+						{{form}}
+					</div>
+					<div class="span4" style="padding-top: 80px;">
+						<span style="font-size: smaller;">
+							Password strength:
+						</span>
+						<div class="pwstrength_viewport_progress"></div>
+					</div>			
+				</div><!-- /.profile -->
+			</div><!-- /.tab-content -->
+
+		</div><!-- /.row-fluid -->						
+
+	</div><!-- /.content-wrap -->
+
+	<div id="pwd-container" class="row tab-pane active">
