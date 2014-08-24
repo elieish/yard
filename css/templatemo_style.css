@@ -309,7 +309,7 @@ a.toggle-menu {
 
 .flex-caption {
     position: absolute;
-    wdith: 100%;
+    width: 1140px;
     margin-left: 15px;
     left: 0;
     bottom: 100px;
@@ -987,29 +987,7 @@ div.contact-form input.mainBtn {
     top:1px;
 }
 
-  .myButton {
-    background-color:#3c00ff;
-    -moz-border-radius:42px;
-    -webkit-border-radius:42px;
-    border-radius:42px;
-    display:inline-block;
-    cursor:pointer;
-    color:#ffffff;
-    font-family:arial;
-    font-size:28px;
-    padding:16px 76px;
-    text-decoration:none;
-    text-shadow:0px -50px 0px #2f6627;
-}
-.myButton:hover {
-    background-color:#5cbf2a;
-}
-.myButton:active {
-    position:relative;
-    top:1px;
-}
-
-        
+     
      
         
 
