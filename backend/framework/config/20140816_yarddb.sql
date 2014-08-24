@@ -259,5 +259,9 @@ INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
 VALUES  (3, 'Provincial', 'Provincial Administration', 'Admin');
 INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
 VALUES  (4, 'National', 'National Administration', 'Admin');
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (5, 'Local', 'Local Administration', 'Admin');
+
+
 
 
