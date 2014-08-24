@@ -262,6 +262,16 @@ VALUES  (4, 'National', 'National Administration', 'Admin');
 INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
 VALUES  (5, 'Local', 'Local Administration', 'Admin');
 
+CREATE TABLE IF NOT EXISTS `districts` (
+  `uid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `province_id` int(11) NOT NULL DEFAULT '0',
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`
+)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 
 
