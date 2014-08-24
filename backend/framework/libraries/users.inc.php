@@ -77,7 +77,7 @@ function user_profile($uid=0,$cur_page) {
 
 	# Generate Content For Tabs
 	$tab_data				= array(	"Details"			=> "<h3>Details</h3>\n
-				                                              ". $user->form(),
+				                                              ". $user->form($cur_page),
 										"Authorizations"	=> user_auths($uid,$cur_page),
 										"Comments"			=> comments_page("u" . $uid),
 										"Attachments"		=> attachments_page("u" . $uid)

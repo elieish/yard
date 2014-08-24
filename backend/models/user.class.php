@@ -43,7 +43,7 @@ class User extends Model {
 		global $_db;
 
 		# Generate Form
-		$form														= new Form("{$cur_page}&action=save");
+		$form			= new Form("{$cur_page}&action=save");
 		//			Label				Type			Name				Value
 		$form->add(""					, "hidden"		, "uid"				, $this->uid);
 		$form->add("Username"			, "text"		, "username"		, $this->username);

@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
  * @package Project
@@ -12,15 +12,15 @@
 # =========================================================================
 
 # System Settings
-$_GLOBALS['title']            = "AME Email2Fax Service";
+$_GLOBALS['title']            = "Yard Development";
 $_GLOBALS['max_results']      = 20;
 $_GLOBALS['default_page']     = "home";
 $_GLOBALS['default_action']   = "display";
 $_GLOBALS['log_file']         = "/var/log/ame_fax/" . date("Y-m-d") . ".log";
 $_GLOBALS['base_dir']         = dirname(dirname(dirname(dirname(__FILE__)))) . "/";
 
-$_GLOBALS['base_url']         = (php_sapi_name() != 'cli')  
-    ? $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . "/../../" 
+$_GLOBALS['base_url']         = (php_sapi_name() != 'cli')
+    ? $_SERVER['SERVER_NAME'] . dirname($_SERVER['REQUEST_URI']) . "/../../"
     : '';
 
 $_GLOBALS['upload_dir']       = $_GLOBALS['base_dir'] . "files/";
