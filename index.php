@@ -20,9 +20,9 @@ $province       = provinces_select();
     <meta name="viewport" content="initial-scale=1">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/templatemo_style.css">
     <!-- JavaScripts -->
@@ -36,492 +36,272 @@ $province       = provinces_select();
     <script src="js/templatemo_custom.js"></script>
     <script src="js/jquery-git2.js"></script><!-- previous next script -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
   </head>
   <body>
-  <!-- title start -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <div class="templatemo_title templatemo_search">
-                    <a href="registration.php"><img src='images/joinus2.jpeg' height="100px" /></a>
-                    <a href="frontend/login.php"><img src='images/login_icon.png'  height="100px" /></a>
-                </div>
-                <div class="templatemo_subtitle"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-sm-6">
-                <div class="templatemo_title"><a href="#">YARD</a></div>
-                <div class="templatemo_subtitle"></div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-                <form id="search_form">
-                    <div class="templatemo_search">
-                        <input name="search" type="text" placeholder="Search here .... " id="search">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-  <!-- title end -->
-    <div class="site-header">
-        <div class="main-navigation">
+
+        <div class="site-header">
             <div class="container">
-                <div class="row">
-                <div class="col-md-12">
-                    <!-- This one in here is responsive menu for tablet and mobiles -->
-                  <div class="responsive-navigation visible-sm visible-xs">
-                   <a href="#" class="menu-toggle-btn">
-                    <i class="fa fa-bars fa-2x"></i>
-                  </a>
-                 <div class="navigation responsive_menu">
-                     <ul>
-                    <li><a class="show-1 templatemo_home" href="#">Main Page</a></li>
-                    <li><a class="show-2 templatemo_page2" href="#">Service</a></li>
-                    <li><a class="show-3 templatemo_page3" href="#">Portfolio</a></li>
-                    <li><a class="show-5 templatemo_page5" href="#">Contact</a></li>
-                </ul>
-            </div> <!-- /.responsive_menu -->
-         </div> <!-- /responsive_navigation -->
-                </div>
-            </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                     <div class="col-md-12 navigation">
-                        <div class="row main_menu">
-                            <div class="col-md-2"><a id="prev">Prev</a></div>
-                            <div class="col-md-2"><a class="show-1 templatemo_home" href="#"><div class="fa fa-home"></div></a></div>
-                            <div class="col-md-2"><a class="show-2 templatemo_page2" href="#"><div class="fa fa-wrench"></div></a></div>
-                            <div class="col-md-2"><a class="show-3 templatemo_page3" href="#"><div class="fa fa-picture-o"></div></a></div>
-                            <div class="col-md-2"><a class="show-5 templatemo_page5" href="#"><div class="fa fa-phone"></div></a></div>
-                            <div class="col-md-2"><a id="next">Next</a></div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="menu-container">
-
-    <div class="divs">
-<!-- homepage start -->
-    <div class="content homepage" id="menu-1">
-    <div class="container">
-        <div class="row">
-            <!-- Large modal -->
-            <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Join Us</button>
-
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="myModalLabel">YARD MEMBERSHIP REGISTRATION</h4>
-                </div>
-                <div class="modal-body">
+                <div class="main-header">
                     <div class="row">
-                                <div class="col-lg-6">
-                                    <form role="form" action='registration.php' method='POST' id='registration' >
+                        <div class="col-md-4 col-sm-6 col-xs-10">
+                            <div class="logo">
+                                <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_409_travel">
+                                    <img src="images/logo.png" alt="travel by templatemo" title="travel - free html5 template">
+                                </a>
+                            </div> <!-- /.logo -->
+                        </div> <!-- /.col-md-4 -->
+                        <div class="col-md-8 col-sm-6 col-xs-2">
+                            <div class="main-menu">
+                                <ul class="visible-lg visible-md">
+                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="#">Members</a></li>
+									<li><a href="#">Projects</a></li>
+                                	<li><a href="#">Governance</a></li>
+									<li><a href="#">Contribute</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                                <a href="#" class="toggle-menu visible-sm visible-xs">
+                                    <i class="fa fa-bars"></i>
+                                </a>
+                            </div> <!-- /.main-menu -->
+                        </div> <!-- /.col-md-8 -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.main-header -->
+                <div class="row">
+                    <div class="col-md-12 visible-sm visible-xs">
+                        <div class="menu-responsive">
+                            <ul>
+                                <li class="active"><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="#">Members</a></li>
+								<li><a href="#">Projects</a></li>
+                                <li><a href="#">Governance</a></li>
+								<li><a href="#">Contribute</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div> <!-- /.menu-responsive -->
+                    </div> <!-- /.col-md-12 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.site-header -->
 
-                                        <div class="form-group">
-                                            <label>Title</label>
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <div class="overlay"></div>
+                    <img src="images/templatemo_slide_1.jpg" alt="Special 1">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-4">
+                                <div class="flex-caption visible-lg">
 
-                                            <?php print $title;?>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Name:</label>
-                                            <input class="form-control" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
+                                    <h3 class="title">OUR AIMS</h3>
+                                    <p>The Aims of YARD are to:
+                                        Promote and support the developmental objectives of disadvantaged and impoverished youth, through self-help collective programmes and organizational structures of YARD, in rural and similarly underdeveloped areas . . . </p>
+                                        <br>
 
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Surname:</label>
-                                            <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
-                                        </div>
-                                                    <div class="form-group">
-                                            <label>Gender</label>
-                                           <select class="form-control" name="gender" id="gender">
-                                                <option value="0">Select One</option>
-                                                <option value="1">Male</option>
-                                                <option value="2">Female</option>
-                                            </select>
+                            			<!--<a rel="nofollow" href="http://unsplash.com">Unsplash</a>.</p>-->
+                                    <!--<a href="#" class="slider-btn">Pre-booking</a>-->
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="overlay"></div>
+                    <img src="images/templatemo_slide_2.jpg" alt="Special 2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-4">
+                                <div class="flex-caption visible-lg">
 
-                                       <div class="form-group">
-                                            <label>Date of Birth:</label>
-                                            <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Telephone:</label>
-                                            <input class="form-control" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
-                                        </div>
-                                         <div class="form-group">
-                                            <label>Cellphone:</label>
-                                            <input class="form-control" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Email:</label>
-                                            <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
-                                            <p class="help-block">email@example.com</p>
-                                        </div>
-                                                            <div class="form-group">
-                                            <label>Province:</label>
-                                           <?php print $province;?>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>District:</label>
-                                            <div id='district'></div>
-                                        </div>
-                                        <input type='hidden' id='registrationnumber' name="registrationnumber"/>
-
-
-
-                                     <div class="form-group">
-                                     <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
-                                     </div>
-
-                                    </form>
+                                    <h3 class="title">OUR OBJECTIVES</h3>
+                                    <p>The Ancillary Objectives of YARD ensure that the development objectives of disadvantaged and impoverished youth, in self-help collective programmes and organizational structures, in rural and similarly underdeveloped areas, are achieved in terms of . . . . </p>
+                                    <!--<a href="#" class="slider-btn">Reserve Now</a>-->
                                 </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-              </div>
-            </div>
-            </div>
-
-
-        </div>
-    </div>
-    </div>
-<!-- homepage end -->
-
-<!-- service start -->
-    <div class="content service" id="menu-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8">
-              <!--  <p>Solidity is free responsive template for everyone. Donec euismod, justo sed convallis blandit, ipsum erat mattis lectus, vel pharetra neque enim tristique risus.</p> -->
-            </div>
-            <div clas="col-md-4">
-              <a href="#"><img src="images/portfolio/image01.jpg" height="200px" /></a>
-
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Our Services</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-12 templatemo_servicegap">
-                <div class="templatemo_icon">
-                    <span class="fa fa-flask"></span>
-                </div>
-                <div class="templatemo_greentitle">Heading</div>
-                <div class="clear"></div>
-                <!-- <p>Solidity is free responsive template for everyone. Donec euismod, justo sed convallis blandit, ipsum erat mattis lectus, vel pharetra neque enim tristique risus.</p> -->
-            </div>
-            <div class="col-md-3 col-sm-12 templatemo_servicegap">
-                 <div class="templatemo_icon">
-                    <span class="fa fa-bug"></span>
-                </div>
-                <div class="templatemo_greentitle">Heading</div>
-                <div class="clear"></div>
-                <!-- <p>Credit goes to <a rel="nofollow" href="http://unsplash.com">Unsplash</a> for images used in homepage slider and portfolio section. Donec euismod, justo sed convallis blandit, ipsum erat mattis lectus.</p> -->
-            </div>
-            <div class="col-md-3 col-sm-12 templatemo_servicegap">
-                <div class="templatemo_icon">
-                    <span class="fa fa-pencil-square-o"></span>
-                </div>
-                <div class="templatemo_greentitle">Heading</div>
-                <div class="clear"></div>
-                <!-- <p>Nam auctor elementum dolor. Donec euismod, justo sed convallis blandit, ipsum erat mattis lectus, vel pharetra neque enim tristique risus. Ut consequat nisi vel justo. </p> -->
-            </div>
-            <div class="col-md-3 col-sm-12 templatemo_servicegap">
-                <div class="templatemo_icon">
-                    <span class="fa fa-shield"></span>
-                </div>
-                <div class="templatemo_greentitle">Heading</div>
-                <div class="clear"></div>
-               <!--  <p>Nam auctor elementum dolor. Donec euismod, justo sed convallis blandit, ipsum erat mattis lectus, vel pharetra neque enim tristique risus. Ut consequat nisi vel justo. </p> -->
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Heading</h1>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="row">
-            <div class="col-md-4 col-sm-12 templatemo_servicegap">
-            <!-- <img src="images/member1.jpg" alt="Tracy - Designer"> -->
-                <div class="templatemo_email">
-                    <a href="#"><div class="fa fa-envelope"></div></a>
-                </div>
-                <div class="clear"></div>
-                <div class="templatemo_teamtext">
-                    <div class="templatemo_teamname">
-                      <!--   <div class="templatemo_teamtitle">Tracy</div>
-                      <div class="templatemo_teampost">Designer</div> -->
-                    </div>
-                    <div class="templatemo_teamsocial">
-                        Find me on:
-                        <div>
-                            <a href="#"><div class="fa fa-facebook"></div></a>
-                            <a href="#"><div class="fa fa-twitter"></div></a>
-                            <a href="#"><div class="fa fa-linkedin"></div></a>
-                            <a href="#"><div class="fa fa-rss"></div></a>
+                            </div>
                         </div>
                     </div>
-               </div>
-            </div>
-            <div class="col-md-4 col-sm-12 templatemo_servicegap">
-               <!--  <img src="images/member2.jpg" alt="service 02"> -->
-                <div class="templatemo_email">
-                    <a href="#"><div class="fa fa-envelope"></div></a>
-                </div>
-                <div class="clear"></div>
-                <div class="templatemo_teamtext">
-                    <div class="templatemo_teamname">
-                      <!--   <div class="templatemo_teamtitle">Mary</div>
-                      <div class="templatemo_teampost">Developer</div> -->
-                    </div>
-                    <div class="templatemo_teamsocial">
-                        Find me on:
-                        <div>
-                            <a href="#"><div class="fa fa-facebook"></div></a>
-                            <a href="#"><div class="fa fa-twitter"></div></a>
-                            <a href="#"><div class="fa fa-linkedin"></div></a>
-                            <a href="#"><div class="fa fa-rss"></div></a>
-                        </div>
-                    </div>
-               </div>
-             </div>
-            <div class="col-md-4 col-sm-12 templatemo_servicegap">
-            <!--     <img src="images/member3.jpg" alt="service 03"> -->
-                <div class="templatemo_email">
-                    <a href="#"><div class="fa fa-envelope"></div></a>
-                </div>
-                <div class="clear"></div>
-                <div class="templatemo_teamtext">
-                    <div class="templatemo_teamname">
-                      <!--   <div class="templatemo_teamtitle">Julia</div>
-                      <div class="templatemo_teampost">Director</div> -->
-                    </div>
-                    <div class="templatemo_teamsocial">
-                        Find me on:
-                        <div>
-                            <a href="#"><div class="fa fa-facebook"></div></a>
-                            <a href="#"><div class="fa fa-twitter"></div></a>
-                            <a href="#"><div class="fa fa-linkedin"></div></a>
-                            <a href="#"><div class="fa fa-rss"></div></a>
-                        </div>
-                    </div>
-               </div>
-            </div>
-        </div>
-    </div>
-    </div>
-<!-- service end -->
+                </li>
+                <li>
+                    <div class="overlay"></div>
+                    <img src="images/templatemo_slide_3.jpg" alt="Special 3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5 col-lg-4">
+                                <div class="flex-caption visible-lg">
 
-<!-- portfolio start -->
-<div class="content portfolio" id="menu-3">
-  <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Our portfolio</h1>
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="row templatemo_portfolio">
-            <div class="col-md-4 col-sm-12">
-                <div class="gallery-item">
-                           <!--  <img src="images/portfolio/image01.jpg" alt="gallery 1">
-                           <div class="overlay">
-                               <a href="images/portfolio/image01.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                           </div> -->
-                        </div>
-          </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="gallery-item">
-                          <!--   <img src="images/portfolio/image02.jpg" alt="gallery 2">
-                          <div class="overlay">
-                              <a href="images/portfolio/image02.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                          </div> -->
-                        </div>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="gallery-item">
-                           <!--  <img src="images/portfolio/image03.jpg" alt="gallery 3">
-                           <div class="overlay">
-                               <a href="images/portfolio/image03.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                           </div> -->
-                        </div>
-            </div>
-        </div>
-        <div class="row templatemo_portfolio">
-            <div class="col-md-3 col-sm-12">
-                <div class="gallery-item">
-                         <!--    <img src="images/portfolio/image04.jpg" alt="gallery 4">
-                         <div class="overlay">
-                             <a href="images/portfolio/image04.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                         </div> -->
-                        </div>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="gallery-item">
-                            <!-- <img src="images/portfolio/image05.jpg" alt="gallery 5">
-                            <div class="overlay">
-                                <a href="images/portfolio/image05.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                            </div> -->
-                        </div>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="gallery-item">
-                            <!-- <img src="images/portfolio/image06.jpg" alt="gallery 6">
-                            <div class="overlay">
-                                <a href="images/portfolio/image06.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                            </div> -->
-                        </div>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="gallery-item">
-                           <!--  <img src="images/portfolio/image07.jpg" alt="gallery 7">
-                           <div class="overlay">
-                               <a href="images/portfolio/image07.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                           </div> -->
-                        </div>
-            </div>
-        </div>
-        <div class="row templatemo_portfolio">
-            <div class="col-md-2 col-sm-12">
-                <div class="gallery-item">
-                            <!-- <img src="images/portfolio/image08.jpg" alt="gallery 8">
-                            <div class="overlay">
-                                <a href="images/portfolio/image08.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                            </div> -->
-                        </div>
-            </div>
-            <div class="col-md-2 col-sm-12">
-                <div class="gallery-item">
-                           <!--  <img src="images/portfolio/image09.jpg" alt="gallery 9">
-                           <div class="overlay">
-                               <a href="images/portfolio/image09.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                           </div> -->
-                        </div>
-            </div>
-            <div class="col-md-4 col-sm-12 templatemo_imagecontrol">
-                <div class="gallery-item">
-                           <!--  <img src="images/portfolio/image10.jpg" alt="gallery 10">
-                           <div class="overlay">
-                               <a href="images/portfolio/image10.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                           </div> -->
-                        </div>
-            </div>
-            <div class="col-md-2 col-sm-12">
-                <div class="gallery-item">
-                           <!--  <img src="images/portfolio/image11.jpg" alt="gallery 11">
-                           <div class="overlay">
-                               <a href="images/portfolio/image11.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                           </div> -->
-                        </div>
-            </div>
-            <div class="col-md-2 col-sm-12">
-                <div class="gallery-item">
-                          <!--   <img src="images/portfolio/image12.jpg" alt="gallery 12">
-                          <div class="overlay">
-                              <a href="images/portfolio/image12.jpg" data-rel="lightbox" class="fa fa-arrows-alt"></a>
-                          </div> -->
-                        </div>
-            </div>
-        </div>
-  </div>
-  </div>
-<!-- portfolio end -->
+                                    <h3 class="title">MISSION STATEMENT</h3>
+                                    <p>YARD undergirds stable socio-economic growth and national development, through cultivating and availing support resources, while administrating and managing their distribution, for youth-led entrepreneurial projects and their related organizational needs throughout South Africa.</p>
+                                    <!--<a href="#" class="slider-btn">&nbsp;</a>-->
+                                </div>
+                            </div>
 
-<!-- contact start -->
-<div class="content contact" id="menu-5">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>Contact us</h1>
-        </div>
-    </div>
-      <div class="clear"></div>
-    <div  class="row">
-        <div class="col-md-12">
-            <div class="templatemo_contactmap">
-                <div id="templatemo_map"></div>
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
-    <div class="row">
-        <div class="col-md-8 col-sm-12">
-            <form action="#" id="contact_form">
-            <div class="templatemo_textbox"><input name="fullname" type="text" class="form-control" id="fullname" placeholder="Your Name"></div>
-            <div class="templatemo_textbox"><input name="email" type="text" class="form-control" id="email" placeholder="Your Email"></div>
-            <div class="clear"></div>
-             <div class="templatemo_textareabox"><textarea name="message" class="form-control" id="message"  placeholder="Your message ... "></textarea>
-             <div class="clear"></div>
-             <button type="button" class="btn btn-primary">Send Message</button>
-             </div>
-             </form>
-             <div class="clear"></div>
-        </div>
-        <div class="col-md-4 col-sm-12 templatemo_address">
-            <ul>
-                <li class="fa fa-phone"></li>
-                <li class="text">000 000 0000</li>
-                <li class="fa fa-map-marker"></li>
-                <li class="text">Test, Text</li>
-                <li class="fa fa-envelope"></li>
-                <li class="text">admin@yardweb.co.za</li>
-                <li class="fa fa-globe"></li>
-                <li class="text"><a href="#">www.yardweb.co.za</a></li>
+                        </div>
+                    </div>
+                </li>
             </ul>
-        </div>
-    </div>
-  </div>
-  </div>
-<!-- contact end -->
-    </div>
-</div>
-    <!-- footer start -->
-    <div class="clear"></div>
-        <div class="templatemo_footer">
+        </div> <!-- /.flexslider -->
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="our-listing owl-carousel">
+                 <!--   <div class="list-item">
+                        <div class="list-thumb">
+                            <div class="title">
+                                <h4>Italy</h4>
+                            </div>
+                            <img src="images/destination_1.jpg" alt="destination 1">
+                        </div> <!-- /.list-thumb
+                        <div class="list-content">
+                            <h5>Rome, Milan, Naples</h5>
+                            <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
+                            <a href="#" class="price-btn">$1,800 Book Now</a>
+                        </div>
+                    </div>-->
+                    <div class="list-item">
+                        <div class="list-thumb">
+                            <div class="title">
+                                <h4>OUR AIMS</h4>
+                            </div>
+                            <img src="images/destination_2.jpg" alt="destination 2">
+                        </div> <!-- /.list-thumb -->
+                        <div class="list-content">
+                            <h5></h5>
+                            <span>&nbsp;</span>
+                            <a href="about.html" class="price-btn">MORE INFO</a>
+                        </div> <!-- /.list-content -->
+                    </div> <!-- /.list-item -->
+                    <div class="list-item">
+                        <div class="list-thumb">
+                            <div class="title">
+                                <h4>OUR OBJECTIVES</h4>
+                            </div>
+                            <img src="images/destination_3.jpg" alt="destination 3">
+                        </div> <!-- /.list-thumb -->
+                        <div class="list-content">
+                            <h5></h5>
+                            <span>&nbsp;</span>
+                            <a href="about.html" class="price-btn">MORE INFO</a>
+                        </div> <!-- /.list-content -->
+                    </div> <!-- /.list-item -->
+                    <div class="list-item">
+                        <div class="list-thumb">
+                            <div class="title">
+                                <h4>ORGANIZATIONAL STRUCTURE</h4>
+                            </div>
+                            <img src="images/destination_4.jpg" alt="destination 4">
+                        </div> <!-- /.list-thumb -->
+                        <div class="list-content">
+                            <h5></h5>
+                            <span>&nbsp;</span>
+                            <a href="about.html" class="price-btn">MORE INFO</a>
+                        </div> <!-- /.list-content -->
+                    </div> <!-- /.list-item -->
+                    <div class="list-item">
+                        <div class="list-thumb">
+                            <div class="title">
+                                <h4>VIDEOS</h4>
+                            </div>
+                            <img src="images/destination_5.jpg" alt="destination 5">
+                        </div> <!-- /.list-thumb -->
+                        <div class="list-content">
+                            <h5></h5>
+                            <span>&nbsp;</span>
+                            <a href="#" class="price-btn">MORE VIDEOS</a>
+                        </div> <!-- /.list-content -->
+                    </div> <!-- /.list-item -->
+                </div> <!-- /.our-listing -->
+            </div> <!-- /.row -->
+        </div> <!-- /.container -->
+
+		<div class="middle-content"></div>
+
+        <div class="partner-list">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                    Copyright © 2014 YARD <a href="frontend/login.php">Admin</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    <!-- footer end -->
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="partner-item">
 
-  </body>
+                        </div> <!-- /.partner-item -->
+                    </div> <!-- /.col-md-2 -->
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="partner-item">
 
-   <script src="js/jquery-1.11.0.js"></script>
+                        </div> <!-- /.partner-item -->
+                    </div> <!-- /.col-md-2 -->
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="partner-item">
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-     <!-- Bootstrap Core JavaScript -->
-    <script src="js/jquery-ui.min.js"></script>
+                        </div> <!-- /.partner-item -->
+                    </div> <!-- /.col-md-2 -->
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="partner-item">
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+                        </div> <!-- /.partner-item -->
+                    </div> <!-- /.col-md-2 -->
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="partner-item">
 
-    <!-- Custom Theme JavaScript -->
-    <script src="js/sb-admin-2.js"></script>
-    <script src="js/main.js"></script>
+                        </div> <!-- /.partner-item -->
+                    </div> <!-- /.col-md-2 -->
+                    <div class="col-md-2 col-sm-4 col-xs-6">
+                        <div class="partner-item last">
+
+                        </div> <!-- /.partner-item -->
+                    </div> <!-- /.col-md-2 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.partner-list -->
+
+
+
+        <div class="site-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="footer-logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div> <!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <div class="copyright">
+                            <span>Copyright &copy; 2014 <a href="#">YARD</a></span>
+                        </div>
+                    </div> <!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-4">
+                        <ul class="social-icons">
+                            <li><a href="#" class="fa fa-facebook"></a></li>
+                            <li><a href="#" class="fa fa-twitter"></a></li>
+                            <li><a href="#" class="fa fa-linkedin"></a></li>
+                        </ul>
+                    </div> <!-- /.col-md-4 -->
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+        </div> <!-- /.site-footer -->
+
+        <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+         <!-- Bootstrap Core JavaScript -->
+        <script src="js/jquery-ui.min.js"></script>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/sb-admin-2.js"></script>
+        <script src="js/main.js"></script>
 
 </html>
+

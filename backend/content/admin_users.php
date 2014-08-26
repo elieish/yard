@@ -89,20 +89,20 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 
 		# Get POST Data
-		$uid															= $validator->validate($_POST['uid'], "Integer");
-		$user															= new User($uid);
-		$user->username													= $validator->validate($_POST['username'], "AlphaNumeric");
-		$user->first_name												= $validator->validate($_POST['first_name'], "String");
-		$user->last_name												= $validator->validate($_POST['last_name'], "String");
-		$user->email													= $validator->validate($_POST['email'], "Email");
-		$user->tel														= $validator->validate($_POST['tel'], "String");
-		$user->mobile													= $validator->validate($_POST['mobile'], "String");
-		$user->fax														= $validator->validate($_POST['fax'], "String");
-		$password														= $validator->validate($_POST['password'], "String");
+		$uid				= $_POST['uid'];
+		$user				= new User($uid);
+		$user->username		= $_POST['username'];
+		$user->first_name	= $_POST['first_name'];
+		$user->last_name	= $_POST['last_name'];
+		$user->email		= $_POST['email'];
+		$user->tel			= $_POST['tel'];
+		$user->mobile		= $_POST['mobile'];
+		$user->fax			= $_POST['fax'];
+		$password			= $_POST['password'];
 
 		# Update Password
 		if (strlen($password)) {
-			$user->password												= $password;
+			$user->password	= $password;
 		}
 
 		# Save User
