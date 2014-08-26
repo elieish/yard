@@ -22,7 +22,6 @@ jQuery(document).ready(function($) {
 	        return false;
 	    });
 
-
     $('#province').change(function(){
     	var url = 'ajax.php?action=district_select';
      	url     += '&province=' + this.value;

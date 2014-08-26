@@ -54,9 +54,9 @@ $province       = provinces_select();
                         <div class="col-md-8 col-sm-6 col-xs-2">
                             <div class="main-menu">
                                 <ul class="visible-lg visible-md">
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="index.php">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">Members</a></li>
+                                    <li><a href="members.html">Members</a></li>
 									<li><a href="#">Projects</a></li>
                                 	<li><a href="#">Governance</a></li>
 									<li><a href="#">Contribute</a></li>
@@ -73,7 +73,7 @@ $province       = provinces_select();
                     <div class="col-md-12 visible-sm visible-xs">
                         <div class="menu-responsive">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="#">Members</a></li>
 								<li><a href="#">Projects</a></li>
