@@ -1,3 +1,22 @@
+<?php
+/**
+ * Yard Development: AJAX Script
+ *
+ * @author Elie ishimwe <elieish@gmail.com>
+ * @version 1.0
+ * @package YARD Development
+ */
+# Start Session
+session_start();
+
+# Include Required Scripts
+include_once(dirname(__FILE__). "/backend/framework/include.php");
+Application::include_models();
+Application::include_helpers();
+Application::db_connect();
+$title          = titles_select();
+$province       = provinces_select();
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -6,7 +25,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Members Page - Tared</title>
+    <title>Members Page</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="templatemo">
@@ -125,9 +144,11 @@
                 <div class="service-content">
 
                     <ul class="nav nav-pills nav-stacked">
-                      <li class="active"><a href="#">Local<br>Click here   </a></li>
+                      <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">Local<br>Click here   </a></li>
 
                   </ul>
+                  <!-- <button  data-target=".bs-example-modal-lg">Large modal</button> -->
+
               </div> <!-- /.service-content -->
           </div> <!-- /.service-item -->
 
@@ -214,11 +235,6 @@
         </div> <!-- /.sample-thumb -->
         <div class="panel panel-default">
           <div class="panel-heading">The local level of YARD is where the most important work of the organization is done. This level receives the highest intensity of input and resourcing; is the most critical level for the aimed development outcomes and is monitored, supported and evaluated regularly to ensure the achievements of the desired results.<br></div>
-
-
-
-
-
       </div>
       <ul class="nav nav-pills nav-stacked">
           <li class="active"><a href="#">MINUTES AND NOTICES<br>Click here   </a></li>
@@ -271,10 +287,84 @@
     </div> <!-- /.container -->
 </div> <!-- /.partner-list -->
 
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">MEMBERSHIP REGISTRATION FORM</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form" action='registration.php' method='POST' id='registration' >
 
+                            <div class="form-group">
+                                <label>Title</label>
 
+                                <?php print $title;?>
+                            </div>
+                            <div class="form-group">
+                                <label>Name:</label>
+                                <input class="form-control" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
 
-<div class="site-footer">
+                            </div>
+                            <div class="form-group">
+                                <label>Surname:</label>
+                                <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <select class="form-control" name="gender" id="gender">
+                                    <option value="0">Select One</option>
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Date of Birth:</label>
+                                <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
+                            </div>
+                            <div class="form-group">
+                                <label>Telephone:</label>
+                                <input class="form-control" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
+                            </div>
+                            <div class="form-group">
+                                <label>Cellphone:</label>
+                                <input class="form-control" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
+                            </div>
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
+                                <p class="help-block">email@example.com</p>
+                            </div>
+                            <div class="form-group">
+                                <label>Province:</label>
+                                <?php print $province;?>
+                            </div>
+                            <div class="form-group">
+                                <label>District:</label>
+                                <div id='district'></div>
+                            </div>
+                            <input type='hidden' id='registrationnumber' name="registrationnumber"/>
+                            <div class="form-group">
+                               <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
+                           </div>
+
+                       </form>
+                   </div>
+               </div>
+               <!-- Modal -->
+               <!-- Button trigger modal -->
+           </div>
+           <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+       </div>
+   </div>
+   <div class="site-footer">
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-4">
