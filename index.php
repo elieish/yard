@@ -1,30 +1,44 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>YARD</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-		<meta name="author" content="templatemo">
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
-        
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/templatemo_misc.css">
-        <link rel="stylesheet" href="css/templatemo_style.css">
+<?php
+# Start Session
+session_start();
 
-        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
-        <![endif]-->
+# Include Required Scripts
+include_once(dirname(__FILE__). "/backend/framework/include.php");
+Application::include_models();
+Application::include_helpers();
+Application::db_connect();
 
-        
+$title          = titles_select();
+$province       = provinces_select();
+?>
+<html>
+  <head>
+    <title>Yard</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/templatemo_misc.css">
+    <link rel="stylesheet" href="css/templatemo_style.css">
+    <!-- JavaScripts -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.singlePageNav.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+
+    <script src="js/custom.js"></script>
+     <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.lightbox.js"></script>
+    <script src="js/templatemo_custom.js"></script>
+    <script src="js/jquery-git2.js"></script><!-- previous next script -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+  </head>
+  <body>
 
         <div class="site-header">
             <div class="container">
@@ -40,9 +54,9 @@
                         <div class="col-md-8 col-sm-6 col-xs-2">
                             <div class="main-menu">
                                 <ul class="visible-lg visible-md">
-                                    <li class="active"><a href="index.html">Home</a></li>
+                                    <li class="active"><a href="index.php">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">Members</a></li>
+                                    <li><a href="members.html">Members</a></li>
 									<li><a href="#">Projects</a></li>
                                 	<li><a href="#">Governance</a></li>
 									<li><a href="#">Contribute</a></li>
@@ -59,7 +73,7 @@
                     <div class="col-md-12 visible-sm visible-xs">
                         <div class="menu-responsive">
                             <ul>
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="#">Members</a></li>
 								<li><a href="#">Projects</a></li>
@@ -73,7 +87,6 @@
             </div> <!-- /.container -->
         </div> <!-- /.site-header -->
 
-
         <div class="flexslider">
             <ul class="slides">
                 <li>
@@ -83,12 +96,12 @@
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
                                 <div class="flex-caption visible-lg">
-                                    
+
                                     <h3 class="title">OUR AIMS</h3>
                                     <p>The Aims of YARD are to:
-Promote and support the developmental objectives of disadvantaged and impoverished youth, through self-help collective programmes and organizational structures of YARD, in rural and similarly underdeveloped areas . . . </p>
- <br>
-										
+                                        Promote and support the developmental objectives of disadvantaged and impoverished youth, through self-help collective programmes and organizational structures of YARD, in rural and similarly underdeveloped areas . . . </p>
+                                        <br>
+
                             			<!--<a rel="nofollow" href="http://unsplash.com">Unsplash</a>.</p>-->
                                     <!--<a href="#" class="slider-btn">Pre-booking</a>-->
                                 </div>
@@ -103,7 +116,7 @@ Promote and support the developmental objectives of disadvantaged and impoverish
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
                                 <div class="flex-caption visible-lg">
-                                    
+
                                     <h3 class="title">OUR OBJECTIVES</h3>
                                     <p>The Ancillary Objectives of YARD ensure that the development objectives of disadvantaged and impoverished youth, in self-help collective programmes and organizational structures, in rural and similarly underdeveloped areas, are achieved in terms of . . . . </p>
                                     <!--<a href="#" class="slider-btn">Reserve Now</a>-->
@@ -119,20 +132,21 @@ Promote and support the developmental objectives of disadvantaged and impoverish
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
                                 <div class="flex-caption visible-lg">
-                                    
+
                                     <h3 class="title">MISSION STATEMENT</h3>
                                     <p>YARD undergirds stable socio-economic growth and national development, through cultivating and availing support resources, while administrating and managing their distribution, for youth-led entrepreneurial projects and their related organizational needs throughout South Africa.</p>
                                     <!--<a href="#" class="slider-btn">&nbsp;</a>-->
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </li>
             </ul>
         </div> <!-- /.flexslider -->
 
-        
-        
+
+
         <div class="container">
             <div class="row">
                 <div class="our-listing owl-carousel">
@@ -212,39 +226,39 @@ Promote and support the developmental objectives of disadvantaged and impoverish
                 <div class="row">
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
-                            
+
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
-                           
+
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
-                            
+
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
-                            
+
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
-                            
+
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item last">
-                            
+
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.partner-list -->
 
-		
+
 
         <div class="site-footer">
             <div class="container">
@@ -277,10 +291,17 @@ Promote and support the developmental objectives of disadvantaged and impoverish
         <script src="js/bootstrap.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <!-- mackdollvins -->
-<!-- 
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+         <!-- Bootstrap Core JavaScript -->
+        <script src="js/jquery-ui.min.js"></script>
 
--->
-        
-    </body>
+        <!-- Metis Menu Plugin JavaScript -->
+        <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="js/sb-admin-2.js"></script>
+        <script src="js/main.js"></script>
+
 </html>
+

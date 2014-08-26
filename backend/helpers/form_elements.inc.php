@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @package Project
@@ -14,7 +14,7 @@
 /*
 	To simplify the creation of Drop-down boxes (select tags), use the generate_select_values()
 	function. The syntax is as follows:
-	
+
 	generate_select_values($table_name, $id_field, $label_field);
 */
 
@@ -186,7 +186,7 @@ function member_select() {
 function titles_select($flag,$selected_value) {
 	# Global Variables
 	global $_db;
-	
+
 	# Get Data
 	$query			= "	SELECT
 							`uid`,
@@ -201,7 +201,7 @@ function titles_select($flag,$selected_value) {
 
 			if($selected_value == $item->uid)
 			{
-				
+
 				$array			.= "<option selected value={$item->uid}>{$item->title}</option>";
 			}
 			else
@@ -209,17 +209,17 @@ function titles_select($flag,$selected_value) {
 				$array 			.= "<option  value={$item->uid}>{$item->title}</option>";
 			}
 
-			
+
 		}
 
 		return "<select class='form-control' name='title' id='title'><option value=0>Select One</option>{$array}</select>";
-	
+
 }
 
 function provinces_select($flag,$selected_value) {
 	# Global Variables
 	global $_db;
-	
+
 	# Get Data
 	$query			= "	SELECT
 							`abreviation`,
@@ -234,7 +234,7 @@ function provinces_select($flag,$selected_value) {
 
 			if($selected_value == $item->id)
 			{
-				
+
 				$array			.= "<option selected value={$item->abreviation}>{$item->province}</option>";
 			}
 			else
@@ -242,11 +242,11 @@ function provinces_select($flag,$selected_value) {
 				$array 			.= "<option  value={$item->uid}>{$item->province}</option>";
 			}
 
-			
+
 		}
 
 		return "<select class='form-control' name='province' id='province'><option value=0>Select One</option>{$array}</select>";
-	
+
 }
 
 function province_id($abr) {
@@ -255,7 +255,7 @@ function province_id($abr) {
 
     # Get Data
     $query   = "    SELECT
-                            `uid` 
+                            `uid`
                     FROM
 
                             `provinces`
@@ -267,6 +267,35 @@ function province_id($abr) {
 
     # Return Values
     return $data;
+}
+
+function districts_select($province_code,$selected_value) {
+    # Global Variables
+    global $_db;
+
+    $province_id      = Province::get_id($province_code);
+    $data             = District::listing($province_id);
+
+
+        foreach ($data as $item) {
+
+            if($selected_value == $item->id)
+            {
+
+                $array          .= "<option selected value={$item->code}>{$item->name}</option>";
+            }
+            else
+            {
+                $array          .= "<option  value={$item->code}>{$item->name}</option>";
+            }
+
+
+        }
+
+        return "<select class='form-control' name='district' id='district'><option value=0>Select One</option>{$array}</select>";
+
+        return $data;
+
 }
 
 
