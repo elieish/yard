@@ -363,7 +363,24 @@ VALUES  (44, 'Overberg District Municipality','DC3', 8, 1);
 INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
 VALUES  (45, 'West Coast District Municipality','DC1', 8, 1);
 INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
-VALUES  (46, 'Alfred Nzo District Municipality','DC44', 8, 1);
+VALUES  (46, 'Alfred Nzo District Municipality','DC44', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (47, 'Amathole District Municipality','DC12', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (48, 'Buffalo City Metropolitan Municipality','BUF', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (49, 'Cacadu District Municipality','DC10', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (50, 'Chris Hani District Municipality','DC13', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (51, 'Joe Gqabi District Municipality','DC14', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (52, 'Nelson Mandela Bay Metropolitan Municipality','NMA', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (53, 'OR Tambo District Municipality','DC15', 9, 1);
+
+
+
 
 
 

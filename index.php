@@ -1,11 +1,24 @@
-<!DOCTYPE html>
+<?php
+# Start Session
+session_start();
+
+# Include Required Scripts
+include_once(dirname(__FILE__). "/backend/framework/include.php");
+Application::include_models();
+Application::include_helpers();
+Application::db_connect();
+
+$title          = titles_select();
+$province       = provinces_select();
+?>
+<html>
   <head>
     <title>Yard</title>
     <meta name="description" content="">
     <meta name="keywords" content="" />
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1">
-    
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,12 +29,13 @@
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery.singlePageNav.js"></script>
     <script src="js/jquery.flexslider.js"></script>
-    
+
     <script src="js/custom.js"></script>
      <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery.lightbox.js"></script>
     <script src="js/templatemo_custom.js"></script>
     <script src="js/jquery-git2.js"></script><!-- previous next script -->
+    <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
   <!-- title start -->
@@ -84,13 +98,13 @@
                             <div class="col-md-2"><a class="show-3 templatemo_page3" href="#"><div class="fa fa-picture-o"></div></a></div>
                             <div class="col-md-2"><a class="show-5 templatemo_page5" href="#"><div class="fa fa-phone"></div></a></div>
                             <div class="col-md-2"><a id="next">Next</a></div>
-                            
-                        </div> 
+
+                        </div>
                     </div>
-                </div> 
-            </div> 
-        </div> 
-    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="menu-container">
 
     <div class="divs">
@@ -98,44 +112,89 @@
     <div class="content homepage" id="menu-1">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="main-slider">
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li>
-                            <div class="slider-caption">
-                                <h2>Heading</h2>
-                                <p>Description text                         </div>
-                            <img src="images/slide1.jpg" alt="Slide 1">
-                        </li>
+            <!-- Large modal -->
+            <button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Join Us</button>
 
-                        <li>
-                            <div class="slider-caption">
-                                <h2>Heading</h2>
-                                <p>Description text                           </div>
-                            <img src="images/slide2.jpg" alt="Slide 2">
-                        </li>
-
-                        <li>
-                            <div class="slider-caption">
-                                <h2>Heading</h2>
-                                <p>Description text.</p>
-                            </div>
-                            <img src="images/slide3.jpg" alt="Slide 3">
-                        </li>
-                        
-                        <li>
-                            <div class="slider-caption">
-                                <h2>Portfolio Website</h2>
-                                <p>Fusce convallis enim vitae sagittis mollis. Sed bibendum ultricies dignissim.</p>
-                            </div>
-                            <img src="images/slide4.jpg" alt="Slide 4">
-                        </li>
-
-                    </ul>
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="myModalLabel">YARD MEMBERSHIP REGISTRATION</h4>
                 </div>
+                <div class="modal-body">
+                    <div class="row">
+                                <div class="col-lg-6">
+                                    <form role="form" action='registration.php' method='POST' id='registration' >
+
+                                        <div class="form-group">
+                                            <label>Title</label>
+
+                                            <?php print $title;?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Name:</label>
+                                            <input class="form-control" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Surname:</label>
+                                            <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
+                                        </div>
+                                                    <div class="form-group">
+                                            <label>Gender</label>
+                                           <select class="form-control" name="gender" id="gender">
+                                                <option value="0">Select One</option>
+                                                <option value="1">Male</option>
+                                                <option value="2">Female</option>
+                                            </select>
+                                </div>
+
+                                       <div class="form-group">
+                                            <label>Date of Birth:</label>
+                                            <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Telephone:</label>
+                                            <input class="form-control" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
+                                        </div>
+                                         <div class="form-group">
+                                            <label>Cellphone:</label>
+                                            <input class="form-control" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Email:</label>
+                                            <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
+                                            <p class="help-block">email@example.com</p>
+                                        </div>
+                                                            <div class="form-group">
+                                            <label>Province:</label>
+                                           <?php print $province;?>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>District:</label>
+                                            <div id='district'></div>
+                                        </div>
+                                        <input type='hidden' id='registrationnumber' name="registrationnumber"/>
+
+
+
+                                     <div class="form-group">
+                                     <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
+                                     </div>
+
+                                    </form>
+                                </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
             </div>
             </div>
+
+
         </div>
     </div>
     </div>
@@ -215,7 +274,7 @@
                     </div>
                     <div class="templatemo_teamsocial">
                         Find me on:
-                        <div>  
+                        <div>
                             <a href="#"><div class="fa fa-facebook"></div></a>
                             <a href="#"><div class="fa fa-twitter"></div></a>
                             <a href="#"><div class="fa fa-linkedin"></div></a>
@@ -237,7 +296,7 @@
                     </div>
                     <div class="templatemo_teamsocial">
                         Find me on:
-                        <div>  
+                        <div>
                             <a href="#"><div class="fa fa-facebook"></div></a>
                             <a href="#"><div class="fa fa-twitter"></div></a>
                             <a href="#"><div class="fa fa-linkedin"></div></a>
@@ -259,7 +318,7 @@
                     </div>
                     <div class="templatemo_teamsocial">
                         Find me on:
-                        <div>  
+                        <div>
                             <a href="#"><div class="fa fa-facebook"></div></a>
                             <a href="#"><div class="fa fa-twitter"></div></a>
                             <a href="#"><div class="fa fa-linkedin"></div></a>
@@ -400,7 +459,7 @@
     <div  class="row">
         <div class="col-md-12">
             <div class="templatemo_contactmap">
-                <div id="templatemo_map"></div>                        
+                <div id="templatemo_map"></div>
             </div>
         </div>
     </div>
@@ -447,8 +506,22 @@
                 </div>
             </div>
         </div>
-    <!-- footer end --> 
+    <!-- footer end -->
 
   </body>
+
+   <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="js/jquery-ui.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/sb-admin-2.js"></script>
+    <script src="js/main.js"></script>
 
 </html>
