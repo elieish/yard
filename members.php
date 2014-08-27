@@ -37,15 +37,14 @@ $province       = provinces_select();
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/templatemo_style.css">
-    <link rel="stylesheet" href="css/livevalidation.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="js/datepicker/css/datepicker.css">
+    <link rel="stylesheet" href="css/main.css">
+
     <!-- JavaScripts -->
     <script src="js/vendor/jquery-1.11.0.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
     <script src="js/jquery.singlePageNav.js"></script>
     <script src="js/jquery.flexslider.js"></script>
-    <script src="js/validate.js"></script>
     <script src="js/custom.js"></script>
     <script src="js/jquery.lightbox.js"></script>
     <script src="js/templatemo_custom.js"></script>
@@ -343,7 +342,7 @@ $province       = provinces_select();
 
                             <div class="form-group">
                                 <label>Date of Birth:</label>
-                                <input class="datepicker form-control validate_nonempty" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
+                                <input class="datepicker form-control validate_nonempty"   name="dob" id="dob" placeholder="Date of Birth">
                             </div>
                             <div class="form-group">
                                 <label>Telephone:</label>

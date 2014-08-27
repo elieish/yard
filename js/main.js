@@ -8,6 +8,8 @@ jQuery(document).ready(function($) {
 			navigationText: ["&larr;","&rarr;"],
 		});
 
+        $('.datepicker').datepicker();
+
 
 		$('.flexslider').flexslider({
 		    animation: "fade",
@@ -306,8 +308,6 @@ $(document).ready(function(){
             },
         }
     });
-
-    $('.datepicker').datepicker();
 
 });
 
