@@ -193,6 +193,7 @@ function titles_select($flag,$selected_value) {
 							`title`
 						FROM
 							`titles`
+                        WHERE `title` IN ('Mrs','Ms','Mr')
 							";
 	$data			= $_db->fetch($query);
 
@@ -212,7 +213,7 @@ function titles_select($flag,$selected_value) {
 
 		}
 
-		return "<select class='form-control' name='title' id='title'><option value=0>Select One</option>{$array}</select>";
+		return "<select class='form-control' name='title' id='title'><option value=''>Select One</option>{$array}</select>";
 
 }
 

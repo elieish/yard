@@ -27,16 +27,35 @@ $province       = provinces_select();
 
     <title>Members Page</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <meta name="author" content="templatemo">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+    <meta name="keywords" content="" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/templatemo_misc.css">
     <link rel="stylesheet" href="css/templatemo_style.css">
-
+    <link rel="stylesheet" href="css/livevalidation.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="js/datepicker/css/datepicker.css">
+    <!-- JavaScripts -->
+    <script src="js/vendor/jquery-1.11.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="js/jquery.singlePageNav.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.lightbox.js"></script>
+    <script src="js/templatemo_custom.js"></script>
+    <script src="js/jquery-git2.js"></script><!-- previous next script -->
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
+    <script src="js/datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
         <!--[if lt IE 7]>
@@ -286,7 +305,7 @@ $province       = provinces_select();
         </div> <!-- /.row -->
     </div> <!-- /.container -->
 </div> <!-- /.partner-list -->
-
+<!--Membership Modal -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -296,7 +315,7 @@ $province       = provinces_select();
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <form role="form" action='registration.php' method='POST' id='registration' >
 
                             <div class="form-group">
@@ -306,17 +325,17 @@ $province       = provinces_select();
                             </div>
                             <div class="form-group">
                                 <label>Name:</label>
-                                <input class="form-control" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
+                                <input class="form-control validate_nonempty" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
 
                             </div>
                             <div class="form-group">
                                 <label>Surname:</label>
-                                <input class="form-control" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
+                                <input class="form-control validate_nonempty" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
                             </div>
                             <div class="form-group">
                                 <label>Gender</label>
-                                <select class="form-control" name="gender" id="gender">
-                                    <option value="0">Select One</option>
+                                <select class="form-control validate_nonempty" name="gender" id="gender">
+                                    <option value="">Select One</option>
                                     <option value="1">Male</option>
                                     <option value="2">Female</option>
                                 </select>
@@ -324,26 +343,26 @@ $province       = provinces_select();
 
                             <div class="form-group">
                                 <label>Date of Birth:</label>
-                                <input class="date form-control" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
+                                <input class="datepicker form-control validate_nonempty" value="<?php echo $_POST['dob'] ?>" placeholder="Date of Birth" name="dob" id="dob">
                             </div>
                             <div class="form-group">
                                 <label>Telephone:</label>
-                                <input class="form-control" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
+                                <input class="form-control validate_nonempty" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
                             </div>
                             <div class="form-group">
                                 <label>Cellphone:</label>
-                                <input class="form-control" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
+                                <input class="form-control validate_nonempty" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
                             </div>
                             <div class="form-group">
                                 <label>Email:</label>
-                                <input class="form-control" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
+                                <input class="form-control validate_nonempty" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
                                 <p class="help-block">email@example.com</p>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group validate_nonempty">
                                 <label>Province:</label>
                                 <?php print $province;?>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group validate_nonempty">
                                 <label>District:</label>
                                 <div id='district'></div>
                             </div>
@@ -391,16 +410,26 @@ $province       = provinces_select();
             </div> <!-- /.col-md-4 -->
         </div> <!-- /.row -->
     </div> <!-- /.container -->
-</div> <!-- /.site-footer -->
+</div>
 
-<script src="js/vendor/jquery-1.11.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="js/bootstrap.js"></script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
-<!-- Google Map -->
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-<script src="js/vendor/jquery.gmap3.min.js"></script>
+<!--Confirmation Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <div id="text"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
 

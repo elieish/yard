@@ -29,6 +29,7 @@ $province       = provinces_select();
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery.singlePageNav.js"></script>
     <script src="js/jquery.flexslider.js"></script>
+    <script src="js/validate.js"></script>
 
     <script src="js/custom.js"></script>
      <script src="js/jquery-1.10.2.min.js"></script>
