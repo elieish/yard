@@ -297,7 +297,7 @@ $province       = provinces_select();
         </div> <!-- /.container -->
       </div> <!-- /.partner-list -->
       <!--Membership Modal -->
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="membershipModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -308,6 +308,7 @@ $province       = provinces_select();
               <div class="row">
                 <div class="col-lg-12">
                   <form role="form" action='registration.php' method='POST' id='registration' >
+                     <!-- <div class="alert alert-success" style="display: none;"></div> -->
 
                     <div class="form-group">
                       <label>Title</label>
@@ -317,7 +318,6 @@ $province       = provinces_select();
                     <div class="form-group">
                       <label>Name:</label>
                       <input class="form-control validate_nonempty" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
-
                     </div>
                     <div class="form-group">
                       <label>Surname:</label>
@@ -361,7 +361,7 @@ $province       = provinces_select();
                     <div class="form-group">
                      <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
                    </div>
-
+                   <!-- div class="alert alert-success" style="display: none;"></div> -->
                  </form>
                </div>
              </div>
@@ -375,7 +375,7 @@ $province       = provinces_select();
         </div>
       </div>
       <!--Confirmation Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="myModalMessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">

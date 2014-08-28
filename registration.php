@@ -21,9 +21,6 @@ function display()
 	# Global Variables
     global $_db;
 
-if(isset($_POST['submit'])) {
-
-
 $name               = $_POST['name'];
 $surname            = $_POST['surname'];
 $gender             = $_POST['gender'];
@@ -64,8 +61,6 @@ foreach ($receivers as $value) {
      html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
   }
 redirect('index.php');
-
-}
 
 }
 # ===================================================

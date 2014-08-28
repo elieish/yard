@@ -1,6 +1,6 @@
 
 /* ===== Primary Styles ========================================================
-    * Project: Web App Template 2.0
+    * Project: Yard Website
     * Author:  Elie Ishimwe
     * Email:   elieish@gmail.com
    ========================================================================== */
@@ -17,4 +17,15 @@
 .nav-pills > li.active > a:hover {
     background-color: #1D4B00 ;
 }
+
+.btn-primary {
+     background-color: #9ED034 !important;
+     border-color: #9ED034 !important;
+}
+
+
+button:hover {
+     background-color: #1D4B00 ;
+}
+
 
