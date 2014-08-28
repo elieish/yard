@@ -281,29 +281,57 @@ $(document).ready(function(){
             title: {
                 validators: {
                     notEmpty: {
-                        message: 'The Title is required'
+                        message: 'Title is required'
                     }
                 }
             },
             name: {
                 validators: {
                     notEmpty: {
-                        message: 'The Name is required'
+                        message: 'Name is required'
                     }
                 }
             },
             surname: {
                 validators: {
                     notEmpty: {
-                        message: 'The Surname is required'
+                        message: 'Surname is required'
                     }
                 }
             },
             gender: {
                 validators: {
                     notEmpty: {
-                        message: 'The Gender is required'
+                        message: 'Gender is required'
                     }
+                }
+            },
+            dob: {
+                validators: {
+                    notEmpty: {
+                        message: 'Date of Birth is required'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                        notEmpty: {
+                        message: 'The Email Address is required'
+                        },
+                        emailAddress: {
+                        message     : 'Please enter a valid email address'
+                        },
+                        identical: {
+                        field: 'confirmPassword',
+                        message: 'The password and its confirm are not the same'
+                    }
+                }
+            },
+            province: {
+                validators: {
+                        notEmpty: {
+                        message: 'The Province is required'
+                        }
                 }
             },
         }

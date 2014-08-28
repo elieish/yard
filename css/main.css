@@ -9,3 +9,12 @@
 }
 
 .datepicker {z-index: 100000 !important ;}
+
+.nav-pills > li.active > a {
+    background-color: #9ED034;
+}
+
+.nav-pills > li.active > a:hover {
+    background-color: #1D4B00 ;
+}
+

@@ -246,7 +246,7 @@ function provinces_select($flag,$selected_value) {
 
 		}
 
-		return "<select class='form-control' name='province' id='province'><option value=0>Select One</option>{$array}</select>";
+		return "<select class='form-control' name='province' id='province'><option value=''>Select One</option>{$array}</select>";
 
 }
 
@@ -293,7 +293,7 @@ function districts_select($province_code,$selected_value) {
 
         }
 
-        return "<select class='form-control' name='district' id='district'><option value=0>Select One</option>{$array}</select>";
+        return "<select class='form-control' name='district' id='district'><option value=''>Select One</option>{$array}</select>";
 
         return $data;
 
