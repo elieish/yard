@@ -8,7 +8,9 @@ jQuery(document).ready(function($) {
 			navigationText: ["&larr;","&rarr;"],
 		});
 
-        $('.datepicker').datepicker();
+        $('.datepicker').datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
 
 
 		$('.flexslider').flexslider({
@@ -316,24 +318,28 @@ $(document).ready(function(){
             email: {
                 validators: {
                         notEmpty: {
-                        message: 'The Email Address is required'
+                        message: 'Email Address is required'
                         },
                         emailAddress: {
                         message     : 'Please enter a valid email address'
                         },
-                        identical: {
-                        field: 'confirmPassword',
-                        message: 'The password and its confirm are not the same'
-                    }
                 }
             },
             province: {
                 validators: {
                         notEmpty: {
-                        message: 'The Province is required'
+                        message: 'Province is required'
                         }
                 }
             },
+
+             district: {
+                validators: {
+                        notEmpty: {
+                        message: 'District is required'
+                        }
+                }
+            }
         }
     })
      .on('success.form.bv', function(e) {
@@ -360,7 +366,7 @@ $(document).ready(function(){
             type: "POST",
             data: $("#registration").serialize(),
             success: function(){
-               $("#text").html(membershipno);
+               $("#text").html("Thanks for signing up.Your Membership Number is :"+ membershipno);
                $('#myModalMessage').modal('show');
             }
             });

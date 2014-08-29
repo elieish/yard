@@ -28,4 +28,8 @@ button:hover {
      background-color: #1D4B00 ;
 }
 
+.dropdown-menu {
+    min-width: 430px;
+}
+
 
