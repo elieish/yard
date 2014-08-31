@@ -38,6 +38,13 @@ jQuery(document).ready(function($) {
      	$('#district').html(result);
     });
 
+    //Clear all input fields when modal closes
+    $('#membershipModal').on('hidden.bs.modal', function (e) {
+          $('.form-group input, .form-group select, .form-group textarea', '#registrationform').each(function() {
+             $(this).val('');
+          });
+     });
+
     //Generate Membership Registration Number
    /* $( "#registration" ).submit( function(event) {
 
