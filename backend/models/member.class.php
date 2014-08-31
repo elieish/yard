@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 1.0
  * @package Project
@@ -12,39 +12,39 @@
 # ==========================================================================================
 
 class Member extends Model {
-	
+
 	# --------------------------------------------------------------------------------------
 	# ATTRIBUTES
 	# --------------------------------------------------------------------------------------
-	
+
 	var $y;
-	
+
 	# --------------------------------------------------------------------------------------
 	# METHODS
 	# --------------------------------------------------------------------------------------
-	
+
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * Set the Table and the UID of the object.
-	 * 
+	 *
 	 * @param $uid Integer: The Unique Identifier of the object.
 	 */
 	function __construct($uid=0) {
 		# Set Table
 		$this->table													= "members";
-		
+
 		# Initialize UID from Parameter
 		$this->uid														= $uid;
 		if ($uid) {
 			$this->load();
 		}
 	}
-	
+
 	function item_form($action) {
 		# Create Form Object
 		$form															= new Form($action, "POST", "member_form");
-		
+
 		# Generate Form - Lead
 		$form->add(""							, "hidden"			, "uid"					, $this->uid);
 		$form->add_select("Select a Title"      , "title_id"       	,$this->title_id        , title_select());
@@ -61,32 +61,32 @@ class Member extends Model {
 		$form->add("Local Area Name"			, "text"			, "local_area"			, $this->local_area);
 		$form->add_select("Select a Sector"     , "sector_id"       ,$this->sector_id       , sector_select());
 		$form->add(""							, "submit"			, ""					, "Save");
-		
+
 		# Generate HTML
 		$html															= $form->generate();
-		
+
 		# Return HTML
 		return $html;
 	}
-	
+
 	public function listing() {
-		
+
 		#Global Variables
 		global $_db;
-		
+
 		# Get Data
 		$query		= "	SELECT
 							`created_at` as 'Registration Date',
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
-							`surname` as 'Surname',				
+							`surname` as 'Surname',
 							`tel` as 'Tel',
 							`cell` as 'Cell',
 							`email` as 'Email',
 							`provinces`.`province` as 'Province',
 
-						
+
 						CONCAT('<a href=\"{$this->cur_page}&action=paid&id=', `members`.`uid`, '\">Not Paid<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Payment',
 					CONCAT('<li class=\"dropdown\">
                     <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
@@ -98,50 +98,50 @@ class Member extends Model {
                         <li><a href=\"{$this->cur_page}&action=paid&id=', `members`.`uid`, '\"><i class=\"fa fa-money fa-fw\"></i> Approve  </a>
                         </li>
                         <li><a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"fa fa-trash-o fa-fw\"></i> Delete </a>
-                        </li>      
+                        </li>
                     </ul>
-                    
+
            </li>') as'Actions'
 
 
 						FROM
-								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` 
+								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
 						WHERE
 								`members`.`active` = 1
 								AND `members`.`paid` = 0
-																									
+
 											";
-																			
+
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
 				$query												.= 'AND paid = "Y"';
-			else 
+			else
 				$query												.= 'AND paid = "N"';
 		}
 		else {
 				$query												.= 'ORDER BY
 																				`name`';
 		}
-																			
+
 		$listing							= paginated_listing($query);
-		
-		
+
+
 		return $listing;
 	}
 
 
 	public function listingpaid() {
-		
+
 		#Global Variables
 		global $_db;
-		
+
 		# Get Data
 		$query		= "	SELECT
 							`created_at` as 'Registration Date',
 							CONCAT('<a href=\"{$this->cur_page}&action=add&id=', `members`.`uid`, '\">', `membership_no`, '</a>') as 'Membership No.',
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
-							`surname` as 'Surname',					
+							`surname` as 'Surname',
 							`tel` as 'Tel',
 							`cell` as 'Cell',
 							`email` as 'Email',
@@ -157,33 +157,33 @@ class Member extends Model {
                         <li><a href=\"#\"  onclick=\"printPDF()\"><i class=\"fa fa-print fa-fw\"></i> Print </a>
                         </li>
                         <li><a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"fa fa-trash-o fa-fw\"></i> Delete </a>
-                        </li>      
+                        </li>
                     </ul>
-                    
+
            </li>') as'Actions'
 						FROM
-								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` 
+								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
 						WHERE
 								`members`.`active` = 1
 								AND `members`.`paid` = 1
-																									
+
 											";
-		 
-																			
+
+
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
 				$query.= 'AND paid = "Y"';
-			else 
+			else
 				$query.= 'AND paid = "N"';
 		}
 		else {
 				$query.= 'ORDER BY
 																				`name`';
 		}
-																			
+
 		$listing= paginated_listing($query);
-		
-		
+
+
 		return $listing;
 	}
 
@@ -195,11 +195,11 @@ class Member extends Model {
 		$total = $_db->fetch_single($query);
 		return ($total <> 0)?$total : '0';
 	}
-	
+
 	public function getAllMembers($mode) {
 		global $_db;
-		
-		$query	= "SELECT 
+
+		$query	= "SELECT
 						`uid` as '#',
 						`datetime` as 'Date Created',
 						`name` as 'Members'
@@ -208,7 +208,7 @@ class Member extends Model {
 					WHERE
 						`active` = 1
 					ORDER BY `name` ASC";
-		
+
 		$listing													= ($mode=="list")?paginated_listing($query):$_db->fetch($query);
 		return $listing;
 	}
@@ -219,8 +219,29 @@ class Member extends Model {
 		$query = "SELECT COUNT(*) FROM `members` WHERE `active` = 1 AND `paid` = 1 ";
 		$total = $_db->fetch_single($query);
 		return ($total <> 0)?$total : '0';
-	}	
-	
+	}
+
+
+	public function check_field_duplicate ($dbfieldname,$value)
+	{
+		global $_db;
+
+		if(($value != '')) {
+
+			$query = " SELECT
+						COUNT(*)
+				   FROM
+				   		`members`
+				   WHERE
+				   		`$dbfieldname` = '{$value}'
+				 ";
+
+			$result = $_db->fetch_single($query);
+			return $result;
+		}
+	}
+
+
 }
 
 # ==========================================================================================

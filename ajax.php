@@ -30,6 +30,20 @@ function district_select()
   print $districtdrop;
 }
 
+
+function check_user_duplicate() {
+
+    global $_db;
+    $query_value = strtolower($_GET['query_value']);
+    $query_field = strtolower($_GET['query_field']);
+    $user        = Member::check_field_duplicate($query_field,$query_value);
+
+
+    $result      = ($user > 0)? 'found':'not found';
+    print $result;
+ }
+
+
 //-----------------------------------------------------------------------
 // Action Handler
 //-----------------------------------------------------------------------

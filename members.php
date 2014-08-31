@@ -53,6 +53,9 @@ $province       = provinces_select();
     <script src="js/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
     <script src="js/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/php.js"></script>
+    <script src="js/forms.js"></script>
   </head>
 <body>
         <!--[if lt IE 7]>
@@ -307,7 +310,7 @@ $province       = provinces_select();
             <div class="modal-body">
               <div class="row">
                 <div class="col-lg-12">
-                  <form role="form" action='registration.php' method='POST' id='registration' >
+                  <form role="form" action='registration.php' method='POST' id='registrationform' >
                      <!-- <div class="alert alert-success" style="display: none;"></div> -->
 
                     <div class="form-group">
@@ -317,11 +320,11 @@ $province       = provinces_select();
                     </div>
                     <div class="form-group">
                       <label>Name:</label>
-                      <input class="form-control validate_nonempty" name="name" id="name" value="<?php echo $_POST['name'] ?>" placeholder="Name">
+                      <input class="form-control validate_nonempty" name="name" id="name" placeholder="Name">
                     </div>
                     <div class="form-group">
                       <label>Surname:</label>
-                      <input class="form-control validate_nonempty" value="<?php echo $_POST['surname'] ?>" placeholder="Surname" name="surname" id="surname">
+                      <input class="form-control validate_nonempty"  placeholder="Surname" name="surname" id="surname">
                     </div>
                     <div class="form-group">
                       <label>Gender</label>
@@ -338,16 +341,15 @@ $province       = provinces_select();
                     </div>
                     <div class="form-group">
                       <label>Telephone:</label>
-                      <input class="form-control validate_nonempty" value="<?php echo $_POST['telephone'] ?>" placeholder="Telephone" name="telephone" id="telephone">
+                      <input class="form-control validate_nonempty" placeholder="Telephone" name="telephone" id="telephone">
                     </div>
                     <div class="form-group">
                       <label>Cellphone:</label>
-                      <input class="form-control validate_nonempty" value="<?php echo $_POST['cellphone'] ?>" placeholder="Cellphone" name="cellphone" id="cellphone">
+                      <input class="form-control validate_nonempty validate_duplicate_cellphone"  placeholder="Cellphone" name="cellphone" id="cellphone">
                     </div>
                     <div class="form-group">
                       <label>Email:</label>
-                      <input class="form-control validate_nonempty" value="<?php echo $_POST['email'] ?>" placeholder="email" name="email" id="email" >
-                      <p class="help-block">email@example.com</p>
+                      <input class="form-control validate_nonempty validate_dublicate_email"  placeholder="email" name="email" id="email" >
                     </div>
                     <div class="form-group validate_nonempty">
                       <label>Province:</label>
@@ -359,7 +361,7 @@ $province       = provinces_select();
                     </div>
                     <input type='hidden' id='registrationnumber' name="registrationnumber"/>
                     <div class="form-group">
-                     <button type="submit" name='submit' id='submit' class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-primary">Submit</button>
                    </div>
                    <!-- div class="alert alert-success" style="display: none;"></div> -->
                  </form>
