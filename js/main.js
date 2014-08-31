@@ -45,6 +45,10 @@ jQuery(document).ready(function($) {
           });
      });
 
+    $("#closemodal").on('click',function(){
+         window.location.href = "index.php";
+    });
+
 
     //Generate Membership Registration Number
    /* $( "#registration" ).submit( function(event) {
