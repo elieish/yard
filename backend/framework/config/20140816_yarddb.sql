@@ -380,6 +380,10 @@ INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
 VALUES  (53, 'OR Tambo District Municipality','DC15', 9, 1);
 
 
+ALTER TABLE `users` ADD `province` int AFTER `user`;
+ALTER TABLE `users` ADD `district` int AFTER `province`;
+
+
 
 
 

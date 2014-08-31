@@ -99,6 +99,9 @@ class Page extends AbstractPage {
 		$user->mobile		= $_POST['mobile'];
 		$user->fax			= $_POST['fax'];
 		$password			= $_POST['password'];
+		$user->province		= $_POST['province_id'];
+		$user->district		= $_POST['district_no'];
+		$user->active		= 1;
 
 		# Update Password
 		if (strlen($password)) {

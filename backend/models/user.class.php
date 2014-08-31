@@ -43,7 +43,7 @@ class User extends Model {
 		global $_db;
 
 		# Generate Form
-		$form			= new Form("{$cur_page}&action=save");
+		$form			= new Form("?p=admin_users&action=save");
 		//			Label				Type			Name				Value
 		$form->add(""					, "hidden"		, "uid"				, $this->uid);
 		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
