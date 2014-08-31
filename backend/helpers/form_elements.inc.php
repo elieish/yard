@@ -319,6 +319,36 @@ function district_id($code) {
     return $data;
 }
 
+function district_select() {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid`, `name`
+                    FROM
+
+                            `districts`
+
+                    WHERE
+
+                            `active` = 1
+
+                    ORDER BY
+
+                            `name`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->name;
+    }
+
+    # Return Values
+    return $values;
+}
+
 
 
 

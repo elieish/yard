@@ -46,6 +46,8 @@ class User extends Model {
 		$form			= new Form("{$cur_page}&action=save");
 		//			Label				Type			Name				Value
 		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
+		$form->add_select("Select a District"   , "district_id"     ,$this->district_id     , district_select());
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
@@ -55,6 +57,7 @@ class User extends Model {
 		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
 		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
 		$form->add(""					, "submit"		, "submit"			, "Save");
+
 
 		# Generate HTML
 		$html														= $form->generate();
