@@ -359,7 +359,7 @@ $province       = provinces_select();
                       <label>District:</label>
                       <div id='district'></div>
                     </div>
-                    <input type='hidden' id='registrationnumber' name="registrationnumber"/>
+
                     <div class="form-group">
                      <button type="submit" class="btn btn-primary">Submit</button>
                    </div>

@@ -31,9 +31,13 @@ $email              = $_POST['email'];
 $prov               = $_POST['province'];
 $title_id           = $_POST['title'];
 $provid             = province_id($prov);
-$registrationno     = $_POST['registrationnumber'];
 $district           = $_POST['district'];
 $districtid         = district_id($district);
+
+# Construct Membership Number
+$membership_no      = substr($name, 0,1).substr($surname,0,1);
+$membership_no      .= date("dmy", strtotime(now()));
+$membership_no      .= $prov.$district;
 
   # Create new Object
 $obj                = new Member();
@@ -48,7 +52,7 @@ $obj->tel           = $telephone;
 $obj->province_id   = $provid;
 $obj->title_id      = $title_id;
 $obj->created_at    = now();
-$obj->membership_no = $registrationno;
+$obj->membership_no = $membership_no;
 $obj->active        = 1;
 $obj->province_id   = $provid;
 $obj->district      = $districtid;
