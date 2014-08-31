@@ -11,17 +11,13 @@ jQuery(document).ready(function($) {
         $('.datepicker').datepicker({
             format: 'yyyy/mm/dd'
         });
-        /*var t ;
-        $( document ).on(
-            'DOMMouseScroll mousewheel scroll',
-            '#membershipModal',
-            function(){
-            window.clearTimeout( t );
-            t = window.setTimeout( function(){
-            $('.datepicker').datepicker('place')
-            }, 100 );
-         }
-        );*/
+
+        $( "#membershipModal" ).scroll(function() {
+            $('.datepicker').datepicker('place',{
+                format: 'yyyy/mm/dd'
+            })
+        });
+
 		$('.flexslider').flexslider({
 		    animation: "fade",
 		    controlNav: false,
