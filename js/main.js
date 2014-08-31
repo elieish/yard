@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
 		});
 
         $('.datepicker').datepicker({
-            formatDate: 'yy/dd/mm'
+            format: 'yyyy/mm/dd'
         });
         /*var t ;
         $( document ).on(
