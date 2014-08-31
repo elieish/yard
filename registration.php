@@ -64,7 +64,7 @@ $receivers           = array('elieish@gmail.com',$obj->email);
 foreach ($receivers as $value) {
      $to_email               = $value;
      $email_subject          = "Membership Confirmation ";
-     $message                = "Good Day ".$obj->name." \n Thank you for you registration. Please take note of your membership no is  ".$obj->membership_no;
+     $message                = "Good Day ".$obj->name." \n Thank you for you registration. Please take note of your Membership Number is  ".$obj->membership_no;
      html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
   }
 redirect('confirmation.php?membership_no='.$obj->membership_no);
