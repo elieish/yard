@@ -32,6 +32,8 @@ $prov               = $_POST['province'];
 $title_id           = $_POST['title'];
 $provid             = province_id($prov);
 $registrationno     = $_POST['registrationnumber'];
+$district           = $_POST['district'];
+$districtid         = district_id($district);
 
   # Create new Object
 $obj                = new Member();
@@ -48,7 +50,8 @@ $obj->title_id      = $title_id;
 $obj->created_at    = now();
 $obj->membership_no = $registrationno;
 $obj->active        = 1;
-$email              = $obj->email;
+$obj->province_id   = $provid;
+$obj->district      = $districtid;
   # Save Member
 $obj->save();
 

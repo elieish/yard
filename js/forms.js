@@ -100,7 +100,6 @@ function form_validate() {
             var cellphone        = $("#cellphone").val();
 
            if (($("#cellphone").length > 0) && ($(this).hasClass('validate_duplicate_cellphone'))&& (cellphone != '')) {
-                alert(cellphone);
                 var url = "ajax.php?";
                 url += "action=check_user_duplicate&query_field=cell&query_value=" + cellphone;
                 var result = ajax_get_data(url);

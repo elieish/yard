@@ -299,5 +299,26 @@ function districts_select($province_code,$selected_value) {
 
 }
 
+function district_id($code) {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid`
+                    FROM
+
+                            `districts`
+
+                    WHERE
+
+                            `code` = '{$code}'";
+    $data  = $_db->fetch_single($query);
+
+    # Return Values
+    return $data;
+}
+
+
 
 
