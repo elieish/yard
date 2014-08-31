@@ -45,6 +45,7 @@ jQuery(document).ready(function($) {
           });
      });
 
+
     //Generate Membership Registration Number
    /* $( "#registration" ).submit( function(event) {
 
