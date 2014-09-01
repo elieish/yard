@@ -144,11 +144,12 @@ class User extends Model {
 		$query = " SELECT
 						`uid` as '#',
 						 CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `username`, '</a>') as 'Username',
+						 (SELECT `title` FROM `titles` WHERE `uid` = u.`title`) as 'Title',
 						`first_name` as 'First Name',
 						`last_name` as 'Last Name',
 						CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 					FROM
-						`users`
+						`users` u
 					WHERE
 						`active` = 1
 					";

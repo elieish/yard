@@ -101,6 +101,7 @@ class Page extends AbstractPage {
 		$password			= $_POST['password'];
 		$user->province		= $_POST['province_id'];
 		$user->district		= $_POST['district_no'];
+		$user->title		= $_POST['title'];
 		$user->active		= 1;
 
 		# Update Password
