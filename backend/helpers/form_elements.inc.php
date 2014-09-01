@@ -319,7 +319,7 @@ function district_id($code) {
     return $data;
 }
 
-function district_select($provinceid) {
+function districtt_select($provinceid) {
     # Global Variables
     global $_db;
 
