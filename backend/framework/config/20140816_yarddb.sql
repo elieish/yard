@@ -381,6 +381,11 @@ VALUES  (53, 'OR Tambo District Municipality','DC15', 9, 1);
 ALTER TABLE `users` ADD `province` int AFTER `user`;
 ALTER TABLE `users` ADD `district` int AFTER `province`;
 ALTER TABLE `users` ADD `title` int AFTER `user`;
+ALTER TABLE `users` ADD `NationalSecretary` varchar(255) AFTER `fax`;
+ALTER TABLE `users` ADD `NationalTreasurer` varchar(255) AFTER `NationalSecretary`;
+ALTER TABLE `users` ADD `ProvincialSecretary` varchar(255) AFTER `NationalSecretary`;
+ALTER TABLE `users` ADD `ProvincialTreasurer` varchar(255) AFTER `ProvincialSecretary`;
+
 
 
 

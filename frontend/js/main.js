@@ -1,5 +1,10 @@
  $(document).ready(function() {
-        $('.table').dataTable();
+    $('.table').dataTable();
+
+    $("#title").on("change", function()
+    {
+        alert("Elie Ishimwe");
+    });
  });
 
 function printPDF(){

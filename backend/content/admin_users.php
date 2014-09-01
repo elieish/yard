@@ -30,7 +30,8 @@ class Page extends AbstractPage {
         // Generate HTML from Template
         $file    = dirname(dirname(dirname(__FILE__))) . "/frontend/html/users/list.html";
         $vars    = array(
-            "link"    => $this->cur_page."&action=add",
+            /*"link"    => $this->cur_page."&action=add",*/
+            "link"    => "?p=user_controller&action=display",
             "listing" => $listing
         );
 
@@ -70,7 +71,7 @@ class Page extends AbstractPage {
 		# Generate HTML
 		$html																= "
 		<!-- Title -->
-		<h2>New User</h2>
+		<h2>National Chairperson Registration</h2>
 
 		<!-- Form -->
 		" . $user->form() . "
@@ -79,6 +80,27 @@ class Page extends AbstractPage {
 		# Display HTML
 		print $html;
 	}
+
+	function addp() {
+		# Global Variables
+		global $_db;
+
+		# Create new User Object
+		$user																= new User();
+
+		# Generate HTML
+		$html																= "
+		<!-- Title -->
+		<h2>Provincial Chairperson Registration</h2>
+
+		<!-- Form -->
+		" . $user->formp() . "
+		";
+
+		# Display HTML
+		print $html;
+	}
+
 
 	# =========================================================================
 	# PROCESSING FUNCTIONS
@@ -89,20 +111,21 @@ class Page extends AbstractPage {
 		global $_db, $validator;
 
 		# Get POST Data
-		$uid				= $_POST['uid'];
-		$user				= new User($uid);
-		$user->username		= $_POST['username'];
-		$user->first_name	= $_POST['first_name'];
-		$user->last_name	= $_POST['last_name'];
-		$user->email		= $_POST['email'];
-		$user->tel			= $_POST['tel'];
-		$user->mobile		= $_POST['mobile'];
-		$user->fax			= $_POST['fax'];
-		$password			= $_POST['password'];
-		$user->province		= $_POST['province_id'];
-		$user->district		= $_POST['district_no'];
-		$user->title		= $_POST['title'];
-		$user->active		= 1;
+		$uid                     = $_POST['uid'];
+		$user                    = new User($uid);
+		$user->username          = $_POST['username'];
+		$user->first_name        = $_POST['first_name'];
+		$user->last_name         = $_POST['last_name'];
+		$user->email             = $_POST['email'];
+		$user->tel               = $_POST['tel'];
+		$user->mobile            = $_POST['mobile'];
+		$user->fax               = $_POST['fax'];
+		$password                = $_POST['password'];
+		$user->NationalTreasurer = $_POST['NationalTreasurer'];
+		$user->NationalSecretary = $_POST['NationalSecretary'];
+		$password                = $_POST['password'];
+		$user->title             = $_POST['title'];
+		$user->active            = 1;
 
 		# Update Password
 		if (strlen($password)) {
@@ -164,6 +187,43 @@ class Page extends AbstractPage {
 
 		# Redirect
 		redirect("{$this->cur_page}&action=profile&id={$uid}");
+	}
+
+		function savep() {
+		# Global Variables
+		global $_db, $validator;
+
+		# Get POST Data
+		$uid                     = $_POST['uid'];
+		$user                    = new User($uid);
+		$user->username          = $_POST['username'];
+		$user->first_name        = $_POST['first_name'];
+		$user->last_name         = $_POST['last_name'];
+		$user->email             = $_POST['email'];
+		$user->tel               = $_POST['tel'];
+		$user->mobile            = $_POST['mobile'];
+		$user->fax               = $_POST['fax'];
+		$password                = $_POST['password'];
+		$user->NationalTreasurer = $_POST['ProvincialTreasurer'];
+		$user->NationalSecretary = $_POST['ProvincialSecretary'];
+		$password                = $_POST['password'];
+		$user->title             = $_POST['title'];
+		$user->province          = $_POST['province_id'];
+		$user->active            = 1;
+
+		# Update Password
+		if (strlen($password)) {
+			$user->password	= $password;
+		}
+
+		# Save User
+		$user->save();
+
+		# Set info message
+		set_info("User {$username} has been saved successfully.");
+
+		# Redirect
+		redirect("?p=admin_users");
 	}
 
 
