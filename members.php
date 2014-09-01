@@ -67,7 +67,7 @@ $province       = provinces_select();
                   <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-10">
                       <div class="logo">
-                        <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_409_travel">
+                        <a rel="nofollow" href="">
                           <img src="images/logo.png" alt="travel by templatemo" title="travel - free html5 template">
                         </a>
                       </div> <!-- /.logo -->
