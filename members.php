@@ -67,7 +67,7 @@ $province       = provinces_select();
                   <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-10">
                       <div class="logo">
-                        <a rel="nofollow" href="">
+                        <a rel="nofollow" href="frontend/login.php">
                           <img src="images/logo.png" alt="travel by templatemo" title="">
                         </a>
                       </div> <!-- /.logo -->

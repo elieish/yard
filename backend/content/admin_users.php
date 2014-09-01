@@ -115,7 +115,7 @@ class Page extends AbstractPage {
 		set_info("User {$username} has been saved successfully.");
 
 		# Redirect
-		redirect("{$this->cur_page}&action=profile&id={$uid}");
+		redirect("?p=admin_users");
 	}
 
 	function delete() {
