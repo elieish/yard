@@ -319,7 +319,7 @@ function district_id($code) {
     return $data;
 }
 
-function district_select() {
+function district_select($provinceid) {
     # Global Variables
     global $_db;
 
@@ -332,7 +332,8 @@ function district_select() {
 
                     WHERE
 
-                            `active` = 1
+                            `active` = 1 AND
+                            `province_id` = '{$provinceid}'
 
                     ORDER BY
 

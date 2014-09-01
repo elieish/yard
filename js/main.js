@@ -138,40 +138,8 @@ $(document).ready(function(){
             }
         }
     });*/
-    /* .on('success.form.bv', function(e) {
-            // Prevent submit form
-            e.preventDefault();
 
-            // Construst Membership Number
-
-            var name          = $("#name").val().toString().substr(0,1).toUpperCase();
-            var surname       = $("#surname").val().toString().substr(0,1).toUpperCase();
-            var fullDate      = new Date();console.log(fullDate);
-            var twoDigitMonth = fullDate.getMonth()+"";if(twoDigitMonth.length==1)  twoDigitMonth="0" +twoDigitMonth;
-            var twoDigitDate  = fullDate.getDate()+"";if(twoDigitDate.length==1) twoDigitDate="0" +twoDigitDate;
-            var currentDate   = twoDigitDate  + twoDigitMonth + fullDate.getFullYear().toString().substr(2,2);
-            var province      = $("#province").val();
-            var membershipno  = name + surname + currentDate + province;
-            var $form = $(e.target),
-            validator = $form.data('bootstrapValidator');
-            validator.getFieldElements('registrationnumber').val(membershipno);
-            $form.find('.alert').html('Thanks for signing up.Your Membership Number is : ' + validator.getFieldElements('registrationnumber').val()).show();
-            validator.getFieldElements('registrationnumber').val(membershipno);
-            $.ajax({
-            url: "registration.php",
-            type: "POST",
-            data: $("#registration").serialize(),
-            success: function(){
-               $("#text").html("Thanks for signing up.Your Membership Number is :"+ membershipno);
-               $('#myModalMessage').modal('show');
-            }
-            });
-
-    });*/
-
-
-
-})
+});
 
 
 

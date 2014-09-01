@@ -47,7 +47,8 @@ class User extends Model {
 		//			Label				Type			Name				Value
 		$form->add(""					, "hidden"		, "uid"				, $this->uid);
 		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
-		$form->add_select("Select a District"   , "district_id"     ,$this->district_id     , district_select());
+
+		$form->add_select("Select a District"   , "district_id"     ,$this->district_id     , "");
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
