@@ -76,29 +76,33 @@ $province       = provinces_select();
                     <div class="col-md-8 col-sm-6 col-xs-2">
                       <div class="main-menu">
                         <ul class="visible-lg visible-md">
-                          <li><a href="index.php">Home</a></li>
-                          <li><a href="services.html">Services</a></li>
-                          <li><a href="events.html">Events</a></li>
-                          <li><a href="about.html">About Us</a></li>
-                          <li class="active"><a href="contact.html">Contact</a></li>
-
-                        </ul>
-                        <a href="#" class="toggle-menu visible-sm visible-xs">
-                          <i class="fa fa-bars"></i>
-                        </a>
-                      </div> <!-- /.main-menu -->
-                    </div> <!-- /.col-md-8 -->
-                  </div> <!-- /.row -->
+                                     <li><a href="index.php">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li class="active"><a href="members.php">Members</a></li>
+                                    <li><a href="project.html">Projects</a></li>
+                                    <li><a href="governance.html">Governance</a></li>
+                                    <li><a href="contribute.html">Contribute</a></li>
+                                    <li><a href="">Contact</a></li>
+                                </ul>
+                                <a href="#" class="toggle-menu visible-sm visible-xs">
+                                    <i class="fa fa-bars"></i>
+                                </a>
+                            </div> <!-- /.main-menu -->
+                        </div> <!-- /.col-md-8 -->
+                    </div> <!-- /.row -->
                 </div> <!-- /.main-header -->
                 <div class="row">
-                  <div class="col-md-12 visible-sm visible-xs">
-                    <div class="menu-responsive">
-                      <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="events.html">Events</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li class="active"><a href="contact.html">Contact</a></li>
+                    <div class="col-md-12 visible-sm visible-xs">
+                        <div class="menu-responsive">
+                            <ul>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li class="active"><a href="members.php">Members</a></li>
+                                <li><a href="project.html">Projects</a></li>
+                                <li><a href="governance.html">Governance</a></li>
+                                <li><a href="contribute.html">Contribute</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+
                       </ul>
                     </div> <!-- /.menu-responsive -->
                   </div> <!-- /.col-md-12 -->
@@ -404,7 +408,7 @@ $province       = provinces_select();
           </div> <!-- /.row -->
         </div> <!-- /.container -->
       </div>
-
+      <!--mack kadollvins -->
     </body>
     </html>
 
