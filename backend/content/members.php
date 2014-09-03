@@ -35,8 +35,7 @@ class Page extends AbstractPage {
 							"listingpaid" 	=> $listingpaid,
 							"add_link"		=> $this->cur_page."&action=add",
 							"title"			=> 'Members',
-							"province"		=> provinces_select(),
-
+							"province"		=> provinces_select()
 						);
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')

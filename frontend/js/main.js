@@ -5,6 +5,14 @@
     format: 'yyyy-mm-dd',
     startDate: '-3d'
     });
+
+    $("#province").on("change", function(){
+        var url = 'ajax.php?action=district_select';
+        url     += '&province=' + this.value;
+        var result = ajax_get_data(url);
+        $('#district').html(result);
+    });
+
  });
 
 function printPDF(){
@@ -14,3 +22,16 @@ function printPDF(){
 	doc.addPage();
 	doc.text(20, 20, 'Do you like that?');
 }
+
+function ajax_get_data(this_url) {
+    // Get Response
+    var new_html = $.ajax({
+        url: this_url,
+        async: false,
+        dataType: "html"
+    }).responseText;
+
+    // Return Response
+    return new_html;
+}
+

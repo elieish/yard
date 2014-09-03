@@ -1,12 +1,12 @@
 <?php
 /**
  * Project: AJAX Script
- * 
- * @author Ralfe Poisson <ralfepoisson@gmail.cm>
- * @version 2.0
+ *
+ * @author Elie Ishimwe <elieish@gmail.com>
+ * @version 1.0
  * @package Project
  */
- 
+
 # ===================================================
 # SCRIPT SETTINGS
 # ===================================================
@@ -24,30 +24,20 @@ Application::db_connect();
 # FUNCTIONS
 # ===================================================
 
-function getdropdownlist() {
-	# Global Variables
-    global $_db;
-	
-	# Get Data
-	$id																= Form::get_str("id");
-	$type															= Form::get_str("type");
-	if ($type == "costcenter") {
-			
-		$listing													= generate_select("cost_center_id", cost_center_select($id));
-	
-	}
-	else {
-		$listing													= generate_select("department_id", department_select($id));
-	}
-	
-	print $listing;
+
+function district_select()
+{
+  $province     = Form::get_str("province");
+  $districtdrop = districts_select($province,"");
+  print $districtdrop;
 }
+
 # ===================================================
 # ACTION HANDLER
 # ===================================================
 
 if (isset($_GET["action"])) {
-	$action																= Form::get_str("action");
+	$action					= Form::get_str("action");
 	if (function_exists($action)) {
 		$action();
 	}
