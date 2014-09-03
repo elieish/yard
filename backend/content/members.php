@@ -26,7 +26,9 @@ class Page extends AbstractPage {
 		global $_db;
 
 		# Get Data
-		$listing 		= Member::listing();
+		$province		= Province::get_id(Form::get_str("province"));
+		$listing 		= Member::listing($province);
+
 		/*$listingpaid 	= Member::listingpaid();*/
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";

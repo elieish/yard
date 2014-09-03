@@ -69,7 +69,7 @@ class Member extends Model {
 		return $html;
 	}
 
-	public function listing() {
+	public function listing($province) {
 
 		#Global Variables
 		global $_db;
@@ -109,6 +109,7 @@ class Member extends Model {
 						WHERE
 								`members`.`active` = 1
 								AND `members`.`paid` = 0
+								AND `members`.`province_id` = '{$province}'
 
 											";
 

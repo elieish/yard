@@ -35,3 +35,13 @@ function ajax_get_data(this_url) {
     return new_html;
 }
 
+function refresh() {
+    var province    =   $("#province").val();
+    var startdate   =   $("input[name=start_date]").val();
+    var enddate     =   $("input[name=end_date]").val();
+    var url         = '?p=members';
+    url             += '&province='  + province;
+    $("#refresh").attr("href", url);
+}
+
+
