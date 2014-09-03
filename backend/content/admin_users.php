@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @package Project
@@ -12,69 +12,50 @@
 # =========================================================================
 
 class Page extends AbstractPage {
-	
+
 	# =========================================================================
 	# DISPLAY FUNCTIONS
 	# =========================================================================
-	
+
 	/**
 	 * The default function called when the script loads
 	 */
 	function display(){
 		# Global Variables
 		global $_db;
-	
-		# Get Data
-		$query															= "	SELECT
-																				CONCAT(\"<a href='$this->cur_page&action=profile&id=\", `uid`, \"'>\", `username`, \"</a>\")as 'Username',
-																				`last_name`				as 'Last Name',
-																				`first_name`			as 'First Name',
-																				`email`					as 'Email Address',
-																				`tel`					as 'Tel',
-																				`mobile`				as 'Mobile'
-																			FROM
-																				`users`
-																			WHERE
-																				`active`				= 1
-																			ORDER BY
-																				`username`";
-		
-		# Generate HTML
-		$html															= "
-		
-		cur_page = {$this->cur_page}
-		
-		<!-- Title -->
-		<h2>User Administration</h2>
-	
-		" . button("Add", "$this->cur_page&action=add") . "
-	
-		<!-- Listing -->
-		" . paginated_listing($query) . "
-		<!-- END: Listing -->
-	
-		";
-	
-		# Display HTML
-		print $html;
-	}
+
+		//Get Listing
+        $listing = user::get_all_users();
+
+        // Generate HTML from Template
+        $file    = dirname(dirname(dirname(__FILE__))) . "/frontend/html/users/list.html";
+        $vars    = array(
+            "link"    => $this->cur_page."&action=add",
+            "listing" => $listing
+        );
+
+        $template = new Template($file, $vars);
+        $html     = $template->toString();
+
+        print $html;
+    }
 
 	function profile() {
 		# Global Variables
 		global $_db;
-	
+
 		# Get GET Data
-		$uid															= $_GET['id'];
-	
+		$uid	= $_GET['id'];
+
 		# Generate HTML
-		$html															= "
+		$html	= "
 		<!-- Title -->
 		<h2>User Administration</h2>
-	
+
 		<!-- Form -->
-		" . user_profile($uid) . "
+		" . user_profile($uid,$this->cur_page) . "
 		";
-	
+
 		# Display HTML
 		print $html;
 	}
@@ -82,19 +63,19 @@ class Page extends AbstractPage {
 	function add() {
 		# Global Variables
 		global $_db;
-	
+
 		# Create new User Object
 		$user																= new User();
-	
+
 		# Generate HTML
 		$html																= "
 		<!-- Title -->
 		<h2>New User</h2>
-	
+
 		<!-- Form -->
 		" . $user->form() . "
 		";
-	
+
 		# Display HTML
 		print $html;
 	}
@@ -106,30 +87,30 @@ class Page extends AbstractPage {
 	function save() {
 		# Global Variables
 		global $_db, $validator;
-	
+
 		# Get POST Data
-		$uid															= $validator->validate($_POST['uid'], "Integer");
-		$user															= new User($uid);
-		$user->username													= $validator->validate($_POST['username'], "AlphaNumeric");
-		$user->first_name												= $validator->validate($_POST['first_name'], "String");
-		$user->last_name												= $validator->validate($_POST['last_name'], "String");
-		$user->email													= $validator->validate($_POST['email'], "Email");
-		$user->tel														= $validator->validate($_POST['tel'], "String");
-		$user->mobile													= $validator->validate($_POST['mobile'], "String");
-		$user->fax														= $validator->validate($_POST['fax'], "String");
-		$password														= $validator->validate($_POST['password'], "String");
-	
+		$uid				= $_POST['uid'];
+		$user				= new User($uid);
+		$user->username		= $_POST['username'];
+		$user->first_name	= $_POST['first_name'];
+		$user->last_name	= $_POST['last_name'];
+		$user->email		= $_POST['email'];
+		$user->tel			= $_POST['tel'];
+		$user->mobile		= $_POST['mobile'];
+		$user->fax			= $_POST['fax'];
+		$password			= $_POST['password'];
+
 		# Update Password
 		if (strlen($password)) {
-			$user->password												= $password;
+			$user->password	= $password;
 		}
-	
+
 		# Save User
 		$user->save();
-	
+
 		# Set info message
 		set_info("User {$username} has been saved successfully.");
-	
+
 		# Redirect
 		redirect("{$this->cur_page}&action=profile&id={$uid}");
 	}
@@ -137,19 +118,19 @@ class Page extends AbstractPage {
 	function delete() {
 		# Global Variables
 		global $_db, $validator;
-	
+
 		# Get GET Data
-		$uid															= $validator->validate($_GET['id'], "Integer");
-	
+		$uid				= $validator->validate($_GET['id'], "Integer");
+
 		# Create User Object
 		$user															= new User($uid);
-	
+
 		# Delete From Database
 		$user->delete();
-	
+
 		# Set info message
 		set_info("User {$user->username} has been deleted successfully.");
-	
+
 		# Redirect
 		redirect($this->cur_page);
 	}
@@ -157,29 +138,31 @@ class Page extends AbstractPage {
 	function save_auths() {
 		# Global Variables
 		global $_db, $validator;
-	
+
 		# Get POST Data
-		$uid															= $validator->validate($_POST['uid'], "Integer");
-	
+		$uid		= $_POST['uid'];
+
 		# Create User
-		$user															= new User($uid);
-	
+		$user		= new User($uid);
+
 		# Save Auths
 		$user->clear_auths();
 		foreach ($_POST as $key => $value) {
 			if (substr($key, 0, 2) == "f_") {
 				# Get Function
-				$function_id											= substr($key, 2);
-				$function												= $_db->get_data("functions", "function", "uid", $function_id);
-			
+				$function_id			= substr($key, 2);
+				$function				= $_db->get_data("functions", "function", "uid", $function_id);
+
 				# Add function to user
 				$user->add_allowed_function($function);
 			}
 		}
-	
+
 		# Redirect
 		redirect("{$this->cur_page}&action=profile&id={$uid}");
 	}
+
+
 }
 
 # =========================================================================

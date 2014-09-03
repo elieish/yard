@@ -24,7 +24,7 @@ function logg(message, type) {
 
 function auto_focus() {
 	var bFound = false;
-	
+
 	// for each form
 	for (f=0; f < document.forms.length; f++) {
 		// for each element in each form
@@ -79,7 +79,7 @@ function makePOSTRequest(url, parameters) {
 
 function alertContents() {
         if (http_request.readyState == 4) {
-		post_result = http_request.responseText;                 
+		post_result = http_request.responseText;
         }
 }
 
@@ -94,7 +94,7 @@ function fetch_element( element ) {
 	if (e == null) {
 		e = document.all.namedItem(element);
 	}
-	
+
 	// Return Element
 	return e
 }
@@ -102,31 +102,31 @@ function fetch_element( element ) {
 function add_table_row(tableRef, fields, tr_id){
         // Get Table Element
         var table = fetch_element(tableRef);
-        
+
         // Create a new Row
         var row = document.createElement('tr');
-        
+
         // Set TR's ID
         var attr = document.createAttribute('id');
         attr.nodeValue = tr_id;
         row.setAttributeNode(attr);
-        
+
         // Add Cells to Row
         for (x = 0; x < fields.length; x++) {
                 var cell = document.createElement('td');
                 cell.innerHTML = fields[x];
                 row.appendChild (cell);
         }
-        
+
         // Add Row to Table
         table.appendChild(row);
-} 
+}
 
 function get_browser() {
         // Get Browser and Version
         var browser = navigator.appName;
         var b_version = navigator.appVersion;
-        
+
         // Return in an Array
         return Array(browser, b_version);
 }
@@ -135,7 +135,7 @@ function toggel_section(section) {
 	// Get Visibility Settings
 	var obj                                 = fetch_element(section);
 	var current                             = obj.style.display;
-	
+
 	// Toggle
 	if (current                             == "none") {
 		obj.style.display               = "block";
@@ -148,12 +148,12 @@ function toggel_section(section) {
 function trim(stringValue) {
 	// Local Variables
 	var newString				= "";
-	
+
 	// Remove Surrounding White Space
 	newString				= stringValue.replace(" ", "");
 	newString				= newString.replace("\n", "");
 	newString				= newString.replace("\r", "");
-	
+
 	// Return String
 	return newString;
 }
@@ -185,15 +185,15 @@ function set_all_checkboxes(thisform, value)
 	if(!document.forms[thisform]) {
 		return;
 	}
-	
+
 	var objElements = document.forms[thisform].elements;
-	
+
 	if(!objElements) {
 		return;
 	}
-	
+
 	var countElements = objElements.length;
-	
+
 	if(!countElements) {
 		//objElements.checked = value;
 	}
@@ -246,7 +246,8 @@ function ajax_get_data(this_url) {
 		async: false,
 		dataType: "html"
 	}).responseText;
-	
+
 	// Return Response
 	return new_html;
 }
+

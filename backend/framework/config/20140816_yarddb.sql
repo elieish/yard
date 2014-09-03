@@ -207,3 +207,193 @@ UPDATE `provinces` SET `abreviation` = 'WC' WHERE `uid`= 8;
 UPDATE `provinces` SET `abreviation` = 'MP' WHERE `uid`= 4;
 
 
+CREATE TABLE IF NOT EXISTS `functions` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `function` varchar(50) NOT NULL DEFAULT '',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `category` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`uid`)
+);
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `item` varchar(255) NOT NULL DEFAULT '',
+  `user` varchar(11) NOT NULL DEFAULT '0',
+  `comment` blob,
+  `company` int(11) NOT NULL,
+  `active` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`uid`)
+);
+
+
+CREATE TABLE IF NOT EXISTS `files` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `branch` int(11) NOT NULL DEFAULT '0',
+  `file` varchar(255) NOT NULL DEFAULT '',
+  `item` varchar(255) NOT NULL DEFAULT '',
+  `datetime` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `user` int(11) NOT NULL DEFAULT '0',
+  `revision` int(5) NOT NULL DEFAULT '0',
+  `type` varchar(30) NOT NULL DEFAULT 'general',
+  `folder` int(11) NOT NULL DEFAULT '0',
+  `name` varchar(255) NOT NULL DEFAULT '',
+  `active` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`uid`)
+);
+
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (1, 'admin_users', 'User Administration', 'Admin');
+
+
+CREATE TABLE IF NOT EXISTS `functions_users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `function` varchar(50) NOT NULL DEFAULT '',
+  `user` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`uid`)
+);
+
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (2, 'District', 'District Administration', 'Admin');
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (3, 'Provincial', 'Provincial Administration', 'Admin');
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (4, 'National', 'National Administration', 'Admin');
+INSERT INTO `functions` (`uid`, `function`, `name`, `category`)
+VALUES  (5, 'Local', 'Local Administration', 'Admin');
+
+CREATE TABLE IF NOT EXISTS `districts` (
+  `uid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `province_id` int(11) NOT NULL DEFAULT '0',
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`
+)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (1, 'Amajuba District Municipality','DC25', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (2, 'eThekwini Metropolitan Municipality','ETH', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (3, 'iLembe District Municipality','DC29', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (4, 'Sisonke District Municipality','DC43', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (5, 'Ugu District Municipality','DC21', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (6, 'uMgungundlovu District Municipality','DC22', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (7, 'uMgungundlovu District Municipality','DC22', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (8, 'uMkhanyakude District Municipality','DC27', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (9, 'uMzinyathi District Municipality','DC24', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (10, 'uThukela District Municipality','DC23', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (11, 'uThukela District Municipality','DC28', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (12, 'Zululand District Municipality','DC26', 7, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (13, 'City of Johannesburg Metropolitan Municipality','JHB', 2, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (14, 'City of Tshwane Metropolitan Municipality','TSH', 2, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (15, 'Ekurhuleni Metropolitan Municipality','EKU', 2, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (16, 'Sedibeng District Municipality','DC42', 2, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (17, 'West Rand District Municipality','DC48', 2, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (18, 'Capricorn District Municipality','DC35', 1, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (19, 'Mopani District Municipality','DC33', 1, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (20, 'Sekhukhune District Municipality','DC47', 1, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (21, 'Vhembe District Municipality','DC34', 1, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (22, 'Waterberg District Municipality','DC36', 1, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (23, 'Bojanala Platinum District Municipality','DC37', 3, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (24, 'Dr Kenneth Kaunda District Municipality','DC40', 3, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (25, 'Dr Ruth Segomotsi Mompati District Municipality','DC39', 3, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (26, 'Ngaka Modiri Molema District Municipality','DC38', 3, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (27, 'Ehlanzeni District Municipality','DC32', 4, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (28, 'Gert Sibande District Municipality','DC30', 4, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (29, 'Nkangala District Municipality','DC31', 4, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (30, 'Frances Baard District Municipality','DC9', 5, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (31, 'John Taolo Gaetsewe District Municipality','DC45', 5, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (32, 'Namakwa District Municipality','DC6', 5, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (33, 'Pixley ka Seme District Municipality','DC7', 5, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (34, 'ZF Mgcawu District Municipality','DC8', 5, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (35, 'Fezile Dabi District Municipality','DC20', 6, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (36, 'Lejweleputswa District Municipality','DC18', 6, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (37, 'Mangaung Metropolitan Municipality','MAN', 6, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (38, 'Thabo Mofutsanyana District Municipality','DC19', 6, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (39, 'Xhariep District Municipality','DC16', 6, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (40, 'Cape Winelands District Municipality','DC2', 8, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (41, 'Central Karoo District Municipality','DC5', 8, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (42, 'City of Cape Town Metropolitan Municipality','CPT', 8, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (43, 'Eden District Municipality','DC4', 8, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (44, 'Overberg District Municipality','DC3', 8, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (45, 'West Coast District Municipality','DC1', 8, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (46, 'Alfred Nzo District Municipality','DC44', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (47, 'Amathole District Municipality','DC12', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (48, 'Buffalo City Metropolitan Municipality','BUF', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (49, 'Cacadu District Municipality','DC10', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (50, 'Chris Hani District Municipality','DC13', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (51, 'Joe Gqabi District Municipality','DC14', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (52, 'Nelson Mandela Bay Metropolitan Municipality','NMA', 9, 1);
+INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
+VALUES  (53, 'OR Tambo District Municipality','DC15', 9, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

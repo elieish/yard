@@ -286,7 +286,9 @@
                             <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a class="active" href="?p=users"><i class="fa fa-user fa-fw"></i>System Users</a>
+                            {{AUTH:admin_users}}
+                            <a class="active" href="?p=admin_users"><i class="fa fa-user fa-fw"></i>System Users</a>
+                            {{END:AUTH}}
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -449,7 +451,7 @@
     <script type="text/javascript" src="js/vendor/jsPDF/jspdf.plugin.sillysvgrenderer.js"></script>
     <script type="text/javascript" src="js/vendor/jsPDF/jspdf.plugin.split_text_to_size.js"></script>
     <script type="text/javascript" src="js/vendor/jsPDF/jspdf.plugin.standard_fonts_metrics.js"></script>
-
+    <script src="js/general.js"></script>
     <script src="js/main.js"></script>
     <footer>
         <p align="center" style="margin: 0 auto">Copyright &copy; <a href="http://www.Yard.co.za">Yard Development</a> 2013</p>

@@ -1,8 +1,8 @@
 <?php
 /**
- * AME Fax: Billing Import Script
  *
- * @author Ralfe Poisson <ralfepoisson@gmail.cm>
+ *
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @package Project
  */
