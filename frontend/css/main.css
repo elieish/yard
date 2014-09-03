@@ -5,6 +5,10 @@
  	* Email:   elieish@gmail.com
    ========================================================================== */
 
-.form-control {
+.half {
     width: 50% !important;
+}
+
+.customw {
+    width: 100px;
 }

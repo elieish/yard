@@ -222,6 +222,37 @@ class User extends Model {
 	}
 
 
+	public function formDistrict($cur_page) {
+		# Global Variables
+		global $_db;
+
+		# Generate Form
+		$form			= new Form("?p=admin_users&action=saveDistrict");
+		//			Label				Type			Name				Value
+		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add(""					, "hidden"		, "title"			, 7);
+		$form->add_select("Select a Province"   , "province_id"     ,$this->province     , province_select());
+		$form->add_select("Select a District"   , "district_id"     ,$this->district     , province_select());
+		$form->add("Username"			, "text"		, "username"		, $this->username);
+		$form->add("Password"			, "password"	, "password"		, $this->password);
+		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
+		$form->add("Last Name"			, "text"		, "last_name"		, $this->last_name);
+		$form->add("Email Address"		, "text"		, "email"			, $this->email);
+		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
+		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
+		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
+		$form->add("Provincial Secretary"	, "text"		, "ProvincialSecretary"		, $this->ProvincialSecretary);
+		$form->add(""					, "submit"		, "submit"			, "Save");
+
+
+		# Generate HTML
+		$html														= $form->generate();
+
+		# Return HTML
+		return $html;
+	}
+
+
 }
 
 # ==========================================================================================

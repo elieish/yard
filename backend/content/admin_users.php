@@ -101,6 +101,27 @@ class Page extends AbstractPage {
 		print $html;
 	}
 
+	function addDistrict() {
+		# Global Variables
+		global $_db;
+
+		# Create new User Object
+		$user						= new User();
+
+		# Generate HTML
+		$html						= "
+		<!-- Title -->
+		<h2>District Official Registration</h2>
+
+		<!-- Form -->
+		" . $user->formDistrict() . "
+		";
+
+		# Display HTML
+		print $html;
+	}
+
+
 
 	# =========================================================================
 	# PROCESSING FUNCTIONS
@@ -204,7 +225,6 @@ class Page extends AbstractPage {
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
 		$password                = $_POST['password'];
-		$user->NationalTreasurer = $_POST['ProvincialTreasurer'];
 		$user->NationalSecretary = $_POST['ProvincialSecretary'];
 		$password                = $_POST['password'];
 		$user->title             = $_POST['title'];
@@ -225,6 +245,44 @@ class Page extends AbstractPage {
 		# Redirect
 		redirect("?p=admin_users");
 	}
+
+	function saveDistrict() {
+		# Global Variables
+		global $_db, $validator;
+
+		# Get POST Data
+		$uid                     = $_POST['uid'];
+		$user                    = new User($uid);
+		$user->username          = $_POST['username'];
+		$user->first_name        = $_POST['first_name'];
+		$user->last_name         = $_POST['last_name'];
+		$user->email             = $_POST['email'];
+		$user->tel               = $_POST['tel'];
+		$user->mobile            = $_POST['mobile'];
+		$user->fax               = $_POST['fax'];
+		$password                = $_POST['password'];
+		$user->NationalSecretary = $_POST['ProvincialSecretary'];
+		$password                = $_POST['password'];
+		$user->title             = $_POST['title'];
+		$user->province          = $_POST['province_id'];
+		$user->district          = $_POST['district_id'];
+		$user->active            = 1;
+
+		# Update Password
+		if (strlen($password)) {
+			$user->password	= $password;
+		}
+
+		# Save User
+		$user->save();
+
+		# Set info message
+		set_info("User {$username} has been saved successfully.");
+
+		# Redirect
+		redirect("?p=admin_users");
+	}
+
 
 
 }

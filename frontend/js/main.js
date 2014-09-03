@@ -1,9 +1,9 @@
  $(document).ready(function() {
     $('.table').dataTable();
 
-    $("#title").on("change", function()
-    {
-        alert("Elie Ishimwe");
+   $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    startDate: '-3d'
     });
  });
 
