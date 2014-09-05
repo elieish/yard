@@ -2,11 +2,9 @@
 
 					<div class="btn-position">
 
-						<a class='btn btn-success pull-right' href='{{add_link}}'><i class='icon-plus icon-white'></i> Add New Member</a>
+						<!-- <a class='btn btn-success pull-right' href='{{add_link}}'><i class='icon-plus icon-white'></i> Add New Member</a> -->
 
 					</div>
-
-					<h1>{{title}}</h1>
 					<div class="panel-group" id="accordion">
 						<div class="panel panel-default">
 							<div class="panel-heading">
@@ -39,7 +37,12 @@
 											<td class="customw"></td>
 											<td class="customw">{{province}}</td>
 											<td class="customw"></td>
-											<td class="customw"><div id="district"></div></td>
+											<td class="customw">
+												<div id="district"></div>
+											</td>
+											<td class="customw">
+												<div id="local"></div>
+											</td>
 										</tr>
 										<tr>
 											<td class="customw">
@@ -54,9 +57,6 @@
 							</div>
 						</div>
 					</div>
-						<h2> New Registrations </h2>
-						{{listing}}
-						<h2> Members </h2>
-						{{listingpaid}}
-
+					<h1>{{title}}</h1>
+						{{AUTH:admin_users}}{{listing}}{{END:AUTH}}
 					</div>

@@ -74,6 +74,8 @@ class Member extends Model {
 		#Global Variables
 		global $_db;
 
+		$province_where_clause = ($province)? "AND `members`.`province_id` = '{$province}'" :"";
+
 		# Get Data
 		$query		= "	SELECT
 							`created_at` as 'Registration Date',
@@ -109,7 +111,7 @@ class Member extends Model {
 						WHERE
 								`members`.`active` = 1
 								AND `members`.`paid` = 0
-								AND `members`.`province_id` = '{$province}'
+								{$province_where_clause}
 
 											";
 

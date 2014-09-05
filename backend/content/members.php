@@ -28,13 +28,10 @@ class Page extends AbstractPage {
 		# Get Data
 		$province		= Province::get_id(Form::get_str("province"));
 		$listing 		= Member::listing($province);
-
-		/*$listingpaid 	= Member::listingpaid();*/
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(
 							"listing"		=> $listing,
-							"listingpaid" 	=> $listingpaid,
 							"add_link"		=> $this->cur_page."&action=add",
 							"title"			=> 'Members',
 							"province"		=> provinces_select()

@@ -12,3 +12,31 @@
 .customw {
     width: 100px;
 }
+
+.navbar-default {
+    background-color: black;
+   /*  border-color: #E7E7E7; */
+}
+
+.panel-default > .panel-heading {
+
+    background-color: black;
+    color:white;
+    /* border-color: #DDD; */
+}
+
+.panel-title {
+    color: white !important;
+}
+
+.customw2 {
+    width: 300px;
+}
+
+.navbar-default .navbar-brand {
+    color: white !important;
+}
+
+a {
+    color: white !important;
+}
