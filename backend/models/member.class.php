@@ -69,12 +69,14 @@ class Member extends Model {
 		return $html;
 	}
 
-	public function listing($province) {
+	public function listing($province,$district) {
 
 		#Global Variables
 		global $_db;
 
 		$province_where_clause = ($province)? "AND `members`.`province_id` = '{$province}'" :"";
+		$district_where_clause = ($district)? "AND `members`.`district` = '{$district}'" :"";
+
 
 		# Get Data
 		$query		= "	SELECT
@@ -112,7 +114,7 @@ class Member extends Model {
 								`members`.`active` = 1
 								AND `members`.`paid` = 0
 								{$province_where_clause}
-
+								{$district_where_clause}
 											";
 
 		if(isset($_GET['v'])){
@@ -191,10 +193,22 @@ class Member extends Model {
 	}
 
 
-	public function getTotalMembers() {
+	public function getTotalMembers($province,$district) {
 		global $_db;
 
-		$query = "SELECT COUNT(*) FROM `members` WHERE `active` = 1 AND `paid` = 0 ";
+		$province_where_clause = ($province)? "AND `members`.`province_id` = '{$province}'" :"";
+		$district_where_clause = ($district)? "AND `members`.`district` = '{$district}'" :"";
+
+		$query = " SELECT
+						COUNT(*)
+				   FROM
+				   		`members`
+				    WHERE `active` = 1
+				    	AND `paid` = 0
+						{$province_where_clause}
+						{$district_where_clause}
+				    	";
+
 		$total = $_db->fetch_single($query);
 		return ($total <> 0)?$total : '0';
 	}
