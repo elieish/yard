@@ -107,6 +107,8 @@ $province       = provinces_select();
                     </div> <!-- /.menu-responsive -->
                   </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->
+                <p style="float:right"><a class="btn btn-primary btn-lg pink_color"  data-toggle="modal" data-target=".bs-example-modal-lg" role="button">Register</a></p>
+
               </div> <!-- /.container -->
             </div> <!-- /.site-header -->
 
@@ -122,63 +124,11 @@ $province       = provinces_select();
                   </div>
                 </div>
 
-                <div class="row"><!-- first row -->
 
-                 <div class="col-md-4"><!-- first column -->
-
-                  <div class="widget-item">
+            <div class="row"><!-- second row -->
 
 
-                    <h3 class="widget-title"></h3>
-                    <div class="service-item"><!-- /.service-icon -->
-                      <div class="service-content">
-                       <br><br>
-
-                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">National<br>Click here   </a></li>
-
-                      </ul>
-                    </div>
-                    <!-- /.service-content -->
-                  </div> <!-- /.service-item -->
-
-                  <div class="service-item"><!-- /.service-icon -->
-                    <div class="service-content">
-
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">Provincial<br>Click here   </a></li>
-
-                      </ul>
-                    </div> <!-- /.service-content -->
-                  </div> <!-- /.service-item -->
-
-                  <div class="service-item"><!-- /.service-icon -->
-                    <div class="service-content">
-
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">District<br>Click here   </a></li>
-
-                      </ul>
-                    </div> <!-- /.service-content -->
-                  </div> <!-- /.service-item -->
-
-                  <div class="service-item"><!-- /.service-icon -->
-                    <div class="service-content">
-
-                      <ul class="nav nav-pills nav-stacked">
-                        <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">Local Membership<br>Click here   </a></li>
-
-                      </ul>
-                      <!-- <button  data-target=".bs-example-modal-lg">Large modal</button> -->
-
-                    </div> <!-- /.service-content -->
-                  </div> <!-- /.service-item -->
-
-                </div> <!-- /.widget-item -->
-
-            </div> <!-- /.col-md-4 -->
-
-            <div class="col-md-4"><!-- second column -->
+            <div class="col-md-3"><!-- second column -->
                 <div class="widget-item">
                   <h3 class="widget-title">National</h3>
                   <div class="sample-thumb">
@@ -190,26 +140,8 @@ $province       = provinces_select();
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-            <div class="col-md-4"><!-- third column -->
-                <div class="widget-item">
-                  <h3 class="widget-title"><br></h3>
-                  <div class="sample-thumb">
-                    <img src="images/event_2.jpg" alt="Special Eve" title="Special Eve">
-                  </div> <!-- /.sample-thumb -->
-                  <div class="panel panel-default">
-                    <div class="panel-heading"><br><br></div>
+             <div class="col-md-3"><!-- first column -->
 
-
-
-                  </div>
-                </div> <!-- /.widget-item -->
-            </div> <!-- /.col-md-4 -->
-
-            </div> <!-- /.row first -->
-
-            <div class="row"><!-- second row -->
-
-             <div class="col-md-4"><!-- first column -->
               <div class="widget-item">
                 <h3 class="widget-title">Provincial</h3>
                 <div class="sample-thumb">
@@ -228,7 +160,7 @@ $province       = provinces_select();
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-            <div class="col-md-4"><!-- second column -->
+            <div class="col-md-3"><!-- second column -->
               <div class="widget-item">
                 <h3 class="widget-title">District</h3>
                 <div class="sample-thumb">
@@ -247,7 +179,7 @@ $province       = provinces_select();
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-            <div class="col-md-4"><!-- third column -->
+            <div class="col-md-3"><!-- third column -->
               <div class="widget-item">
                 <h3 class="widget-title">Local</h3>
                 <div class="sample-thumb">
@@ -363,6 +295,11 @@ $province       = provinces_select();
                       <label>District:</label>
                       <div id='district'></div>
                     </div>
+                    <div class="form-group validate_nonempty">
+                      <label>Local Municipality:</label>
+                      <div id='local'></div>
+                    </div>
+
 
                     <div class="form-group">
                      <button type="submit" class="btn btn-primary">Submit</button>

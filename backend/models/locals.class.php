@@ -11,7 +11,7 @@
 # CLASS
 # ==========================================================================================
 
-class District extends Model {
+class Local extends Model {
 
     # --------------------------------------------------------------------------------------
     # ATTRIBUTES
@@ -32,7 +32,7 @@ class District extends Model {
      */
     function __construct($uid=0) {
         # Set Table
-        $this->table       = "districts";
+        $this->table       = "locals";
 
         # Initialize UID from Parameter
         $this->uid         = $uid;
@@ -82,16 +82,16 @@ class District extends Model {
         return $listing;
     }
 
-    public function listing($province)
+    public function listing($district)
     {
         global $_db;
         # Get Data
         $query          = " SELECT
-                            `code`,
+                            `uid`,
                             `name`
                         FROM
-                            `districts`
-                        WHERE `province_id` = '{$province}'
+                            `locals`
+                        WHERE `district_id` = '{$district}'
                             ";
         $data           = $_db->fetch($query);
 

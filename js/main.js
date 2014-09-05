@@ -50,6 +50,15 @@ jQuery(document).ready(function($) {
          window.location.href = "index.php";
     });
 
+
+    $(document).on('change','#districts',function(){
+    var url = 'ajax.php?action=local_select';
+    url     += '&district=' + this.value;
+    var result = ajax_get_data(url);
+    $('#local').html(result);
+    });
+
+
 });
 
 function ajax_get_data(this_url) {
@@ -140,6 +149,7 @@ $(document).ready(function(){
     });*/
 
 });
+
 
 
 
