@@ -72,15 +72,23 @@ class Email extends Model {
         global $_db;
 
         $query = " SELECT
-                    *
+                        (SELECT
+                                CONCAT(`first_name`, ' ', `last_name`)
+                        FROM
+                            `users`
+                        WHERE
+                            `uid` = e.`user_id`
+                        ) as 'Sender',
+
+                        `subject` as 'Subject',
+                        `created_at`as 'Datetime Sent'
                     FROM
-                        `emails`
+                        `emails` e
                     WHERE
                         `active` = 1
-                        AND `receiver` = '{$receiver}'
+                        AND `receiver` = '{$uid}'
                     ORDER BY `created_at` DESC
                     ";
-
         return paginated_listing($query);
     }
 

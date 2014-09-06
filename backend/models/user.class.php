@@ -252,6 +252,23 @@ class User extends Model {
 		return $html;
 	}
 
+	function get_users_uids()
+	{
+		# Global Variables
+		global $_db;
+
+		$query = " SELECT
+						`uid`
+					FROM
+						`users`
+					WHERE
+						`active` = 1
+					";
+		$data  = $_db->fetch($query);
+
+		return $data;
+	}
+
 
 }
 

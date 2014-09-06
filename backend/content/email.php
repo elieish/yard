@@ -32,26 +32,55 @@ class Page extends AbstractPage {
 
     function save() {
 
+
         # Global Variables
         global $_db, $validator;
 
+
         # Get POST Data
         $receiver          = Form::get_str("receiver");
-        $subject           = Form::get_str("subject");
-        $message           = Form::get_str("message");
 
-        $obj               = new Email();
-        $obj->created_at   = now();
-        $obj->user_id      = get_user_uid();
-        $obj->message      = $message;
-        $obj->receiver     = $receiver;
-        $obj->active       = 1;
+        if ($receiver == 3) {
 
-        //Save Email
-        $obj->save();
+           # Get all active Users UIDs
+           $users = User::get_users_uids();
 
-        // Redirect
-        redirect("?p=home");
+           foreach ($users as $value) {
+
+            $subject           = Form::get_str("subject");
+            $message           = Form::get_str("message");
+            $obj               = new Email();
+            $obj->created_at   = now();
+            $obj->user_id      = get_user_uid();
+            $obj->message      = $message;
+            $obj->receiver     = $value->uid;
+            $obj->active       = 1;
+
+            //Save Email
+            $obj->save();
+           }
+
+        }
+        else {
+            $subject           = Form::get_str("subject");
+            $message           = Form::get_str("message");
+
+            $obj               = new Email();
+            $obj->created_at   = now();
+            $obj->user_id      = get_user_uid();
+            $obj->message      = $message;
+            $obj->receiver     = $receiver;
+            $obj->active       = 1;
+
+            //Save Email
+            $obj->save();
+
+
+        }
+
+
+            // Redirect
+            redirect("?p=home");
 
     }
 
