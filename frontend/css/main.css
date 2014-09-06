@@ -66,4 +66,9 @@ body {
     background-color: #000 !important;
 }
 
+.dropdown-menu > li > a:hover {
+   background-color:#000 !important;
+}
+
+
 
