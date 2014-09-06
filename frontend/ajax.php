@@ -32,6 +32,38 @@ function district_select()
   print $districtdrop;
 }
 
+function get_user_email_addresses_multi() {
+    global $_db;
+
+    $searchString = Form::get_str('q');
+    $query = "SELECT
+                    *
+                FROM
+                    `users`
+                WHERE
+                    CONCAT(`first_name`, ' ', `last_name`, ' ', `email`) LIKE '%{$searchString}%' AND
+                    `email` != '' AND
+                    `active` = 1
+    ";
+    $result  = $_db->fetch($query);
+    if(count($result) > 0) {
+        foreach($result as $user) {
+            $sToken = md5(uniqid(mt_rand(), true));
+            $data[]= array("name"=>"{$user->first_name} {$user->last_name} <{$user->email}","id" =>"{$user->uid}");
+        }
+
+
+        $data = json_encode($data);
+    } else {
+        $data = json_encode(array());
+    }
+
+
+    print $data;
+
+}
+
+
 # ===================================================
 # ACTION HANDLER
 # ===================================================

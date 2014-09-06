@@ -392,7 +392,7 @@ CREATE TABLE IF NOT EXISTS `locals` (
   `uid` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `code` varchar(50) NOT NULL,
-  `_id` int(11) NOT NULL DEFAULT '0',
+  `district_id` int(11) NOT NULL DEFAULT '0',
   `active`      int(1)      NOT NULL default 1,
   PRIMARY KEY (`uid`
 )
@@ -446,11 +446,19 @@ VALUES  (18, 'uMdoni','', 5, 1);
 INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
 VALUES  (19, 'Ezingoleni','', 5, 1);
 
+/** 06 September 2014 By Elie ishimwe **/
+CREATE TABLE IF NOT EXISTS `emails` (
+  `uid` int(10) NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `user_id` int,
+  `receiver` varchar(250) NOT NULL,
+  `subject` varchar(250) NOT NULL,
+  `message` BLOB,
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`));
 
-
-
-
-
+/** 06 September 2014 By Elie ishimwe **/
+ALTER TABLE `emails` ADD `read` int AFTER `message`;
 
 
 

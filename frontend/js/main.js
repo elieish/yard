@@ -13,6 +13,8 @@
         $('#district').html(result);
     });
 
+
+ $("#receiver").tokenInput('ajax.php?action=get_user_email_addresses_multi',{ theme: "facebook"});
  });
 
 function printPDF(){
@@ -43,5 +45,7 @@ function refresh() {
     url             += '&province='  + province;
     $("#refresh").attr("href", url);
 }
+
+
 
 

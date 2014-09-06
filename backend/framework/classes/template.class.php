@@ -175,6 +175,14 @@ class Template {
 		else if ($variable == "MEMBERS2") {
 			return Member::getTotalMemberss();
 		}
+		else if ($variable == "EMAILFORM") {
+			$email = new Email();
+			return $email->item_form("?p=email&action=save");
+		}
+		else if ($variable == "MESSAGES") {
+			$email = new Email();
+			return $email->getTotalInbox(get_user_uid());
+		}
 		else {
 			return "";
 		}

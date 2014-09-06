@@ -21,10 +21,11 @@
 											<td class="customw"><strong>Start Date</strong></td>
 											<td class="customw"></td>
 											<td class="customw"><strong>End Date</strong></td>
+											{{AUTH:admin_users}}
 											<td class="customw"></td>
 											<td class="customw"><strong>Province</strong></td>
 											<td class="customw"></td>
-											<td class="customw"><strong>District</strong></td>
+											<td class="customw"><strong>District</strong></td>{{END:AUTH}}
 										</tr>
 										<tr>
 											<td class="customw">
@@ -35,7 +36,9 @@
 												<input type="text" class="datepicker" name="enddate"/>
 											</td>
 											<td class="customw"></td>
-											<td class="customw">{{province}}</td>
+											<td class="customw">
+											{{AUTH:admin_users}}{{province}}
+											{{END:AUTH}}</td>
 											<td class="customw"></td>
 											<td class="customw">
 												<div id="district"></div>
