@@ -1,7 +1,7 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @package Project
@@ -16,7 +16,7 @@ ini_set("session.save_handler", "files");
 session_start();
 
 # Store latest page request
-$_SESSION['accessing_page'] 											= $_SERVER['REQUEST_URI'];
+$_SESSION['accessing_page'] 		= $_SERVER['REQUEST_URI'];
 
 # Include Required Scripts
 include_once (dirname(dirname(__FILE__)) . "/backend/framework/include.php");
@@ -26,7 +26,7 @@ include_once (dirname(dirname(__FILE__)) . "/backend/framework/include.php");
 # =========================================================================
 
 # Create Application Object
-$app																	= Application::Factory();
+$app	= Application::Factory();
 
 # Construct Page
 $app->draw_page();

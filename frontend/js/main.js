@@ -45,6 +45,12 @@ function refresh() {
     url             += '&province='  + province;
     $("#refresh").attr("href", url);
 }
+function modalEmail(name)
+{
+    alert(name);
+    $('#myModal').modal('toggle');
+}
+
 
 
 

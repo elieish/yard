@@ -81,7 +81,10 @@ class Email extends Model {
                         ) as 'Sender',
 
                         `subject` as 'Subject',
-                        `created_at`as 'Datetime Sent'
+                        CONCAT('<a onclick=modalEmail(\"',e.`message`,'\")>',
+                                e.`subject`,
+                                '</a>') as 'Sub',
+                        `created_at`as 'Received'
                     FROM
                         `emails` e
                     WHERE
@@ -91,6 +94,11 @@ class Email extends Model {
                     ";
         return paginated_listing($query);
     }
+
+      /*  CONCAT('<a href=\"?p=employee&action=add&id=', `company_id`,'&co=',`cost_center_id`,'&dep=',`department_id`,'&em=',`uid`,'\">', `name`, '</a>') as 'Employee name',
+         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                        Filters Options
+                                    </a>*/
 
 }
 

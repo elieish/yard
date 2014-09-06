@@ -1,12 +1,12 @@
 <?php
 /**
  * Project
- * 
+ *
  * @author Ralfe Poisson <ralfepoisson@gmail.cm>
  * @version 2.0
  * @package Project
  */
- 
+
 # ===================================================
 # SCRIPT SETTINGS
 # ===================================================
@@ -29,7 +29,7 @@ Application::db_connect();
 function display() {
 	# Global Variables
 	global $_GLOBALS;
-	
+
 	# Generate Page
 	$template															= new Template(dirname(__FILE__) . "/html/login.html");
 	$template->draw();
@@ -42,20 +42,21 @@ function display() {
 function login() {
 	# Global Variables
 	global $cur_page, $_db, $_GLOBALS;
-        
+
 	# Check if user is attempting to be authenticated
 	if (isset($_POST['login'])){
 		# Get POST Data
 		$username														= Form::get_str('username');
-		
+
 		$password														= Form::get_str('password');
 		# Attempt to Login
 		$result															= User::login($username, $password);
-		
+
 		# Handle Login Result
 		if ($result) {
 			# Redirect
 			if (isset($_SESSION['accessing_page'])) {
+
 				redirect($_SESSION['accessing_page']);
 			}
 			else {

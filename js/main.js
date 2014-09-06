@@ -57,8 +57,6 @@ jQuery(document).ready(function($) {
     var result = ajax_get_data(url);
     $('#local').html(result);
     });
-
-
 });
 
 function ajax_get_data(this_url) {
@@ -149,8 +147,6 @@ $(document).ready(function(){
     });*/
 
 });
-
-
 
 
 
