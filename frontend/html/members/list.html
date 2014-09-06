@@ -1,66 +1,72 @@
-				<div class='row-fluid'>
+	 <div class="row">
+	 	<div class="col-lg-12">
+	 	<h1 class="page-header">Members</h1>
+	 	</div>
+	 	<!-- /.col-lg-12 -->
+	 </div>
 
-					<div class="btn-position">
 
-						<!-- <a class='btn btn-success pull-right' href='{{add_link}}'><i class='icon-plus icon-white'></i> Add New Member</a> -->
+	 <div class='row-fluid'>
 
-					</div>
-					<div class="panel-group" id="accordion">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-										Filters Options
-									</a>
-								</h4>
-							</div>
-							<div id="collapseOne" class="panel-collapse collapse out">
-								<div class="panel-body">
-									<table>
-										<tr>
-											<td class="customw"><strong>Start Date</strong></td>
-											<td class="customw"></td>
-											<td class="customw"><strong>End Date</strong></td>
-											{{AUTH:admin_users}}
-											<td class="customw"></td>
-											<td class="customw"><strong>Province</strong></td>
-											<td class="customw"></td>
-											<td class="customw"><strong>District</strong></td>{{END:AUTH}}
-										</tr>
-										<tr>
-											<td class="customw">
-												<input type="text" class="datepicker" name="startdate"/>
-											</td>
-											<td class="customw"></td>
-											<td class="customw">
-												<input type="text" class="datepicker" name="enddate"/>
-											</td>
-											<td class="customw"></td>
-											<td class="customw">
-											{{AUTH:admin_users}}{{province}}
-											{{END:AUTH}}</td>
-											<td class="customw"></td>
-											<td class="customw">
-												<div id="district"></div>
-											</td>
-											<td class="customw">
-												<div id="local"></div>
-											</td>
-										</tr>
-										<tr>
-											<td class="customw">
-												<a id="refresh" class="btn btn-success" onclick="refresh()">
-													<i class="icon-plus icon-white">
-													</i> Refresh
-												</a>
-											</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-					<h1>{{title}}</h1>
-						<!-- {{AUTH:admin_users}}{{listing}}{{END:AUTH}} -->
-						{{listing}}
-					</div>
+	 	<div class="btn-position">
+
+	 		<!-- <a class='btn btn-success pull-right' href='{{add_link}}'><i class='icon-plus icon-white'></i> Add New Member</a> -->
+
+	 	</div>
+	 	<div class="panel-group" id="accordion">
+	 		<div class="panel panel-default">
+	 			<div class="panel-heading">
+	 				<h4 class="panel-title">
+	 					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+	 						Filters Options
+	 					</a>
+	 				</h4>
+	 			</div>
+	 			<div id="collapseOne" class="panel-collapse collapse out">
+	 				<div class="panel-body">
+	 					<table>
+	 						<tr>
+	 							<td class="customw"><strong>Start Date</strong></td>
+	 							<td class="customw"></td>
+	 							<td class="customw"><strong>End Date</strong></td>
+	 							{{AUTH:admin_users}}
+	 							<td class="customw"></td>
+	 							<td class="customw"><strong>Province</strong></td>
+	 							<td class="customw"></td>
+	 							<td class="customw"><strong>District</strong></td>{{END:AUTH}}
+	 						</tr>
+	 						<tr>
+	 							<td class="customw">
+	 								<input type="text" class="datepicker" name="startdate"/>
+	 							</td>
+	 							<td class="customw"></td>
+	 							<td class="customw">
+	 								<input type="text" class="datepicker" name="enddate"/>
+	 							</td>
+	 							<td class="customw"></td>
+	 							<td class="customw">
+	 								{{AUTH:admin_users}}{{province}}
+	 								{{END:AUTH}}</td>
+	 								<td class="customw"></td>
+	 								<td class="customw">
+	 									<div id="district"></div>
+	 								</td>
+	 								<td class="customw">
+	 									<div id="local"></div>
+	 								</td>
+	 							</tr>
+	 							<tr>
+	 								<td class="customw">
+	 									<a id="refresh" class="btn btn-success" onclick="refresh()">
+	 										<i class="icon-plus icon-white">
+	 										</i> Refresh
+	 									</a>
+	 								</td>
+	 							</tr>
+	 						</table>
+	 					</div>
+	 				</div>
+	 			</div>
+	 		</div>
+	 		{{listing}}
+	 	</div>
