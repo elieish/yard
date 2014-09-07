@@ -21,6 +21,7 @@ function printPDF(uid){
 
     var url = 'ajax.php?action=getMemberdetails';
     url     += '&uid=' + uid;
+    var result = ajax_get_data(url);
     var data = jQuery.parseJSON(result);
 	var doc = new jsPDF();
    /* doc.addImage(imgData, 'PNG', 15, 40, 180, 180);*/
@@ -29,8 +30,8 @@ function printPDF(uid){
     doc.text(20, 40, 'Membership Number: ' + data.membership_no);
     doc.text(20, 50, 'Name: '   + data.name);
     doc.text(20, 60, 'Surname: ' + data.surname);
-    doc.text(20, 70, 'Province Name: ' + data.province_id);
-    doc.text(20, 80, 'District Name: ' + data.district);
+    doc.text(20, 70, 'Province Name: ' + data.provincename);
+    doc.text(20, 80, 'District Name: ' + data.districtname);
     doc.text(20, 90, 'Local Name: ' + data.local_area);
     doc.text(20, 100, 'Date of Issue: ' + data.created_at);
     doc.text(20, 110, 'Renewal Date : ' + data.created_at);

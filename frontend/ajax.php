@@ -77,9 +77,12 @@ function getEmailContent() {
 }
 
 function getMemberdetails() {
-
-    $memberUid     = Form::get_str("uid");
-    $member        = new Member($memberUid);
+    $memberUid              = Form::get_str("uid");
+    $member                 = new Member($memberUid);
+    $province               = new Province($member->province_id);
+    $district               = new District($member->district);
+    $member->provincename   = $province->province;
+    $member->districtname   = $district->name;
     print json_encode($member);
 }
 
