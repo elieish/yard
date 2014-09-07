@@ -17,12 +17,26 @@
  $("#receiver").tokenInput('ajax.php?action=get_user_email_addresses_multi',{ theme: "facebook"});
  });
 
-function printPDF(){
+function printPDF(uid){
+
+    var url = 'ajax.php?action=getMemberdetails';
+    url     += '&uid=' + uid;
+    var data = jQuery.parseJSON(result);
 	var doc = new jsPDF();
-	doc.text(20, 20, 'Hello world!');
-	doc.text(20, 30, 'This is client-side Javascript, pumping out a PDF.');
+   /* doc.addImage(imgData, 'PNG', 15, 40, 180, 180);*/
+	doc.text(20, 20, 'YARD MEMBERSHIP CERTIFICATE');
+	doc.text(20, 30, 'Youth in Agriculture & Rural Development');
+    doc.text(20, 40, 'Membership Number: ' + data.membership_no);
+    doc.text(20, 50, 'Name: '   + data.name);
+    doc.text(20, 60, 'Surname: ' + data.surname);
+    doc.text(20, 70, 'Province Name: ' + data.province_id);
+    doc.text(20, 80, 'District Name: ' + data.district);
+    doc.text(20, 90, 'Local Name: ' + data.local_area);
+    doc.text(20, 100, 'Date of Issue: ' + data.created_at);
+    doc.text(20, 110, 'Renewal Date : ' + data.created_at);
+    doc.text(20, 120, 'Issuing Office : ' + data.created_at);
 	doc.addPage();
-	doc.text(20, 20, 'Do you like that?');
+    doc.save('Certificate.pdf');
 }
 
 function ajax_get_data(this_url) {
@@ -61,6 +75,7 @@ function modalEmail(uid)
         location.reload();
     });
 }
+
 
 
 

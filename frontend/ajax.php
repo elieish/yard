@@ -76,6 +76,13 @@ function getEmailContent() {
     print json_encode($Email);
 }
 
+function getMemberdetails() {
+
+    $memberUid     = Form::get_str("uid");
+    $member        = new Member($memberUid);
+    print json_encode($member);
+}
+
 
 # ===================================================
 # ACTION HANDLER

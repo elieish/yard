@@ -97,7 +97,7 @@ class Member extends Model {
                         </li>
                         <li><a href=\"{$this->cur_page}&action=paid&id=', `members`.`uid`, '\"><i class=\"fa fa-money fa-fw\"></i> Approve  </a>
                         </li>
-                        <li><a href=\"#\"  onclick=\"printPDF()\"><i class=\"fa fa-print fa-fw\"></i> Print </a>
+                        <li><a href=\"#\"  onclick=printPDF(', `members`.`uid`,')><i class=\"fa fa-print fa-fw \"></i> Print </a>
                         </li>
                         <li><a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"fa fa-trash-o fa-fw\"></i> Delete </a>
                         </li>
