@@ -87,7 +87,7 @@ class Member extends Model {
 							`surname` as 'Surname',
 							`cell` as 'Cell',
 							`provinces`.`province` as 'Province',
-						CONCAT('<a href=\"{$this->cur_page}&action=paid&id=', `members`.`uid`, '\">Not Paid<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Payment',
+					 IF(`members`.`paid` = 1,'Paid','Not Paid') as 'Payment',
 					CONCAT('<li class=\"dropdown\">
                     <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
                         <i class=\"fa fa-tasks fa-fw\"></i>  <i class=\"fa fa-caret-down\"></i>
@@ -108,11 +108,10 @@ class Member extends Model {
 								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
 						WHERE
 								`members`.`active` = 1
-								AND `members`.`paid` = 0
 								{$province_where_clause}
 								{$district_where_clause}
 											";
-
+/*
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
 				$query												.= 'AND paid = "Y"';
@@ -122,7 +121,7 @@ class Member extends Model {
 		else {
 				$query												.= 'ORDER BY
 																				`name`';
-		}
+		}*/
 
 		$listing							= paginated_listing($query);
 
@@ -166,7 +165,7 @@ class Member extends Model {
 								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
 						WHERE
 								`members`.`active` = 1
-								AND `members`.`paid` = 1
+
 
 											";
 
