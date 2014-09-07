@@ -1,0 +1,44 @@
+
+/* ===== Primary Styles ========================================================
+    * Project: Yard Website
+    * Author:  Elie Ishimwe
+    * Email:   elieish@gmail.com
+   ========================================================================== */
+.form-control {
+    width: 50% !important;
+}
+
+.datepicker {z-index: 100000 !important ;}
+
+.nav-pills > li.active > a {
+    background-color: #9ED034;
+}
+
+.nav-pills > li.active > a:hover {
+    background-color: #1D4B00 ;
+}
+
+.btn-primary {
+     background-color: #9ED034 !important;
+     border-color: #9ED034 !important;
+}
+
+
+button:hover {
+     background-color: #1D4B00 ;
+}
+
+.dropdown-menu {
+    min-width: 430px;
+}
+
+.has-error,.help-block{
+    color: #A94442 !important;
+}
+
+.has-error .form-control {
+    border-color: #A94442;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+

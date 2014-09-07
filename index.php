@@ -29,6 +29,7 @@ $province       = provinces_select();
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery.singlePageNav.js"></script>
     <script src="js/jquery.flexslider.js"></script>
+    <script src="js/validate.js"></script>
 
     <script src="js/custom.js"></script>
      <script src="js/jquery-1.10.2.min.js"></script>
@@ -46,8 +47,8 @@ $province       = provinces_select();
                     <div class="row">
                         <div class="col-md-4 col-sm-6 col-xs-10">
                             <div class="logo">
-                                <a rel="nofollow" href="http://www.templatemo.com/preview/templatemo_409_travel">
-                                    <img src="images/logo.png" alt="travel by templatemo" title="travel - free html5 template">
+                                <a rel="nofollow" href="frontend/login.php">
+                                    <img src="images/logo.png" alt="travel by templatemo" title="">
                                 </a>
                             </div> <!-- /.logo -->
                         </div> <!-- /.col-md-4 -->
@@ -272,7 +273,7 @@ $province       = provinces_select();
                     </div> <!-- /.col-md-4 -->
                     <div class="col-md-4 col-sm-4">
                         <div class="copyright">
-                            <span>Copyright &copy; 2014 <a href="#">YARD</a></span>
+                            <span>Copyright &copy; 2014 <a href="frontend/login.php">YARD</a><i class="fa fa-login fa-fw"></i></span>
                         </div>
                     </div> <!-- /.col-md-4 -->
                     <div class="col-md-4 col-sm-4">

@@ -21,9 +21,6 @@ function display()
 	# Global Variables
     global $_db;
 
-if(isset($_POST['submit'])) {
-
-
 $name               = $_POST['name'];
 $surname            = $_POST['surname'];
 $gender             = $_POST['gender'];
@@ -34,7 +31,13 @@ $email              = $_POST['email'];
 $prov               = $_POST['province'];
 $title_id           = $_POST['title'];
 $provid             = province_id($prov);
-$registrationno     = $_POST['registrationnumber'];
+$district           = $_POST['district'];
+$districtid         = district_id($district);
+
+# Construct Membership Number
+$membership_no      = substr($name, 0,1).substr($surname,0,1);
+$membership_no      .= date("dmy", strtotime(now()));
+$membership_no      .= $prov.$district;
 
   # Create new Object
 $obj                = new Member();
@@ -49,9 +52,10 @@ $obj->tel           = $telephone;
 $obj->province_id   = $provid;
 $obj->title_id      = $title_id;
 $obj->created_at    = now();
-$obj->membership_no = $registrationno;
+$obj->membership_no = strtoupper($membership_no);
 $obj->active        = 1;
-$email              = $obj->email;
+$obj->province_id   = $provid;
+$obj->district      = $districtid;
   # Save Member
 $obj->save();
 
@@ -60,12 +64,10 @@ $receivers           = array('elieish@gmail.com',$obj->email);
 foreach ($receivers as $value) {
      $to_email               = $value;
      $email_subject          = "Membership Confirmation ";
-     $message                = "Good Day ".$obj->name." \n Thank you for you registration. Please take note of your membership no is  ".$obj->membership_no;
+     $message                = "Good Day ".$obj->name." \n Thank you for you registration. Please take note of your Membership Number is  ".$obj->membership_no;
      html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
   }
-redirect('index.php');
-
-}
+redirect('confirmation.php?membership_no='.$obj->membership_no);
 
 }
 # ===================================================

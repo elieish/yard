@@ -193,6 +193,7 @@ function titles_select($flag,$selected_value) {
 							`title`
 						FROM
 							`titles`
+                        WHERE `title` IN ('Mrs','Ms','Mr')
 							";
 	$data			= $_db->fetch($query);
 
@@ -212,7 +213,7 @@ function titles_select($flag,$selected_value) {
 
 		}
 
-		return "<select class='form-control' name='title' id='title'><option value=0>Select One</option>{$array}</select>";
+		return "<select class='form-control' name='title' id='title'><option value=''>Select One</option>{$array}</select>";
 
 }
 
@@ -245,7 +246,7 @@ function provinces_select($flag,$selected_value) {
 
 		}
 
-		return "<select class='form-control' name='province' id='province'><option value=0>Select One</option>{$array}</select>";
+		return "<select class='form-control' name='province' id='province'><option value=''>Select One</option>{$array}</select>";
 
 }
 
@@ -292,11 +293,63 @@ function districts_select($province_code,$selected_value) {
 
         }
 
-        return "<select class='form-control' name='district' id='district'><option value=0>Select One</option>{$array}</select>";
+        return "<select class='form-control' name='district' id='district'><option value=''>Select One</option>{$array}</select>";
 
         return $data;
 
 }
+
+function district_id($code) {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid`
+                    FROM
+
+                            `districts`
+
+                    WHERE
+
+                            `code` = '{$code}'";
+    $data  = $_db->fetch_single($query);
+
+    # Return Values
+    return $data;
+}
+
+function districtt_select($provinceid) {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid`, `name`
+                    FROM
+
+                            `districts`
+
+                    WHERE
+
+                            `active` = 1 AND
+                            `province_id` = '{$provinceid}'
+
+                    ORDER BY
+
+                            `name`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->name;
+    }
+
+    # Return Values
+    return $values;
+}
+
 
 
 

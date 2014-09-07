@@ -1,17 +1,63 @@
-				<div class='row-fluid'>
-	        		
-	        		<div class="btn-position">
-	        		
-	        			<a class='btn btn-success pull-right' style="margin-left: 8px !important;" target="_blank" href="../reports.php"><i class='fa fa-print'></i> Print</a>
-	        			<a class='btn btn-success pull-right' href='{{add_link}}'><i class='icon-plus fa fa-plus'></i> Add New Member</a>
-	        			
-	        		</div>
-	        		
-	        		<h1>{{title}}</h1>
-	        		<div class="search"><select style="margin-right: 10px"><option>Option1</option></select><select style="margin-right: 10px"><option>Option2</option></select><select style="margin-right: 10px"><option>Option3</option></select></div>
-					<h2> New Registrations </h2>
-					{{listing}}
-					<h2> Members </h2>
-					{{listingpaid}}
-					
-				</div>
+ <div class='row-fluid'>
+
+                    <div class="btn-position">
+
+                        <a class='btn btn-success pull-right'
+href='{{add_link}}'><i class='icon-plus icon-white'></i> Add New
+Member</a>
+
+                    </div>
+
+                    <h1>{{title}}</h1>
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse"
+data-parent="#accordion" href="#collapseOne">
+                                        Filters Options
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne"
+class="panel-collapse collapse out">
+                                <div class="panel-body">
+                                    <table>
+                                        <tr>
+                                            <td
+class="customw"><strong>Start Date</strong></td>
+                                            <td class="customw"></td>
+                                            <td
+class="customw"><strong>End Date</strong></td>
+                                            <td class="customw"></td>
+                                            <td
+class="customw"><strong>Province</strong></td>
+                                            <td class="customw"></td>
+                                            <td
+class="customw"><strong>District</strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="customw">
+                                                <input type="text"
+class="datepicker" name="startdate"/>
+                                            </td>
+                                            <td class="customw"></td>
+                                            <td class="customw">
+                                                <input type="text"
+class="datepicker" name="enddate"/>
+                                            </td>
+                                            <td class="customw"></td>
+                                            <td
+class="customw">{{province}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <h2> New Registrations </h2>
+                        {{listing}}
+                        <h2> Members </h2>
+                        {{listingpaid}}
+
+                    </div>

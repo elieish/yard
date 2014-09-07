@@ -43,9 +43,13 @@ class User extends Model {
 		global $_db;
 
 		# Generate Form
-		$form			= new Form("{$cur_page}&action=save");
+		$form			= new Form("?p=admin_users&action=save");
 		//			Label				Type			Name				Value
 		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add(""					, "hidden"		, "title"			, 1);
+		/*$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
+
+		$form->add_select("Select a District"   , "district_id"     ,$this->district_id     , "");*/
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
@@ -54,7 +58,10 @@ class User extends Model {
 		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
 		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
 		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
+		$form->add("National Secretary"	, "text"		, "NationalSecretary"		, $this->NationalSecretary);
+		$form->add("National Treasurer"	, "text"		, "NationalTreasurer"		, $this->NationalTreasurer);
 		$form->add(""					, "submit"		, "submit"			, "Save");
+
 
 		# Generate HTML
 		$html														= $form->generate();
@@ -139,11 +146,12 @@ class User extends Model {
 		$query = " SELECT
 						`uid` as '#',
 						 CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\">', `username`, '</a>') as 'Username',
+						 (SELECT `title` FROM `titles` WHERE `uid` = u.`title`) as 'Title',
 						`first_name` as 'First Name',
 						`last_name` as 'Last Name',
 						CONCAT('<a href=\"{$this->cur_page}&action=profile&id=', `uid`, '\"><i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Actions'
 					FROM
-						`users`
+						`users` u
 					WHERE
 						`active` = 1
 					";
@@ -181,6 +189,69 @@ class User extends Model {
 			)
 		);
 	}
+
+	public function formp($cur_page) {
+		# Global Variables
+		global $_db;
+
+		# Generate Form
+		$form			= new Form("?p=admin_users&action=savep");
+		//			Label				Type			Name				Value
+		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add(""					, "hidden"		, "title"			, 4);
+		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
+
+		$form->add("Username"			, "text"		, "username"		, $this->username);
+		$form->add("Password"			, "password"	, "password"		, $this->password);
+		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
+		$form->add("Last Name"			, "text"		, "last_name"		, $this->last_name);
+		$form->add("Email Address"		, "text"		, "email"			, $this->email);
+		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
+		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
+		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
+		$form->add("Provincial Secretary"	, "text"		, "ProvincialSecretary"		, $this->ProvincialSecretary);
+		$form->add("Provincial Treasurer"	, "text"		, "ProvincialTreasurer"		, $this->ProvincialTreasurer);
+		$form->add(""					, "submit"		, "submit"			, "Save");
+
+
+		# Generate HTML
+		$html														= $form->generate();
+
+		# Return HTML
+		return $html;
+	}
+
+
+	public function formDistrict($cur_page) {
+		# Global Variables
+		global $_db;
+
+		# Generate Form
+		$form			= new Form("?p=admin_users&action=saveDistrict");
+		//			Label				Type			Name				Value
+		$form->add(""					, "hidden"		, "uid"				, $this->uid);
+		$form->add(""					, "hidden"		, "title"			, 7);
+		$form->add_select("Select a Province"   , "province_id"     ,$this->province     , province_select());
+		$form->add_select("Select a District"   , "district_id"     ,$this->district     , province_select());
+		$form->add("Username"			, "text"		, "username"		, $this->username);
+		$form->add("Password"			, "password"	, "password"		, $this->password);
+		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
+		$form->add("Last Name"			, "text"		, "last_name"		, $this->last_name);
+		$form->add("Email Address"		, "text"		, "email"			, $this->email);
+		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
+		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
+		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
+		$form->add("Provincial Secretary"	, "text"		, "ProvincialSecretary"		, $this->ProvincialSecretary);
+		$form->add(""					, "submit"		, "submit"			, "Save");
+
+
+		# Generate HTML
+		$html														= $form->generate();
+
+		# Return HTML
+		return $html;
+	}
+
 
 }
 

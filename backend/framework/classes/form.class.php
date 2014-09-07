@@ -82,7 +82,7 @@ class Form {
 		} else if ($type == "submit") {
 			return "<input type='submit' value=\"{$value}\" class='btn btn-primary'>";
 		} else if ($type == "password") {
-			return "<input type='password' name=\"$name\" id=\"$name\" value=\"{$value}\">";
+			return "<input type='password'  class='form-control' name=\"$name\" id=\"$name\" value=\"{$value}\">";
 		} else if ($type == "checkbox") {
 			return "<input type='checkbox' name='{$name}' " . is_checked($value) . ">";
 		} else if ($type == "date") {

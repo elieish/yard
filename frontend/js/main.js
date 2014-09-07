@@ -1,5 +1,10 @@
  $(document).ready(function() {
-        $('.table').dataTable();
+    $('.table').dataTable();
+
+   $('.datepicker').datepicker({
+    format: 'yyyy-mm-dd',
+    startDate: '-3d'
+    });
  });
 
 function printPDF(){
