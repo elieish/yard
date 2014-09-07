@@ -63,6 +63,13 @@ function get_user_email_addresses_multi() {
 
 }
 
+function getEmailContent() {
+
+    $EmailUid     = Form::get_str("uid");
+    $Email        = new Email($EmailUid);
+    print json_encode($Email);
+}
+
 
 # ===================================================
 # ACTION HANDLER

@@ -45,10 +45,17 @@ function refresh() {
     url             += '&province='  + province;
     $("#refresh").attr("href", url);
 }
-function modalEmail(name)
+function modalEmail(uid)
 {
-    alert(name);
-    $('#myModal').modal('toggle');
+
+    //Get Email Content
+    var url = 'ajax.php?action=getEmailContent';
+    url     += '&uid=' + uid;
+    var result = ajax_get_data(url);
+    var data = jQuery.parseJSON(result);
+    $('#emailcontent').html(data.message);
+    $('#myModalLabelEmail').html("Subject:" + data.subject);
+    $('#myModal2').modal('toggle');
 }
 
 

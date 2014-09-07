@@ -53,6 +53,7 @@ class Page extends AbstractPage {
             $obj->created_at   = now();
             $obj->user_id      = get_user_uid();
             $obj->message      = $message;
+            $obj->subject      = $subject;
             $obj->receiver     = $value->uid;
             $obj->active       = 1;
 
@@ -69,6 +70,7 @@ class Page extends AbstractPage {
             $obj->created_at   = now();
             $obj->user_id      = get_user_uid();
             $obj->message      = $message;
+            $obj->subject      = $subject;
             $obj->receiver     = $receiver;
             $obj->active       = 1;
 
