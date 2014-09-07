@@ -82,5 +82,9 @@ table a {
     color:blue !important;
 }
 
+table .dropdown-menu {
+    background-color: white !important;
+}
+
 
 
