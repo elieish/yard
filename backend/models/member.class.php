@@ -85,12 +85,8 @@ class Member extends Model {
 							(SELECT `title` FROM `titles` WHERE `uid` = `members`.`title_id`) as'Title',
 							`name` as 'Name',
 							`surname` as 'Surname',
-							`tel` as 'Tel',
 							`cell` as 'Cell',
-							`email` as 'Email',
 							`provinces`.`province` as 'Province',
-
-
 						CONCAT('<a href=\"{$this->cur_page}&action=paid&id=', `members`.`uid`, '\">Not Paid<i class=\"icon-edit\"></i></a>\t<a href=\"{$this->cur_page}&action=delete&id=', `members`.`uid`, '\"><i class=\"icon-trash\"></i></a>') as 'Payment',
 					CONCAT('<li class=\"dropdown\">
                     <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" href=\"#\">
