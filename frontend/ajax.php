@@ -67,6 +67,12 @@ function getEmailContent() {
 
     $EmailUid     = Form::get_str("uid");
     $Email        = new Email($EmailUid);
+
+    //Mark Email as Read
+    $Email->read  = 1;
+
+    // Save Changes
+    $Email->save();
     print json_encode($Email);
 }
 

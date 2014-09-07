@@ -460,6 +460,9 @@ CREATE TABLE IF NOT EXISTS `emails` (
 /** 06 September 2014 By Elie ishimwe **/
 ALTER TABLE `emails` ADD `read` int AFTER `message`;
 
+/** 07 September 2014 By Elie ishimwe **/
+INSERT INTO `users` (`datetime`, `username`, `password`, `first_name`, `last_name`, `active`) VALUES(NOW(), 'Everyone', '21232f297a57a5a743894a0e4a801fc3', 'Everyone', 'User', 1);
+
 
 
 
