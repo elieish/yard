@@ -56,8 +56,11 @@ function modalEmail(uid)
     $('#emailcontent').html(data.message);
     $('#myModalLabelEmail').html("Subject:" + data.subject);
     $('#myModal2').modal('toggle');
-}
 
+    $('#clModal2,#clModal1').click(function() {
+        location.reload();
+    });
+}
 
 
 

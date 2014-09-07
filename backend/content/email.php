@@ -40,7 +40,7 @@ class Page extends AbstractPage {
         # Get POST Data
         $receiver          = Form::get_str("receiver");
 
-        if ($receiver == 3) {
+        if ($receiver == 3 || $receiver == 2) {
 
            # Get all active Users UIDs
            $users = User::get_users_uids();
@@ -82,7 +82,7 @@ class Page extends AbstractPage {
 
 
             // Redirect
-            redirect("?p=home");
+            redirect("?p=email&action=email_confirmation");
 
     }
 
@@ -96,6 +96,24 @@ class Page extends AbstractPage {
         $file       = dirname(dirname(dirname(__FILE__)))."/frontend/html/emails/list.html";
         $vars       = array(
                             "listing"       => $listing,
+
+                        );
+
+        $template     = new Template($file,$vars);
+        $html         = $template->tostring();
+
+        # Display HTML
+        Print $html;
+
+    }
+
+    function email_confirmation()
+    {
+          # Global Variables
+        global $_db, $validator;
+
+        $file       = dirname(dirname(dirname(__FILE__)))."/frontend/html/emails/confirmation.html";
+        $vars       = array(
 
                         );
 
