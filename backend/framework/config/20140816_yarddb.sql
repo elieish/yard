@@ -293,7 +293,7 @@ VALUES  (9, 'uMzinyathi District Municipality','DC24', 7, 1);
 INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
 VALUES  (10, 'uThukela District Municipality','DC23', 7, 1);
 INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
-VALUES  (11, 'uThukela District Municipality','DC28', 7, 1);
+VALUES  (11, 'uThungulu District Municipality','DC28', 7, 1);
 INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
 VALUES  (12, 'Zululand District Municipality','DC26', 7, 1);
 INSERT INTO `districts` (`uid`, `name`, `code`,`province_id`, `active`)
@@ -463,9 +463,95 @@ ALTER TABLE `emails` ADD `read` int AFTER `message`;
 /** 07 September 2014 By Elie ishimwe **/
 INSERT INTO `users` (`datetime`, `username`, `password`, `first_name`, `last_name`, `active`) VALUES(NOW(), 'Everyone', '21232f297a57a5a743894a0e4a801fc3', 'Everyone', 'User', 1);
 
+/** 10 September 2014 By Elie ishimwe **/
+
+/** uMgungundlovu District Municipality **/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (20, 'Msunduzi','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (21, 'uMshwathi','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (22, 'uMngeni','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (23, 'Richmond','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (24, 'Mkhambathini','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (25, 'Mpofana','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (26, 'Impendle','', 6, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (27, 'Highmoor/Kamberg Park','', 6, 1);
+
+/**uMkhanyakude District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (28, 'Jozini','', 8, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (29, 'Hlabisa','', 8, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (30, 'Umhlabuyalingana','', 8, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (31, 'Mtubatuba','', 8, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (32, 'The Big 5 False Bay','', 8, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (33, 'St Lucia Parka','', 8, 1);
+
+/**uMzinyathi District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (34, 'Msinga','', 9, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (35, 'Nqutu','', 9, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (36, 'Umvoti','', 9, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (37, 'Endumeni','', 9, 1);
 
 
+/**uThukela District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (38, 'Emnambithi/Ladysmith','', 10, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (39, 'Okhahlamba','', 10, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (40, 'Imbabazane','', 10, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (41, 'Indaka','', 10, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (42, 'Umtshezi','', 10, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (43, 'Giants Castle Game Reserve','', 10, 1);
 
+/**uThungulu District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (44, 'Emnambithi/Ladysmith','', 11, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (45, 'Okhahlamba','', 11, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (46, 'Imbabazane','', 11, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (47, 'Indaka','', 11, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (48, 'Umtshezi','', 11, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (49, 'Giants Castle Game Reserve','', 11, 1);
+
+/**Zululand District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (50, 'Abaqulusi Local Municipality ','', 12, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (51, 'eDumbe Local Municipality','', 12, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (52, 'Nongoma Local Municipality','', 12, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (53, 'Ulundi Local Municipality','', 12, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (54, 'uPhongolo Local Municipality','', 12, 1);
+
+
+/**Zululand District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (55, 'Durban Municipality','', 2, 1);
 
 
 
