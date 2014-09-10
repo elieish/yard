@@ -25,18 +25,28 @@ class Page extends AbstractPage {
 		# Global Variables
 		global $_db;
 
+		#Get User ID
+		$user_id 		= get_user_uid();
+		$user			= new User($user_id);
+
 		# Get Data
+
 		$listing 		= Member::listing();
 		$listingpaid 	= Member::listingpaid();
+
+		$province		= Province::get_id(Form::get_str("province"));
+		$district		= District::get_id(Form::get_str("district"));
+		$province		= ($province)? $province : $user->province;
+		$province		= ($district)? $district : $user->district;
+		$listing 		= Member::listing($province,$district);
+
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(
 							"listing"		=> $listing,
-							"listingpaid" 	=> $listingpaid,
 							"add_link"		=> $this->cur_page."&action=add",
 							"title"			=> 'Members',
-							"province"		=> provinces_select(),
-
+							"province"		=> provinces_select()
 						);
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
@@ -60,9 +70,6 @@ class Page extends AbstractPage {
 
 		# Get Member ID
 		$member_id	= Form::get_int('id');
-
-		#Get Data
-		//$listing														= CostCenter::listing_by_member($member_id);
 
 		#Create New Object
 		$obj			= new Member($member_id);

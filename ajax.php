@@ -44,6 +44,15 @@ function check_user_duplicate() {
  }
 
 
+function local_select()
+{
+  $district     = Form::get_str("district");
+  $localsdrop   = locals_select($district,"");
+  print $localsdrop;
+}
+
+
+
 //-----------------------------------------------------------------------
 // Action Handler
 //-----------------------------------------------------------------------

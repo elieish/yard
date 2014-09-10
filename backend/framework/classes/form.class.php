@@ -74,7 +74,7 @@ class Form {
 	 */
 	function generate_input($type, $name, $value="", $options="") {
 		if ($type == "text") {
-			return "<input class='form-control' type='text' name='{$name}' value=\"{$value}\">";
+			return "<input class='form-control' type='text' id='{$name}' name='{$name}' value=\"{$value}\">";
 		} else if ($type == "textarea") {
 			return "<textarea name='{$name}' rows='5' cols='60'>{$value}</textarea>";
 		} else if ($type == "hidden") {

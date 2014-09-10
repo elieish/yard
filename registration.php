@@ -33,6 +33,7 @@ $title_id           = $_POST['title'];
 $provid             = province_id($prov);
 $district           = $_POST['district'];
 $districtid         = district_id($district);
+$localid            = $_POST['locals'];
 
 # Construct Membership Number
 $membership_no      = substr($name, 0,1).substr($surname,0,1);
@@ -56,6 +57,7 @@ $obj->membership_no = strtoupper($membership_no);
 $obj->active        = 1;
 $obj->province_id   = $provid;
 $obj->district      = $districtid;
+$obj->local_area    = $localid;
   # Save Member
 $obj->save();
 

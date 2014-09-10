@@ -388,6 +388,82 @@ ALTER TABLE `users` ADD `ProvincialTreasurer` varchar(255) AFTER `ProvincialSecr
 
 
 
+CREATE TABLE IF NOT EXISTS `locals` (
+  `uid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `code` varchar(50) NOT NULL,
+  `district_id` int(11) NOT NULL DEFAULT '0',
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`
+)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/** 05-09-2014 By Elie Ishimwe **/
+
+/**Amajuba District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (1, 'Newcastle','', 1, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (2, 'Dannhauser','', 1, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (3, 'eMadlangeni','', 1, 1);
+
+/**iLembe District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (4, 'NKwaDukuza','', 3, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (5, 'Ndwedwe','', 3, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (6, 'Mandeni','', 3, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (7, 'Maphumulo','', 3, 1);
+
+/**Sisonke District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (8, 'Ingwe','', 4, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (9, 'Ubuhlebezwe','', 4, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (10, 'Greater Kokstad','', 4, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (11, 'Kwa Sani','', 4, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (12, 'Umzimkhulu','', 4, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (13, 'Mkhomazi Wilderness Area','', 4, 1);
+
+/**Ugu District Municipality**/
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (14, 'Hibiscus Coast','', 5, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (15, 'Umzumbe','', 5, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (16, 'uMuziwabantu','', 5, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (17, 'Vulamehlo','', 5, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (18, 'uMdoni','', 5, 1);
+INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
+VALUES  (19, 'Ezingoleni','', 5, 1);
+
+/** 06 September 2014 By Elie ishimwe **/
+CREATE TABLE IF NOT EXISTS `emails` (
+  `uid` int(10) NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `user_id` int,
+  `receiver` varchar(250) NOT NULL,
+  `subject` varchar(250) NOT NULL,
+  `message` BLOB,
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`));
+
+/** 06 September 2014 By Elie ishimwe **/
+ALTER TABLE `emails` ADD `read` int AFTER `message`;
+
+/** 07 September 2014 By Elie ishimwe **/
+INSERT INTO `users` (`datetime`, `username`, `password`, `first_name`, `last_name`, `active`) VALUES(NOW(), 'Everyone', '21232f297a57a5a743894a0e4a801fc3', 'Everyone', 'User', 1);
+
+
 
 
 

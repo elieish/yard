@@ -293,7 +293,7 @@ function districts_select($province_code,$selected_value) {
 
         }
 
-        return "<select class='form-control' name='district' id='district'><option value=''>Select One</option>{$array}</select>";
+        return "<select class='form-control' name='districts' id='districts'><option value=''>Select One</option>{$array}</select>";
 
         return $data;
 
@@ -349,6 +349,36 @@ function districtt_select($provinceid) {
     # Return Values
     return $values;
 }
+
+function locals_select($district_code,$selected_value) {
+    # Global Variables
+    global $_db;
+
+    $district_id      = District::get_id($district_code);
+    $data             = Local::listing($district_id);
+
+
+        foreach ($data as $item) {
+
+            if($selected_value == $item->id)
+            {
+
+                $array          .= "<option selected value={$item->uid}>{$item->name}</option>";
+            }
+            else
+            {
+                $array          .= "<option  value={$item->uid}>{$item->name}</option>";
+            }
+
+
+        }
+
+        return "<select class='form-control' name='locals' id='locals'><option value=''>Select One</option>{$array}</select>";
+
+        return $data;
+
+}
+
 
 
 

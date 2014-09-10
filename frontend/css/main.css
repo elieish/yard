@@ -12,3 +12,79 @@
 .customw {
     width: 100px;
 }
+
+.navbar-default {
+    background-color: #333;
+   /*  border-color: #E7E7E7; */
+}
+
+.panel-default > .panel-heading {
+
+    background-color: #333;
+    color:white;
+    /* border-color: #DDD; */
+}
+
+.panel-title {
+    color: white !important;
+}
+
+.customw2 {
+    width: 300px;
+}
+
+.navbar-default .navbar-brand {
+    color: white !important;
+}
+
+a {
+    color: white !important;
+}
+
+.panel-footer {
+    background-color: #111111 !important;
+}
+
+.nav > li > a:focus,.nav > li > a:hover {
+    text-decoration: none;
+    background-color: #111 !important;
+}
+
+body {
+    background-color: #333 !important;
+}
+
+.dropdown-menu {
+    background-color: #333 !important;
+}
+
+.sidebar ul li a.active {
+    background-color: #333 !important;
+}
+
+.sidebar ul li a.hover {
+    background-color: #000 !important;
+}
+
+.dropdown-menu > li > a:hover,.dropdown-menu > li > a:focus {
+   background-color:#000 !important;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    background-color: #000 !important
+}
+
+.breadcrumb {
+    background-color:#333 !important;
+}
+
+table a {
+    color:blue !important;
+}
+
+table .dropdown-menu {
+    background-color: white !important;
+}
+
+
+

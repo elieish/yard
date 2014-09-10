@@ -1,12 +1,12 @@
 <?php
 /**
  * Project: AJAX Script
- * 
- * @author Ralfe Poisson <ralfepoisson@gmail.cm>
- * @version 2.0
+ *
+ * @author Elie Ishimwe <elieish@gmail.com>
+ * @version 1.0
  * @package Project
  */
- 
+
 # ===================================================
 # SCRIPT SETTINGS
 # ===================================================
@@ -24,30 +24,75 @@ Application::db_connect();
 # FUNCTIONS
 # ===================================================
 
-function getdropdownlist() {
-	# Global Variables
-    global $_db;
-	
-	# Get Data
-	$id																= Form::get_str("id");
-	$type															= Form::get_str("type");
-	if ($type == "costcenter") {
-			
-		$listing													= generate_select("cost_center_id", cost_center_select($id));
-	
-	}
-	else {
-		$listing													= generate_select("department_id", department_select($id));
-	}
-	
-	print $listing;
+
+function district_select()
+{
+  $province     = Form::get_str("province");
+  $districtdrop = districts_select($province,"");
+  print $districtdrop;
 }
+
+function get_user_email_addresses_multi() {
+    global $_db;
+
+    $searchString = Form::get_str('q');
+    $query = "SELECT
+                    *
+                FROM
+                    `users`
+                WHERE
+                    CONCAT(`first_name`, ' ', `last_name`, ' ', `email`) LIKE '%{$searchString}%' AND
+                    `email` != '' AND
+                    `active` = 1
+    ";
+    $result  = $_db->fetch($query);
+    if(count($result) > 0) {
+        foreach($result as $user) {
+            $sToken = md5(uniqid(mt_rand(), true));
+            $data[]= array("name"=>"{$user->first_name} {$user->last_name} <{$user->email}","id" =>"{$user->uid}");
+        }
+
+
+        $data = json_encode($data);
+    } else {
+        $data = json_encode(array());
+    }
+
+
+    print $data;
+
+}
+
+function getEmailContent() {
+
+    $EmailUid     = Form::get_str("uid");
+    $Email        = new Email($EmailUid);
+
+    //Mark Email as Read
+    $Email->read  = 1;
+
+    // Save Changes
+    $Email->save();
+    print json_encode($Email);
+}
+
+function getMemberdetails() {
+    $memberUid              = Form::get_str("uid");
+    $member                 = new Member($memberUid);
+    $province               = new Province($member->province_id);
+    $district               = new District($member->district);
+    $member->provincename   = $province->province;
+    $member->districtname   = $district->name;
+    print json_encode($member);
+}
+
+
 # ===================================================
 # ACTION HANDLER
 # ===================================================
 
 if (isset($_GET["action"])) {
-	$action																= Form::get_str("action");
+	$action					= Form::get_str("action");
 	if (function_exists($action)) {
 		$action();
 	}
