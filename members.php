@@ -107,91 +107,207 @@ $province       = provinces_select();
                     </div> <!-- /.menu-responsive -->
                   </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->
-                <p style="float:right"><a class="btn btn-primary btn-lg pink_color"  data-toggle="modal" data-target=".bs-example-modal-lg" role="button">Register</a></p>
-
               </div> <!-- /.container -->
             </div> <!-- /.site-header -->
 
-            <div class="page-top" id="templatemo_events">
+            <div>
+            
+            <img src="images/Pictureyard.jpg" alt="Ancillary Objectives" title="Ancillary Objectives"/>
+        </div>
             </div> <!-- /.page-header -->
 
             <div class="middle-content">
               <div class="container">
                 <div class ="row">
                   <div class="col-md-12">
-                   <div class="panel panel-default">
-                    <div class="panel-heading">YARD is rolled out on local grassroots level which falls under a district and provincial administrations. Each province is to be set-up with its own leadership structures which will form the operational backbone of the programme. The programme’s development activities takes place at the level of community-based youth co-operatives and youth-led organizational structures, in the different provinces.</div>
-                  </div>
+                  <div class="sample-thumb">
+                        <div>
+                            <ul class="nav nav-pills nav-stacked">
+                              <li class="active">
+                              <a>Members </a></li>
+                            </ul>
+                            </div>
+
+                          
+                            <img src="images/member10.jpg" alt="New Event" title="New Event"/>
+
+                            <a href="#" class="list-group-item active"><font size="5"><center>
+                                </center></font>
+                            </a>
+                            <div class="well well-lg">YARD undergirds stable socio-economic growth and national
+                             development, through cultivating and availing support resources, while administrating 
+                             and managing their distribution, for youth-led entrepreneurial projects and their related
+                              organizational needs throughout South Africa.
+                            </div>
+                        </div>
                 </div>
 
+                <div class="row"><!-- first row -->
 
-            <div class="row"><!-- second row -->
+                 <div class="col-md-4"><!-- first column -->
+
+                  <div class="widget-item">
 
 
-            <div class="col-md-3"><!-- second column -->
+                    <div class="service-item"><!-- /.service-icon -->
+                      <div class="service-content">
+                       <br><br>
+
+                       <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#">National<br>Click here   </a></li>
+
+                      </ul>
+                    </div>
+                    <!-- /.service-content -->
+                  </div> <!-- /.service-item -->
+
+                  <div class="service-item"><!-- /.service-icon -->
+                    <div class="service-content">
+
+                      <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#">Provincial<br>Click here   </a></li>
+
+                      </ul>
+                    </div> <!-- /.service-content -->
+                  </div> <!-- /.service-item -->
+
+                  <div class="service-item"><!-- /.service-icon -->
+                    <div class="service-content">
+
+                      <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#">District<br>Click here   </a></li>
+
+                      </ul>
+                    </div> <!-- /.service-content -->
+                  </div> <!-- /.service-item -->
+
+                  <div class="service-item"><!-- /.service-icon -->
+                    <div class="service-content">
+
+                      <ul class="nav nav-pills nav-stacked">
+                        <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">Local Membership<br>Click here   </a></li>
+
+                      </ul>
+                      <!-- <button  data-target=".bs-example-modal-lg">Large modal</button> -->
+
+                    </div> <!-- /.service-content -->
+                  </div> <!-- /.service-item -->
+
+                </div> <!-- /.widget-item -->
+
+            </div> <!-- /.col-md-4 -->
+
+            <div class="col-md-4"><!-- second column -->
                 <div class="widget-item">
-                  <h3 class="widget-title">National</h3>
                   <div class="sample-thumb">
-                    <img src="images/event_1.jpg" alt="New Event" title="New Event">
+                    <img src="images/member1.jpg" alt="New Event" title="New Event">
+                  </div> <!-- /.sample-thumb -->
+                  <div class="list-group">
+                                    <a href="#" class="list-group-item active">
+                                        <font size="5">
+                                            <center>
+                                                National Level 
+                                            </center>
+                                        </font>
+                                    </a>
+                                    <div class="well well-lg" style="min-height: 200px">
+                                    While YARD programmes are rolled out on national level; investment, resourcing and the
+                                    development activities are focused at the level of SMMEs, community-based youth
+                                    co-operatives and youth-led organizational structures, in the various provinces, on
+                                    local level. TYA exists to ensure that youth structures be developed for integration
+                                    into the formal economy and achieve their socio-economic development aims. TYA is 
+                                    careful 
+                                    t to be bogged-down by the necessary internal bureaucratic and democratic processes, typical 
+                                    f a national organization.</div><!-- /.well well-lg -->
+                                </div><!-- /.list-group -->
+                </div> <!-- /.widget-item -->
+            </div> <!-- /.col-md-4 -->
+
+            <div class="col-md-4"><!-- third column -->
+                <div class="widget-item">
+                  <div class="sample-thumb">
+                    <img src="images/event_2.jpg" alt="Special Eve" title="Special Eve">
                   </div> <!-- /.sample-thumb -->
                   <div class="panel panel-default">
-                    <div class="panel-heading">While YARD programmes are rolled out on national level; investment, resourcing and the development activities are focused at the level of SMMEs, community-based youth co-operatives and youth-led organizational structures, in the various provinces, on local level. TYA exists to ensure that youth structures be developed for integration into the formal economy and achieve their socio-economic development aims. TYA is careful not to be bogged-down by the necessary internal bureaucratic and democratic processes, typical of a national organization.<br><br></div>
+                    <div class="panel-heading"><br><br></div>
+
+
+
                   </div>
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-             <div class="col-md-3"><!-- first column -->
+            </div> <!-- /.row first -->
 
+            <div class="row"><!-- second row -->
+
+             <div class="col-md-4"><!-- first column -->
               <div class="widget-item">
-                <h3 class="widget-title">Provincial</h3>
                 <div class="sample-thumb">
-                  <img src="images/event_3.jpg" alt="New" title="New">
+                  <img src="images/member2.jpg" alt="New" title="New">
                 </div> <!-- /.sample-thumb -->
-                <div class="panel panel-default">
-                  <div class="panel-heading">The Provincial office is the administrative head of the districts and their local beneficiaries’ structures. The structure is responsible for ensuring the successful roll-out and governance of the YARD programme in each province.<br><br></div>
-
-
-
-                </div>
-                <ul class="nav nav-pills nav-stacked">
-                  <li class="active"><a href="#">MINUTES AND NOTICES<br>Click here   </a></li>
-
-                </ul>
+                <div class="list-group">
+                                    <a href="#" class="list-group-item active">
+                                        <font size="5">
+                                            <center>
+                                                Provincial 
+                                            </center>
+                                        </font>
+                                    </a>
+                                    <div class="well well-lg" style="min-height: 200px">
+                                      The Provincial office is the administrative head of the districts and their 
+                                      local beneficiaries’ structures. The structure is responsible for ensuring the
+                                      successful roll-out and governance of the YARD programme in each province.</div><!-- /.well well-lg -->
+                                </div><!-- /.list-group -->
+                
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-            <div class="col-md-3"><!-- second column -->
+            <div class="col-md-4"><!-- second column -->
               <div class="widget-item">
-                <h3 class="widget-title">District</h3>
                 <div class="sample-thumb">
-                  <img src="images/event_4.jpg" alt="New Event" title="New Event">
+                  <img src="images/member3.jpg" alt="New Event" title="New Event">
                 </div> <!-- /.sample-thumb -->
-                <div class="panel panel-default">
-                  <div class="panel-heading">The District levels of YARD are critical for the implementation of the projects and enterprises on local level. Their direct oversight ensures that structures operate, intra-collaborate and filter critical information that informs the YARD <br><br></div>
-
-
-
-                </div>
-                <ul class="nav nav-pills nav-stacked">
-                  <li class="active"><a href="#">MINUTES AND NOTICES<br>Click here   </a></li>
-
-                </ul>
+                <div class="list-group">
+                                    <a href="#" class="list-group-item active">
+                                        <font size="5">
+                                            <center>
+                                                District
+                                            </center>
+                                        </font>
+                                    </a>
+                                    <div class="well well-lg" style="min-height: 200px">
+                                    The District levels of YARD are critical for the implementation of 
+                                    the projects and enterprises on local level. Their direct oversight 
+                                    ensures that structures operate, intra-collaborate and filter critical 
+                                    information that informs the YARD 
+                                    </div><!-- /.well well-lg -->
+                                </div><!-- /.list-group -->
+     
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-            <div class="col-md-3"><!-- third column -->
-              <div class="widget-item">
-                <h3 class="widget-title">Local</h3>
+            <div class="col-md-4"><!-- third column -->
+              <div class="widget-item"
                 <div class="sample-thumb">
-                  <img src="images/event_5.jpg" alt="Special Eve" title="Special Eve">
+                  <img src="images/member4.jpg" alt="Special Eve" title="Special Eve">
+                  <div class="list-group">
+                                    <a href="#" class="list-group-item active">
+                                        <font size="5">
+                                            <center>
+                                              Local
+                                            </center>
+                                        </font>
+                                    </a>
+                                    <div class="well well-lg" style="min-height: 200px">
+                                    The local level of YARD is where the most important work of the organization is done. 
+                                    This level receives the highest intensity of input and resourcing; is the most critical 
+                                    level for the aimed development outcomes and is monitored, supported and evaluated 
+                                    regularly to ensure the achievements of the desired results.
+                                    </div><!-- /.well well-lg -->
+                                </div><!-- /.list-group -->
                 </div> <!-- /.sample-thumb -->
-                <div class="panel panel-default">
-                  <div class="panel-heading">The local level of YARD is where the most important work of the organization is done. This level receives the highest intensity of input and resourcing; is the most critical level for the aimed development outcomes and is monitored, supported and evaluated regularly to ensure the achievements of the desired results.<br></div>
-                </div>
-                <ul class="nav nav-pills nav-stacked">
-                  <li class="active"><a href="#">MINUTES AND NOTICES<br>Click here   </a></li>
-
-                </ul>
+                
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
           </div> <!-- /.row second -->
@@ -295,11 +411,6 @@ $province       = provinces_select();
                       <label>District:</label>
                       <div id='district'></div>
                     </div>
-                    <div class="form-group validate_nonempty">
-                      <label>Local Municipality:</label>
-                      <div id='local'></div>
-                    </div>
-
 
                     <div class="form-group">
                      <button type="submit" class="btn btn-primary">Submit</button>

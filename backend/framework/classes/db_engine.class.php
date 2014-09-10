@@ -136,6 +136,30 @@ class db_engine {
 		return $arr;
 	}
 	
+	function fetch_array($query){
+		# Connect To Database
+		$this->db_connect();
+		
+		# Execute SQL Command
+		$result 														= $this->query($query);
+		
+		# Handle Errors
+		$this->err_handler();
+		//return $result->fetch_array();
+		# Get Array
+		$arr															= array();
+		foreach ($result as $key => $value) {
+			$arr[$key] = $value;
+		}
+		//$arr															= $result->fetch_array();
+		/*while ($item													= $result->fetch_array()) {
+			$arr[]														= $item;
+		}*/
+		
+		# Return array
+		return $arr;
+	}
+	
 	/**
 	 * Connects to the database, executes a query, returns an array
 	 * of objects.

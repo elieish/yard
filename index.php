@@ -89,7 +89,7 @@ $province       = provinces_select();
             </div> <!-- /.container -->
         </div> <!-- /.site-header -->
 
-        <div class="flexslider">
+        <div class="flexslider" style="top: -350">
             <ul class="slides">
                 <li>
                     <div class="overlay"></div>
@@ -97,16 +97,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                <div class="flex-caption visible-lg">
-
-                                    <h3 class="title">OUR AIMS</h3>
-                                    <p>The Aims of YARD are to:
-                                        Promote and support the developmental objectives of disadvantaged and impoverished youth, through self-help collective programmes and organizational structures of YARD, in rural and similarly underdeveloped areas . . . </p>
-                                        <br>
-
-                            			<!--<a rel="nofollow" href="http://unsplash.com">Unsplash</a>.</p>-->
-                                    <!--<a href="#" class="slider-btn">Pre-booking</a>-->
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -117,12 +108,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                <div class="flex-caption visible-lg">
-
-                                    <h3 class="title">OUR OBJECTIVES</h3>
-                                    <p>The Ancillary Objectives of YARD ensure that the development objectives of disadvantaged and impoverished youth, in self-help collective programmes and organizational structures, in rural and similarly underdeveloped areas, are achieved in terms of . . . . </p>
-                                    <!--<a href="#" class="slider-btn">Reserve Now</a>-->
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -133,12 +119,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                <div class="flex-caption visible-lg">
-
-                                    <h3 class="title">MISSION STATEMENT</h3>
-                                    <p>YARD undergirds stable socio-economic growth and national development, through cultivating and availing support resources, while administrating and managing their distribution, for youth-led entrepreneurial projects and their related organizational needs throughout South Africa.</p>
-                                    <!--<a href="#" class="slider-btn">&nbsp;</a>-->
-                                </div>
+                                
                             </div>
 
                         </div>
@@ -151,7 +132,7 @@ $province       = provinces_select();
 
         <div class="container">
             <div class="row">
-                <div class="our-listing owl-carousel">
+                <div class="our-listing owl-carousel" style="top: -280">
                  <!--   <div class="list-item">
                         <div class="list-thumb">
                             <div class="title">
@@ -207,7 +188,7 @@ $province       = provinces_select();
                     <div class="list-item">
                         <div class="list-thumb">
                             <div class="title">
-                                <h4>VIDEOS</h4>
+                                <h4>VIDEO</h4>
                             </div>
                             <img src="images/destination_5.jpg" alt="destination 5">
                         </div> <!-- /.list-thumb -->

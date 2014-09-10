@@ -30,11 +30,16 @@ class Page extends AbstractPage {
 		$user			= new User($user_id);
 
 		# Get Data
+
+		$listing 		= Member::listing();
+		$listingpaid 	= Member::listingpaid();
+
 		$province		= Province::get_id(Form::get_str("province"));
 		$district		= District::get_id(Form::get_str("district"));
 		$province		= ($province)? $province : $user->province;
 		$province		= ($district)? $district : $user->district;
 		$listing 		= Member::listing($province,$district);
+
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(
@@ -168,7 +173,7 @@ class Page extends AbstractPage {
 		# Redirect
 		redirect($this->cur_page);
 	}
-
+	
 	function paid() {
 		# Global Variables
 		global $_db, $validator;
