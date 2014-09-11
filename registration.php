@@ -69,7 +69,7 @@ foreach ($receivers as $value) {
      $message                = "Good Day ".$obj->name." \n Thank you for you registration. Please take note of your Membership Number is  ".$obj->membership_no;
      html_email($to_email, $email_subject, $message, $message, $_GLOBALS["from_email"], $fileArray);
   }
-redirect('confirmation.php?membership_no='.$obj->membership_no);
+redirect('confirmation.php?uid='.$obj->uid);
 
 }
 # ===================================================
