@@ -553,6 +553,10 @@ VALUES  (54, 'uPhongolo Local Municipality','', 12, 1);
 INSERT INTO `locals` (`uid`, `name`, `code`,`district_id`, `active`)
 VALUES  (55, 'Durban Municipality','', 2, 1);
 
+/**City of Johannesburg Metropolitan Municipality**/
+
+
+
 
 
 

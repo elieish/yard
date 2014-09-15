@@ -16,6 +16,7 @@ Application::include_helpers();
 Application::db_connect();
 $title          = titles_select();
 $province       = provinces_select();
+$date_select    = html_date();
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -78,7 +79,7 @@ $province       = provinces_select();
                         <ul class="visible-lg visible-md">
                                      <li><a href="index.php">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li class="active"><a href="members.php">Members</a></li>
+                                    <li class="active"><a href="members.php">Become a Member</a></li>
                                     <li><a href="project.html">Projects</a></li>
                                     <li><a href="governance.html">Governance</a></li>
                                     <li><a href="contribute.html">Contribute</a></li>
@@ -107,7 +108,7 @@ $province       = provinces_select();
                     </div> <!-- /.menu-responsive -->
                   </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->
-                <p style="float:right"><a class="btn btn-primary btn-lg pink_color"  data-toggle="modal" data-target=".bs-example-modal-lg" role="button">Register</a></p>
+                <p style="float:right"><a class="btn btn-primary btn-lg"  data-toggle="modal" data-target=".bs-example-modal-lg" role="button">Register</a></p>
 
               </div> <!-- /.container -->
             </div> <!-- /.site-header -->
@@ -272,8 +273,9 @@ $province       = provinces_select();
                     </div>
 
                     <div class="form-group">
-                      <label>Date of Birth:</label>
-                      <input class="datepicker form-control validate_nonempty"   name="dob" id="dob" placeholder="Date of Birth" readonly>
+                      <label>Date of Birth:</label><br>
+                      <!-- <input class="datepicker form-control validate_nonempty"   name="dob" id="dob" placeholder="Date of Birth" readonly> -->
+                      <?php  print $date_select ;?>
                     </div>
                     <div class="form-group">
                       <label>Telephone:</label>

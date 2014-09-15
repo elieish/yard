@@ -24,7 +24,7 @@ function display()
 $name               = $_POST['name'];
 $surname            = $_POST['surname'];
 $gender             = $_POST['gender'];
-$dob                = $_POST['dob'];
+$dob                = $_POST['date_year']."-".$_POST['date_month']."-".$_POST['date_day'];
 $cellphone          = $_POST['cellphone'];
 $telephone          = $_POST['telephone'];
 $email              = $_POST['email'];
