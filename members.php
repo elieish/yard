@@ -17,6 +17,7 @@ Application::include_helpers();
 Application::db_connect();
 $title          = titles_select();
 $province       = provinces_select();
+$date_select    = html_date();
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -112,7 +113,7 @@ $province       = provinces_select();
             </div> <!-- /.site-header -->
 
             <div>
-            
+
             <img src="images/Pictureyard.jpg" alt="Ancillary Objectives" title="Ancillary Objectives"/>
         </div>
             </div> <!-- /.page-header -->
@@ -129,14 +130,14 @@ $province       = provinces_select();
                             </ul>
                             </div>
 
-                          
+
                             <img src="images/member10.jpg" alt="New Event" title="New Event"/>
 
                             <a href="#" class="list-group-item active"><font size="5"><center>
                                 </center></font>
                             </a>
                             <div class="well well-lg">YARD undergirds stable socio-economic growth and national
-                             development, through cultivating and availing support resources, while administrating 
+                             development, through cultivating and availing support resources, while administrating
                              and managing their distribution, for youth-led entrepreneurial projects and their related
                               organizational needs throughout South Africa.
                             </div>
@@ -207,7 +208,7 @@ $province       = provinces_select();
                                     <a href="#" class="list-group-item active">
                                         <font size="5">
                                             <center>
-                                                National Level 
+                                                National Level
                                             </center>
                                         </font>
                                     </a>
@@ -216,9 +217,9 @@ $province       = provinces_select();
                                     development activities are focused at the level of SMMEs, community-based youth
                                     co-operatives and youth-led organizational structures, in the various provinces, on
                                     local level. TYA exists to ensure that youth structures be developed for integration
-                                    into the formal economy and achieve their socio-economic development aims. TYA is 
-                                    careful 
-                                    t to be bogged-down by the necessary internal bureaucratic and democratic processes, typical 
+                                    into the formal economy and achieve their socio-economic development aims. TYA is
+                                    careful
+                                    t to be bogged-down by the necessary internal bureaucratic and democratic processes, typical
                                     f a national organization.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.widget-item -->
@@ -251,16 +252,16 @@ $province       = provinces_select();
                                     <a href="#" class="list-group-item active">
                                         <font size="5">
                                             <center>
-                                                Provincial 
+                                                Provincial
                                             </center>
                                         </font>
                                     </a>
                                     <div class="well well-lg" style="min-height: 200px">
-                                      The Provincial office is the administrative head of the districts and their 
+                                      The Provincial office is the administrative head of the districts and their
                                       local beneficiaries’ structures. The structure is responsible for ensuring the
                                       successful roll-out and governance of the YARD programme in each province.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
-                
+
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
@@ -278,13 +279,13 @@ $province       = provinces_select();
                                         </font>
                                     </a>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The District levels of YARD are critical for the implementation of 
-                                    the projects and enterprises on local level. Their direct oversight 
-                                    ensures that structures operate, intra-collaborate and filter critical 
-                                    information that informs the YARD 
+                                    The District levels of YARD are critical for the implementation of
+                                    the projects and enterprises on local level. Their direct oversight
+                                    ensures that structures operate, intra-collaborate and filter critical
+                                    information that informs the YARD
                                     </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
-     
+
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
@@ -301,14 +302,14 @@ $province       = provinces_select();
                                         </font>
                                     </a>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The local level of YARD is where the most important work of the organization is done. 
-                                    This level receives the highest intensity of input and resourcing; is the most critical 
-                                    level for the aimed development outcomes and is monitored, supported and evaluated 
+                                    The local level of YARD is where the most important work of the organization is done.
+                                    This level receives the highest intensity of input and resourcing; is the most critical
+                                    level for the aimed development outcomes and is monitored, supported and evaluated
                                     regularly to ensure the achievements of the desired results.
                                     </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.sample-thumb -->
-                
+
               </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
           </div> <!-- /.row second -->
@@ -353,7 +354,7 @@ $province       = provinces_select();
         </div> <!-- /.container -->
       </div> <!-- /.partner-list -->
       <!--Membership Modal -->
-      <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="membershipModal">
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="membershipModal">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
@@ -389,8 +390,9 @@ $province       = provinces_select();
                     </div>
 
                     <div class="form-group">
-                      <label>Date of Birth:</label>
-                      <input class="datepicker form-control validate_nonempty"   name="dob" id="dob" placeholder="Date of Birth" readonly>
+                      <label>Date of Birth:</label><br>
+                      <!-- <input class="datepicker form-control validate_nonempty"   name="dob" id="dob" placeholder="Date of Birth" readonly> -->
+                      <?php  print $date_select ;?>
                     </div>
                     <div class="form-group">
                       <label>Telephone:</label>
@@ -412,6 +414,11 @@ $province       = provinces_select();
                       <label>District:</label>
                       <div id='district'></div>
                     </div>
+                    <div class="form-group validate_nonempty">
+                      <label>Local Municipality:</label>
+                      <div id='local'></div>
+                    </div>
+
 
                     <div class="form-group">
                      <button type="submit" class="btn btn-primary">Submit</button>
