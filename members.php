@@ -90,7 +90,6 @@ $province       = provinces_select();
                             </div> <!-- /.main-menu -->
                         </div> <!-- /.col-md-8 -->
                     </div> <!-- /.row -->
-                    <p style="float:right"><a class="btn btn-primary btn-lg pink_color" data-toggle="modal" data-target=".bs-example-modal-lg" role="button">Register</a></p>
                 </div> <!-- /.main-header -->
                 <div class="row">
                     <div class="col-md-12 visible-sm visible-xs">

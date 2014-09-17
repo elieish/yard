@@ -68,65 +68,66 @@ $member		= new Member($uid);
             <div class="modal-body">
               <div id="text">Thank you for your registration,your membership number is <?php print $member->membership_no ?> </div>
             </div>
-            <div class="modal-footer">
+          
+          <!--<div class="row">
+	        <div class="col-md-8">-->
+	        	<form action="https://sandbox.payfast.co.za/eng/process" class="form-horizontal" role="form">
+	        		<!-- Receiver Details -->
+					<input type="hidden" name="merchant_id" value="10001540">
+					<input type="hidden" name="merchant_key" value="zm5yxqt7vyraa">
+					<input type="hidden" name="return_url" value="http://127.0.0.1/payfast/thankyou.html">
+					<input type="hidden" name="cancel_url" value="http://www.widget.co.za/payment_cancelled">
+					<input type="hidden" name="notify_url" value="http://www.widget.co.za/payment_notify">
+				  <div class="form-group">
+				    <label for="name_first" class="col-sm-2 control-label">Name</label>
+				    <div class="col-sm-10">
+				      <input type="text" required="true" class="form-control" name="name_first" id="inputName_first3" placeholder="Name" value="<?php echo $member->name;?>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="name_last" class="col-sm-2 control-label">Surname</label>
+				    <div class="col-sm-10">
+				      <input type="text" required="true" class="form-control" name="name_last" id="inputName_last3" placeholder="Surname" value="<?php echo $member->surname;?>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+				    <div class="col-sm-10">
+				      <input type="email" class="form-control" name="email" id="inputEmail3" placeholder="Email" value="<?php echo $member->email;?>">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="amount" class="col-sm-2 control-label">Amount</label>
+				    <div class="col-sm-10">
+				      <input type="text" required="true" class="form-control" name="amount" id="inputAmount3" placeholder="Surname" value="20.00">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label for="item_name" class="col-sm-2 control-label">Item</label>
+				    <div class="col-sm-10">
+				      <input type="text" required="true" class="form-control" name="item_name" id="inputAmount3" placeholder="item_name" value="Membership Fee">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				      <button type="submit" class="btn btn-default"><img alt="Pay Now" src="./images/paynow.png" /></button>
+				    </div>
+				  </div>
+				  <!-- Transaction Details -->
+					<input type="hidden" name="m_payment_id" value="TRN123456789">
+					
+					<!-- Transaction Options -->
+					<input type="hidden" name="email_confirmation" value="1">
+					
+					<!-- Security -->
+					<input type="hidden" name="signature" value="">
+				</form>
+	      	<!--</div>
+	      </div>-->
+          	<div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal" id='closemodal'>Close</button>
-          </div>
+          	</div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-8">
-        	<form action="https://sandbox.payfast.co.za/eng/process" class="form-horizontal" role="form">
-        		<!-- Receiver Details -->
-				<input type="hidden" name="merchant_id" value="10001540">
-				<input type="hidden" name="merchant_key" value="zm5yxqt7vyraa">
-				<input type="hidden" name="return_url" value="http://127.0.0.1/payfast/thankyou.html">
-				<input type="hidden" name="cancel_url" value="http://www.widget.co.za/payment_cancelled">
-				<input type="hidden" name="notify_url" value="http://www.widget.co.za/payment_notify">
-			  <div class="form-group">
-			    <label for="name_first" class="col-sm-2 control-label">Name</label>
-			    <div class="col-sm-10">
-			      <input type="text" required="true" class="form-control" name="name_first" id="inputName_first3" placeholder="Name" value="<?php echo $member->name;?>">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="name_last" class="col-sm-2 control-label">Surname</label>
-			    <div class="col-sm-10">
-			      <input type="text" required="true" class="form-control" name="name_last" id="inputName_last3" placeholder="Surname" value="<?php echo $member->surname;?>">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-			    <div class="col-sm-10">
-			      <input type="email" class="form-control" name="email" id="inputEmail3" placeholder="Email" value="<?php echo $member->email;?>">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="amount" class="col-sm-2 control-label">Amount</label>
-			    <div class="col-sm-10">
-			      <input type="text" required="true" class="form-control" name="amount" id="inputAmount3" placeholder="Surname" value="<?php echo $member->surname;?>">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <label for="item_name" class="col-sm-2 control-label">Item</label>
-			    <div class="col-sm-10">
-			      <input type="text" required="true" class="form-control" name="item_name" id="inputAmount3" placeholder="item_name" value="Membership Fee">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default"><img alt="Pay Now" src="./images/paynow.png" /></button>
-			    </div>
-			  </div>
-			  <!-- Transaction Details -->
-				<input type="hidden" name="m_payment_id" value="TRN123456789">
-				
-				<!-- Transaction Options -->
-				<input type="hidden" name="email_confirmation" value="1">
-				
-				<!-- Security -->
-				<input type="hidden" name="signature" value="">
-			</form>
-      	</div>
       </div>
      </div>
      
