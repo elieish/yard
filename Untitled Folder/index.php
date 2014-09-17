@@ -85,7 +85,7 @@ $province       = provinces_select();
                         </div> <!-- /.menu-responsive -->
                     </div> <!-- /.col-md-12 -->
                 </div> <!-- /.row -->
-                <p style="float:right"><a class="btn btn-primary btn-lg pink_color"  data-toggle="modal" data-target=".bs-example-modal-lg" role="button">Register</a></p>
+
             </div> <!-- /.container -->
         </div> <!-- /.site-header -->
 
@@ -97,7 +97,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                
+
                             </div>
 
                         </div>
