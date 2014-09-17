@@ -75,7 +75,7 @@ $member		= new Member($uid);
 	        		<!-- Receiver Details -->
 					<input type="hidden" name="merchant_id" value="10001540">
 					<input type="hidden" name="merchant_key" value="zm5yxqt7vyraa">
-					<input type="hidden" name="return_url" value="http://127.0.0.1/payfast/thankyou.html">
+					<input type="hidden" name="return_url" value="http://www.yardweb.co.za">
 					<input type="hidden" name="cancel_url" value="http://www.widget.co.za/payment_cancelled">
 					<input type="hidden" name="notify_url" value="http://www.widget.co.za/payment_notify">
 				  <div class="form-group">
