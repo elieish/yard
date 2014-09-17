@@ -953,6 +953,175 @@ function view_files($item) {
 	return $html;
 }
 
+
+function html_select($options, $default = false) {
+
+	$html																= '';
+	$associative														= is_associative($options);
+
+	foreach ($options as $key => $option) {
+
+		# If the $options array is associative, we use the key as the label, and the value as the selectbox value.
+		if ($associative) {
+			$value														= $key;
+			$label														= $option;
+		}
+		# If the $options array is not associative, each value is used as both the label and the value.
+		else {
+			$value														= $option;
+			$label														= $option;
+		}
+
+		# Set the current option to selected if it is equal to the provided default value.
+		$selected														= ($default == $value)? "selected='selected'" : "";
+
+		$html															.= "<option {$selected} value='{$value}'>{$label}</option>";
+
+	}
+
+	# Return the HTML for the select box
+	return $html;
+
+}
+
+
+/**
+ * Returns 3 HTML dropdown select boxes for the day, month and year, and sets the default selected date to the provided value.
+ *
+ * @param string $selected A date in the MySQL ISO 8601 format
+ * @param string $prefix A string to prefix to the name of each of the select boxes
+ * @param string $tabindex The HTML tab index of the first select box
+ * @return string
+ */
+function html_date($selected = false, $prefix = false, $tabindex = '') {
+
+	$html																= "";
+	$selected															= ($selected)? $selected : date("Y-m-d");
+	$prefix																= ($prefix)? $prefix : "date";
+
+	# Split up day, month and year
+	$year																= substr($selected, 0, 4);
+	$month																= substr($selected, 5, 2);
+	$day																= substr($selected, 8, 2);
+
+	# Set the tab index
+	$index																= ($tabindex != '')? "tabindex='" . $tabindex++ . "'" : "";
+
+	# Construct day selector
+	$html																.= "<select {$index} class='date_day' name='{$prefix}_day' id='{$prefix}_day'>";
+	for ($x = 1; $x <= 31; $x++) {
+		$x																= str_pad($x, 2, "0", STR_PAD_LEFT);
+		$selected														= ($day == $x)? "selected='selected'" : "";
+		$html															.= "<option {$selected} value='$x'>$x</option>";
+	}
+	$html																.= "</select>";
+
+	# Set the tab index
+	$index																= ($tabindex != '')? "tabindex='" . $tabindex++ . "'" : "";
+
+	# Construct month selector
+	$html																.= "<select {$index} class='date_month' name='{$prefix}_month' id='{$prefix}_month'>";
+	for ($x = 1; $x <= 12; $x++) {
+		$x																= str_pad($x, 2, "0", STR_PAD_LEFT);
+		$label															= date("F", strtotime("2001-{$x}-01 01:01:01"));
+		$selected														= ($month == $x)? "selected='selected'" : "";
+		$html															.= "<option {$selected} value='$x'>$label</option>";
+	}
+	$html																.= "</select>";
+
+	# Set the tab index
+	$index																= ($tabindex != '')? "tabindex='" . $tabindex++ . "'" : "";
+
+	# Construct year selector
+	$html																.= "<select {$index} class='date_year' name='{$prefix}_year' id='{$prefix}_year'>";
+	for ($x = 1910; $x <= 2025; $x++) {
+		$selected														= ($year == $x)? "selected='selected'" : "";
+		$html															.= "<option {$selected} value='$x'>$x</option>";
+	}
+	$html																.= "</select>";
+
+	# Return HTML
+	return $html;
+
+}
+
+
+/**
+ * Returns an HTML dropdown select boxes for the year, and sets the default selected date to the provided value.
+ *
+ * @param string $selected A valid Gregorian year
+ * @return string
+ */
+function html_year($selected = false) {
+
+	$html														= '';
+
+	# Select the provided quarter, otherwise calculate the current quarter
+	$selected													= ($selected)? $selected : date('Y');
+
+	for ($x = 1980; $x <= 2025; $x++) {
+		$option_selected										= ($selected == $x)? "selected='selected'" : "";
+		$html													.= "<option {$option_selected} value='$x'>$x</option>";
+	}
+
+	# Return HTML
+	return $html;
+}
+
+
+/**
+ * Returns 2 HTML dropdown select boxes for the hour and minute, and sets the default selected time to the provided value.
+ *
+ * @param string $selected An hour and minute in the 24 hour format
+ * @param string $prefix A string to prefix to the name of each of the select boxes
+ * @param string $tabindex The HTML tab index of the first select box
+ * @return string
+ */
+function html_time($selected = false, $prefix = false, $tabindex = '') {
+
+	$html																= "";
+	$selected															= ($selected)? $selected : date("H") . ":00:00";
+	$prefix																= ($prefix)? $prefix : "time";
+
+	# If the passed selected time is a full datetime string, remove the date part
+	if (strlen($selected) == 19) {
+		$selected														= substr($selected, 13);
+	}
+
+	# Split up hour, minute and second
+	$hour																= substr($selected, 0, 2);
+	$minute																= substr($selected, 3, 2);
+	$second																= substr($selected, 6, 2);
+
+	# Set the tab index
+	$index																= ($tabindex != '')? "tabindex='" . $tabindex++ . "'" : "";
+
+	# Construct hour selector
+	$html																.= "<select {$index} class='time_hour' name='{$prefix}_hour'>";
+	for ($x = 0; $x < 24; $x++) {
+		$x																= str_pad($x, 2, "0", STR_PAD_LEFT);
+		$selected														= ($hour == $x)? "selected='selected'" : "";
+		$html															.= "<option {$selected} value='$x'>$x</option>";
+	}
+	$html																.= "</select><div class='time_spacer'>:</div>";
+
+	# Set the tab index
+	$index																= ($tabindex != '')? "tabindex='" . $tabindex++ . "'" : "";
+
+	# Construct minute selector
+	$html																.= "<select {$index} class='time_minute' name='{$prefix}_minute'>";
+	for ($x = 0; $x < 60; $x+= 5) {
+		$x																= str_pad($x, 2, "0", STR_PAD_LEFT);
+		$selected														= ($minute == $x)? "selected='selected'" : "";
+		$html															.= "<option {$selected} value='$x'>$x</option>";
+	}
+	$html																.= "</select>";
+
+	# Return HTML
+	return $html;
+
+}
+
 # =========================================================================
 # THE END
 # =========================================================================

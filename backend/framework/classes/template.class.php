@@ -183,6 +183,17 @@ class Template {
 			$email = new Email();
 			return $email->getTotalInbox(get_user_uid());
 		}
+		else if ($variable == "PROVINCE") {
+			$user     = new User(get_user_uid());
+			$province = new Province($user->province);
+			return ($province)?$province->province : "ADMIN";
+		}
+
+		else if ($variable == "DISTRICT") {
+			$user     = new User(get_user_uid());
+			$district = new District($user->district);
+			return ($district)?$district->name : "ADMIN";
+		}
 		else {
 			return "";
 		}
