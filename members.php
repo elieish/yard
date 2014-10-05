@@ -84,7 +84,7 @@ $date_select    = html_date();
                                     <li><a href="project.html">Projects</a></li>
                                     <li><a href="governance.html">Governance</a></li>
                                     <li><a href="contribute.html">Contribute</a></li>
-                                    <li><a href="">Contact</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                                 <a href="#" class="toggle-menu visible-sm visible-xs">
                                     <i class="fa fa-bars"></i>
@@ -103,7 +103,7 @@ $date_select    = html_date();
                                 <li><a href="project.html">Projects</a></li>
                                 <li><a href="governance.html">Governance</a></li>
                                 <li><a href="contribute.html">Contribute</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="contact.php">Contact</a></li>
 
                       </ul>
                     </div> <!-- /.menu-responsive -->

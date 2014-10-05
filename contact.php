@@ -1,4 +1,29 @@
 
+<?php
+/**
+ * Yard Development: AJAX Script
+ *
+ * @author Elie ishimwe <elieish@gmail.com>
+ * @version 1.0
+ * @package YARD Development
+ */
+# Start Session
+session_start();
+
+# Include Required Scripts
+include_once(dirname(__FILE__). "/backend/framework/include.php");
+Application::include_models();
+Application::include_helpers();
+Application::db_connect();
+$title          = titles_select();
+$province       = provinces_select();
+$date_select    = html_date();
+
+if (isset($_POST['submit'])) {
+   $name = $_POST['name'];
+   var_dump($name); 
+}
+?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -46,7 +71,7 @@
                                     <li><a href="project.html">Projects</a></li>
                                     <li><a href="governance.html">Governance</a></li>
                                     <li><a href="contribute.html">Contribute</a></li>
-                                    <li class="active"><a href="contact.html">Contact</a></li>
+                                    <li class="active"><a href="contact.php">Contact</a></li>
                                 </ul>
                                 <a href="#" class="toggle-menu visible-sm visible-xs">
                                     <i class="fa fa-bars"></i>
@@ -65,7 +90,7 @@
                                 <li><a href="project.html">Projects</a></li>
                                 <li><a href="governance.html">Governance</a></li>
                                 <li><a href="contribute.html">Contribute</a></li>
-                                <li class="active"><a href="contact.html">Contact</a></li>
+                                <li class="active"><a href="contact.php">Contact</a></li>
                             </ul>
                         </div> <!-- /.menu-responsive -->
                     </div> <!-- /.col-md-12 -->
@@ -110,7 +135,7 @@
                     </div> <!-- /.col-md-6 -->
                    <div class="col-md-6"><!-- first column -->
                         <div class="contact-form">
-                            <form name="contactform" id="contactform" action="#" method="post">
+                            <form name="contactform" id="contactform" action="contact.php" method="post">
                                 <p>
                                     <input name="name" type="text" id="name" placeholder="Your Name">
                                 </p>
@@ -123,7 +148,7 @@
                                 <p>
                                     <textarea name="message" id="message" placeholder="Message"></textarea>
                                 </p>
-                                <input type="submit" class="mainBtn" id="submit" value="Send Message">
+                                <input type="submit" class="mainBtn" id="submit" name="submit" value="Send Message">
                             </form>
                         </div> <!-- /.contact-form -->
                     </div> <!-- /.col-md-6 -->

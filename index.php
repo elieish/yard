@@ -58,10 +58,10 @@ $province       = provinces_select();
                                     <li class="active"><a href="index.php">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="members.php">Become a Member</a></li>
-									<li><a href="#">Projects</a></li>
-                                	<li><a href="#">Governance</a></li>
-									<li><a href="#">Contribute</a></li>
-                                    <li><a href="#">Contact</a></li>
+									<li><a href="projects.html">Projects</a></li>
+                                	<li><a href="governance.html">Governance</a></li>
+									<li><a href="contribute.html">Contribute</a></li>
+                                    <li><a href="contact.php">Contact</a></li>
                                 </ul>
                                 <a href="#" class="toggle-menu visible-sm visible-xs">
                                     <i class="fa fa-bars"></i>
@@ -77,10 +77,10 @@ $province       = provinces_select();
                                 <li class="active"><a href="index.php">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="members.php">Members</a></li>
-								<li><a href="#">Projects</a></li>
-                                <li><a href="#">Governance</a></li>
-								<li><a href="#">Contribute</a></li>
-                                <li><a href="#">Contact</a></li>
+								<li><a href="projects.html">Projects</a></li>
+                                <li><a href="governance.html">Governance</a></li>
+								<li><a href="contribute.html">Contribute</a></li>
+                                <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </div> <!-- /.menu-responsive -->
                     </div> <!-- /.col-md-12 -->
