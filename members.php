@@ -69,7 +69,7 @@ $date_select    = html_date();
                   <div class="row">
                     <div class="col-md-4 col-sm-6 col-xs-10">
                       <div class="logo">
-                        <a rel="nofollow" href="frontend/login.php">
+                        <a rel="nofollow" href="#">
                           <img src="images/logo.png" alt="travel by templatemo" title="">
                         </a>
                       </div> <!-- /.logo -->
@@ -156,7 +156,7 @@ $date_select    = html_date();
                        <br><br>
 
                        <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">National<br>Click here   </a></li>
+                        <li class="active"><a href="frontend/login.php">National<br>Click here   </a></li>
 
                       </ul>
                     </div>
@@ -167,7 +167,7 @@ $date_select    = html_date();
                     <div class="service-content">
 
                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">Provincial<br>Click here   </a></li>
+                        <li class="active"><a href="frontend/login.php">Provincial<br>Click here   </a></li>
 
                       </ul>
                     </div> <!-- /.service-content -->
@@ -177,7 +177,7 @@ $date_select    = html_date();
                     <div class="service-content">
 
                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">District<br>Click here   </a></li>
+                        <li class="active"><a href="frontend/login.php">District<br>Click here   </a></li>
 
                       </ul>
                     </div> <!-- /.service-content -->
