@@ -99,7 +99,7 @@ INSERT INTO `provinces` (`uid`, `province`,`active`) VALUES
 	(7, 'KwaZulu-Natal',1),
 	(8, 'Western Cape',1),
 	(9, 'Eastern Cape',1);
-/*!40000 ALTER TABLE `provincies` ENABLE KEYS */;
+
 
 
 -- Dumping structure for table yarddb.sectors
