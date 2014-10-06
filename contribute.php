@@ -1,4 +1,59 @@
 
+<?php
+/**
+ * Yard Development: AJAX Script
+ *
+ * @author Elie ishimwe <elieish@gmail.com>
+ * @version 1.0
+ * @package YARD Development
+ */
+# Start Session
+session_start();
+
+# Include Required Scripts
+include_once(dirname(__FILE__). "/backend/framework/include.php");
+Application::include_models();
+Application::include_helpers();
+Application::db_connect();
+
+if (isset($_POST['submit'])) {
+   $title           = $_POST['title'];
+   $name            = $_POST['name'];
+   $surname         = $_POST['surname'];
+   $organization    = $_POST['organization'];
+   $type            = $_POST['type'];
+   $tel             = $_POST['tel'];
+   $cell            = $_POST['cell'];
+   $email           = $_POST['email'];
+   $subject         = "Contribution Request";
+   $message         = "Title : ".$title."<br>";
+   $message         = "Name : ".$name."<br>";
+   $message         = "Surname : ".$surname."<br>";
+   $message         = "Organization : ".$organization."<br>";
+   $message         = "Organization Type  : ".$type."<br>";
+   $message         = "Telephone  : ".$tel."<br>";
+   $message         = "Cellphone  : ".$cell."<br>";
+   $message         .= "Email Address: ".$email."<br>";
+   $message         .= "Message: <br>";
+   $message         .= $_POST['message'];
+
+   #Sending Email
+    $receivers           = array('admin@yardagency.org.za','elieish@gmail.com');
+    foreach ($receivers as $value) {
+         $to_email               = $value;
+         $email_subject          = "Contribution Request";
+         html_email($to_email, $email_subject, $message, $message,$email);
+    }
+
+    $class = "";
+
+}
+else
+{
+    $class = "hidden";
+}
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -45,7 +100,7 @@
                                     <li><a href="members.php">Members</a></li>
                                     <li><a href="project.html">Projects</a></li>
                                     <li><a href="governance.html">Governance</a></li>
-                                    <li class="active"><a href="contribute.html">Contribute</a></li>
+                                    <li class="active"><a href="contribute.php">Contribute</a></li>
                                     <li><a href="contact.php">Contact</a></li>
                                 </ul>
                                 <a href="#" class="toggle-menu visible-sm visible-xs">
@@ -64,7 +119,7 @@
                                 <li><a href="members.html">Members</a></li>
                                 <li><a href="project.html">Projects</a></li>
                                 <li><a href="governance.html">Governance</a></li>
-                                <li class="active"><a href="contribute.html">Contribute</a></li>
+                                <li class="active"><a href="contribute.php">Contribute</a></li>
                                 <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </div> <!-- /.menu-responsive -->
@@ -81,6 +136,7 @@
 
         <div class="middle-content">
             <div class="container">
+            <div class="<?php  print $class ;?> alert alert-success" role="alert">Thank you! Your message has been sent successfully.</div>
 
                 <div class ="row">
                     <div class="col-md-12">
@@ -138,7 +194,7 @@
                         <div class="col-md-12 col-sm-12">
 
                         <div class="contact-form">
-                            <form name="contactform" id="contactform" action="#" method="post">
+                            <form name="contactform" id="contactform" action="contribute.php" method="post">
                                 <p>
                                     <input name="title" type="text" id="title" placeholder="Title">
                                 </p>
@@ -149,16 +205,16 @@
                                     <input name="surname" type="text" id="surname" placeholder="Surname">
                                 </p>
                                 <p>
-                                    <input name="organization you represent" type="text" id="organization you represent" placeholder="The Organization you Represent">
+                                    <input name="organization" type="text" id="organization you represent" placeholder="The Organization you Represent">
                                 </p>
                                 <p>
-                                    <input name="name" type="text" id="name" placeholder="Type of Organization">
+                                    <input name="type" type="text" id="name" placeholder="Type of Organization">
                                 </p>
                                 <p>
-                                    <input name="email" type="text" id="email" placeholder="Tel">
+                                    <input name="tel" type="text" id="email" placeholder="Tel">
                                 </p>
                                 <p>
-                                    <input name="subject" type="text" id="subject" placeholder="Cell">
+                                    <input name="cell" type="text" id="subject" placeholder="Cell">
                                 </p>
                                 <p>
                                     <input name="email" type="text" id="email" placeholder="Your Email">
@@ -166,7 +222,7 @@
                                 <p>
                                     <textarea name="message" id="message" placeholder="Message"></textarea>
                                 </p>
-                                <input type="submit" class="mainBtn" id="submit" value="Send Message">
+                                <input type="submit" class="mainBtn" value="Send Message" name="submit">
                             </form>
                         </div> <!-- /.contact-form -->
                     </div><!-- /.col-md-12 col-sm-12 -->

@@ -60,7 +60,7 @@ $province       = provinces_select();
                                     <li><a href="members.php">Become a Member</a></li>
 									<li><a href="projects.html">Projects</a></li>
                                 	<li><a href="governance.html">Governance</a></li>
-									<li><a href="contribute.html">Contribute</a></li>
+									<li><a href="contribute.php">Contribute</a></li>
                                     <li><a href="contact.php">Contact</a></li>
                                 </ul>
                                 <a href="#" class="toggle-menu visible-sm visible-xs">
@@ -79,7 +79,7 @@ $province       = provinces_select();
                                 <li><a href="members.php">Members</a></li>
 								<li><a href="projects.html">Projects</a></li>
                                 <li><a href="governance.html">Governance</a></li>
-								<li><a href="contribute.html">Contribute</a></li>
+								<li><a href="contribute.php">Contribute</a></li>
                                 <li><a href="contact.php">Contact</a></li>
                             </ul>
                         </div> <!-- /.menu-responsive -->
@@ -96,7 +96,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                
+
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                               
+
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ $province       = provinces_select();
                     <div class="container">
                         <div class="row">
                             <div class="col-md-5 col-lg-4">
-                                
+
                             </div>
 
                         </div>
