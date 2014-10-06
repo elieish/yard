@@ -146,7 +146,7 @@ else
                             <li>Tel: +2731 822 2052</li>
                             <li><h5>Provincial Contacts:</h5>
                                 To reach the provincial contacts of YARD, please visit our governance section of the site or click here to email us, to send the contact details to you.</li>
-                            <li>Email: <a href="mailto:admin@yardweb.co.za">admin@yardweb.co.za</a></li>
+
                           </ul>
                         </div>
                     </div> <!-- /.col-md-6 -->
