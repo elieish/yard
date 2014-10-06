@@ -88,7 +88,7 @@ else
                         <div class="col-md-4 col-sm-6 col-xs-10">
                             <div class="logo">
                                 <a rel="nofollow" href="#">
-                                    <img src="images/logo.png" alt="travel by templatemo" title="">
+                                    <img src="images/logo.png" alt="" title="">
                                 </a>
                             </div> <!-- /.logo -->
                         </div> <!-- /.col-md-4 -->
@@ -333,13 +333,7 @@ else
                             <span>Copyright &copy; 2014 <a href="frontend/login.php">YARD</a> </span>
                         </div>
                     </div> <!-- /.col-md-4 -->
-                    <div class="col-md-4 col-sm-4">
-                        <ul class="social-icons">
-                            <li><a href="#" class="fa fa-facebook"></a></li>
-                            <li><a href="#" class="fa fa-twitter"></a></li>
-                            <li><a href="#" class="fa fa-linkedin"></a></li>
-                        </ul>
-                    </div> <!-- /.col-md-4-->
+                    "" <!-- /.col-md-4-->
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.site-footer -->
