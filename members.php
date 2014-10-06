@@ -67,13 +67,13 @@ $date_select    = html_date();
               <div class="container">
                 <div class="main-header">
                   <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-10">
-                      <div class="logo">
-                        <a rel="nofollow" href="#">
-                          <img src="images/logo.png" alt="" title="">
-                        </a>
-                      </div> <!-- /.logo -->
-                    </div> <!-- /.col-md-4 -->
+                     <div class="col-md-4 col-sm-6 col-xs-10">
+                            <div class="logo">
+                                <a rel="nofollow" href="#">
+                                    <img src="images/logo.png" alt="" title="">
+                                </a>
+                            </div> <!-- /.logo -->
+                        </div> <!-- /.col-md-4 -->
 
                     <div class="col-md-8 col-sm-6 col-xs-2">
                       <div class="main-menu">
