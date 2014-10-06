@@ -16,7 +16,7 @@ $_GLOBALS['title']            = "Yard Development";
 $_GLOBALS['max_results']      = 20;
 $_GLOBALS['default_page']     = "home";
 $_GLOBALS['default_action']   = "display";
-$_GLOBALS['log_file']         = "/var/log/ame_fax/" . date("Y-m-d") . ".log";
+$_GLOBALS['log_file']         = "/var/log/yard/" . date("Y-m-d") . ".log";
 $_GLOBALS['base_dir']         = dirname(dirname(dirname(dirname(__FILE__)))) . "/";
 
 $_GLOBALS['base_url']         = (php_sapi_name() != 'cli')
@@ -25,10 +25,10 @@ $_GLOBALS['base_url']         = (php_sapi_name() != 'cli')
 
 $_GLOBALS['upload_dir']       = $_GLOBALS['base_dir'] . "files/";
 $_GLOBALS['upload_url']       = "files/";
-$_GLOBALS['admin_email']      = "development@Yard.co.za";
-$_GLOBALS['security_email']   = "development@Yard.co.za";
+$_GLOBALS['admin_email']      = "elieish@gmail.com";
+$_GLOBALS['security_email']   = "elieish@gmail.com";
 $_GLOBALS['security_subject'] = "SECURITY ALERT FOR " . $_GLOBALS['title'];
-$_GLOBALS['from_email']       = "no-reply@Yard.co.za";
+$_GLOBALS['from_email']       = "admin@yardweb.co.za";
 $_GLOBALS['config_file']      = dirname(__FILE__) . "/config.ini";
 $_GLOBALS['requires_login']   = true;
 

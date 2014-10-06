@@ -15,13 +15,30 @@ include_once(dirname(__FILE__). "/backend/framework/include.php");
 Application::include_models();
 Application::include_helpers();
 Application::db_connect();
-$title          = titles_select();
-$province       = provinces_select();
-$date_select    = html_date();
 
 if (isset($_POST['submit'])) {
-   $name = $_POST['name'];
-   var_dump($name); 
+   $name        = $_POST['name'];
+   $email       = $_POST['email'];
+   $subject     = $_POST['subject'];
+   $message     = "Name : ".$name."<br>";
+   $message     .= "Email Address: ".$email."<br>";
+   $message     .= "Message: <br>";
+   $message     .= $_POST['message'];
+
+   #Sending Email
+    $receivers           = array('admin@yardweb.co.za','elieish@gmail.com');
+    foreach ($receivers as $value) {
+         $to_email               = $value;
+         $email_subject          = "Enquiry";
+         html_email($to_email, $email_subject, $message, $message,$email);
+    }
+
+    $class = "";
+
+}
+else
+{
+    $class = "hidden";
 }
 ?>
 <!DOCTYPE html>
@@ -105,7 +122,7 @@ if (isset($_POST['submit'])) {
 
         <div class="middle-content">
             <div class="container">
-
+                <div class="<?php  print $class ;?> alert alert-success" role="alert">Thank you! Your message has been sent successfully.</div>
 
                 <div class="row"><!-- first row -->
 
@@ -199,8 +216,8 @@ if (isset($_POST['submit'])) {
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.partner-list -->
-   
-        
+
+
         <div class="site-footer">
             <div class="container">
                 <div class="row">
