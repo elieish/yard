@@ -404,6 +404,28 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
           </div> <!-- /.row -->
         </div> <!-- /.container -->
       </div> <!-- /.partner-list -->
+
+
+        <div class="site-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-4">
+              <div class="footer-logo">
+                <a href="index.html">
+                  <img src="images/logo.png" alt="">
+                </a>
+              </div>
+            </div> <!-- /.col-md-4 -->
+            <div class="col-md-4 col-sm-4">
+              <div class="copyright">
+
+                <span>Copyright &copy; 2014 <a href="#">YARD</a> </span>
+
+              </div>
+            </div> <!-- /.col-md-4 -->
+          </div> <!-- /.row -->
+        </div> <!-- /.container -->
+      </div>
       <!--Membership Modal -->
         <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="membershipModal">
         <div class="modal-dialog modal-lg">
@@ -487,35 +509,8 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
           </div>
         </div>
       </div>
-      <div class="site-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 col-sm-4">
-              <div class="footer-logo">
-                <a href="index.html">
-                  <img src="images/logo.png" alt="">
-                </a>
-              </div>
-            </div> <!-- /.col-md-4 -->
-            <div class="col-md-4 col-sm-4">
-              <div class="copyright">
 
-                <span>Copyright &copy; 2014 <a href="#">YARD</a> </span>
 
-              </div>
-            </div> <!-- /.col-md-4 -->
-            <div class="col-md-4 col-sm-4">
-              <ul class="social-icons">
-                <li><a href="#" class="fa fa-facebook"></a></li>
-                <li><a href="#" class="fa fa-twitter"></a></li>
-                <li><a href="#" class="fa fa-linkedin"></a></li>
-
-              </ul>
-            </div> <!-- /.col-md-4 -->
-          </div> <!-- /.row -->
-        </div> <!-- /.container -->
-      </div>
-      <!--mack kadollvins -->
     </body>
     </html>
 

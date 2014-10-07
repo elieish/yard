@@ -1,12 +1,12 @@
 <?php
 /**
  * Project
- * 
- * @author Ralfe Poisson <ralfepoisson@gmail.cm>
+ *
+ * @author Elie Ishimwe <elieish@gmail.com>
  * @version 2.0
  * @package Project
  */
- 
+
 # ===================================================
 # SCRIPT SETTINGS
 # ===================================================
@@ -28,10 +28,10 @@ Application::include_models();
 function display() {
 	# Global Variables
 	global $_GLOBALS;
-	
+
 	# Get GET Data
 	$error																= Form::get_str("error");
-	
+
 	# Generate Page
 	$vars																= array(
 																				"mysql_host"		=> config::get("mysql_host"),
@@ -52,21 +52,21 @@ function display() {
 function save() {
 	# Global Variables
 	global $_GLOBALS;
-	
+
 	# Get POST Data
 	$mysql_host															= Form::get_str("mysql_host");
 	$mysql_user															= Form::get_str("mysql_user");
 	$mysql_pass															= Form::get_str("mysql_pass");
 	$mysql_db															= Form::get_str("mysql_db");
 	$root_password														= Form::get_str("root_password");
-	
+
 	# Update Config
 	config::update("mysql_host", $mysql_host);
 	config::update("mysql_user", $mysql_user);
 	config::update("mysql_pass", $mysql_pass);
 	config::update("mysql_db", $mysql_db);
 	logg("Installation: Updated config file with new database credentials: {$mysql_host}, {$mysql_user}, {$mysql_pass}, {$mysql_db}.");
-	
+
 	# If Root Password is provided, attempt to connect as that user and setup login credentials.
 	if (strlen($root_password)) {
 		if ($link														= mysql_connect($mysql_host, "root", $root_password)) {
@@ -76,7 +76,7 @@ function save() {
 			if (mysql_error()) {
 				logg("Installation: DB ERROR: " . mysql_error());
 			}
-			
+
 			# Setup Login Details
 			logg("Installation: Granting Privileges to '{$mysql_user}'.");
 			mysql_query("GRANT ALL PRIVILEGES ON `{$mysql_db}`.* TO '{$mysql_user}'@'localhost' IDENTIFIED BY '{$mysql_pass}'");
@@ -86,14 +86,14 @@ function save() {
 			}
 		}
 	}
-	
+
 	# Test Configuration
 	$error																= install_test_db_connect();
 	if (strlen($error)) {
 		logg("Installation: Database errors. Running installation process. ($error_message)");
 		run_installation($error_message);
 	}
-	
+
 	# If the test passes, run database script
 	$db																	= new db_engine(	$mysql_host,
 																							$mysql_user,
@@ -106,7 +106,7 @@ function save() {
 	$command															= "mysql -u {$mysql_user} -p{$mysql_pass} -h {$mysql_host} {$mysql_db} < {$sql_script}";
 	logg("Installation: - `{$command}`");
 	exec($command);
-	
+
 	# Redirect
 	redirect("./");
 }

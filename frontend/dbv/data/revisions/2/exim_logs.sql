@@ -1,9 +1,0 @@
-ALTER TABLE `exim_logs`
-    CHANGE COLUMN `date` `date` DATETIME NULL DEFAULT '0000-00-00 00:00:00' AFTER `uid`,
-    CHANGE COLUMN `fax_no` `fax_no` VARCHAR(50) NULL DEFAULT NULL AFTER `date`,
-    ADD COLUMN `status` VARCHAR(30) NULL DEFAULT NULL AFTER `fax_reference`,
-    ADD COLUMN `status_code` VARCHAR(10) NULL DEFAULT NULL AFTER `status`,
-    ADD COLUMN `pages` SMALLINT UNSIGNED NULL DEFAULT '0' AFTER `status_code`,
-    ADD COLUMN `transmit_time` SMALLINT UNSIGNED NULL DEFAULT '0' AFTER `pages`,
-    ADD COLUMN `date_processed` DATETIME NULL DEFAULT '0000-00-00 00:00:00' AFTER `transmit_time`,
-    ADD COLUMN `retries` TINYINT NULL DEFAULT '0' AFTER `date_processed`;
