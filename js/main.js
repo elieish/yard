@@ -74,77 +74,11 @@ function ajax_get_data(this_url) {
 
 $(document).ready(function(){
 
-
- /*   $('#registrationform').bootstrapValidator({
-        message: 'This value is not valid',
-        feedbackIcons: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            title: {
-                validators: {
-                    notEmpty: {
-                        message: 'Title is required'
-                    }
-                }
-            },
-            name: {
-                validators: {
-                    notEmpty: {
-                        message: 'Name is required'
-                    }
-                }
-            },
-            surname: {
-                validators: {
-                    notEmpty: {
-                        message: 'Surname is required'
-                    }
-                }
-            },
-            gender: {
-                validators: {
-                    notEmpty: {
-                        message: 'Gender is required'
-                    }
-                }
-            },
-            dob: {
-                validators: {
-                    notEmpty: {
-                        message: 'Date of Birth is required'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                        notEmpty: {
-                        message: 'Email Address is required'
-                        },
-                        emailAddress: {
-                        message     : 'Please enter a valid email address'
-                        },
-                }
-            },
-            province: {
-                validators: {
-                        notEmpty: {
-                        message: 'Province is required'
-                        }
-                }
-            },
-
-             district: {
-                validators: {
-                        notEmpty: {
-                        message: 'District is required'
-                        }
-                }
-            }
-        }
-    });*/
+    $('.gallery-item').hover( function() {
+        $(this).find('.img-title').fadeIn(300);
+    }, function() {
+        $(this).find('.img-title').fadeOut(100);
+    });
 
 });
 
