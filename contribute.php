@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
    $message         .= $_POST['message'];
 
    #Sending Email
-    $receivers           = array('admin@yardagency.org.za','elieish@gmail.com');
+    $receivers           = array('admin@theyardagency.org.za','elieish@gmail.com');
     foreach ($receivers as $value) {
          $to_email               = $value;
          $email_subject          = "Contribution Request";
