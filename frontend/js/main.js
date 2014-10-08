@@ -24,19 +24,38 @@ function printPDF(uid){
     var result = ajax_get_data(url);
     var data = jQuery.parseJSON(result);
 	var doc = new jsPDF();
+    doc.setProperties({
+    title: 'YARD Membership Certificate',
+    author: 'Elie ishimwe'
+    });
    /* doc.addImage(imgData, 'PNG', 15, 40, 180, 180);*/
-	doc.text(20, 20, 'YARD MEMBERSHIP CERTIFICATE');
-	doc.text(20, 30, 'Youth in Agriculture & Rural Development');
-    doc.text(20, 40, 'Membership Number: ' + data.membership_no);
-    doc.text(20, 50, 'Name: '   + data.name);
-    doc.text(20, 60, 'Surname: ' + data.surname);
-    doc.text(20, 70, 'Province Name: ' + data.provincename);
-    doc.text(20, 80, 'District Name: ' + data.districtname);
-    doc.text(20, 90, 'Local Name: ' + data.local_area);
-    doc.text(20, 100, 'Date of Issue: ' + data.created_at);
-    doc.text(20, 110, 'Renewal Date : ' + data.created_at);
-    doc.text(20, 120, 'Issuing Office : ' + data.created_at);
-	doc.addPage();
+    doc.setFontSize(22);
+    doc.setFont("times");
+    doc.setFontType("bolditalic");
+    doc.setTextColor(0,255,0);
+	doc.text(60, 20, 'YARD MEMBERSHIP CERTIFICATE');
+    doc.setFontType("normal");
+    doc.setTextColor(0,0,0);
+    doc.setFontSize(12);
+	doc.text(80, 30, 'Youth in Agriculture & Rural Development');
+    doc.text(20, 40, 'Membership Number ');
+    doc.text(60, 40,  ':' + data.membership_no);
+    doc.text(20, 50, 'Name ');
+    doc.text(60, 50,  ':' + data.name);
+    doc.text(20, 60, 'Surname ');
+    doc.text(60, 60,  ':' + data.surname);
+    doc.text(20, 70, 'Province Name ');
+    doc.text(60, 70,  ':' + data.provincename);
+    doc.text(20, 80, 'District Name ');
+    doc.text(60, 80, ':' + data.districtname);
+    doc.text(20, 90, 'Local Name ');
+    doc.text(60, 90, ':' + data.local_area);
+    doc.text(20, 100, 'Date of Issue ');
+    doc.text(60, 100, ': ' + data.created_at);
+    doc.text(20, 110, 'Renewal Date ');
+    doc.text(60, 110, ': ' + data.created_at);
+    doc.text(20, 120, 'Issuing Office : ');
+    doc.text(60, 120, ': ' + data.created_at);
     doc.save('Certificate.pdf');
 }
 
