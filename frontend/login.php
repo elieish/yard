@@ -52,15 +52,18 @@ function login() {
 		# Attempt to Login
 		$result															= User::login($username, $password);
 
+
+
 		# Handle Login Result
 		if ($result) {
+			//$_SESSION['accessing_page'] = "?p=dashboard";
 			# Redirect
 			if (isset($_SESSION['accessing_page'])) {
 
 				redirect($_SESSION['accessing_page']);
 			}
 			else {
-				redirect("./");
+				redirect("./?p=dashboard");
 			}
 		}
 		else {

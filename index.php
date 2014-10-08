@@ -57,7 +57,7 @@ $province       = provinces_select();
                                 <ul class="visible-lg visible-md">
                                     <li class="active"><a href="index.php">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="members.php">Become a Member</a></li>
+                                    <li><a href="members.php">Members</a></li>
 									<li><a href="project.html">Projects</a></li>
                                 	<li><a href="governance.html">Governance</a></li>
 									<li><a href="contribute.php">Contribute</a></li>

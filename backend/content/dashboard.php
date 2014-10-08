@@ -24,11 +24,9 @@ class Page extends AbstractPage {
         # Global Variables
         global $_db;
 
-
         // Generate HTML from Template
         $file    = dirname(dirname(dirname(__FILE__))) . "/frontend/html/dashboard/dashboard.html";
         $vars    = array(
-            /*"link"    => $this->cur_page."&action=add",*/
             "link"    => "?p=user_controller&action=display",
             "listing" => $listing
         );

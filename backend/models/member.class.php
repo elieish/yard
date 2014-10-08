@@ -112,6 +112,7 @@ class Member extends Model {
 								`members`.`active` = 1
 								{$province_where_clause}
 								{$district_where_clause}
+						ORDER BY `created_at` DESC
 											";
 /*
 		if(isset($_GET['v'])){

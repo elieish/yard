@@ -31,7 +31,7 @@ class Page extends AbstractPage {
 
 		# Get Data
 
-		$listing 		= Member::listing();
+
 		$listingpaid 	= Member::listingpaid();
 
 		$province		= Province::get_id(Form::get_str("province"));
@@ -173,7 +173,7 @@ class Page extends AbstractPage {
 		# Redirect
 		redirect($this->cur_page);
 	}
-	
+
 	function paid() {
 		# Global Variables
 		global $_db, $validator;
