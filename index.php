@@ -155,7 +155,7 @@ $province       = provinces_select();
                         <div class="list-content">
                             <h5></h5>
                             <span>&nbsp;</span>
-                            <a href="about.html" class="price-btn">MORE INFO</a>
+                            <a href="subpage.html" class="price-btn">MORE INFO</a>
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->
                     <div class="list-item">
@@ -168,7 +168,7 @@ $province       = provinces_select();
                         <div class="list-content">
                             <h5></h5>
                             <span>&nbsp;</span>
-                            <a href="about.html" class="price-btn">MORE INFO</a>
+                            <a href="subpage2.html" class="price-btn">MORE INFO</a>
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->
                     <div class="list-item">
