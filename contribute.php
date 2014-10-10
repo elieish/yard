@@ -146,10 +146,6 @@ else
             </div> <!-- /.container -->
         </div> <!-- /.site-header -->
 
-        <div>
-
-            <img src="images/pictureyard.jpg" alt="Ancillary Objectives" title="Ancillary Objectives"/>
-        </div>
 
         <div class="middle-content">
             <div class="container">

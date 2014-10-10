@@ -8,9 +8,6 @@ jQuery(document).ready(function($) {
 			navigationText: ["&larr;","&rarr;"],
 		});
 
-        $('.datepicker').datepicker({
-            format: 'yyyy/mm/dd'
-        });
 
         $( "#membershipModal" ).scroll(function() {
             $('.datepicker').datepicker('place',{

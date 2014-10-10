@@ -997,6 +997,11 @@ div.contact-form input.mainBtn {
  height: auto;
 }
 
+.badge{
+    background-color:#232323 !important ;
+    font-size:17px !important ;
+}
+
 
 
 

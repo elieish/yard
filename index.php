@@ -165,7 +165,8 @@ $province       = provinces_select();
                 </div> <!-- /.our-listing -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
-
+        <br>
+        <br>
 
 
         <div class="partner-list">
@@ -230,7 +231,7 @@ $province       = provinces_select();
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
         <script src="js/bootstrap.js"></script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+
         <!-- Bootstrap Core JavaScript -->
         <script src="js/bootstrap.min.js"></script>
          <!-- Bootstrap Core JavaScript -->

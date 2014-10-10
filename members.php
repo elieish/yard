@@ -75,6 +75,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
     <script src="js/bootstrapvalidator/dist/js/bootstrapValidator.min.js"></script>
     <script src="js/datepicker/js/bootstrap-datepicker.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/member.js"></script>
     <script src="js/filter.js"></script>
     <script src="js/php.js"></script>
     <script src="js/forms.js"></script>
@@ -148,11 +149,6 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                 </div> <!-- /.row -->
               </div> <!-- /.container -->
             </div> <!-- /.site-header -->
-
-            <div>
-
-            <img src="images/Pictureyard.jpg" alt="Ancillary Objectives" title="Ancillary Objectives"/>
-        </div>
             </div> <!-- /.page-header -->
 
             <div class="middle-content">
