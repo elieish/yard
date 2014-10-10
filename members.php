@@ -157,10 +157,8 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                   <div class="col-md-12">
                   <div class="sample-thumb">
                   	 <div class="panel panel-default">
-                            <ul class="nav nav-pills nav-stacked">
-                              <li class="active">
-                              <a><span class="glyphicon glyphicon-stats"></span> Statistics</a></li>
-                            </ul>
+
+                             <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-stats"></span> Statistics</a>                            </a>
                   		<div  class="panel-body">
 
 							<div class="row">
