@@ -28,7 +28,6 @@ $province       = provinces_select();
     <!-- JavaScripts -->
     <script src="js/jquery-1.10.2.min.js"></script>
     <script src="js/jquery.singlePageNav.js"></script>
-    <script src="js/jquery.flexslider.js"></script>
     <script src="js/validate.js"></script>
 
     <script src="js/custom.js"></script>
@@ -40,6 +39,23 @@ $province       = provinces_select();
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
   </head>
   <body>
+
+   <div class="container">
+    <div id="yardslider">
+            <div class="item"><img src="images/sliders/1.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/2.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/8.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/3.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/5.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/6.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/7.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/9.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/10.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/11.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/12.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/4.jpg" alt=""></div>
+    </div>
+    </div>
 
         <div class="site-header">
             <div class="container">
@@ -88,63 +104,12 @@ $province       = provinces_select();
             </div> <!-- /.container -->
         </div> <!-- /.site-header -->
 
-        <div class="flexslider" style="top: -350">
-            <ul class="slides">
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/templatemo_slide_1.jpg" alt="Special 1">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-5 col-lg-4">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/templatemo_slide_2.jpg" alt="Special 2">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-5 col-lg-4">
-
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="overlay"></div>
-                    <img src="images/templatemo_slide_3.jpg" alt="Special 3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-5 col-lg-4">
-
-                            </div>
-
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div> <!-- /.flexslider -->
 
 
 
         <div class="container">
             <div class="row">
-                <div class="our-listing owl-carousel" style="top: -280">
-                 <!--   <div class="list-item">
-                        <div class="list-thumb">
-                            <div class="title">
-                                <h4>Italy</h4>
-                            </div>
-                            <img src="images/destination_1.jpg" alt="destination 1">
-                        </div> <!-- /.list-thumb
-                        <div class="list-content">
-                            <h5>Rome, Milan, Naples</h5>
-                            <span>SILVER HOTEL, 4 NIGHTS, 5 STARS</span>
-                            <a href="#" class="price-btn">$1,800 Book Now</a>
-                        </div>
-                    </div>-->
+                <div class="our-listing ">
                     <div class="list-item">
                         <div class="list-thumb">
                             <div class="title">
@@ -201,7 +166,7 @@ $province       = provinces_select();
             </div> <!-- /.row -->
         </div> <!-- /.container -->
 
-		<div class="middle-content"></div>
+
 
         <div class="partner-list">
             <div class="container">
@@ -239,7 +204,6 @@ $province       = provinces_select();
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.partner-list -->
-
 
 
         <div class="site-footer">

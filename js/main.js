@@ -18,14 +18,6 @@ jQuery(document).ready(function($) {
             })
         });
 
-		$('.flexslider').flexslider({
-		    animation: "fade",
-		    controlNav: false,
-		    prevText: "&larr;",
-		    nextText: "&rarr;"
-		});
-
-
 		$('.toggle-menu').click(function(){
 	        $('.menu-responsive').slideToggle();
 	        return false;
@@ -78,6 +70,16 @@ $(document).ready(function(){
         $(this).find('.img-title').fadeIn(300);
     }, function() {
         $(this).find('.img-title').fadeOut(100);
+    });
+
+  $("#yardslider").owlCarousel({
+
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+        items : 4,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+
     });
 
 });

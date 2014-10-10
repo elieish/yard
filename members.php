@@ -83,6 +83,23 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
             <![endif]-->
+
+   <div class="container">
+    <div id="yardslider">
+            <div class="item"><img src="images/sliders/1.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/2.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/8.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/3.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/5.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/6.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/7.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/9.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/10.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/11.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/12.jpg" alt=""></div>
+            <div class="item"><img src="images/sliders/4.jpg" alt=""></div>
+    </div>
+    </div>
             <div class="site-header">
               <div class="container">
                 <div class="main-header">
@@ -149,7 +166,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                               <a><span class="glyphicon glyphicon-stats"></span> Statistics</a></li>
                             </ul>
                   		<div  class="panel-body">
-                        	
+
 							<div class="row">
 								<div class="col-lg-3">
 									<ul class="list-group">

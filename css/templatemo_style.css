@@ -210,7 +210,7 @@ hr {
 
 @media screen and (min-width: 992px) {
     .site-header {
-        top: 60px;
+        top: 200px;
     }
 }
 
@@ -453,13 +453,13 @@ h3.widget-title {
 
 @media screen and (min-width: 240px) {
     .our-listing {
-        margin-top: 50px;
+        margin-top: 120px;
     }
 }
 
 @media screen and (min-width: 992px) {
     .our-listing {
-        margin-top: -50px;
+
     }
 }
 
@@ -986,6 +986,18 @@ div.contact-form input.mainBtn {
     position:relative;
     top:1px;
 }
+
+
+#owl-demo .item{
+    margin: 3px;
+}
+#owl-demo .item img{
+ display: block;
+ width: 100%;
+ height: auto;
+}
+
+
 
 
 
