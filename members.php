@@ -157,9 +157,11 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                   <div class="col-md-12">
                   <div class="sample-thumb">
                   	 <div class="panel panel-default">
+                            <div class="bordertitle">
+                                <span class="glyphicon glyphicon-stats"></span> Statistics
+                            </div>
+                  	<div  class="panel-body">
 
-                             <a href="#" class="list-group-item active"><span class="glyphicon glyphicon-stats"></span> Statistics</a>                            </a>
-                  		<div  class="panel-body">
 
 							<div class="row">
 								<div class="col-lg-3">
@@ -193,11 +195,9 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
 							 </div>
 							</div>
 						   </div>
-                            <!--<img src="images/member10.jpg" alt="New Event" title="New Event"/>-->
+                          <div class="bordertitle">
+                          </div>
 
-                            <a href="#" class="list-group-item active"><font size="5"><center>
-                                </center></font>
-                            </a>
                             <div class="well well-lg">YARD undergirds stable socio-economic growth and national
                              development, through cultivating and availing support resources, while administrating
                              and managing their distribution, for youth-led entrepreneurial projects and their related
@@ -267,13 +267,10 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                     <img src="images/member1.jpg" alt="New Event" title="New Event">
                   </div> <!-- /.sample-thumb -->
                   <div class="list-group">
-                                    <a href="#" class="list-group-item active">
-                                        <font size="5">
-                                            <center>
-                                                National Level
-                                            </center>
-                                        </font>
-                                    </a>
+                                    <div class="bordertitle">
+                                        National Level
+                                    </div>
+
                                     <div class="well well-lg" style="min-height: 200px">
                                     While YARD programmes are rolled out on national level; investment, resourcing and the
                                     development activities are focused at the level of SMMEs, community-based youth
@@ -311,13 +308,9 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                   <img src="images/member2.jpg" alt="New" title="New">
                 </div> <!-- /.sample-thumb -->
                 <div class="list-group">
-                                    <a href="#" class="list-group-item active">
-                                        <font size="5">
-                                            <center>
-                                                Provincial
-                                            </center>
-                                        </font>
-                                    </a>
+                                   <div class="bordertitle">
+                                        Provincial
+                                    </div>
                                     <div class="well well-lg" style="min-height: 200px">
                                       The Provincial office is the administrative head of the districts and their
                                       local beneficiaries’ structures. The structure is responsible for ensuring the
@@ -333,13 +326,9 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                   <img src="images/member3.jpg" alt="New Event" title="New Event">
                 </div> <!-- /.sample-thumb -->
                 <div class="list-group">
-                                    <a href="#" class="list-group-item active">
-                                        <font size="5">
-                                            <center>
-                                                District
-                                            </center>
-                                        </font>
-                                    </a>
+                                    <div class="bordertitle">
+                                        District
+                                     </div>
                                     <div class="well well-lg" style="min-height: 200px">
                                     The District levels of YARD are critical for the implementation of
                                     the projects and enterprises on local level. Their direct oversight
@@ -356,13 +345,9 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                 <div class="sample-thumb">
                   <img src="images/member4.jpg" alt="Special Eve" title="Special Eve">
                   <div class="list-group">
-                                    <a href="#" class="list-group-item active">
-                                        <font size="5">
-                                            <center>
+                                        <div class="bordertitle">
                                               Local
-                                            </center>
-                                        </font>
-                                    </a>
+                                        </div>
                                     <div class="well well-lg" style="min-height: 200px">
                                     The local level of YARD is where the most important work of the organization is done.
                                     This level receives the highest intensity of input and resourcing; is the most critical

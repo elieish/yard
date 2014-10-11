@@ -141,13 +141,9 @@ else
 
                     <div class="col-md-6"><!-- second column -->
                         <div class="list-group">
-                          <a href="#" class="list-group-item active">
-                            <font size="5">
-                                <center>
-                                    Contact Details
-                                </center>
-                            </font>
-                          </a>
+                          <div class="bordertitle">
+                             Contact Details
+                          </div>
                           <ul>
                             <li><h5>Operational Hours:</h5>
 

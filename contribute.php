@@ -155,21 +155,15 @@ else
                     <div class="col-md-12">
 
                         <div class="sample-thumb">
-                        <div>
-                            <ul class="nav nav-pills nav-stacked">
-                                  <li class="active">
-                                    <a>What You’re Donating To
-                                    </a>
-                                  </li>
-                              </ul>
+                        <div class="bordertitle">
+                            What You’re Donating To
                         </div>
                             <img src="images/picturec.jpg" alt="New Event" title="New Event"/>
-                            <a href="#" class="list-group-item active"><font size="5"><center>
-                                </center></font>
-                            </a>
+                        <div class="bordertitle">
+                        </div>
 
-                            <div class="well well-lg">The work that we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the missionto improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.
-                            </div>
+                        <div class="well well-lg">The work that we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the missionto improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.
+                        </div>
                         </div>
                     </div>
                 </div><!-- row -->
@@ -183,9 +177,9 @@ else
                                     <img src="images/about_11.jpg" alt="Our aims" title="Our aims">
                                 </div> <!-- /.sample-thumb -->
                                 <div class="list-group">
-                                    <a href="#" class="list-group-item active"><font size="5"><center>
-                                    When You Donate</center></font>
-                                    </a>
+                                    <div class="bordertitle">
+                                        When You Donate
+                                    </div>
                               <div class="well well-lg">
                                     1.    Consider calling us first, to let us know your intentions. Otherwise, <a href="#"><br>&#91;click here&#93;</a> to enquire about making a donation.<br><br>
 
@@ -269,18 +263,14 @@ else
                 <div class ="row">
                    <div class="col-md-12">
                         <div class="sample-thumb">
-                        <div>
-                            <ul class="nav nav-pills nav-stacked">
-                              <li class="active">
-                              <a href="#">Projects to Donate To  </a></li>
-                            </ul>
-                        </div>
+                        <div class="bordertitle">
+                            Projects to Donate To
+                         </div>
                             <img src="images/picture29.jpg" alt="New Event" title="New Event"/>
-                            <a href="#" class="list-group-item active"><font size="5"><center>
-                                </center></font>
-                            </a>
+                        <div class="bordertitle">
+                        </div>
 
-                            <div class="well well-lg">There are a number of Projects we embark on, which provide necessary complementary support systems to the enterprises our beneficiaries are involved in. A few of these projects are in the consulting and business plan development phase. For info on our current and imminent projects, please click on one of the links below. You may also choose to donate to any other aspect of our work.
+                        <div class="well well-lg">There are a number of Projects we embark on, which provide necessary complementary support systems to the enterprises our beneficiaries are involved in. A few of these projects are in the consulting and business plan development phase. For info on our current and imminent projects, please click on one of the links below. You may also choose to donate to any other aspect of our work.
 
                         </div>
                         </div> <!--sample-thumb-->

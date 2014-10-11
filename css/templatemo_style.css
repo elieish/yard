@@ -131,7 +131,7 @@ body {
 }
 
 a {
-    color: #9ed034;
+    color: #4c9ed9;
     text-decoration: none;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
@@ -247,11 +247,11 @@ hr {
 }
 
 .main-menu ul li a:hover {
-    color: #9ed034;
+    color: #4c9ed9;
 }
 
 .main-menu ul li.active {
-    background: #9ed034;
+    background: #4c9ed9;
 }
 
 .main-menu ul li.active a {
@@ -506,7 +506,7 @@ h3.widget-title {
 
 .list-item .list-content a.price-btn {
     display: block;
-    background-color: #9ed034;
+    background-color: #4c9ed9;
     color: #fff;
     padding: 12px;
     text-align: center;
@@ -517,7 +517,7 @@ h3.widget-title {
 }
 
 .list-item .list-content a.price-btn:hover {
-    background-color: #90be2c;
+    background-color: #172D82;
 }
 
 .owl-next,.owl-prev {
@@ -886,7 +886,7 @@ div.contact-form textarea {
 
 div.contact-form input.mainBtn {
     border: 0;
-    background: #9ed034;
+    background: #4c9ed9;
     color: #fff;
     text-transform: uppercase;
     font-weight: 700;
@@ -1001,6 +1001,13 @@ div.contact-form input.mainBtn {
     background-color:#232323 !important ;
     font-size:17px !important ;
 }
+
+.bordertitle {
+    background-color: #9ED034;
+    color:white;
+    height: 50px;
+
+  ;}
 
 
 

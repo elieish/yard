@@ -13,7 +13,7 @@ $province       = provinces_select();
 ?>
 <html>
   <head>
-    <title>Yard</title>
+    <title>YARD</title>
     <meta name="description" content="">
     <meta name="keywords" content="" />
     <meta charset="utf-8">
