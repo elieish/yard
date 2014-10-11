@@ -1005,7 +1005,11 @@ div.contact-form input.mainBtn {
 .bordertitle {
     background-color: #9ED034;
     color:white;
-    height: 50px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
 
   ;}
 
