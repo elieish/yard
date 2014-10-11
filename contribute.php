@@ -61,7 +61,7 @@ else
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>YARD</title>
+    <title>Contribute - YARD</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="templatemo">

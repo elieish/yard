@@ -46,7 +46,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
   <meta charset="utf-8">
-    <title>Members Page</title>
+    <title>Members - YARD</title>
     <meta name="description" content="">
     <meta name="keywords" content="" />
     <meta charset="utf-8">
