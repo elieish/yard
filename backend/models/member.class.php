@@ -118,7 +118,6 @@ class Member extends Model {
 								{$egroup_where_clause}
 						ORDER BY `members`.`uid` DESC
 											";
-											echo $query;
 /*
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')

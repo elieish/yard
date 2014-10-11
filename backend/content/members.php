@@ -149,7 +149,7 @@ class Page extends AbstractPage {
 		$obj->district		= Form::get_str("district");
 		$obj->local_area	= Form::get_str("local)_area");
 		$obj->sector_id		= Form::get_str("sector_id");
-		$obj->group_id		= Form::get_str("group_id");
+		$obj->group_id		= Form::get_int("group_id");
 		$obj->paid			= 0;
 		$obj->active		= 1;
 
