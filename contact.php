@@ -189,42 +189,6 @@ else
                 </div><!-- row -->
             </div><!-- /. container -->
             </div><!-- /. container -->
-            <div class="partner-list">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item last">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.partner-list -->
 
 
         <div class="site-footer">
