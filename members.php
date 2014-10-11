@@ -266,14 +266,11 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                     </div>
 
                                     <div class="well well-lg" style="min-height: 200px">
-                                    While YARDprogrammes are rolled out on national level; investment, resourcing and the
+                                    While YARD programmes are rolled out on national level; investment, resourcing and the
                                     development activities are focused at the level of SMMEs, community-based youth
                                     co-operatives and youth-led organizational structures, in the various provinces, on
-                                    local level. TYA exists to ensure that youth structures be developed for integration
-                                    into the formal economy and achieve their socio-economic development aims. TYA is
-                                    careful
-                                    t to be bogged-down by the necessary internal bureaucratic and democratic processes, typical
-                                    f a national organization.</div><!-- /.well well-lg -->
+                                    local level. YARD exists to ensure that youth structures developed for integration
+                                    into the formal economy and achieve their socio-economic development aims.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
