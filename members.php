@@ -344,7 +344,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
             </div> <!-- /.col-md-4 -->
 
             <div class="col-md-4"><!-- third column -->
-              <div class=""
+              <div class="">
                 <div class="sample-thumb">
                   <img src="images/member4.jpg" alt="Special Eve" title="Special Eve">
                   <div class="list-group">
