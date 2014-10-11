@@ -249,7 +249,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                     <div class="service-content">
 
                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">Local Membership<br>Click here   </a></li>
+                        <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">Click here <br>to complete membership form  </a></li>
 
                       </ul>
                       <!-- <button  data-target=".bs-example-modal-lg">Large modal</button> -->
