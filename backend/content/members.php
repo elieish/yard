@@ -33,20 +33,22 @@ class Page extends AbstractPage {
 
 
 		$listingpaid 	= Member::listingpaid();
-
 		$province		= Province::get_id(Form::get_str("province"));
+		$group			= Egroup::get_id(Form::get_str("group"));
 		$district		= District::get_id(Form::get_str("district"));
 		$province		= ($province)? $province : $user->province;
 		$province		= ($district)? $district : $user->district;
-		$listing 		= Member::listing($province,$district);
-
+		$group			= ($group)? $group : $user->group;
+		$listing 		= Member::listing($province,$district,$group);
+		
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(
 							"listing"		=> $listing,
 							"add_link"		=> $this->cur_page."&action=add",
 							"title"			=> 'Members',
-							"province"		=> provinces_select()
+							"province"		=> provinces_select(),
+							"group"			=> enterprise_groups_select()
 						);
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
@@ -147,6 +149,7 @@ class Page extends AbstractPage {
 		$obj->district		= Form::get_str("district");
 		$obj->local_area	= Form::get_str("local)_area");
 		$obj->sector_id		= Form::get_str("sector_id");
+		$obj->group_id		= Form::get_int("group_id");
 		$obj->paid			= 0;
 		$obj->active		= 1;
 

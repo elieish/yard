@@ -557,7 +557,8 @@ VALUES  (55, 'Durban Municipality','', 2, 1);
 
 
 
-
+/**Add Group ID **/
+ALTER TABLE `members` ADD COLUMN `group_id` INT(11) NOT NULL DEFAULT '0' AFTER `sector_id`;
 
 
 

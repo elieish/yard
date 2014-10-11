@@ -112,6 +112,68 @@ function sector_select() {
     return $values;
 }
 
+function enterprise_groups_select($flag,$selected_value) {
+	# Global Variables
+	global $_db;
+
+	# Get Data
+	$query			= "	SELECT
+							`uid`,
+							`group`
+						FROM
+							`enterprise_groups`
+							";
+	$data			= $_db->fetch($query);
+
+
+		foreach ($data as $item) {
+
+			if($selected_value == $item->uid)
+			{
+
+				$array			.= "<option selected value={$item->uid}>{$item->group}</option>";
+			}
+			else
+			{
+				$array 			.= "<option  value={$item->uid}>{$item->group}</option>";
+			}
+
+
+		}
+
+		return "<select class='form-control' name='group_id' id='group_id'><option value=''>Select One</option>{$array}</select>";
+}
+
+function enterprise_group_select() {
+	# Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+         					`uid`, `group`
+                    FROM
+
+         					`enterprise_groups`
+
+     				WHERE
+
+         					`active` = 1
+
+     				ORDER BY
+
+         					`uid`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->group;
+    }
+
+    # Return Values
+    return $values;
+}
+
 function cost_center_select($company=0) {
 	$where = ($company)? "company_id = {$company}" : "";
 
