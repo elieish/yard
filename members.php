@@ -278,7 +278,8 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                     </div>
 
                                     <div class="well well-lg" style="min-height: 200px">
-                                   While YARD programmes are rolled out on national level; investment, resourcing and the development activities are focused at the level of SMMEs, community-based youth co-operatives and youth-led organizational structures, in the various provinces, on local level. TYA exists to ensure that youth structures be developed for integration into the formal economy and achieve their socio-economic development aims. TYA is careful not to be bogged-down by the necessary internal bureaucratic and democratic processes, typical of a national organization.</div><!-- /.well well-lg -->
+                                    YARD exists to ensure that youth structures are developed for integration into the formal national economy and achieve their socio-economic development aims. To achieve maximum gain, the activities of youth structures are formalized into SMMEs and co-operatives, thereby allowing for a multiplier effect and the replication of workable models.
+                                   </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
@@ -294,7 +295,8 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                     <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of Female District Leaders</li>
                     <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of District Leaders aged 20 - 25 yrs</li>
                     <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 26 - 30 yrs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 31 - 35 yrs</li>
 
                   </ul>
 
