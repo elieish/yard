@@ -153,8 +153,7 @@ else
                             <li><h5>Physical Address:</h5>
                                 1B Iduli Close, Izinga Ridge, Durban, 4319, KZN Province, South Africa</li>
                             <li>Tel: +2731 822 2052</li>
-                            <li><h5>Provincial Contacts:</h5>
-                                To reach the provincial contacts of YARD, please visit our governance section of the site or click here to email us, to send the contact details to you.</li>
+
 
                           </ul>
                         </div>

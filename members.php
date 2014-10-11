@@ -200,6 +200,14 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 
                     </div>
                 </div>
+                <div class="row">
+                    <div class="bordertitle">
+                        Members
+                    </div>
+                    <div class="well well-lg">
+                        YARD is rolled out on local grassroots level which falls under a district and provincial administrations. Each province is to be set-up with its own leadership structures which will form the operational backbone of the programme. The programme’s development activities takes place at the level of community-based youth co-operatives and youth-led organizational structures, in the different provinces.
+                    </div>
+                </div>
 
                 <div class="row"><!-- first row -->
 
@@ -267,11 +275,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                     </div>
 
                                     <div class="well well-lg" style="min-height: 200px">
-                                    While YARD programmes are rolled out on national level; investment, resourcing and the
-                                    development activities are focused at the level of SMMEs, community-based youth
-                                    co-operatives and youth-led organizational structures, in the various provinces, on
-                                    local level. YARD exists to ensure that youth structures developed for integration
-                                    into the formal economy and achieve their socio-economic development aims.</div><!-- /.well well-lg -->
+                                   While YARD programmes are rolled out on national level; investment, resourcing and the development activities are focused at the level of SMMEs, community-based youth co-operatives and youth-led organizational structures, in the various provinces, on local level. TYA exists to ensure that youth structures be developed for integration into the formal economy and achieve their socio-economic development aims. TYA is careful not to be bogged-down by the necessary internal bureaucratic and democratic processes, typical of a national organization.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
@@ -306,9 +310,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                         Provincial
                                     </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                      The Provincial office is the administrative head of the districts and their
-                                      local beneficiaries’ structures. The structure is responsible for ensuring the
-                                      successful roll-out and governance of the YARDprogramme in each province.</div><!-- /.well well-lg -->
+                                      The Provincial office is the administrative head of the districts and their local beneficiaries’ structures. The structure is responsible for ensuring the successful roll-out and governance of the YARD programme in each province.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
 
               </div> <!-- /.widget-item -->
@@ -324,10 +326,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                         District
                                      </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The District levels of YARDare critical for the implementation of
-                                    the projects and enterprises on local level. Their direct oversight
-                                    ensures that structures operate, intra-collaborate and filter critical
-                                    information that informs the YARD
+                                   The District levels of YARD are critical for the implementation of the projects and enterprises on local level. Their direct oversight ensures that structures operate, intra-collaborate and filter critical information that informs the YARD
                                     </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
 
@@ -343,10 +342,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                               Local
                                         </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The local level of YARDis where the most important work of the organization is done.
-                                    This level receives the highest intensity of input and resourcing; is the most critical
-                                    level for the aimed development outcomes and is monitored, supported and evaluated
-                                    regularly to ensure the achievements of the desired results.
+                                    The local level of YARD is where the most important work of the organization is done. This level receives the highest intensity of input and resourcing; is the most critical level for the aimed development outcomes and is monitored, supported and evaluated regularly to ensure the achievements of the desired results.
                                     </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.sample-thumb -->

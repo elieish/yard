@@ -161,7 +161,7 @@ else
                              What You’re Donating To
                         </div>
 
-                        <div class="well well-lg">The work that we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the missionto improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.
+                        <div class="well well-lg">The work we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the mission to improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.
                         </div>
                         </div>
                     </div>
@@ -180,14 +180,11 @@ else
                                         When You Donate
                                     </div>
                               <div class="well well-lg">
-                                    1.    Consider calling us first, to let us know your intentions. Otherwise, <a href="#"><br>&#91;click here&#93;</a> to enquire about making a donation.<br><br>
+                                     1.Consider calling us first, to let us know what you aspect of our work you may be interested to know more about
 
-                                     2.  Consider making yourself available for an appointment with us.
-                                     We would be thrilled to show you around our projects and tell you more.
-                                     Please fill in the form provided on this page.<br><br>
-                                     3.  Ensure that you reference clearly your donation when you make a deposit.
-                                     This will help us acknowledge your gift and accurately allocate it to the area of our work you wish to support.<br><br><br><br><br>
-                             </div><!-- /.well well-lg -->
+                                     2. Consider making an appointment, to meet with us. We would be thrilled to show you around our projects and tell you more. Please fill in the form provided on this page.
+                                     3. Ensure that you reference clearly your donation when you make a deposit.
+                                     This will help us acknowledge your gift and accurately allocate it to the area of our work you wish to support.                             </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                             </div> <!-- /.widget-item -->
                     </div> <!-- /.col-md-6 -->
