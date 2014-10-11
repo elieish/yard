@@ -32,6 +32,10 @@ function get_user_username() {
 	return (isset($_SESSION['user_username']))? $_SESSION['user_username'] : "System";
 }
 
+function get_user_fullname() {
+	return (isset($_SESSION['user_fullname']))? $_SESSION['user_fullname'] : "No Name";
+}
+
 function is_mobile_browser() {
 	$mobile_browser = '0';
 	

@@ -81,8 +81,14 @@ function getMemberdetails() {
     $member                 = new Member($memberUid);
     $province               = new Province($member->province_id);
     $district               = new District($member->district);
+    $local               	= new Local($member->local_area);
+    $member->issued_date	= date('Y-m-d H:i:s');
+    $member->renewal_date	= date("Y-m-d",mktime(0, 0, 0, date('m')+6, date('d'), date('Y')));
     $member->provincename   = $province->province;
     $member->districtname   = $district->name;
+    $member->localname   	= $local->name;
+	$member->issued_by		= get_user_fullname();
+	
     print json_encode($member);
 }
 

@@ -106,6 +106,7 @@ class User extends Model {
 			# Set SESSION Details
 			$_SESSION['user_uid']				= $user->uid;
 			$_SESSION['user_username']			= $user->username;
+			$_SESSION['user_fullname']			= $user->first_name." ".$user->last_name;
 			unset($_SESSION['login_error']);
 
 			# Log Activity

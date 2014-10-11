@@ -25,38 +25,34 @@ function printPDF(uid){
     var data = jQuery.parseJSON(result);
 	var doc = new jsPDF();
     doc.setProperties({
-    title: 'YARDMembership Certificate',
+    title: 'YARD Membership Certificate',
     author: 'Elie ishimwe'
     });
    /* doc.addImage(imgData, 'PNG', 15, 40, 180, 180);*/
     doc.setFontSize(22);
     doc.setFont("times");
-    doc.setFontType("bolditalic");
-    doc.setTextColor(0,255,0);
-	doc.text(60, 20, 'YARDMEMBERSHIP CERTIFICATE');
     doc.setFontType("normal");
     doc.setTextColor(0,0,0);
     doc.setFontSize(12);
-	doc.text(80, 30, 'Youth in Agriculture & Rural Development');
-    doc.text(20, 40, 'Membership Number ');
-    doc.text(60, 40,  ':' + data.membership_no);
-    doc.text(20, 50, 'Name ');
-    doc.text(60, 50,  ':' + data.name);
-    doc.text(20, 60, 'Surname ');
-    doc.text(60, 60,  ':' + data.surname);
-    doc.text(20, 70, 'Province Name ');
-    doc.text(60, 70,  ':' + data.provincename);
-    doc.text(20, 80, 'District Name ');
-    doc.text(60, 80, ':' + data.districtname);
-    doc.text(20, 90, 'Local Name ');
-    doc.text(60, 90, ':' + data.local_area);
-    doc.text(20, 100, 'Date of Issue ');
-    doc.text(60, 100, ': ' + data.created_at);
-    doc.text(20, 110, 'Renewal Date ');
-    doc.text(60, 110, ': ' + data.created_at);
-    doc.text(20, 120, 'Issuing Office : ');
-    doc.text(60, 120, ': ' + data.created_at);
-    doc.save('Certificate.pdf');
+    doc.text(40, 100, 'Membership Number ');
+    doc.text(80, 100,  ': ' + data.membership_no);
+    doc.text(40, 110, 'Name ');
+    doc.text(80, 110,  ': ' + data.name);
+    doc.text(40, 120, 'Surname ');
+    doc.text(80, 120,  ': ' + data.surname);
+    doc.text(40, 130, 'Province Name ');
+    doc.text(80, 130,  ': ' + data.provincename);
+    doc.text(40, 140, 'District Name ');
+    doc.text(80, 140, ': ' + data.districtname);
+    doc.text(40, 150, 'Local Name ');
+    doc.text(80, 150, ': ' + data.localname);
+    doc.text(40, 160, 'Date of Issue ');
+    doc.text(80, 160, ': ' + data.issued_date);
+    doc.text(40, 170, 'Renewal Date ');
+    doc.text(80, 170, ': ' + data.renewal_date);
+    doc.text(40, 180, 'Issuing Officer : ');
+    doc.text(80, 180, ': ' + data.issued_by);
+    doc.save(data.membership_no+'.pdf');
 }
 
 function ajax_get_data(this_url) {

@@ -441,6 +441,37 @@ function locals_select($district_code,$selected_value) {
 
 }
 
+function local_area_select($districtid) {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid`, `name`
+                    FROM
+
+                            `locals`
+
+                    WHERE
+
+                            `active` = 1 AND
+                            `district_id` = '{$districtid}'
+
+                    ORDER BY
+
+                            `name`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->name;
+    }
+
+    # Return Values
+    return $values;
+}
+
 
 
 

@@ -57,9 +57,11 @@ class Member extends Model {
 		$form->add("Tel"						, "text"			, "tel"					, $this->tel);
 		$form->add("Cell"						, "text"			, "cell"				, $this->cell);
 		$form->add("Email"						, "text"			, "email"				, $this->email);
-		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
-		$form->add("District"					, "text"			, "district"			, $this->district);
-		$form->add("Local Area Name"			, "text"			, "local_area"			, $this->local_area);
+		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select()							,array('id', 'province'));
+		$form->add_select("Select a District"   , "district"     	,$this->district     	, districtt_select($this->province_id)		,array('id', 'districts'));
+		//$form->add("District"					, "text"			, "district"			, $this->district);
+		$form->add_select("Select a Local Area" , "local_area"      ,$this->local_area      , local_area_select($this->district)		,array('id', 'locals'));
+		//$form->add("Local Area Name"			, "text"			, "local_area"			, $this->local_area);
 		$form->add_select("Select a Sector"     , "sector_id"       ,$this->sector_id       , sector_select());
 		$form->add(""							, "submit"			, ""					, "Save");
 

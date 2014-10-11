@@ -37,9 +37,12 @@ $districtid         = district_id($district);
 $localid            = $_POST['locals'];
 
 # Construct Membership Number
+$query = " SELECT MAX(`uid`) AS 'max' FROM `members`";
+$max_id = $_db->fetch_single($query);
+
 $membership_no      = substr($name, 0,1).substr($surname,0,1);
 $membership_no      .= date("dmy", strtotime(now()));
-$membership_no      .= $prov.$district;
+$membership_no      .= $prov.$district.($max_id+1);
 
   # Create new Object
 $obj                = new Member();
