@@ -118,8 +118,6 @@ $province       = provinces_select();
                             <img src="images/destination_2.jpg" alt="destination 2">
                         </div> <!-- /.list-thumb -->
                         <div class="list-content">
-
-
                             <a href="subpage.html" class="price-btn">MORE INFO</a>
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->
@@ -131,8 +129,6 @@ $province       = provinces_select();
                             <img src="images/destination_3.jpg" alt="destination 3">
                         </div> <!-- /.list-thumb -->
                         <div class="list-content">
-
-
                             <a href="subpage2.html" class="price-btn">MORE INFO</a>
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->

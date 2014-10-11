@@ -1,11 +1,11 @@
 
 <?php
 /**
- * Yard Development: AJAX Script
+ * YARDDevelopment: AJAX Script
  *
  * @author Elie ishimwe <elieish@gmail.com>
  * @version 1.0
- * @package YARD Development
+ * @package YARDDevelopment
  */
 # Start Session
 session_start();
@@ -198,7 +198,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                           <div class="bordertitle">
                           </div>
 
-                            <div class="well well-lg">YARD undergirds stable socio-economic growth and national
+                            <div class="well well-lg">YARDundergirds stable socio-economic growth and national
                              development, through cultivating and availing support resources, while administrating
                              and managing their distribution, for youth-led entrepreneurial projects and their related
                               organizational needs throughout South Africa.
@@ -272,7 +272,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                                     </div>
 
                                     <div class="well well-lg" style="min-height: 200px">
-                                    While YARD programmes are rolled out on national level; investment, resourcing and the
+                                    While YARDprogrammes are rolled out on national level; investment, resourcing and the
                                     development activities are focused at the level of SMMEs, community-based youth
                                     co-operatives and youth-led organizational structures, in the various provinces, on
                                     local level. TYA exists to ensure that youth structures be developed for integration
@@ -300,7 +300,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                                     <div class="well well-lg" style="min-height: 200px">
                                       The Provincial office is the administrative head of the districts and their
                                       local beneficiaries’ structures. The structure is responsible for ensuring the
-                                      successful roll-out and governance of the YARD programme in each province.</div><!-- /.well well-lg -->
+                                      successful roll-out and governance of the YARDprogramme in each province.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
 
               </div> <!-- /.widget-item -->
@@ -316,7 +316,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                                         District
                                      </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The District levels of YARD are critical for the implementation of
+                                    The District levels of YARDare critical for the implementation of
                                     the projects and enterprises on local level. Their direct oversight
                                     ensures that structures operate, intra-collaborate and filter critical
                                     information that informs the YARD
@@ -335,7 +335,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                                               Local
                                         </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The local level of YARD is where the most important work of the organization is done.
+                                    The local level of YARDis where the most important work of the organization is done.
                                     This level receives the highest intensity of input and resourcing; is the most critical
                                     level for the aimed development outcomes and is monitored, supported and evaluated
                                     regularly to ensure the achievements of the desired results.

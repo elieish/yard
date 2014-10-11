@@ -25,7 +25,7 @@ function printPDF(uid){
     var data = jQuery.parseJSON(result);
 	var doc = new jsPDF();
     doc.setProperties({
-    title: 'YARD Membership Certificate',
+    title: 'YARDMembership Certificate',
     author: 'Elie ishimwe'
     });
    /* doc.addImage(imgData, 'PNG', 15, 40, 180, 180);*/
@@ -33,7 +33,7 @@ function printPDF(uid){
     doc.setFont("times");
     doc.setFontType("bolditalic");
     doc.setTextColor(0,255,0);
-	doc.text(60, 20, 'YARD MEMBERSHIP CERTIFICATE');
+	doc.text(60, 20, 'YARDMEMBERSHIP CERTIFICATE');
     doc.setFontType("normal");
     doc.setTextColor(0,0,0);
     doc.setFontSize(12);

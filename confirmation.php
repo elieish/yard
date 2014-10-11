@@ -63,12 +63,12 @@ $member		= new Member($uid);
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-              <h4 class="modal-title" id="myModalLabel">YARD MEMBERSHIP CONFIRMATION</h4>
+              <h4 class="modal-title" id="myModalLabel">YARDMEMBERSHIP CONFIRMATION</h4>
             </div>
             <div class="modal-body">
               <div id="text">Thank you for your registration,your membership number is <?php print $member->membership_no ?> </div>
             </div>
-          
+
           <!--<div class="row">
 	        <div class="col-md-8">-->
 	        	<form action="https://sandbox.payfast.co.za/eng/process" class="form-horizontal" role="form">
@@ -115,10 +115,10 @@ $member		= new Member($uid);
 				  </div>
 				  <!-- Transaction Details -->
 					<input type="hidden" name="m_payment_id" value="TRN123456789">
-					
+
 					<!-- Transaction Options -->
 					<input type="hidden" name="email_confirmation" value="1">
-					
+
 					<!-- Security -->
 					<input type="hidden" name="signature" value="">
 				</form>
@@ -130,7 +130,7 @@ $member		= new Member($uid);
         </div>
       </div>
      </div>
-     
+
 </body>
 </html>
 

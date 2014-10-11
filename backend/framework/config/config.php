@@ -12,7 +12,7 @@
 # =========================================================================
 
 # System Settings
-$_GLOBALS['title']            = "Yard Development";
+$_GLOBALS['title']            = "YARDDevelopment";
 $_GLOBALS['max_results']      = 20;
 $_GLOBALS['default_page']     = "home";
 $_GLOBALS['default_action']   = "display";

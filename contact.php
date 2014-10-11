@@ -1,11 +1,11 @@
 
 <?php
 /**
- * Yard Development: AJAX Script
+ * YARDDevelopment: AJAX Script
  *
  * @author Elie ishimwe <elieish@gmail.com>
  * @version 1.0
- * @package YARD Development
+ * @package YARDDevelopment
  */
 # Start Session
 session_start();
@@ -256,6 +256,6 @@ else
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
-<!-- mack kapya D 409 YARD -->
+<!-- mack kapya D 409 YARD-->
 </body>
 </html>

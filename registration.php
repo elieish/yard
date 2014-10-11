@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Yard Development: AJAX Script
+ * YARDDevelopment: AJAX Script
  *
  * @author Elie ishimwe <elieish@gmail.com>
  * @version 1.0
- * @package YARD Development
+ * @package YARDDevelopment
  */
 # Start Session
 session_start();

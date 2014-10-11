@@ -1,10 +1,10 @@
 <?php
 /**
- * Yard Development: AJAX Script
+ * YARDDevelopment: AJAX Script
  *
  * @author Elie ishimwe <elieish@gmail.com>
  * @version 1.0
- * @package Yard Development
+ * @package YARDDevelopment
  */
 
 # ===================================================
