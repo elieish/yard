@@ -218,7 +218,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                        <br><br>
 
                        <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="frontend/login.php">National<br>Click here   </a></li>
+                        <li class="active"><a href="frontend/login.php">National Official<br>Click here   </a></li>
 
                       </ul>
                     </div>
@@ -229,7 +229,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                     <div class="service-content">
 
                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="frontend/login.php">Provincial<br>Click here   </a></li>
+                        <li class="active"><a href="frontend/login.php">Provincial Official <br>Click here   </a></li>
 
                       </ul>
                     </div> <!-- /.service-content -->
@@ -239,7 +239,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                     <div class="service-content">
 
                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="frontend/login.php">District<br>Click here   </a></li>
+                        <li class="active"><a href="frontend/login.php">District Official<br>Click here   </a></li>
 
                       </ul>
                     </div> <!-- /.service-content -->
@@ -249,7 +249,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                     <div class="service-content">
 
                       <ul class="nav nav-pills nav-stacked">
-                        <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">Click here <br>to complete membership form  </a></li>
+                        <li class="active" data-toggle="modal" data-target=".bs-example-modal-lg"><a href="#">To complete Membership Form<br> Click here</a></li>
 
                       </ul>
                       <!-- <button  data-target=".bs-example-modal-lg">Large modal</button> -->
