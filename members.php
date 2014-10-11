@@ -196,14 +196,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 							             </div>
 						          </div>
                     </div>
-                          <div class="bordertitle">
-                          </div>
 
-                            <div class="well well-lg">YARDundergirds stable socio-economic growth and national
-                             development, through cultivating and availing support resources, while administrating
-                             and managing their distribution, for youth-led entrepreneurial projects and their related
-                              organizational needs throughout South Africa.
-                            </div>
                     </div>
                 </div>
 
