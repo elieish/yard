@@ -200,14 +200,17 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 
                     </div>
                 </div>
-                <div class="row">
+                       <div class="row">
+                <div class="col-md-12">
                     <div class="bordertitle">
                         Members
                     </div>
                     <div class="well well-lg">
                         YARD is rolled out on local grassroots level which falls under a district and provincial administrations. Each province is to be set-up with its own leadership structures which will form the operational backbone of the programme. The programme’s development activities takes place at the level of community-based youth co-operatives and youth-led organizational structures, in the different provinces.
                     </div>
+                 </div>
                 </div>
+
 
                 <div class="row"><!-- first row -->
 
@@ -297,6 +300,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 
             </div>
             </div> <!-- /.row first -->
+
 
             <div class="row"><!-- second row -->
 
