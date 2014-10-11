@@ -210,12 +210,12 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
 
                  <div class="col-md-4"><!-- first column -->
 
-                  <div class="widget-item">
+                  <div class="">
 
 
                     <div class="service-item"><!-- /.service-icon -->
                       <div class="service-content">
-                       <br><br>
+
 
                        <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="frontend/login.php">National Official<br>Click here   </a></li>
@@ -262,7 +262,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
             </div> <!-- /.col-md-4 -->
 
             <div class="col-md-4"><!-- second column -->
-                <div class="widget-item">
+                <div class="">
                   <div class="sample-thumb">
                     <img src="images/member1.jpg" alt="New Event" title="New Event">
                   </div> <!-- /.sample-thumb -->
@@ -289,7 +289,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
             <div class="row"><!-- second row -->
 
              <div class="col-md-4"><!-- first column -->
-              <div class="widget-item">
+              <div class="">
                 <div class="sample-thumb">
                   <img src="images/member2.jpg" alt="New" title="New">
                 </div> <!-- /.sample-thumb -->
@@ -307,7 +307,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
             </div> <!-- /.col-md-4 -->
 
             <div class="col-md-4"><!-- second column -->
-              <div class="widget-item">
+              <div class="">
                 <div class="sample-thumb">
                   <img src="images/member3.jpg" alt="New Event" title="New Event">
                 </div> <!-- /.sample-thumb -->
@@ -327,7 +327,7 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
             </div> <!-- /.col-md-4 -->
 
             <div class="col-md-4"><!-- third column -->
-              <div class="widget-item"
+              <div class=""
                 <div class="sample-thumb">
                   <img src="images/member4.jpg" alt="Special Eve" title="Special Eve">
                   <div class="list-group">
