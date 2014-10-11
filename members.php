@@ -286,17 +286,17 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
             <div class="col-md-4">
 
                   <ul class="list-group">
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of SMMES</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of Members in SMMEs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of Cooperatives</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of Membes in Cooperative</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of Members still as Individuals</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of Male District Leaders</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of Female District Leaders</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of District Leaders aged 20 - 25 yrs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 26 - 30 yrs</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 31 - 35 yrs</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No of SMMES</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No of Members in SMMEs</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No of Cooperatives</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No of Membes in Cooperative</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No of Members still as Individuals</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of Male District Leaders</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of Female District Leaders</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leaders aged 20 - 25 yrs</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 26 - 30 yrs</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>
 
                   </ul>
 
