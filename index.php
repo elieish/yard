@@ -165,47 +165,6 @@ $province       = provinces_select();
                 </div> <!-- /.our-listing -->
             </div> <!-- /.row -->
         </div> <!-- /.container -->
-        <br>
-        <br>
-
-
-        <div class="partner-list">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                    <div class="col-md-2 col-sm-4 col-xs-6">
-                        <div class="partner-item last">
-
-                        </div> <!-- /.partner-item -->
-                    </div> <!-- /.col-md-2 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.partner-list -->
-
 
         <div class="site-footer">
             <div class="container">
@@ -222,7 +181,6 @@ $province       = provinces_select();
                             <span>Copyright &copy; 2014 <a href="frontend/login.php">YARD</a><i class="fa fa-login fa-fw"></i></span>
                         </div>
                     </div> <!-- /.col-md-4 -->
-                    "" <!-- /.col-md-4 -->
                 </div> <!-- /.row -->
             </div> <!-- /.container -->
         </div> <!-- /.site-footer -->
