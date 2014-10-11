@@ -284,20 +284,6 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
 
-            <div class="col-md-4"><!-- third column -->
-                <div class="widget-item">
-                  <div class="sample-thumb">
-                    <img src="images/event_2.jpg" alt="Special Eve" title="Special Eve">
-                  </div> <!-- /.sample-thumb -->
-                  <div class="panel panel-default">
-                    <div class="panel-heading"><br><br></div>
-
-
-
-                  </div>
-                </div> <!-- /.widget-item -->
-            </div> <!-- /.col-md-4 -->
-
             </div> <!-- /.row first -->
 
             <div class="row"><!-- second row -->
