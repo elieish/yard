@@ -155,11 +155,10 @@ else
                     <div class="col-md-12">
 
                         <div class="sample-thumb">
-                        <div class="bordertitle">
-                            What You’re Donating To
-                        </div>
+
                             <img src="images/picturec.jpg" alt="New Event" title="New Event"/>
                         <div class="bordertitle">
+                             What You’re Donating To
                         </div>
 
                         <div class="well well-lg">The work that we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the missionto improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.
@@ -263,11 +262,10 @@ else
                 <div class ="row">
                    <div class="col-md-12">
                         <div class="sample-thumb">
-                        <div class="bordertitle">
-                            Projects to Donate To
-                         </div>
+
                             <img src="images/picture29.jpg" alt="New Event" title="New Event"/>
                         <div class="bordertitle">
+                            Projects to Donate To
                         </div>
 
                         <div class="well well-lg">There are a number of Projects we embark on, which provide necessary complementary support systems to the enterprises our beneficiaries are involved in. A few of these projects are in the consulting and business plan development phase. For info on our current and imminent projects, please click on one of the links below. You may also choose to donate to any other aspect of our work.
