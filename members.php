@@ -350,42 +350,6 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
         </div> <!-- /.container -->
       </div> <!-- /.middle-content -->
 
-      <div class="partner-list">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-2 col-sm-4 col-xs-6">
-              <div class="partner-item">
-
-              </div> <!-- /.partner-item -->
-            </div> <!-- /.col-md-2 -->
-            <div class="col-md-2 col-sm-4 col-xs-6">
-              <div class="partner-item">
-
-              </div> <!-- /.partner-item -->
-            </div> <!-- /.col-md-2 -->
-            <div class="col-md-2 col-sm-4 col-xs-6">
-              <div class="partner-item">
-
-              </div> <!-- /.partner-item -->
-            </div> <!-- /.col-md-2 -->
-            <div class="col-md-2 col-sm-4 col-xs-6">
-              <div class="partner-item">
-
-              </div> <!-- /.partner-item -->
-            </div> <!-- /.col-md-2 -->
-            <div class="col-md-2 col-sm-4 col-xs-6">
-              <div class="partner-item">
-
-              </div> <!-- /.partner-item -->
-            </div> <!-- /.col-md-2 -->
-            <div class="col-md-2 col-sm-4 col-xs-6">
-              <div class="partner-item last">
-
-              </div> <!-- /.partner-item -->
-            </div> <!-- /.col-md-2 -->
-          </div> <!-- /.row -->
-        </div> <!-- /.container -->
-      </div> <!-- /.partner-list -->
 
 
         <div class="site-footer">
