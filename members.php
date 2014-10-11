@@ -17,6 +17,7 @@ Application::include_helpers();
 Application::db_connect();
 $title          = titles_select();
 $province       = provinces_select();
+$egroup       	= enterprise_groups_select();
 $date_select    = html_date();
 
 #Global Variables
@@ -424,6 +425,10 @@ $no_of_individuals	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ent
                     <div class="form-group">
                       <label>Email:</label>
                       <input class="form-control validate_nonempty validate_dublicate_email"  placeholder="email" name="email" id="email" >
+                    </div>
+                    <div class="form-group validate_nonempty">
+                      <label>Group type:</label>
+                      <?php print $egroup;?>
                     </div>
                     <div class="form-group validate_nonempty">
                       <label>Province:</label>

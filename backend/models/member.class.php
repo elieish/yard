@@ -53,6 +53,7 @@ class Member extends Model {
 		$form->add("Gender"						, "text"			, "gender"				, $this->gender);
 		$form->add("D.O.B"						, "date"			, "dob"					, $this->dob);
 		$form->add("Age"						, "text"			, "age"					, $this->age);
+		$form->add_select("Select a Group"   	, "group_id"     	,$this->group_id     	, enterprise_group_select());
 		$form->add("Tel"						, "text"			, "tel"					, $this->tel);
 		$form->add("Cell"						, "text"			, "cell"				, $this->cell);
 		$form->add("Email"						, "text"			, "email"				, $this->email);
@@ -69,13 +70,14 @@ class Member extends Model {
 		return $html;
 	}
 
-	public function listing($province,$district) {
+	public function listing($province,$district,$egroup) {
 
 		#Global Variables
 		global $_db;
 
-		$province_where_clause = ($province)? "AND `members`.`province_id` = '{$province}'" :"";
-		$district_where_clause = ($district)? "AND `members`.`district` = '{$district}'" :"";
+		$province_where_clause = ($province)? " AND `members`.`province_id` = '{$province}'" :"";
+		$district_where_clause = ($district)? " AND `members`.`district` = '{$district}'" :"";
+		$egroup_where_clause = ($egroup)? " AND `members`.`group_id` = '{$egroup}'" :"";
 
 
 		# Get Data
@@ -86,6 +88,7 @@ class Member extends Model {
 							`name` as 'Name',
 							`surname` as 'Surname',
 							`cell` as 'Cell',
+							`enterprise_groups`.`group` as 'Group',
 							`provinces`.`province` as 'Province',
 					 IF(`members`.`paid` = 1,'Paid','Not Paid') as 'Payment',
 					CONCAT('<li class=\"dropdown\">
@@ -107,13 +110,15 @@ class Member extends Model {
 
 
 						FROM
-								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id`
+								`members` JOIN `provinces` ON `provinces`.`uid` = `members`.`province_id` JOIN `enterprise_groups` ON `enterprise_groups`.`uid` = `members`.`group_id`
 						WHERE
 								`members`.`active` = 1
 								{$province_where_clause}
 								{$district_where_clause}
-						ORDER BY `created_at` DESC
+								{$egroup_where_clause}
+						ORDER BY `members`.`uid` DESC
 											";
+											echo $query;
 /*
 		if(isset($_GET['v'])){
 			if($_GET['v'] == 'paid')
