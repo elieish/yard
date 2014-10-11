@@ -31,12 +31,12 @@ $members_21_25		= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM member
 $members_26_30		= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM members WHERE (YEAR(now()) - YEAR(dob)) >= 26 AND (YEAR(now()) - YEAR(dob)) <= 30");
 
 $members_31_35		= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM members WHERE (YEAR(now()) - YEAR(dob)) >= 31 AND (YEAR(now()) - YEAR(dob)) <= 35");
-$no_of_districts	= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM members WHERE `district` IS NOT NULL");
-$no_of_locals		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM locals");
+$no_of_districts	= $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM members ");
+$no_of_locals		  = $_db->fetch_single("SELECT COUNT(DISTINCT(`local_area`)) AS 'count' FROM members ");
 
-$no_of_coops		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM enterprises WHERE group_id=2");
-$no_of_smmes		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM enterprises WHERE group_id=1");
-$no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM enterprises WHERE group_id=3");
+$no_of_coops		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `members` WHERE group_id = 2");
+$no_of_smmes		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `members` WHERE group_id = 1");
+$no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `members` WHERE group_id = 3");
 
 ?>
 <!DOCTYPE html>
@@ -181,13 +181,13 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM ente
 								<div class="col-lg-3">
 									<ul class="list-group">
 									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_31_35;?></span>Members aged 31-35</li>
-									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_districts;?></span><small>No. of Districts</small></li>
-									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Local Area/Wards</small></li>
+									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_districts;?></span><small>No. of Active Districts</small></li>
+									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Active Local Area/Wards</small></li>
 									 </ul>
 								</div>
 								<div class="col-lg-3">
 									<ul class="list-group">
-									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No. of Co-ops</li>
+									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No. of Co-ops </li>
 									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No. of SMMEs</li>
 									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No. of Individuals</li>
 									 </ul>
