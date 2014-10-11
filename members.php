@@ -92,14 +92,12 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
             <div class="item"><img src="images/sliders/2.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/8.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/3.jpg" alt=""></div>
-            <div class="item"><img src="images/sliders/5.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/6.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/7.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/9.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/10.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/11.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/12.jpg" alt=""></div>
-            <div class="item"><img src="images/sliders/4.jpg" alt=""></div>
     </div>
     </div>
             <div class="site-header">
@@ -197,16 +195,20 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 							             </div>
 						          </div>
                     </div>
-                          <div class="bordertitle">
-                          </div>
 
-                            <div class="well well-lg">YARDundergirds stable socio-economic growth and national
-                             development, through cultivating and availing support resources, while administrating
-                             and managing their distribution, for youth-led entrepreneurial projects and their related
-                              organizational needs throughout South Africa.
-                            </div>
                     </div>
                 </div>
+                       <div class="row">
+                <div class="col-md-12">
+                    <div class="bordertitle">
+                        Members
+                    </div>
+                    <div class="well well-lg">
+                        YARD is rolled out on local grassroots level which falls under a district and provincial administrations. Each province is to be set-up with its own leadership structures which will form the operational backbone of the programme. The programme’s development activities takes place at the level of community-based youth co-operatives and youth-led organizational structures, in the different provinces.
+                    </div>
+                 </div>
+                </div>
+
 
                 <div class="row"><!-- first row -->
 
@@ -274,35 +276,31 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                     </div>
 
                                     <div class="well well-lg" style="min-height: 200px">
-                                    While YARDprogrammes are rolled out on national level; investment, resourcing and the
-                                    development activities are focused at the level of SMMEs, community-based youth
-                                    co-operatives and youth-led organizational structures, in the various provinces, on
-                                    local level. TYA exists to ensure that youth structures be developed for integration
-                                    into the formal economy and achieve their socio-economic development aims. TYA is
-                                    careful
-                                    t to be bogged-down by the necessary internal bureaucratic and democratic processes, typical
-                                    f a national organization.</div><!-- /.well well-lg -->
+                                    YARD exists to ensure that youth structures are developed for integration into the formal national economy and achieve their socio-economic development aims. To achieve maximum gain, the activities of youth structures are formalized into SMMEs and co-operatives, thereby allowing for a multiplier effect and the replication of workable models.
+                                   </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.widget-item -->
             </div> <!-- /.col-md-4 -->
             <div class="col-md-4">
 
                   <ul class="list-group">
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of SMMES</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of Members in SMMEs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of Cooperatives</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of Membes in Cooperative</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of Members still as Individuals</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of Male District Leaders</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_members;?></span>No of Female District Leaders</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_females;?></span>No of District Leaders aged 20 - 25 yrs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 26 - 30 yrs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_males;?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No of SMMES</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No of Members in SMMEs</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No of Cooperatives</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No of Membes in Cooperative</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No of Members still as Individuals</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of Male District Leaders</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of Female District Leaders</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leaders aged 20 - 25 yrs</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 26 - 30 yrs</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>
 
                   </ul>
 
             </div>
             </div> <!-- /.row first -->
+
 
             <div class="row"><!-- second row -->
 
@@ -316,9 +314,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                         Provincial
                                     </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                      The Provincial office is the administrative head of the districts and their
-                                      local beneficiaries’ structures. The structure is responsible for ensuring the
-                                      successful roll-out and governance of the YARDprogramme in each province.</div><!-- /.well well-lg -->
+                                      The Provincial office is the administrative head of the districts and their local beneficiaries’ structures. The structure is responsible for ensuring the successful roll-out and governance of the YARD programme in each province.</div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
 
               </div> <!-- /.widget-item -->
@@ -334,10 +330,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                         District
                                      </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The District levels of YARDare critical for the implementation of
-                                    the projects and enterprises on local level. Their direct oversight
-                                    ensures that structures operate, intra-collaborate and filter critical
-                                    information that informs the YARD
+                                   The District levels of YARD are critical for the implementation of the projects and enterprises on local level. Their direct oversight ensures that structures operate, intra-collaborate and filter critical information that informs the YARD
                                     </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
 
@@ -353,10 +346,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                                               Local
                                         </div>
                                     <div class="well well-lg" style="min-height: 200px">
-                                    The local level of YARDis where the most important work of the organization is done.
-                                    This level receives the highest intensity of input and resourcing; is the most critical
-                                    level for the aimed development outcomes and is monitored, supported and evaluated
-                                    regularly to ensure the achievements of the desired results.
+                                    The local level of YARD is where the most important work of the organization is done. This level receives the highest intensity of input and resourcing; is the most critical level for the aimed development outcomes and is monitored, supported and evaluated regularly to ensure the achievements of the desired results.
                                     </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                 </div> <!-- /.sample-thumb -->

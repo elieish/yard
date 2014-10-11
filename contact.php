@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
    $subject     = $_POST['subject'];
    $message     = "Name : ".$name."<br>";
    $message     .= "Email Address: ".$email."<br>";
+   $message     .= "Subject : ".$subject."<br>";
    $message     .= "Message: <br>";
    $message     .= $_POST['message'];
 
@@ -74,14 +75,12 @@ else
             <div class="item"><img src="images/sliders/2.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/8.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/3.jpg" alt=""></div>
-            <div class="item"><img src="images/sliders/5.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/6.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/7.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/9.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/10.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/11.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/12.jpg" alt=""></div>
-            <div class="item"><img src="images/sliders/4.jpg" alt=""></div>
     </div>
     </div>
 
@@ -153,8 +152,7 @@ else
                             <li><h5>Physical Address:</h5>
                                 1B Iduli Close, Izinga Ridge, Durban, 4319, KZN Province, South Africa</li>
                             <li>Tel: +2731 822 2052</li>
-                            <li><h5>Provincial Contacts:</h5>
-                                To reach the provincial contacts of YARD, please visit our governance section of the site or click here to email us, to send the contact details to you.</li>
+
 
                           </ul>
                         </div>
