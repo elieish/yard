@@ -149,7 +149,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                 </div> <!-- /.row -->
               </div> <!-- /.container -->
             </div> <!-- /.site-header -->
-            </div> <!-- /.page-header -->
+
 
             <div class="middle-content">
               <div class="container">
@@ -195,6 +195,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
             							    </div>
 							             </div>
 						          </div>
+                    </div>
                           <div class="bordertitle">
                           </div>
 
