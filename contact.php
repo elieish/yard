@@ -22,6 +22,7 @@ if (isset($_POST['submit'])) {
    $subject     = $_POST['subject'];
    $message     = "Name : ".$name."<br>";
    $message     .= "Email Address: ".$email."<br>";
+   $message     .= "Subject : ".$subject."<br>";
    $message     .= "Message: <br>";
    $message     .= $_POST['message'];
 
