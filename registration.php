@@ -42,7 +42,7 @@ $max_id = $_db->fetch_single($query);
 
 $membership_no      = substr($name, 0,1).substr($surname,0,1);
 $membership_no      .= date("dmy", strtotime(now()));
-$membership_no      .= $prov.$district.($max_id+1);
+$membership_no      .= $prov.$district.str_pad(($max_id+1), 5, 0, STR_PAD_LEFT);
 
   # Create new Object
 $obj                = new Member();
