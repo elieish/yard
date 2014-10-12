@@ -285,6 +285,7 @@ function provinces_select($flag,$selected_value) {
 
 	# Get Data
 	$query			= "	SELECT
+							`uid`,
 							`abreviation`,
 							`province`
 						FROM
@@ -298,11 +299,11 @@ function provinces_select($flag,$selected_value) {
 			if($selected_value == $item->id)
 			{
 
-				$array			.= "<option selected value={$item->abreviation}>{$item->province}</option>";
+				$array			.= "<option selected data-option={$item->abreviation} value={$item->abreviation}>{$item->province}</option>";
 			}
 			else
 			{
-				$array 			.= "<option  value={$item->uid}>{$item->province}</option>";
+				$array 			.= "<option data-option={$item->abreviation} value={$item->uid}>{$item->province}</option>";
 			}
 
 
@@ -337,8 +338,10 @@ function districts_select($province_code,$selected_value) {
     global $_db;
 
     $province_id      = Province::get_id($province_code);
+	if($province_id)
     $data             = District::listing($province_id);
-
+	else
+	$data             = District::listing($province_code);
 
         foreach ($data as $item) {
 
@@ -350,6 +353,37 @@ function districts_select($province_code,$selected_value) {
             else
             {
                 $array          .= "<option  value={$item->code}>{$item->name}</option>";
+            }
+
+
+        }
+
+        return "<select class='form-control' name='districts' id='districts'><option value=''>Select One</option>{$array}</select>";
+
+        return $data;
+
+}
+
+function districtsid_select($province_code,$selected_value) {
+    # Global Variables
+    global $_db;
+
+    $province_id      = Province::get_id($province_code);
+	if($province_id)
+    $data             = District::listing($province_id);
+	else
+	$data             = District::listing($province_code);
+
+        foreach ($data as $item) {
+
+            if($selected_value == $item->id)
+            {
+
+                $array          .= "<option selected value={$item->uid}>{$item->name}</option>";
+            }
+            else
+            {
+                $array          .= "<option  value={$item->uid}>{$item->name}</option>";
             }
 
 
@@ -415,10 +449,36 @@ function districtt_select($provinceid) {
 function locals_select($district_code,$selected_value) {
     # Global Variables
     global $_db;
-
+    die($district_code);
     $district_id      = District::get_id($district_code);
     $data             = Local::listing($district_id);
 
+        foreach ($data as $item) {
+
+            if($selected_value == $item->id)
+            {
+
+                $array          .= "<option selected value={$item->uid}>{$item->name}</option>";
+            }
+            else
+            {
+                $array          .= "<option  value={$item->uid}>{$item->name}</option>";
+            }
+
+
+        }
+
+        return "<select class='form-control' name='locals' id='locals'><option value=''>Select One</option>{$array}</select>";
+
+        return $data;
+
+}
+
+function localsid_select($district_code,$selected_value) {
+    # Global Variables
+    global $_db;
+    //$district_id      = District::get_id($district_code);
+    $data             = Local::listing($district_code);
 
         foreach ($data as $item) {
 

@@ -87,6 +87,7 @@ class District extends Model {
         global $_db;
         # Get Data
         $query          = " SELECT
+        					`uid`,
                             `code`,
                             `name`
                         FROM

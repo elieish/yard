@@ -32,6 +32,27 @@ function district_select()
   print $districtdrop;
 }
 
+function districtid_select()
+{
+  $province     = Form::get_str("province");
+  $districtdrop = districtsid_select($province,"");
+  print $districtdrop;
+}
+
+function local_select()
+{
+  $district     = Form::get_str("district");
+  $localsdrop   = locals_select($district,"");
+  print $localsdrop;
+}
+
+function localid_select()
+{
+  $district     = Form::get_str("district");
+  $localsdrop   = localsid_select($district,"");
+  print $localsdrop;
+}
+
 function get_user_email_addresses_multi() {
     global $_db;
 
