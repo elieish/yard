@@ -562,6 +562,17 @@ ALTER TABLE `members` ADD COLUMN `group_id` INT(11) NOT NULL DEFAULT '0' AFTER `
 
 
 
+-- Dumping structure for table yarddb.enterprises
+CREATE TABLE IF NOT EXISTS `genders` (
+  `uid` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `active`      int(1)      NOT NULL default 1,
+  PRIMARY KEY (`uid`
+)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
 
 
 

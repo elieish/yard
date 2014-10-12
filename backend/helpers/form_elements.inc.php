@@ -472,6 +472,36 @@ function local_area_select($districtid) {
     return $values;
 }
 
+function gender_select() {
+    # Global Variables
+    global $_db;
+
+    # Get Data
+    $query   = "    SELECT
+                            `uid`, `name`
+                    FROM
+
+                            `genders`
+
+                    WHERE
+
+                            `active` = 1
+
+                    ORDER BY
+
+                            `uid`";
+    $data  = $_db->fetch($query);
+
+    # Construct Values
+    $values    = array();
+    foreach ($data as $item) {
+        $values[$item->uid]    = $item->name;
+    }
+
+    # Return Values
+    return $values;
+}
+
 
 
 
