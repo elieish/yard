@@ -50,8 +50,8 @@ class Member extends Model {
 		$form->add_select("Select a Title"      , "title_id"       	,$this->title_id        , title_select());
 		$form->add("Name"						, "text"			, "name"				, $this->name);
 		$form->add("Surname"					, "text"			, "surname"				, $this->surname);
-		$form->add("Gender"						, "text"			, "gender"				, $this->gender);
-		$form->add("Date of Birth"				, "date"			, "dob"					, $this->dob);
+		$form->add_select("Select Gender"   	, "gender"     	    , $this->gender     	, gender_select($this->gender));
+		$form->add("Date of Birth"				, "date"		 	, "dob"					, $this->dob);
 		$form->add_select("Select a Group"   	, "group_id"     	,$this->group_id     	, enterprise_group_select());
 		$form->add("Tel"						, "text"			, "tel"					, $this->tel);
 		$form->add("Cell"						, "text"			, "cell"				, $this->cell);
