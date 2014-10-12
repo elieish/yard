@@ -89,7 +89,7 @@ class Page extends AbstractPage {
         
         // Update Values
         $obj->username   = Form::get_str('username');
-        $obj->password   = Form::get_str('password');
+        $obj->password   = md5(Form::get_str('password'));
         $obj->first_name = Form::get_str('first_name');
         $obj->last_name  = Form::get_str('last_name');
         $obj->email      = Form::get_str('email');

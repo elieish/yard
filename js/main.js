@@ -46,6 +46,13 @@ jQuery(document).ready(function($) {
     var result = ajax_get_data(url);
     $('#local').html(result);
     });
+    
+    $(document).on('change','#district',function(){
+    var url = 'ajax.php?action=local_select';
+    url     += '&district=' + this.value;
+    var result = ajax_get_data(url);
+    $('#local_area').html(result);
+    });
 });
 
 function ajax_get_data(this_url) {

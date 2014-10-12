@@ -141,10 +141,9 @@ class Page extends AbstractPage {
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$password                = $_POST['password'];
+		$password                = md5($_POST['password']);
 		$user->NationalTreasurer = $_POST['NationalTreasurer'];
 		$user->NationalSecretary = $_POST['NationalSecretary'];
-		$password                = $_POST['password'];
 		$user->title             = $_POST['title'];
 		$user->active            = 1;
 
@@ -224,7 +223,7 @@ class Page extends AbstractPage {
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$password                = $_POST['password'];
+		$password                = md5($_POST['password']);
 		$user->NationalSecretary = $_POST['ProvincialSecretary'];
 		$password                = $_POST['password'];
 		$user->title             = $_POST['title'];
@@ -260,7 +259,7 @@ class Page extends AbstractPage {
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$password                = $_POST['password'];
+		$password                = md5($_POST['password']);
 		$user->NationalSecretary = $_POST['ProvincialSecretary'];
 		$password                = $_POST['password'];
 		$user->title             = $_POST['title'];
