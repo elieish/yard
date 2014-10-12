@@ -358,7 +358,7 @@ function districts_select($province_code,$selected_value) {
 
         }
 
-        return "<select class='form-control' name='districts' id='districts'><option value=''>Select One</option>{$array}</select>";
+        return "<select class='form-control' name='district' id='districts'><option value=''>Select One</option>{$array}</select>";
 
         return $data;
 
