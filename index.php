@@ -146,13 +146,13 @@ $province       = provinces_select();
                     <div class="list-item">
                         <div class="list-thumb">
                             <div class="title">
-                                <h4>VIDEO</h4>
+                                <h4>YARD Statistics</h4>
                             </div>
-                            <img src="images/destination_5.jpg" alt="destination 5">
+                            <img src="images/Home/home.jpg" alt="destination 5">
                         </div> <!-- /.list-thumb -->
                         <div class="list-content">
 
-                            <a href="#" class="price-btn">MORE VIDEOS</a>
+                            <a href="members.php" class="price-btn">MORE INFO</a>
                         </div> <!-- /.list-content -->
                     </div> <!-- /.list-item -->
                 </div> <!-- /.our-listing -->
