@@ -338,10 +338,7 @@ function districts_select($province_code,$selected_value) {
     global $_db;
 
     $province_id      = Province::get_id($province_code);
-	if($province_id)
     $data             = District::listing($province_id);
-	else
-	$data             = District::listing($province_code);
 
         foreach ($data as $item) {
 
@@ -358,7 +355,7 @@ function districts_select($province_code,$selected_value) {
 
         }
 
-        return "<select class='form-control' name='districts' id='districts'><option value=''>Select One</option>{$array}</select>";
+        return "<select class='form-control' name='district' id='districts'><option value=''>Select One</option>{$array}</select>";
 
         return $data;
 
@@ -369,9 +366,6 @@ function districtsid_select($province_code,$selected_value) {
     global $_db;
 
     $province_id      = Province::get_id($province_code);
-	if($province_id)
-    $data             = District::listing($province_id);
-	else
 	$data             = District::listing($province_code);
 
         foreach ($data as $item) {
@@ -421,7 +415,7 @@ function districtt_select($provinceid) {
 
     # Get Data
     $query   = "    SELECT
-                            `uid`, `code`, `name`
+                            `uid`, `name`
                     FROM
 
                             `districts`
@@ -439,7 +433,7 @@ function districtt_select($provinceid) {
     # Construct Values
     $values    = array();
     foreach ($data as $item) {
-        $values[$item->code]    = $item->name;
+        $values[$item->uid]    = $item->name;
     }
 
     # Return Values
@@ -514,7 +508,7 @@ function local_area_select($districtid) {
                     WHERE
 
                             `active` = 1 AND
-                            `code` = '{$districtid}'
+                            `district_id` = '{$districtid}'
 
                     ORDER BY
 
@@ -544,11 +538,12 @@ function gender_select() {
 
                     WHERE
 
-                            `active` = 1
+                            `active` = 1 
+                            
 
                     ORDER BY
 
-                            `uid`";
+                            `name`";
     $data  = $_db->fetch($query);
 
     # Construct Values
