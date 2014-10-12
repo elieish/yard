@@ -421,7 +421,7 @@ function districtt_select($provinceid) {
 
     # Get Data
     $query   = "    SELECT
-                            `uid`, `name`
+                            `uid`, `code`, `name`
                     FROM
 
                             `districts`
@@ -439,7 +439,7 @@ function districtt_select($provinceid) {
     # Construct Values
     $values    = array();
     foreach ($data as $item) {
-        $values[$item->uid]    = $item->name;
+        $values[$item->code]    = $item->name;
     }
 
     # Return Values
@@ -449,7 +449,6 @@ function districtt_select($provinceid) {
 function locals_select($district_code,$selected_value) {
     # Global Variables
     global $_db;
-    die($district_code);
     $district_id      = District::get_id($district_code);
     $data             = Local::listing($district_id);
 
@@ -515,7 +514,7 @@ function local_area_select($districtid) {
                     WHERE
 
                             `active` = 1 AND
-                            `district_id` = '{$districtid}'
+                            `code` = '{$districtid}'
 
                     ORDER BY
 

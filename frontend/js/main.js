@@ -18,14 +18,14 @@
     });
     
     $("#province_id").on("change", function(){
-        var url = 'ajax.php?action=districtid_select';
+        var url = 'ajax.php?action=district_select';
         url     += '&province=' + this.value;
         var result = ajax_get_data(url);
         $('#district').html(result);
     });
     
     $(document).on('change','#district',function(){
-    var url = 'ajax.php?action=localid_select';
+    var url = 'ajax.php?action=local_select';
     url     += '&district=' + this.value;
     var result = ajax_get_data(url);
     $('#local_area').html(result);
