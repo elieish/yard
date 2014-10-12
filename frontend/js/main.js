@@ -1,5 +1,9 @@
  $(document).ready(function() {
-    $('.table').dataTable();
+
+
+     $('.table').dataTable( {
+        "order": [[ 1, "desc" ]]
+    } );
 
    $('.datepicker').datepicker({
     format: 'yyyy-mm-dd',

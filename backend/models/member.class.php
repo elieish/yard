@@ -118,21 +118,9 @@ class Member extends Model {
 								{$province_where_clause}
 								{$district_where_clause}
 								{$egroup_where_clause}
-						ORDER BY `members`.`uid` DESC
+						ORDER BY `members`.`created_at` DESC
 											";
-/*
-		if(isset($_GET['v'])){
-			if($_GET['v'] == 'paid')
-				$query												.= 'AND paid = "Y"';
-			else
-				$query												.= 'AND paid = "N"';
-		}
-		else {
-				$query												.= 'ORDER BY
-																				`name`';
-		}*/
-
-		$listing							= paginated_listing($query);
+	$listing		= paginated_listing($query);
 
 
 		return $listing;
