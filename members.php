@@ -32,6 +32,7 @@ $members_21_25		= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM member
 $members_26_30		= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM members WHERE (YEAR(now()) - YEAR(dob)) >= 26 AND (YEAR(now()) - YEAR(dob)) <= 30");
 
 $members_31_35		= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM members WHERE (YEAR(now()) - YEAR(dob)) >= 31 AND (YEAR(now()) - YEAR(dob)) <= 35");
+$members_36       = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM members WHERE (YEAR(now()) - YEAR(dob)) >= 31 AND (YEAR(now()) - YEAR(dob)) >= 36");
 $no_of_districts	= $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM members ");
 $no_of_locals		  = $_db->fetch_single("SELECT COUNT(DISTINCT(`local_area`)) AS 'count' FROM members ");
 
@@ -157,7 +158,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                     <div class="sample-thumb">
                     	 <div class="panel panel-default">
                               <div class="bordertitle">
-                                  <span class="glyphicon glyphicon-stats"></span> Statistics
+                                  <span class="glyphicon glyphicon-stats"></span> Members Statistics
                               </div>
                     	     <div  class="panel-body">
 
@@ -180,14 +181,15 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                     								<div class="col-lg-3">
                     									<ul class="list-group">
                     									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_31_35;?></span>Members aged 31-35</li>
+                                        <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_36;?></span>Members aged >= 36  </li>
                     									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_districts;?></span><small>No. of Active Districts</small></li>
-                    									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Active Local Area/Wards</small></li>
+
                     									 </ul>
                     								</div>
                     								<div class="col-lg-3">
                     									<ul class="list-group">
-                    									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No. of Co-ops </li>
-                    									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No. of SMMEs</li>
+                    									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Active Local Area/Wards</small></li>
+                    									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No. of Members on Cellphone</li>
                     									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No. of Individuals</li>
                     									 </ul>
                     								</div>
@@ -268,7 +270,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
             <div class="col-md-4"><!-- second column -->
                 <div class="">
                   <div class="sample-thumb">
-                    <img src="images/member1.jpg" alt="New Event" title="New Event">
+                    <img src="images/Member/member2.jpg" height="170" alt="New Event" title="New Event">
                   </div> <!-- /.sample-thumb -->
                   <div class="list-group">
                                     <div class="bordertitle">
