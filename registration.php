@@ -19,7 +19,7 @@ Application::db_connect();
 function display()
 {
 	# Global Variables
-    global $_db;
+    global $_db,$_GLOBALS;
 
 $name               = $_POST['name'];
 $surname            = $_POST['surname'];
