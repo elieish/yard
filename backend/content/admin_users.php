@@ -141,7 +141,6 @@ class Page extends AbstractPage {
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$password                = md5($_POST['password']);
 		$user->NationalTreasurer = $_POST['NationalTreasurer'];
 		$user->NationalSecretary = $_POST['NationalSecretary'];
 		$user->title             = $_POST['title'];
@@ -149,7 +148,7 @@ class Page extends AbstractPage {
 
 		# Update Password
 		if (strlen($password)) {
-			$user->password	= $password;
+			$user->password	= md5(htmlentities($_POST['password']));
 		}
 
 		# Save User
@@ -223,7 +222,6 @@ class Page extends AbstractPage {
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$password                = md5($_POST['password']);
 		$user->NationalSecretary = $_POST['ProvincialSecretary'];
 		$password                = $_POST['password'];
 		$user->title             = $_POST['title'];
@@ -232,7 +230,7 @@ class Page extends AbstractPage {
 
 		# Update Password
 		if (strlen($password)) {
-			$user->password	= $password;
+			$user->password	= md5(htmlentities($_POST['password']));
 		}
 
 		# Save User
@@ -259,9 +257,7 @@ class Page extends AbstractPage {
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$password                = md5($_POST['password']);
 		$user->NationalSecretary = $_POST['ProvincialSecretary'];
-		$password                = $_POST['password'];
 		$user->title             = $_POST['title'];
 		$user->province          = $_POST['province_id'];
 		$user->district          = $_POST['district_id'];
@@ -269,7 +265,7 @@ class Page extends AbstractPage {
 
 		# Update Password
 		if (strlen($password)) {
-			$user->password	= $password;
+			$user->password	= md5(htmlentities($_POST['password']));
 		}
 
 		# Save User

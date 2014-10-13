@@ -11,19 +11,20 @@
     });
 
     $("#province").on("change", function(){
+
         var url = 'ajax.php?action=district_select';
         url     += '&province=' + this.value;
         var result = ajax_get_data(url);
         $('#district').html(result);
     });
-    
+
     $("#province_id").on("change", function(){
         var url = 'ajax.php?action=districtid_select';
         url     += '&province=' + this.value;
         var result = ajax_get_data(url);
         $('#district').html(result);
     });
-    
+
     $(document).on('change','#district',function(){
     var url = 'ajax.php?action=localid_select';
     url     += '&district=' + this.value;
