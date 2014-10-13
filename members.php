@@ -42,7 +42,8 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 
 $no_of_cellphones  = $_db->fetch_single("SELECT COUNT(DISTINCT(`cell`)) AS 'count' FROM members ");
 $no_of_emails      = $_db->fetch_single("SELECT COUNT(DISTINCT(`email`)) AS 'count' FROM members ");
-$no_of_male_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users ");
+$no_of_male_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users  WHERE `gender` = 1");
+$no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users  WHERE `gender` = 2");
 
 ?>
 <!DOCTYPE html>
