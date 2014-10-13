@@ -40,6 +40,9 @@ $no_of_coops		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `membe
 $no_of_smmes		  = $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `members` WHERE group_id = 1");
 $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `members` WHERE group_id = 3");
 
+$no_of_cellphones  = $_db->fetch_single("SELECT COUNT(DISTINCT(`cell`)) AS 'count' FROM members ");
+$no_of_emails      = $_db->fetch_single("SELECT COUNT(DISTINCT(`email`)) AS 'count' FROM members ");
+
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -189,8 +192,8 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
                     								<div class="col-lg-3">
                     									<ul class="list-group">
                     									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Active Local Area/Wards</small></li>
-                    									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_smmes;?></span>No. of Members on Cellphone</li>
-                    									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No. of Individuals</li>
+                    									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_cellphones;?></span>No. of Members on Cellphone</li>
+                    									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_emails;?></span>No. of Members on Email</li>
                     									 </ul>
                     								</div>
             							    </div>
