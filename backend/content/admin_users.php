@@ -140,16 +140,11 @@ class Page extends AbstractPage {
 		$user->email             = $_POST['email'];
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
+		$user->datetime          = now();
 		$user->fax               = $_POST['fax'];
-		$user->NationalTreasurer = $_POST['NationalTreasurer'];
-		$user->NationalSecretary = $_POST['NationalSecretary'];
+	    $user->password			 = md5(htmlentities($_POST['password']));
 		$user->title             = $_POST['title'];
 		$user->active            = 1;
-
-		# Update Password
-		if (strlen($password)) {
-			$user->password	= md5(htmlentities($_POST['password']));
-		}
 
 		# Save User
 		$user->save();
@@ -217,21 +212,16 @@ class Page extends AbstractPage {
 		$user                    = new User($uid);
 		$user->username          = $_POST['username'];
 		$user->first_name        = $_POST['first_name'];
+		$user->datetime          = now();
 		$user->last_name         = $_POST['last_name'];
 		$user->email             = $_POST['email'];
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
 		$user->fax               = $_POST['fax'];
-		$user->NationalSecretary = $_POST['ProvincialSecretary'];
-		$password                = $_POST['password'];
+		$user->password			 = md5(htmlentities($_POST['password']));
 		$user->title             = $_POST['title'];
 		$user->province          = $_POST['province_id'];
 		$user->active            = 1;
-
-		# Update Password
-		if (strlen($password)) {
-			$user->password	= md5(htmlentities($_POST['password']));
-		}
 
 		# Save User
 		$user->save();
@@ -256,17 +246,13 @@ class Page extends AbstractPage {
 		$user->email             = $_POST['email'];
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
+		$user->datetime          = now();
 		$user->fax               = $_POST['fax'];
-		$user->NationalSecretary = $_POST['ProvincialSecretary'];
 		$user->title             = $_POST['title'];
 		$user->province          = $_POST['province_id'];
-		$user->district          = $_POST['district_id'];
+		$user->district          = $_POST['district'];
+		$user->password			 = md5(htmlentities($_POST['password']));
 		$user->active            = 1;
-
-		# Update Password
-		if (strlen($password)) {
-			$user->password	= md5(htmlentities($_POST['password']));
-		}
 
 		# Save User
 		$user->save();

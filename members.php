@@ -42,6 +42,7 @@ $no_of_individuals= $_db->fetch_single("SELECT COUNT('uid') AS 'count' FROM `mem
 
 $no_of_cellphones  = $_db->fetch_single("SELECT COUNT(DISTINCT(`cell`)) AS 'count' FROM members ");
 $no_of_emails      = $_db->fetch_single("SELECT COUNT(DISTINCT(`email`)) AS 'count' FROM members ");
+$no_of_male_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users ");
 
 ?>
 <!DOCTYPE html>
@@ -294,8 +295,8 @@ $no_of_emails      = $_db->fetch_single("SELECT COUNT(DISTINCT(`email`)) AS 'cou
                     <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No of Cooperatives</li>
                     <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_coops;?></span>No of Membes in Cooperative</li>
                     <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No of Members still as Individuals</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of Male District Leaders</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of Female District Leaders</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_male_district_leaders;?></span>No of Male District Leaders</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_female_district_leaders;?></span>No of Female District Leaders</li>
                     <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leaders aged 20 - 25 yrs</li>
                     <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 26 - 30 yrs</li>
                     <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>

@@ -58,8 +58,6 @@ class User extends Model {
 		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
 		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
 		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
-		$form->add("National Secretary"	, "text"		, "NationalSecretary"		, $this->NationalSecretary);
-		$form->add("National Treasurer"	, "text"		, "NationalTreasurer"		, $this->NationalTreasurer);
 		$form->add(""					, "submit"		, "submit"			, "Save");
 
 
@@ -201,7 +199,6 @@ class User extends Model {
 		$form->add(""					, "hidden"		, "uid"				, $this->uid);
 		$form->add(""					, "hidden"		, "title"			, 4);
 		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
-
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
@@ -210,8 +207,6 @@ class User extends Model {
 		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
 		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
 		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
-		$form->add("Provincial Secretary"	, "text"		, "ProvincialSecretary"		, $this->ProvincialSecretary);
-		$form->add("Provincial Treasurer"	, "text"		, "ProvincialTreasurer"		, $this->ProvincialTreasurer);
 		$form->add(""					, "submit"		, "submit"			, "Save");
 
 
@@ -242,7 +237,6 @@ class User extends Model {
 		$form->add("Telephone"			, "text"		, "tel"				, $this->tel);
 		$form->add("Mobile"				, "text"		, "mobile"			, $this->mobile);
 		$form->add("Fax"				, "text"		, "fax"				, $this->fax);
-		$form->add("Provincial Secretary"	, "text"		, "ProvincialSecretary"		, $this->ProvincialSecretary);
 		$form->add(""					, "submit"		, "submit"			, "Save");
 
 
