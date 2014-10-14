@@ -146,11 +146,11 @@ else
                           <ul>
                             <li><h5>Operational Hours:</h5>
 
-                                To reach YARD, please contact us Monday to Friday, between 8am and 5pm.</li>
+                                To reach YARD, please contact us Monday to Friday, between 8am and 5pm.</li><br>
                             <li><h5>Office Contact Details:</h5>
-                                PO Box 2681, Umhlanga Rocks, 4320, KZN Province, South Africa</li>
+                                PO Box 2681, Umhlanga Rocks, 4320, KZN Province, South Africa</li><br>
                             <li><h5>Physical Address:</h5>
-                                1B Iduli Close, Izinga Ridge, Durban, 4319, KZN Province, South Africa</li>
+                                1B Iduli Close, Izinga Ridge, Durban, 4319, KZN Province, South Africa</li><br>
                             <li>Tel: +2731 822 2052</li>
 
 
