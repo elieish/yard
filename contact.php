@@ -150,7 +150,7 @@ else
                             <li><h5>Office Contact Details:</h5>
                                 PO Box 2681, Umhlanga Rocks, 4320, KZN Province, South Africa</li><br>
                             <li><h5>Physical Address:</h5>
-                                1B Iduli Close, Izinga Ridge, Durban, 4319, KZN Province, South Africa</li><br>
+                                1B Iduli Close, Izinga Ridge, Durban, 4319, KZN Province, South Africa</li>
                             <li>Tel: +2731 822 2052</li>
 
 
