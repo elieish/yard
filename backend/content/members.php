@@ -37,10 +37,10 @@ class Page extends AbstractPage {
 		$group			= Egroup::get_id(Form::get_str("group"));
 		$district		= District::get_id(Form::get_str("district"));
 		$province		= ($province)? $province : $user->province;
-		$province		= ($district)? $district : $user->district;
+		$district		= ($district)? $district : $user->district;
 		$group			= ($group)? $group : $user->group;
 		$listing 		= Member::listing($province,$district,$group);
-		
+
 		# Generate HTML
 		$file			= dirname(dirname(dirname(__FILE__)))."/frontend/html/members/list.html";
 		$vars	= array(

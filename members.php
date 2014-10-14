@@ -44,7 +44,7 @@ $no_of_cellphones  = $_db->fetch_single("SELECT COUNT(DISTINCT(`cell`)) AS 'coun
 $no_of_emails      = $_db->fetch_single("SELECT COUNT(DISTINCT(`email`)) AS 'count' FROM members ");
 $no_of_male_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users  WHERE `gender` = 1");
 $no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users  WHERE `gender` = 2");
-
+//$no_of_district_25 = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count'  FROM users WHERE (YEAR(now()) - YEAR(dob)) >= 21 AND (YEAR(now()) - YEAR(dob)) <= 25");
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -186,7 +186,7 @@ $no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`dist
                     								<div class="col-lg-3">
                     									<ul class="list-group">
                     									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_31_35;?></span>Members aged 31-35</li>
-                                        <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_36;?></span>Members aged >= 36  </li>
+                                        <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_36;?></span>Members aged 36 and older  </li>
                     									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_districts;?></span><small>No. of Active Districts</small></li>
 
                     									 </ul>
@@ -298,10 +298,10 @@ $no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`dist
                     <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_individuals;?></span>No of Members still as Individuals</li>
                     <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_male_district_leaders;?></span>No of Male District Leaders</li>
                     <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_female_district_leaders;?></span>No of Female District Leaders</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leaders aged 20 - 25 yrs</li>
-                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 26 - 30 yrs</li>
-                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>
-                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo 0?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo  $no_of_district_25;?></span>No of District Leaders aged 20 - 25 yrs</li>
+                    <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_district_30;?></span>No of District Leader aged 26 - 30 yrs</li>
+                    <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_district_35;?></span>No of District Leader aged 31 - 35 yrs</li>
+                    <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_district_36;?></span>No of District Leader aged 36 and older</li>
 
                   </ul>
 
