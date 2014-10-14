@@ -154,14 +154,19 @@ else
                     <div class="col-md-12">
 
                         <div class="sample-thumb">
-
-                            <img src="images/picturec.jpg" alt="New Event" title="New Event"/>
                         <div class="bordertitle">
                              What You’re Donating To
                         </div>
 
-                        <div class="well well-lg">The work we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the mission to improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.
+                          <div style="background-image: url(images/Contribute/1.png); background-repeat: no-repeat; background-size: 100%; color: black" class="well well-lg">
+                                <div class="row"><div class="col-md-4"></div>
+                                <div class="col-md-8">
+                               The work we do and the development improvements our beneficiaries make are not possible without our funding and grant partners. It is their means which allows us to create opportunities and provide the support; which our beneficiaries use to change their lives. The funds received are a fundamental component in the mission to improve not only their socio-economic conditions, but also that of thousands of people whose development paths are connected to theirs. We thank and solute our donors for their generosity and encourage others to take up the banner with them.</div>
                         </div>
+
+
+
+
                         </div>
                     </div>
                 </div><!-- row -->
@@ -172,17 +177,15 @@ else
                             <div class="widget-item">
 
                                 <div class="sample-thumb">
-                                    <img src="images/about_11.jpg" alt="Our aims" title="Our aims">
+                                    <img src="images/Contribute/3.png" alt="Our aims" title="Our aims">
                                 </div> <!-- /.sample-thumb -->
                                 <div class="list-group">
-                                    <div class="bordertitle">
-                                        When You Donate
-                                    </div>
-                              <div class="well well-lg">
-                                     1.Consider calling us first, to let us know what you aspect of our work you may be interested to know more about
 
-                                     2. Consider making an appointment, to meet with us. We would be thrilled to show you around our projects and tell you more. Please fill in the form provided on this page.
-                                     3. Ensure that you reference clearly your donation when you make a deposit.
+                              <div class="well well-lg">
+                                     1.Consider calling us first, to let us know what you aspect of our work you may be interested to know more about<br><br>
+
+                                     2. Consider making an appointment, to meet with us. We would be thrilled to show you around our projects and tell you more. Please fill in the form provided on this page.<br><br>
+                                     3. Ensure that you reference clearly your donation when you make a deposit.<br>
                                      This will help us acknowledge your gift and accurately allocate it to the area of our work you wish to support.                             </div><!-- /.well well-lg -->
                                 </div><!-- /.list-group -->
                             </div> <!-- /.widget-item -->
@@ -258,11 +261,12 @@ else
                 <div class ="row">
                    <div class="col-md-12">
                         <div class="sample-thumb">
-
-                            <img src="images/picture29.jpg" alt="New Event" title="New Event"/>
-                        <div class="bordertitle">
-                            Projects to Donate To
+                          <div class="bordertitle">
+                            PROJECTS YOU CAN DONATE TO – INFORMATION COMING SOON
                         </div>
+
+                        <img src="images/Contribute/2.png" alt="New Event" title="New Event"/>
+
 
                         <div class="well well-lg">There are a number of Projects we embark on, which provide necessary complementary support systems to the enterprises our beneficiaries are involved in. A few of these projects are in the consulting and business plan development phase. For info on our current and imminent projects, please click on one of the links below. You may also choose to donate to any other aspect of our work.
 
