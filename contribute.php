@@ -287,28 +287,28 @@ else
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
                             <ul class="nav nav-pills nav-stacked">
-                              <li class="active"><a href="#">Uthungulu Fresh Produce Market  </a></li>
+                              <li class="active" style="text-align:center"><a href="#">Uthungulu Fresh Produce Market  </a></li>
                             </ul>
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
                             <ul class="nav nav-pills nav-stacked">
-                              <li class="active"><a href="#">SMME Hub Facility  </a></li>
+                              <li class="active" style="text-align:center"><a href="#">SMME HUB Facility  </a></li>
                             </ul>
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
                             <ul class="nav nav-pills nav-stacked">
-                              <li class="active"><a href="#">SMME Rd Repairs Project  </a></li>
+                              <li class="active" style="text-align:center"><a href="#">SMME RD Repairs Project  </a></li>
                             </ul>
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
                     <div class="col-md-2 col-sm-4 col-xs-6">
                         <div class="partner-item">
                             <ul class="nav nav-pills nav-stacked">
-                                <li class="active"><a href="#">Biodiesel Grain<br><br></a></li>
+                                <li class="active" style="text-align:center"><a href="#">Biodiesel<br> Grain</a></li>
                             </ul>
                         </div> <!-- /.partner-item -->
                     </div> <!-- /.col-md-2 -->
