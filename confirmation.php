@@ -71,13 +71,15 @@ $member		= new Member($uid);
 
           <!--<div class="row">
 	        <div class="col-md-8">-->
-	        	<form action="https://sandbox.payfast.co.za/eng/process" class="form-horizontal" role="form">
+	        	<form action="https://www.payfast.co.za/eng/process" class="form-horizontal" role="form" method="post">
 	        		<!-- Receiver Details -->
-					<input type="hidden" name="merchant_id" value="10001540">
-					<input type="hidden" name="merchant_key" value="zm5yxqt7vyraa">
+				<!-- 	<input type="hidden" name="merchant_id" value="10001540">
+					<input type="hidden" name="merchant_key" value="zm5yxqt7vyraa"> -->
+          <input type="hidden" name="merchant_id" value="10597295">
+          <input type="hidden" name="merchant_key" value="u24b426br40fz">
 					<input type="hidden" name="return_url" value="http://www.yardweb.co.za">
-					<input type="hidden" name="cancel_url" value="http://www.widget.co.za/payment_cancelled">
-					<input type="hidden" name="notify_url" value="http://www.widget.co.za/payment_notify">
+					<input type="hidden" name="cancel_url" value="http://www.yardweb.co.za">
+					<input type="hidden" name="notify_url" value="http://www.yardweb.co.za">
 				  <div class="form-group">
 				    <label for="name_first" class="col-sm-2 control-label">Name</label>
 				    <div class="col-sm-10">
