@@ -134,7 +134,7 @@ class Page extends AbstractPage {
 		# Get POST Data
 		$uid                     = $_POST['uid'];
 		$user                    = new User($uid);
-		$user->username          = $_POST['username'];
+		$user->username          = htmlentities($_POST['username']);
 		$user->first_name        = $_POST['first_name'];
 		$user->last_name         = $_POST['last_name'];
 		$user->email             = $_POST['email'];
