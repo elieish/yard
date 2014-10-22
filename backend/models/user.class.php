@@ -74,8 +74,8 @@ class User extends Model {
 		global $_db;
 
 		# Sanitize Parameters Parameters
-		$username														= preg_replace('@[^a-zA-Z0-9_]@', '', $username);
-		/*var_dump($password);die;*/
+		//$username														= preg_replace('@[^a-zA-Z0-9_]@', '', $username);
+
 		$password														= md5($password);
 
 
