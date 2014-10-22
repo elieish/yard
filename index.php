@@ -196,5 +196,23 @@ $province       = provinces_select();
         <script src="js/sb-admin-2.js"></script>
         <script src="js/main.js"></script>
 
+        <!-- Start of StatCounter Code for Default Guide -->
+        <script type="text/javascript">
+        var sc_project=10093677;
+        var sc_invisible=0;
+        var sc_security="a056a256";
+        var scJsHost = (("https:" == document.location.protocol) ?
+        "https://secure." : "http://www.");
+        document.write("<sc"+"ript type='text/javascript' src='" +
+        scJsHost+
+        "statcounter.com/counter/counter.js'></"+"script>");
+        </script>
+        <noscript><div class="statcounter"><a title="click tracking"
+        href="http://statcounter.com/" target="_blank"><img
+        class="statcounter"
+        src="http://c.statcounter.com/10093677/0/a056a256/0/"
+        alt="click tracking"></a></div></noscript>
+        <!-- End of StatCounter Code for Default Guide -->
+        <a href="http://statcounter.com/p10093677/?guest=1">View MyStats</a>
 </html>
 
