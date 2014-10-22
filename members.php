@@ -186,14 +186,14 @@ $no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`dist
                     								<div class="col-lg-3">
                     									<ul class="list-group">
                     									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_31_35;?></span>Members aged 31-35</li>
-                                        <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $members_36;?></span>Members aged 36 and older  </li>
-                    									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_districts;?></span><small>No. of Active Districts</small></li>
+                                        <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $members_36;?></span>Members aged 36 and older  </li>
+                    									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_districts;?></span><small>No. of Active Districts</small></li>
 
                     									 </ul>
                     								</div>
                     								<div class="col-lg-3">
                     									<ul class="list-group">
-                    									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Active Local Area/Wards</small></li>
+                    									  <li class="list-group-item list-group-item-success btn-xs"><span class="badge"><?php echo $no_of_locals;?></span><small>No. of Active Local Area/Wards</small></li>
                     									  <li class="list-group-item list-group-item-info btn-xs"><span class="badge"><?php echo $no_of_cellphones;?></span>No. of Members on Cellphone</li>
                     									  <li class="list-group-item list-group-item-warning btn-xs"><span class="badge"><?php echo $no_of_emails;?></span>No. of Members on Email</li>
                     									 </ul>
