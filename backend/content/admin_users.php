@@ -140,6 +140,7 @@ class Page extends AbstractPage {
 		$user->email             = $_POST['email'];
 		$user->tel               = $_POST['tel'];
 		$user->gender            = $_POST['gender'];
+		$user->dob            	 = $_POST['dob'];
 		$user->mobile            = $_POST['mobile'];
 		$user->datetime          = now();
 		$user->fax               = $_POST['fax'];
@@ -216,6 +217,7 @@ class Page extends AbstractPage {
 		$user->datetime          = now();
 		$user->last_name         = $_POST['last_name'];
 		$user->gender            = $_POST['gender'];
+		$user->dob            	 = $_POST['dob'];
 		$user->email             = $_POST['email'];
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];
@@ -246,6 +248,7 @@ class Page extends AbstractPage {
 		$user->first_name        = $_POST['first_name'];
 		$user->last_name         = $_POST['last_name'];
 		$user->gender            = $_POST['gender'];
+		$user->dob            	 = $_POST['dob'];
 		$user->email             = $_POST['email'];
 		$user->tel               = $_POST['tel'];
 		$user->mobile            = $_POST['mobile'];

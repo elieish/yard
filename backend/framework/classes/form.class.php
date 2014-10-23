@@ -89,7 +89,9 @@ class Form {
 			return "<input type='text' class='date form-control' name='{$name}' id='{$name}' value=\"{$value}\">";
 		} else if ($type == "select") {
 			return generate_select($name, $options, $value);
-		} else if ($type == "other") {
+		} else if ($type == "datepicker") {
+			return "<input class='form-control datepicker' type='text' id='{$name}' name='{$name}' value=\"{$value}\">";
+		}else if ($type == "other") {
 			return $name;
 		}
 	}

@@ -53,6 +53,7 @@ class User extends Model {
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add_select("Select Gender"       , "gender"      ,$this->gender     , gender_select($this->gender));
+		$form->add("Date of birth"		, "datepicker"		, "dob"				, $this->dob ,array('class', 'datepicker'));
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
 		$form->add("Last Name"			, "text"		, "last_name"		, $this->last_name);
 		$form->add("Email Address"		, "text"		, "email"			, $this->email);
@@ -201,6 +202,7 @@ class User extends Model {
 		$form->add(""					, "hidden"		, "title"			, 4);
 		$form->add_select("Select a Province"   , "province_id"     ,$this->province_id     , province_select());
 		$form->add_select("Select Gender"       , "gender"      ,$this->gender     , gender_select($this->gender));
+		$form->add("Date of birth"		, "datepicker"		, "dob"				, $this->dob ,array('class', 'datepicker'));
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
@@ -232,6 +234,7 @@ class User extends Model {
 		$form->add_select("Select a Province"   , "province_id"     ,$this->province    , province_select()							,array('id', 'province_id'));
 		$form->add_select("Select a District"   , "district"     ,$this->district     , districtt_select($this->province)		,array('id', 'districts'));
 		$form->add_select("Select Gender"       , "gender"      ,$this->gender     , gender_select($this->gender));
+		$form->add("Date of birth"		, "datepicker"		, "dob"				, $this->dob ,array('class', 'datepicker'));
 		$form->add("Username"			, "text"		, "username"		, $this->username);
 		$form->add("Password"			, "password"	, "password"		, $this->password);
 		$form->add("First Name"			, "text"		, "first_name"		, $this->first_name);
