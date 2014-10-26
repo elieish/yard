@@ -92,7 +92,7 @@ $no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`dist
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
             <![endif]-->
 
-   <div class="container">
+   <div class="container visible-lg visible-md">
     <div id="yardslider">
             <div class="item"><img src="images/sliders/1.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/2.jpg" alt=""></div>

@@ -40,7 +40,7 @@ $province       = provinces_select();
   </head>
   <body>
 
-   <div class="container">
+   <div class="container visible-lg visible-md">
     <div id="yardslider">
             <div class="item"><img src="images/sliders/1.jpg" alt=""></div>
             <div class="item"><img src="images/sliders/2.jpg" alt=""></div>
