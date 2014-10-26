@@ -55,7 +55,7 @@ body {
 }
 
 .dropdown-menu {
-    background-color: #333 !important;
+   /* background-color: #333 !important;*/
 }
 
 .sidebar ul li a.active {
@@ -84,6 +84,10 @@ table a {
 
 table .dropdown-menu {
     background-color: white !important;
+}
+
+.datepicker {
+    width:320px;
 }
 
 
