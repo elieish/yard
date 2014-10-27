@@ -44,7 +44,10 @@ $no_of_cellphones  = $_db->fetch_single("SELECT COUNT(DISTINCT(`cell`)) AS 'coun
 $no_of_emails      = $_db->fetch_single("SELECT COUNT(DISTINCT(`email`)) AS 'count' FROM members ");
 $no_of_male_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users  WHERE `gender` = 1");
 $no_of_female_district_leaders = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count' FROM users  WHERE `gender` = 2");
-//$no_of_district_25 = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count'  FROM users WHERE (YEAR(now()) - YEAR(dob)) >= 21 AND (YEAR(now()) - YEAR(dob)) <= 25");
+$no_of_district_25 = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count'  FROM users WHERE (YEAR(now()) - YEAR(dob)) >= 21 AND (YEAR(now()) - YEAR(dob)) <= 25");
+$no_of_district_30 = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count'  FROM users WHERE (YEAR(now()) - YEAR(dob)) >= 26 AND (YEAR(now()) - YEAR(dob)) <= 30");
+$no_of_district_35 = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count'  FROM users WHERE (YEAR(now()) - YEAR(dob)) >= 31 AND (YEAR(now()) - YEAR(dob)) <= 35");
+$no_of_district_36 = $_db->fetch_single("SELECT COUNT(DISTINCT(`district`)) AS 'count'  FROM users WHERE (YEAR(now()) - YEAR(dob)) >= 36 ");
 ?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
